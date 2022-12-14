@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/FONT/fontawesome-free-6.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="asset/css/main.css">
+    <link rel="stylesheet" href="asset/css/grid.css">
+    <link rel="stylesheet" href="asset/css/silder.css">
+    <link rel="stylesheet" href="asset/css/silder-card.css">
+    <link rel="stylesheet" href="asset/css/reponsive.css">
+
+    <title>Fpt shop</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- reponsive 
+        * l - pc or > pc
+        * m - tablet
+        * c - mobile
+        -->
+
+    <!-- header -->
+        <div class="header">
+            <div class="header-top">
+                <div class="grid wide">
+                    <div class="row header-top">
+                        <div class="col l-2 m-6 c-6">
+                            <div class="logo-top">
+                                <i class="fa-solid fa-bars bar-reponsive"></i>
+                                <a class="logo" href="index.html">
+                                <img src="asset/img/logo.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!-- cart for mobile and tablet -->
+                        <div class="col l-0 m-6 c-6">
+                            <div class="cart mobile-tablet">
+                                <i class="fa-solid fa-cart-shopping"></i> <br>
+                            </div>
+                        </div>
+                        <!-- end cart for mobile and tablet -->
+                        <div class="col l-6 l-o-1 m-12 c-12">
+                            <div class="search-top">
+                            <input type="text" value="" placeholder="Nhập tên phụ kiện mà bạn muốn tìm">
+                                    <button class="btn-search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                    <ul class="history-search">
+                                        <span class="title-history-search">Lịch sử tìm</span>
+                                        <li class="history-item"><a href="">Iphone</a></li>
+                                        <li class="history-item"><a href="">Samsung</a></li>
+                                        <li class="history-item"><a href="">Tai nghe</a></li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div class="col l-2 l-o-1 m-6 c-6">
+                            <div class="cart">
+                                <i class="fa-solid fa-cart-shopping"></i> <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12 m-0 c-0">
+                            <ul class="menu-top">
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-mobile"></i> điện thoại</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-laptop"></i> Laptop</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-brands fa-apple"></i> Apple</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-desktop"></i> PC phụ kiện</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-headphones"></i> Tai nghe</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-arrow-rotate-right"></i>Máy cũ giá rẻ</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-house-laptop"></i>Hàng gia dụng</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-sim-card"></i> sim&Thẻ cào</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-certificate"></i>Khuyến mãi</a></li>
+                                <li class="menu-top-item"><a href="product.html"><i class="fa-solid fa-circle-dollar-to-slot"></i> Trả gớp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu-mobile and tablet -->
+        <div class="modal-menu"></div>
+        <div class="menu-mobile-tablet">
+            <ul class="menu-mobile-tablet-list">
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-mobile"></i> Điện thoại</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-laptop"></i> Laptop</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-brands fa-apple"></i> Apple</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-desktop"></i> PC phụ kiện</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-headphones"></i> Tai nghe</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-arrow-rotate-right"></i>Máy cũ giá rẻ</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-house-laptop"></i>Hàng gia dụng</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-sim-card"></i> sim&Thẻ cào</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-certificate"></i>Khuyến mãi</a></li>
+                <li class="menu-mobile-tablet-list-item"><a href="product.html"><i class="fa-solid fa-circle-dollar-to-slot"></i> Trả gớp</a></li>
+            </ul>
+            <div class="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+    <!-- end-header -->
+    <!-- main -->
+        <div class="main">
+            <div class="silder">
+                <div class="grid wide silder">
+                    <div class="row">
+                        <div class="col l-8 m-12 c-12">
+                            <!-- <div class="silder"> -->
+                                    <div class="grid">
+                                        <div class="wapper-silder">
+                                            <div class="row no-warp main-silder">
+                                                <div class="col l-12 m-12 c-12 wrapper-item-silder">
+                                                    <div class="item-silder">
+                                                        <img src="asset/img/637806895646282188_F-H1_800x300.jfif" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col l-12 m-12 c-12 wrapper-item-silder">
+                                                    <div class="item-silder">
+                                                        <img src="asset/img/slide-3.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col l-12 m-12 c-12 wrapper-item-silder">
+                                                    <div class="item-silder">
+                                                        <img src="asset/img/637811231329170645_F-H1_800x300.jfif" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="back"><</button>
+                                            <button class="next">></button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- <div style="text-align:center">
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                      </div>--------->
+                                <!-- </div>  -->
+                        </div>
+                        <div class="col l-4 c-12 m-12">
+                            <div class="banner-top">
+                                <div class="banner-img-item">
+                                    <img src="asset/img/slide-1.png" alt="">
+                                </div>
+                                <div class="banner-img-item">
+                                    <img src="asset/img/slide-2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="category-wapper">
+                <div class="grid wide category">
+                    <div class="row no-gutters">
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/pngegg.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Điện thoại
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/laptop.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Laptop
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/apple.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Apple
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/samsung.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Samsung
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/tablet.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Máy tính bảng
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img//xiaomi.png" alt="">
+                            </div>
+                            <p class="title-category">
+                                Xiaomi
+                            </p>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/pngegg.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Điện thoại
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/laptop.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Laptop
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/apple.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Apple
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/samsung.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Samsung
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img/tablet.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Máy tính bảng
+                            </a>
+                        </div>
+                        <div class="col l-2 m-3 c-3 category-item">
+                            <div class="img-category">
+                                <img src="asset/img//xiaomi.png" alt="">
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Xiaomi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="silder-card">
+                <div class="grid wide silder">
+                    <div class="row">
+                        <div class="col l-12 m-12 c-12">
+                            <p class="title-product fire"> <i class="fa-solid fa-fire-flame-curved"></i> KHUYẾN MÃI</p>
+                        </div>
+                    </div>
+                    <div class="silder-wapper">
+                        <div class="row silder-main">
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/iphone13.png" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 128GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">20.000.000đ</span>
+                                            <span class="old-price">25.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/5640025_iphone-13-family-select-2021.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 256GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">25.000.000đ</span>
+                                            <span class="old-price">30.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/download.jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Samsung A50
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">8.000.000đ</span>
+                                            <span class="old-price">10.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/Vivo-V23e-1-2-600x600.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Vivo V23e
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">9.000.000đ</span>
+                                            <span class="old-price">11.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/iphone13.png" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 128GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">20.000.000đ</span>
+                                            <span class="old-price">25.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/5640025_iphone-13-family-select-2021.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 256GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">25.000.000đ</span>
+                                            <span class="old-price">30.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/download.jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Samsung A50
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">8.000.000đ</span>
+                                            <span class="old-price">10.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-6 c-6 card-silder">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/Vivo-V23e-1-2-600x600.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Vivo V23e
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">9.000.000đ</span>
+                                            <span class="old-price">11.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                      
+                        </div>
+                    </div>
+                    <button class="next-silder-card">></button>
+                    <button class="back-silder-card"><</button>
+                </div>
+            </div>
+            <div class="banner-1">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12 banner">
+                            <img src="asset/img/banner-1.jfif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="grid wide ">
+                    <div class="product-wapper">
+                        <div class="row  no-gutters">
+                            <div class="col l-12 m-12 c-12">
+                                <p class="title-product">ĐIỆN THOẠI NỔI BẬC</p>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/iphone13.png" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 128GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">20.000.000đ</span>
+                                            <span class="old-price">25.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/5640025_iphone-13-family-select-2021.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 256GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">25.000.000đ</span>
+                                            <span class="old-price">30.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/download.jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Samsung A50
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">8.000.000đ</span>
+                                            <span class="old-price">10.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/Vivo-V23e-1-2-600x600.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Vivo V23e
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">9.000.000đ</span>
+                                            <span class="old-price">11.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/iphone13.png" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 128GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">20.000.000đ</span>
+                                            <span class="old-price">25.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/5640025_iphone-13-family-select-2021.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Iphone 13 256GB
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">25.000.000đ</span>
+                                            <span class="old-price">30.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/download.jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Samsung A50
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">8.000.000đ</span>
+                                            <span class="old-price">10.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/Vivo-V23e-1-2-600x600.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Vivo V23e
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">9.000.000đ</span>
+                                            <span class="old-price">11.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="banner-2">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12 banner">
+                            <img src="asset/img/banner-2.jfif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="grid wide ">
+                    <div class="product-wapper">
+                        <div class="row  no-gutters">
+                            <div class="col l-12 m-12 c-12">
+                                <p class="title-product">LAPTOP BÁN CHẠY</p>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/download (3).jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop dell
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">20.000.000đ</span>
+                                            <span class="old-price">25.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/196019.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop HP
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">25.000.000đ</span>
+                                            <span class="old-price">30.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/13-ngoc-minh-long-dia-chi-ban-laptop-cu-nhap-khau-tu-usa-700x493.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop asus
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">8.000.000đ</span>
+                                            <span class="old-price">10.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/laptop-1.jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop lenovo
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">9.000.000đ</span>
+                                            <span class="old-price">11.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/download (3).jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop dell
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">20.000.000đ</span>
+                                            <span class="old-price">25.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/196019.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop HP
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">25.000.000đ</span>
+                                            <span class="old-price">30.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/13-ngoc-minh-long-dia-chi-ban-laptop-cu-nhap-khau-tu-usa-700x493.jpg" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop asus
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">8.000.000đ</span>
+                                            <span class="old-price">10.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col l-3 m-4 c-6 product-card">
+                                <div class="product-card-item">
+                                    <a href="product-detail.html">
+                                    <div class="product-card-item-img">
+                                        <img src="asset/img/laptop-1.jfif" alt="">
+                                        <div class="sticker">
+                                            <span class="sticker-sale">Ưu đãi 5.000.000đ</span> <br>
+                                            <span class="sticker-event">Trả gớp 0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-card-item-content">
+                                        <h3 class="title-card">
+                                            Laptop lenovo
+                                        </h3>
+                                        <div class="price">
+                                            <span class="new-price">9.000.000đ</span>
+                                            <span class="old-price">11.000.000đ</span>
+                                        </div>
+                                        <div class="card-item-info">
+                                            <div class="card-item-info-img-wapper">
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/vnpay.png" alt="">
+                                                </div>
+                                                <div class="card-item-info-img">
+                                                    <img src="asset/img/môm.png" alt="">
+                                                </div>
+                                            </div>
+                                            <span class="text-info-card">
+                                                Giảm thêm 150.000đ khi thanh toán online 100% qua thẻ Mastercard
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="banner-3">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12 banner">
+                            <img src="asset/img/banner-3.jfif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="category-wapper">
+                <div class="grid wide category">
+                    <div class="row  no-gutters">
+                        <div class="col l-12 m-12 c-12">
+                            <p class="title-product">PHỤ KIỆN HOT</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-bahai"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Phụ kiện hot
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-brands fa-apple"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Apple
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-battery-full"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Pin dự phòng
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-headphones-simple"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Tai nghe
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-keyboard"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Bàn phím
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-computer-mouse"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Chuột
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-bahai"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Phụ kiện hot
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-brands fa-apple"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Apple
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-battery-full"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Pin dự phòng
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-headphones-simple"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Tai nghe
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-keyboard"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Bàn phím
+                            </a>
+                        </div>
+                        <div class="col l-2 m-4 c-4 category-item category-item-bot">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-computer-mouse"></i>
+                            </div>
+                            <a href="#cate" class="title-category">
+                                Chuột
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="category-bottom">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-4 m-12 c-12 ">
+                            <div class="category-bot-item">
+                                <img src="asset/img/cate-bot.jfif" alt="">
+                            </div>
+                        </div>
+                        <div class="col l-4 m-12 c-12 ">
+                            <div class="category-bot-item">
+                                <img src="asset/img/cate-bot-2.jfif" alt="">
+                            </div>
+                        </div>
+                        <div class="col l-4 m-12 c-12 ">
+                            <div class="category-bot-item">
+                                <img src="asset/img/cate-bot-3.jfif" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- end-main -->
+    <div class="footer">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-2 m-4 c-12">
+                    <div class="footer-1">
+                        <ul class="footer-list">
+                            <li class="footer-list-item"><a href="">Giới thiệu về công ty</a></li>
+                            <li class="footer-list-item"><a href="">Câu hỏi thường gặp mua hàng</a></li>
+                            <li class="footer-list-item"><a href="">Chính sách bảo mật</a></li>
+                            <li class="footer-list-item"><a href="">
+                                Quy chế hoạt động</a></li>
+                            <li class="footer-list-item"><a href="">Kiểm tra hóa đơn điện tử</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col l-2 m-4 c-12">
+                    <div class="footer-2">
+                        <ul class="footer-list">
+                            <li class="footer-list-item"><a href="">Tin tuyển dụng</a></li>
+                            <li class="footer-list-item"><a href="">Tin khuyến mãi</a></li>
+                            <li class="footer-list-item"><a href="">Hướng dẫn mua online</a></li>
+                            <li class="footer-list-item"><a href="">Hướng dẫn mua trả góp</a></li>
+                            <li class="footer-list-item"><a href="">Chính sách trả góp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col l-2 m-4 c-12">
+                    <div class="footer-3">
+                        <ul class="footer-list">
+                            <li class="footer-list-item"><a href="">Hệ thống cửa hàng</a></li>
+                            <li class="footer-list-item"><a href="">Bán hàng doanh nghiệp</a></li>
+                            <li class="footer-list-item"><a href="">Hệ thống bảo hành</a></li>
+                            <li class="footer-list-item"><a href="">Giới thiệu máy đổi trả
+                                </a></li>
+                            <li class="footer-list-item"><a href="">Chính sách đổi trả</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col l-3 m-6 c-12">
+                    <div class="footer-4">
+                        <p class="title-footer">Tư vấn mua hàng (Miễn phí)</p>
+                        <p class="footer-phone">1800 6601</p>
+                        <p class="title-footer">Hỗ trợ kỹ thuật</p>
+                        <p class="footer-phone">1800 6601</p>
+                        <p class="title-footer">Hỗ trợ thanh toán</p>
+                        <div class="img-footer">
+                            <img src="asset/img/môm.png" alt="">
+                            <img src="asset/img/vnpay.png" alt="">
+                            <img src="asset/img/zalo.png" alt="">
+                            <img src="asset/img/visa.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col l-3 m-6 c-12">
+                    <div class="footer-4">
+                        <p class="title-footer">Góp ý, khiếu nại dịch vụ (8h00-22h00)</p>
+                        <p class="footer-phone">1800 6616</p>
+                        <p class="title-footer">Website cùng tập đoàn:</p>
+                        <div class="img-footer footer-final">
+                            <img src="asset/img/longchau.jpg" alt="">
+                            <img src="asset/img/fb.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+            
+    </div>
+    <script src="asset/js/main.js"></script>
+    <script src="asset/js/silder.js"></script>
+    <script src="asset/js/silder-card.js"></script>
+</body>
+</html>
