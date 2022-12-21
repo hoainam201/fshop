@@ -1,8 +1,9 @@
-const category = require('./categories')
+const category = require('./categories');
+const admin = require('./admin');
 // const site = require('./site')
 
 function route(app) {
-    app.use('/admin', );
+    app.use('/admin', admin);
 
     // app.use('/', site);
 }

@@ -2,4 +2,4 @@ class CatagoriesController{
 
 }
 
-module.exports = new CatagoriesController();
+module.exports = new CatagoriesController;
