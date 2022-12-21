@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/1f55434e39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="login-page.html">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/slider.css">
+    <link rel="stylesheet" href="./assets/css/slider-card.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link rel="stylesheet" href="assets/css/log-reg-page.css">
+    <script src="assets/javascript/dangky.js"></script>
+    <title>FPT shop</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-top">
+                <div class="grid wide">
+                    <div class="row header-top">
+                        <div class="col l-2 m-6 c-6">
+                            <div class="logo-top">
+                                <i class="fa fa-bars bar-reponsive"></i>
+                                <a class="logo f-logo" href="./index.html"></a>
+                            </div>
+                        </div>
+                        <!-- cart for mobile and tablet -->
+                        <div class="col l-0 m-6 c-6">
+                            <div class="cart mobile-tablet">
+                                <i class="fa fa-cart-shopping"></i> <br>
+                            </div>
+                        </div>
+                        <!-- end cart for mobile and tablet -->
+                        <div class="col l-5 m-6 c-12">
+                            <form class="search-top">
+                                <input type="search" placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm">
+                                <button class="button-search">
+                                    <i class="fa fa-magnifying-glass"></i>
+                                </button>
+                                <ul class="history-search">
+                                    <span class="title-history-search">Lịch sử tìm</span>
+                                    <li class="history-item"><a href="">Iphone</a></li>
+                                    <li class="history-item"><a href="">Samsung</a></li>
+                                    <li class="history-item"><a href="">Tai nghe</a></li>
+                                </ul>
+                        </div>
+                        <div class="col l-5 m-6 c-6">
+                            <div class="service">
+                                <div class="service-inf">
+                                    <a href="#">
+                                        <i class="fa fa-file"></i>
+                                        <p>Thông tin hay</p>
+                                        <ul class="news">
+                                            <li><a href="#">Tin mới</a></li>
+                                            <li><a href="#">Khuyến mãi</a></li>
+                                            <li><a href="#">Thủ thuật</a></li>
+                                            <li><a href="#">For games</a></li>
+                                            <li><a href="#">Video hot</a></li>
+                                            <li><a href="#">Đánh giá - tư vấn</a></li>
+                                            <li><a href="#">App &amp; Game</a></li>
+                                            <li><a href="#">Sự kiện</a></li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div class="service-pee">
+                                    <a href="#">
+                                        <i class="fa fa-file-invoice-dollar"></i>
+                                        <p>Thanh toán &amp; Tiện ích</p>
+                                    </a>
+                                </div>
+                                <div class="service-personal-account">
+                                    <a href="#">
+                                        <i class="fa fa-user"></i>
+                                        <p>Tài khoản của tôi</p>
+                                    </a>
+                                </div>
+                                <div class="service-cart">
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <p>Giỏ hàng</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="formlogin">
+            <div class="formlogin_container">
+                <div class="formlogin_header">
+                    <h3 class="formlogin_heading">Đăng Ký</h3>
+                </div>
+    
+                <div class="formlogin_form">
+                    <form onsubmit="a()">
+                        <div class="formlogin_login">
+                            <input type="text" name="phone" class="formlogin_ip" required placeholder="Số Điện Thoại">
+                        </div>
+                        <div class="formlogin_login">
+                            <input type="password" name="pass" class="formlogin_ip" required placeholder="Mật Khẩu">
+                        </div>
+                        <div class="formlogin_login">
+                            <input type="password" name="cfpass" class="formlogin_ip" required placeholder="Nhập Lại Mật Khẩu">
+                        </div>
+                </div>
+    
+                <div class="formlogin_nut">
+                    <button  class="nut">Đăng Ký</button>
+                    </form>
+                </div>
+    
+                <div class="them">
+                    <div class="dongke"></div>
+                    <span class="span">Hoặc</span>
+                    <div class="dongke"></div>
+                </div>
+                <div class="formlogin_knbn">
+                    <a href="" class="knn1">
+                        <i class="formlogin_icon fab fa-facebook"></i>
+                        Kết Nối Facebook
+                    </a>
+                    <a href="" class="knn2">
+                        <i class="formlogin_icon fab fa-google"></i>
+                        Kết Nối Google
+                    </a>
+                </div>
+                <div class="formlogin_dieukhoan">
+                    <p class="pformlogin">
+                        Bằng việc đăng kí, bạn đã đồng ý với
+                        <a class="dkdv" href="">điều khoản dịch vụ</a> &
+                        <a href="" class="dkdv">chính sách bảo mật</a>
+                    </p>
+                </div>
+                <div class="formlogin_them1">
+                    <p class="pra">Bạn đã có tài khoản
+                        <a href="login-page.html" class="dky">Đăng Nhập</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-2 m-4 c-12">
+                        <div class="footer-1">
+                            <ul class="footer-list">
+                                <li class="footer-list-item"><a href="">Giới thiệu về công ty</a></li>
+                                <li class="footer-list-item"><a href="">Câu hỏi thường gặp mua hàng</a></li>
+                                <li class="footer-list-item"><a href="">Chính sách bảo mật</a></li>
+                                <li class="footer-list-item"><a href="">
+                                        Quy chế hoạt động</a></li>
+                                <li class="footer-list-item"><a href="">Kiểm tra hóa đơn điện tử</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col l-2 m-4 c-12">
+                        <div class="footer-2">
+                            <ul class="footer-list">
+                                <li class="footer-list-item"><a href="">Tin tuyển dụng</a></li>
+                                <li class="footer-list-item"><a href="">Tin khuyến mãi</a></li>
+                                <li class="footer-list-item"><a href="">Hướng dẫn mua online</a></li>
+                                <li class="footer-list-item"><a href="">Hướng dẫn mua trả góp</a></li>
+                                <li class="footer-list-item"><a href="">Chính sách trả góp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col l-2 m-4 c-12">
+                        <div class="footer-3">
+                            <ul class="footer-list">
+                                <li class="footer-list-item"><a href="">Hệ thống cửa hàng</a></li>
+                                <li class="footer-list-item"><a href="">Bán hàng doanh nghiệp</a></li>
+                                <li class="footer-list-item"><a href="">Hệ thống bảo hành</a></li>
+                                <li class="footer-list-item"><a href="">Giới thiệu máy đổi trả
+                                    </a></li>
+                                <li class="footer-list-item"><a href="">Chính sách đổi trả</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col l-3 m-6 c-12">
+                        <div class="footer-4">
+                            <p class="title-footer">Tư vấn mua hàng (Miễn phí)</p>
+                            <p class="footer-phone">1800 6601</p>
+                            <p class="title-footer">Hỗ trợ kỹ thuật</p>
+                            <p class="footer-phone">1800 6601</p>
+                            <p class="title-footer">Hỗ trợ thanh toán</p>
+                            <div class="img-footer">
+                                <img src="assets/img/môm.png">
+                                <img src="assets/img/vnpay.png">
+                                <img src="assets/img/zalo.png">
+                                <img src="assets/img/visa.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-3 m-6 c-12">
+                        <div class="footer-4">
+                            <p class="title-footer">Góp ý, khiếu nại dịch vụ (8h00-22h00)</p>
+                            <p class="footer-phone">1800 6616</p>
+                            <p class="title-footer">Website cùng tập đoàn:</p>
+                            <div class="img-footer footer-final">
+                                <img src="assets/img/longchau.jpg">
+                                <img src="assets/img/fb.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </body>
+
+    </html>
