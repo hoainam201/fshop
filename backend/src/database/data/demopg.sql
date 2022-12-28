@@ -44,40 +44,56 @@ create table discounts
     endDate    date
 );
 
+create table provinces
+(
+    provinceId   char(2) primary key,
+    provinceName char(20)
+);
+
+create table districts
+(
+    districtsId   char(3) primary key,
+    districtsName char(20),
+    provinceId    char(2) references provinces (provinceId)
+);
+
 create table customers
 (
     customerID       serial primary key,
     phone            varchar unique,
-    passwords        varchar not null,
-    contactName      varchar not null,
-    contactTitle     varchar,
-    accumulatePoints int default 0,
-    address          varchar,
-    postalCode       varchar,
-    email            varchar
+    accumulatePoints int default 0
+);
+
+create table contacts
+(
+    contactId   serial primary key,
+    phone       varchar,
+    contactName varchar,
+    customerID  int references customers (customerID),
+    districtsId char(3) references districts (districtsId),
+    address     varchar
 );
 
 create table orders
 (
     orderID      serial primary key,
-    customerID   int,
+    contactId   int,
     orderDate    date default current_date,
     requiredDate date,
     shippedDate  date,
     shipAddress  varchar,
-    foreign key (customerID) references customers (customerID)
+    discountID   int references discounts (discountID),
+    foreign key (contactId) references contacts (contactId)
 );
 
 create table orderDetails
 (
-    orderID    serial,
-    productID  serial,
+    orderID   serial,
+    productID serial,
     primary key (orderID, productID),
-    price      int not null,
-    quantity   int default 1,
-    discountID int,
+    price     int not null,
+    quantity  int default 1,
     foreign key (orderID) references orders (orderID),
-    foreign key (discountID) references discounts (discountID),
     foreign key (productID) references products (productID)
 );
 
