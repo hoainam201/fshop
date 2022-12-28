@@ -21,6 +21,7 @@ class AdminControllers {
             if (err) {
                 return next(err);
             }
+            res.json(result.rows)
         });
     }
 
