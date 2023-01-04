@@ -12,8 +12,7 @@ class SiteController{
     }
 
     home(req, res, next) {
-        const text = parseInt(req.params.text);
-        db.query('select * from products where productname = $1', [text], (err, result) => {
+        db.query('select * from products', [], (err, result) => {
             if (err) {
                 return next(err);
             }
