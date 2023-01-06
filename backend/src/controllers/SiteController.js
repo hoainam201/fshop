@@ -11,6 +11,14 @@ class SiteController{
         })
     }
 
+    home(req, res, next) {
+        db.query('select * from products', [], (err, result) => {
+            if (err) {
+                return next(err);
+            }
+            res.json(result.rows);
+        })
+    }
 }
 
 module.exports = new SiteController;
