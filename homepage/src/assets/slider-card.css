@@ -1,6 +1,6 @@
 .slider {
     position: relative;
-    background-image: url(../images/desk-header-bg.png);
+    background-image: url("@/assets/images/background_banner-desk-header-bg.webp");
     background-size: contain;
 }
 

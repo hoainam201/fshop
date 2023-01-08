@@ -1,13 +1,15 @@
 <template>
   <v-app id="inspire" >
-    <Header v-model="expandOnHover"></Header>
-    <Sidebar :expand-on-hover.sync="expandOnHover"></Sidebar>
-    <v-content style="background-color: white">
-      <userHeader></userHeader>
-      <v-container rounded-0 class="fill-height" fluid>
-        <router-view />
-      </v-container>
-    </v-content>
+<!--    <Header v-model="expandOnHover"></Header>-->
+<!--    <Sidebar :expand-on-hover.sync="expandOnHover"></Sidebar>-->
+    <userHeader></userHeader>
+    <Slider></Slider>
+<!--    <v-content style="background-color: white">-->
+<!--      <v-container rounded-0 class="fill-height" fluid>-->
+<!--        <router-view />-->
+<!--      </v-container>-->
+<!--    </v-content>-->
+<!--    <router-view />-->
     <Footer></Footer>
   </v-app>
 </template>

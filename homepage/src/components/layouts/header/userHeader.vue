@@ -32,11 +32,14 @@
               </form>
             </div>
             <div class="col l-5 m-6 c-6">
-              <div class="service">
-                <div class="service-inf">
+              <ul class="service">
+                <li class="service-inf">
                   <a href="#">
-                    <i class="fa-solid fa-file-lines"></i>
-                    <p>Thông tin hay</p>
+                    <div class="service-icon">
+                      <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <span>Thông tin hay</span>
+                  </a>
                     <ul class="news">
                       <li><a href="#">Tin mới</a></li>
                       <li><a href="#">Khuyến mãi</a></li>
@@ -47,27 +50,32 @@
                       <li><a href="#">App &amp; Game</a></li>
                       <li><a href="#">Sự kiện</a></li>
                     </ul>
-                  </a>
-                </div>
-                <div class="service-pee">
+                </li>
+                <li class="service-pee">
                   <a href="#">
-                    <i class="fa fa-file-invoice-dollar"></i>
-                    <p>Thanh toán &amp; Tiện ích</p>
+                    <div>
+                      <i class="fa fa-file-invoice-dollar"></i>
+                    </div>
+                    <span>Thanh toán &amp; Tiện ích</span>
                   </a>
-                </div>
-                <div class="service-personal-account">
+                </li>
+                <li class="service-personal-account">
                   <a href="#">
-                    <i class="fa fa-user"></i>
-                    <p>Tài khoản của tôi</p>
+                    <div>
+                      <i class="fa fa-user"></i>
+                    </div>
+                    <span>Tài khoản của tôi</span>
                   </a>
-                </div>
-                <div class="service-cart">
+                </li>
+                <li class="service-cart">
                   <a href="#">
-                    <i class="fa fa-shopping-cart"></i>
-                    <p>Giỏ hàng</p>
+                    <div>
+                      <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <span>Giỏ hàng</span>
                   </a>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -151,8 +159,7 @@
                       <tr>
                         <td>
                           <a href="#">
-                            <img src="./assets/images/navbar/hot selling/637925294823972014_samsung-galaxy-a53-xanh-dd-icon.webp"
-                                 alt="Samsung">
+                            <img src="@/assets/images/navbar/hot selling/637925294823972014_samsung-galaxy-a53-xanh-dd-icon.webp" alt="">
                           </a>
                         </td>
                         <td>
@@ -166,7 +173,7 @@
                         <td>
                           <a href="#">
                             <img
-                                src="./assets/images/navbar/hot selling/637699137820447063_oppo-a55-dd.webp">
+                                src="@/assets/images/navbar/hot selling/637699137820447063_oppo-a55-dd.webp">
                           </a>
                         </td>
                         <td>
@@ -180,7 +187,7 @@
                     <div class="nav-box-banner">
                       <a href="#">
                         <img
-                            src="./assets/images/navbar/hot selling/637944273471751685_H4_248x248.webp">
+                            src="@/assets/images/navbar/hot selling/637944273471751685_H4_248x248.webp">
                       </a>
                     </div>
                   </div>
@@ -267,7 +274,7 @@
                     <div class="nav-box-banner">
                       <a href="#">
                         <img
-                            src="../assets/images/navbar/hot selling/637922251851746367_F-H4_248x248.webp">
+                            src="@/assets/images/navbar/hot selling/637922251851746367_F-H4_248x248.webp" alt="">
                       </a>
                     </div>
                   </div>
@@ -324,7 +331,7 @@
                           <td>
                             <a href="#">
                               <img
-                                  src="./assets/images/navbar/hot selling/637546013880588874_ipad-pro-11-wifi-dd.webp">
+                                  src="@/assets/images/navbar/hot selling/637546013880588874_ipad-pro-11-wifi-dd.webp" alt="">
                             </a>
                           </td>
                           <td>
@@ -337,7 +344,7 @@
                           <td>
                             <a href="#">
                               <img
-                                  src="./assets/images/navbar/hot selling/637931283633045136_samsung-galaxy-tab-s6-lite-2022-xanh-dd-logo.webp">
+                                  src="@/assets/images/navbar/hot selling/637931283633045136_samsung-galaxy-tab-s6-lite-2022-xanh-dd-logo.webp" alt="">
                             </a>
                           </td>
                           <td>
@@ -350,7 +357,7 @@
                       <div class="nav-box-banner">
                         <a href="#">
                           <img
-                              src="./assets/images/navbar/hot selling/637713179647010960_F-H4_248x248.webp">
+                              src="@/assets/images/navbar/hot selling/637713179647010960_F-H4_248x248.webp" alt="">
                         </a>
                       </div>
                     </table>
@@ -399,7 +406,7 @@
                         <td>
                           <a href="#">
                             <img
-                                src="./assets/images/navbar/hot selling/637864982144816513_iphone-13-pro-max-dd-2-128-256-512-1tb.webp"
+                                src="@/assets/images/navbar/hot selling/637864982144816513_iphone-13-pro-max-dd-2-128-256-512-1tb.webp"
                                 alt="bán chạy nhất">
                           </a>
                         </td>
@@ -411,7 +418,7 @@
                         <td>
                           <a href="#">
                             <img
-                                src="./assets/images/navbar/hot selling/637907317057450509_iphone-13-dd-bh-2nam.webp">
+                                src="@/assets/images/navbar/hot selling/637907317057450509_iphone-13-dd-bh-2nam.webp" alt="">
                           </a>
                         </td>
                         <td><a href="#">iPhone 13 128GB
@@ -422,7 +429,7 @@
                     <div class="nav-box-banner">
                       <a href="#">
                         <img
-                            src="./src/assets/images/navbar/hot selling/637928315803655276_FI-H4_248x248.webp">
+                            src="@/assets/images/navbar/hot selling/637928315803655276_FI-H4_248x248.webp" alt="">
                       </a>
                     </div>
                   </div>
@@ -491,7 +498,7 @@
                         <td>
                           <a href="#">
                             <img
-                                src="./assets/images/navbar/hot selling/636963759454365620_HASP-00554636-dd-1.webp">
+                                src="@/assets/images/navbar/hot selling/636963759454365620_HASP-00554636-dd-1.webp">
                           </a>
                         </td>
                         <td><a href="#">Combo Loa Bluetooth Karaoke kèm Mic không dây ivalue
@@ -503,7 +510,7 @@
                         <td>
                           <a href="#">
                             <img
-                                src="./assets/images/navbar/hot selling/637146111983706760_Trip10000_Black.webp">
+                                src="@/assets/images/navbar/hot selling/637146111983706760_Trip10000_Black.webp">
                           </a>
                         </td>
                         <td><a href="#">Pin sạc dự phòng UmeTravel 10000mAh TRIP10000 Quick
@@ -516,7 +523,7 @@
 
                       <a href="#">
                         <img
-                            src="./assets/images/navbar/hot selling/637922203212313689_F--H4_248x248.webp">
+                            src="@/assets/images/navbar/hot selling/637922203212313689_F--H4_248x248.webp">
                       </a>
                     </div>
                   </div>

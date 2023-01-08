@@ -6,12 +6,11 @@
           <div class="col l-2 m-4 c-12">
             <div class="footer-1">
               <ul class="footer-list">
-                <li class="footer-list-item"><a href="">Giới thiệu về công ty</a></li>
-                <li class="footer-list-item"><a href="">Câu hỏi thường gặp mua hàng</a></li>
-                <li class="footer-list-item"><a href="">Chính sách bảo mật</a></li>
-                <li class="footer-list-item"><a href="">
-                  Quy chế hoạt động</a></li>
-                <li class="footer-list-item"><a href="">Kiểm tra hóa đơn điện tử</a></li>
+                <li><a href="">Giới thiệu về công ty</a></li>
+                <li><a href="">Câu hỏi thường gặp mua hàng</a></li>
+                <li><a href="">Chính sách bảo mật</a></li>
+                <li><a href="">Quy chế hoạt động</a></li>
+                <li><a href="">Kiểm tra hóa đơn điện tử</a></li>
               </ul>
             </div>
           </div>
@@ -50,10 +49,10 @@
               <span>(Nhánh 2)</span>
               <p class="title-footer">Hỗ trợ thanh toán</p>
               <div class="img-footer">
-                <img src="./src/assets/img/môm.png" alt="momo">
-                <img src="./src/assets/img/vnpay.png" alt="vnpay">
-                <img src="./src/assets/img/zalo.png" alt="zalo">
-                <img src="./src/assets/img/visa.jpg" alt="visa">
+                <img src="../../../assets/img/momo.png" alt="momo">
+                <img src="../../../assets/img/vnpay.png" alt="vnpay">
+                <img src="../../../assets/img/zalo.png" alt="zalo">
+                <img src="../../../assets/img/visa.jpg" alt="visa">
               </div>
             </div>
           </div>
@@ -64,7 +63,7 @@
               <p class="title-footer">Website cùng tập đoàn:</p>
               <div class="img-footer footer-final">
                 <a href="https://nhathuoclongchau.com/">
-                  <img src="./src/assets/img/logo longchau.png" alt="Logo Long Châu">
+                  <img src="../../../assets/img/longchau.jpg" alt="Logo Long Châu">
                 </a>
               </div>
             </div>
