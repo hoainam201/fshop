@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="slider">
       <div class="grid wide">
         <img src="https://images.fpt.shop/unsafe/fit-in/filters:quality(80):fill(transparent)/fptshop.com.vn/Uploads/Originals/2022/12/26/638076621909941793_desk-header.png"
@@ -55,7 +54,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

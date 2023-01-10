@@ -49,10 +49,10 @@
               <span>(Nhánh 2)</span>
               <p class="title-footer">Hỗ trợ thanh toán</p>
               <div class="img-footer">
-                <img src="../../../assets/img/momo.png" alt="momo">
-                <img src="../../../assets/img/vnpay.png" alt="vnpay">
-                <img src="../../../assets/img/zalo.png" alt="zalo">
-                <img src="../../../assets/img/visa.jpg" alt="visa">
+                <img src="@/assets/img/momo.png" alt="momo">
+                <img src="@/assets/img/vnpay.png" alt="vnpay">
+                <img src="@/assets/img/zalo.png" alt="zalo">
+                <img src="@/assets/img/visa.jpg" alt="visa">
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
               <p class="title-footer">Website cùng tập đoàn:</p>
               <div class="img-footer footer-final">
                 <a href="https://nhathuoclongchau.com/">
-                  <img src="../../../assets/img/longchau.jpg" alt="Logo Long Châu">
+                  <img src="@/assets/img/longchau.jpg" alt="Logo Long Châu">
                 </a>
               </div>
             </div>

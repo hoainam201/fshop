@@ -1,25 +1,15 @@
 <template>
-  <div class="App">
-    <userHeader></userHeader>
-    <router-view />
-    <Footer></Footer>
+  <div class="app">
+    <Header />
+    <router-view/>
+    <Footer />
   </div>
 </template>
 
-<script>
+<style>
 
-// import Mainpage from "@/view_user/pages_user/Mainpage";
-import Footer from "@/components/layouts/footer/Footer.vue";
-
-export default {
-  name: 'App',
-
-  components: {
-    Footer
-    // Mainpage
-
-  }
-
-};
+</style>
+<script setup>
+import Header from "@/components/layouts/Header.vue";
+import Footer from "@/components/layouts/Footer.vue";
 </script>
-

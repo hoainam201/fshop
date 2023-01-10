@@ -188,7 +188,7 @@ body {
 .nav-box {
   position: absolute;
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
   transition: 0.4s;
   margin-top: 0;
   opacity: 0;
@@ -310,9 +310,7 @@ body {
 
 /* end navbar */
 #content {
-
   background-color: #f8f9fa;
-  ;
 }
 
 #footer {}
