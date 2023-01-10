@@ -7,7 +7,6 @@
       <div class="grid wide slider">
         <div class="row">
           <div class="col l-12 m-12 c-12">
-            <!-- <div class="slider"> -->
             <div class="grid">
               <div class="wapper-slider">
                 <div class="row no-warp main-slider">
@@ -45,11 +44,11 @@
               </div>
             </div>
 
-            <div style="text-align:center">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
+<!--            <div style="text-align:center">-->
+<!--              <span class="dot"></span>-->
+<!--              <span class="dot"></span>-->
+<!--              <span class="dot"></span>-->
+<!--            </div>-->
           </div>
         </div>
       </div>
@@ -58,7 +57,16 @@
 
 <script>
 export default {
-  name: "Slider"
+  name: "Slider",
+  data() {
+    return {
+      slide: 0,
+      sliding: null
+    }
+  },
+  methods: {
+
+  }
 }
 </script>
 

@@ -3,7 +3,9 @@
     <Slider />
     <CategoryWapper />
     <SliderCard />
-<!--    <FeaturedPhone />-->
+    <FeaturedPhone />
+    <FeaturedLaptop />
+    <Accessory />
   </div>
 </template>
 
@@ -11,11 +13,15 @@
 import Slider from "@/views/Slider.vue";
 import CategoryWapper from "@/views/CategoryWapper.vue";
 import SliderCard from "@/views/SliderCard.vue";
+import Accessory from "@/views/Accessory.vue";
+import FeaturedLaptop from "@/views/FeaturedLaptop.vue";
 import FeaturedPhone from "@/views/FeaturedPhone.vue";
 
 export default {
   name: 'HomeView',
   components: {
+    FeaturedLaptop,
+    Accessory,
     FeaturedPhone,
     SliderCard,
     CategoryWapper,

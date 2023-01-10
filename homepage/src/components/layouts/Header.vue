@@ -62,9 +62,7 @@
                   </li>
                   <li class="service-personal-account">
                     <a href="#">
-                      <div>
-                        <i class="fa fa-user"></i>
-                      </div>
+                      <i><font-awesome-icon icon="fa-solid fa-user" /></i>
                       <span>Tài khoản của tôi</span>
                     </a>
                   </li>
