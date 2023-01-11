@@ -5,51 +5,29 @@
              style="width: 100%" alt="">
       </div>
       <div class="grid wide slider">
-        <div class="row">
-          <div class="col l-12 m-12 c-12">
-            <div class="grid">
-              <div class="wapper-slider">
-                <div class="row no-warp main-slider">
-                  <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                    <div class="item-slider">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/14/638066548736519019_F-H6_1190x300.png"
-                           alt="">
-                    </div>
-                  </div>
-                  <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                    <div class="item-slider">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/19/638070597111862277_H6%20-%201190x300.png"
-                           alt="">
-                    </div>
-                  </div>
-                  <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                    <div class="item-slider">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638067214883821844_F-H6_1190x300.png"
-                           alt="">
-                    </div>
-                  </div>
-                  <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                    <div class="item-slider">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/22/638073138777718013_H6%20-%201190x300.png"
-                           alt="">
-                    </div>
-                  </div>
-                </div>
-                <button class="back">
-                  <i class="fa fa-chevron-left"></i>
-                </button>
-                <button class="next">
-                  <i class="fa fa-chevron-right"></i>
-                </button>
-              </div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/14/638066548736519019_F-H6_1190x300.png" class="d-block w-100" alt="...">
             </div>
-
-<!--            <div style="text-align:center">-->
-<!--              <span class="dot"></span>-->
-<!--              <span class="dot"></span>-->
-<!--              <span class="dot"></span>-->
-<!--            </div>-->
+            <div class="carousel-item">
+              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/19/638070597111862277_H6%20-%201190x300.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638067214883821844_F-H6_1190x300.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/22/638073138777718013_H6%20-%201190x300.png" class="d-block w-100" alt="...">
+            </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </div>

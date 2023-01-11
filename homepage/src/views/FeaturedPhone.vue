@@ -8,7 +8,7 @@
               <p class="title-product">ĐIỆN THOẠI NỔI BẬT</p>
             </div>
           </div>
-          <div class="row slider-main" style="transform: translateX(-1212px);">
+          <div class="row no-gutters">
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
@@ -426,6 +426,7 @@
               </div>
             </div>
           </div>
+<!--          <div class="row slider-main" style="transform: translateX(-1212px)">-->
         </div>
       </div>
     </div>

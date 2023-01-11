@@ -14,10 +14,19 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faUserSecret, faUser } from '@fortawesome/free-solid-svg-icons'
+import {
+    faUserSecret,
+    faUser,
+    faMobileScreenButton,
+    faMedal,
+    faBattery,
+    faSimCard, faMobileButton, faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard,
+} from '@fortawesome/free-solid-svg-icons'
+import {faApple} from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
-library.add(faUserSecret, faUser)
+library.add(faUserSecret, faUser, faMobileScreenButton, faMedal, faBattery, faSimCard, faApple, faMobileButton,
+            faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard)
 
 createApp(App)
     .use(router)

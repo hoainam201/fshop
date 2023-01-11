@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="accessory">
     <div class="category-wapper">
       <div class="grid wide category">
         <div class="row  no-gutters">
@@ -10,31 +10,55 @@
         <div class="row no-gutters">
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa fa-bahai"></i>
+              <i><font-awesome-icon icon="fa-solid fa-medal" /></i>
             </div>
             <a href="/" class="title-category">
-              Phụ kiện hot
+              Phụ kiện nổi bật
             </a>
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa fa-apple"></i>
+              <i class="fa-solid fa-cards-blank"></i>
             </div>
             <a href="/" class="title-category">
-              Apple
+              Bao da ốp lưng
             </a>
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa fa-battery-full"></i>
+              <i><font-awesome-icon icon="fa-solid fa-battery-full" /></i>
             </div>
             <a href="/" class="title-category">
-              Pin dự phòng
+              Sạc dự phòng
             </a>
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa fa-headphones-simple"></i>
+              <i><font-awesome-icon icon="fa-solid fa-sim-card" /></i>
+            </div>
+            <a href="/" class="title-category">
+              Thẻ nhớ
+            </a>
+          </div>
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
+            <div class="category-icon">
+              <i><font-awesome-icon icon="fa-brands fa-apple" /></i>
+            </div>
+            <a href="/" class="title-category">
+              Phụ kiện Apple
+            </a>
+          </div>
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
+            <div class="category-icon">
+              <i><font-awesome-icon icon="fa-solid fa-mobile-button" /></i>
+            </div>
+            <a href="/" class="title-category">
+              Miếng dán màn hình
+            </a>
+          </div>
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
+            <div class="category-icon">
+              <i><font-awesome-icon icon="fa-solid fa-headphones-simple" /></i>
             </div>
             <a href="/" class="title-category">
               Tai nghe
@@ -42,7 +66,23 @@
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa fa-keyboard"></i>
+              <i><font-awesome-icon icon="fa-solid fa-print" /></i>
+            </div>
+            <a href="/" class="title-category">
+              Mực in
+            </a>
+          </div>
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
+            <div class="category-icon">
+              <i class="fa-solid fa-speaker"></i>
+            </div>
+            <a href="/" class="title-category">
+              Loa
+            </a>
+          </div>
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
+            <div class="category-icon">
+              <i><font-awesome-icon icon="fa-solid fa-keyboard" /></i>
             </div>
             <a href="/" class="title-category">
               Bàn phím
@@ -50,7 +90,7 @@
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa fa-computer-mouse"></i>
+              <i><font-awesome-icon icon="fa-solid fa-computer-mouse" /></i>
             </div>
             <a href="/" class="title-category">
               Chuột
@@ -58,50 +98,10 @@
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa fa-bahai"></i>
+              <i class="fa-regular fa-watch-smart"></i>
             </div>
             <a href="/" class="title-category">
-              Phụ kiện hot
-            </a>
-          </div>
-          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
-            <div class="category-icon">
-              <i class="fa fa-apple"></i>
-            </div>
-            <a href="/" class="title-category">
-              Apple
-            </a>
-          </div>
-          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
-            <div class="category-icon">
-              <i class="fa fa-battery-full"></i>
-            </div>
-            <a href="/" class="title-category">
-              Pin dự phòng
-            </a>
-          </div>
-          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
-            <div class="category-icon">
-              <i class="fa fa-headphones-simple"></i>
-            </div>
-            <a href="/" class="title-category">
-              Tai nghe
-            </a>
-          </div>
-          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
-            <div class="category-icon">
-              <i class="fa fa-keyboard"></i>
-            </div>
-            <a href="/" class="title-category">
-              Bàn phím
-            </a>
-          </div>
-          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
-            <div class="category-icon">
-              <i class="fa fa-computer-mouse"></i>
-            </div>
-            <a href="/" class="title-category">
-              Chuột
+              Phụ kiện khác
             </a>
           </div>
         </div>
@@ -144,4 +144,8 @@ export default {
   @import "@/assets/reponsive.css";
   @import "@/assets/grid.css";
   @import "@/assets/style.css";
+
+  .accessory {
+    background-image: url("@/assets/img/accessory.webp");
+  }
 </style>
