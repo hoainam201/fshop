@@ -1,7 +1,139 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" fill="currentColor">
-    <path
-      d="M11 2.253a1 1 0 1 0-2 0h2zm-2 13a1 1 0 1 0 2 0H9zm.447-12.167a1 1 0 1 0 1.107-1.666L9.447 3.086zM1 2.253L.447 1.42A1 1 0 0 0 0 2.253h1zm0 13H0a1 1 0 0 0 1.553.833L1 15.253zm8.447.833a1 1 0 1 0 1.107-1.666l-1.107 1.666zm0-14.666a1 1 0 1 0 1.107 1.666L9.447 1.42zM19 2.253h1a1 1 0 0 0-.447-.833L19 2.253zm0 13l-.553.833A1 1 0 0 0 20 15.253h-1zm-9.553-.833a1 1 0 1 0 1.107 1.666L9.447 14.42zM9 2.253v13h2v-13H9zm1.553-.833C9.203.523 7.42 0 5.5 0v2c1.572 0 2.961.431 3.947 1.086l1.107-1.666zM5.5 0C3.58 0 1.797.523.447 1.42l1.107 1.666C2.539 2.431 3.928 2 5.5 2V0zM0 2.253v13h2v-13H0zm1.553 13.833C2.539 15.431 3.928 15 5.5 15v-2c-1.92 0-3.703.523-5.053 1.42l1.107 1.666zM5.5 15c1.572 0 2.961.431 3.947 1.086l1.107-1.666C9.203 13.523 7.42 13 5.5 13v2zm5.053-11.914C11.539 2.431 12.928 2 14.5 2V0c-1.92 0-3.703.523-5.053 1.42l1.107 1.666zM14.5 2c1.573 0 2.961.431 3.947 1.086l1.107-1.666C18.203.523 16.421 0 14.5 0v2zm3.5.253v13h2v-13h-2zm1.553 12.167C18.203 13.523 16.421 13 14.5 13v2c1.573 0 2.961.431 3.947 1.086l1.107-1.666zM14.5 13c-1.92 0-3.703.523-5.053 1.42l1.107 1.666C11.539 15.431 12.928 15 14.5 15v-2z"
-    />
-  </svg>
+  <div>
+    <div class="product">
+      <div class="grid wide ">
+        <div class="product-wapper">
+          <div class="row no-gutters">
+            <div class="col l-12 m-12 c-12">
+              <p class="title-product">ĐIỆN THOẠI NỔI BẬT</p>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <div v-for="(product,index) in products"
+                 :key="index"
+                 class="col l-3 m-6 c-6 card-slider">
+              <div class="product-card-item product-card-item-sale">
+                <div class="product-card-item-img">
+                  <router-link to="/product-detail">
+                    <img :src="product.img_url"
+                         alt="IPhone 12">
+                  </router-link>
+                  <div class="sticker">
+                    <span class="stickers sticker-event">Trả góp 0%</span>
+                    <br>
+                    <span class="stickers sticker-sale">Lì xì 3.000.000đ</span>
+                  </div>
+                </div>
+                <div class="product-card-item-content">
+                  <h3>
+                    <a href="/" class="title-card">{{ product.name }}</a>
+                  </h3>
+                  <div class="price">
+                    <span class="new-price">{{ product.price }}</span>
+                    <span class="old-price">{{ product.cost }}</span>
+                  </div>
+                  <div class="card-item-info__promo">
+                    <span class>
+                      <div class="lazyload-wrapper">
+                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
+                             alt="Tặng Balo Laptop" width="45" height="45">
+                      </div>
+                    </span>
+                    <span class="active">
+                      <div class="lazyload-wrapper">
+                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
+                             alt="Giảm 3% tối đa 250.000đ qua Grab Moca" width="45" height="45">
+                      </div>
+                    </span>
+                    <span class>
+                      <div class="lazyload-wrapper">
+                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
+                             alt="Tặng Balo Laptop" width="45" height="45">
+                      </div>
+                    </span>
+                    <span class>
+                      <div class="lazyload-wrapper">
+                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
+                             alt="Giảm ngay 600.000đ khi mở thẻ TPBANK EVO" width="45" height="45">
+                      </div>
+                    </span>
+                    <div class="card-item-info__promo-text">Giảm ngay 600.000đ khi mở thẻ TPBANK EVO</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+export default {
+  name: "test-product",
+  data() {
+    return {
+      products: [
+        {
+          name: "Iphone 1",
+          img_url: "../assets/img/iphone13.png",
+          price: 20000000,
+          cost: 25000000
+        },
+        {
+          name: "Iphone 2",
+          img_url: "@/assets/img/iphone13.png",
+          price: "20000000",
+          cost: "25000000"
+        },
+        {
+          name: "Iphone",
+          img_url: "@/assets/img/iphone13.png",
+          price: "20000000",
+          cost: "25000000"
+        },
+        {
+          name: "Iphone",
+          img_url: "@/assets/img/iphone13.png",
+          price: "20000000",
+          cost: "25000000"
+        },
+        {
+          name: "Iphone",
+          img_url: "@/assets/img/iphone13.png",
+          price: "20000000",
+          cost: "25000000"
+        },
+        {
+          name: "Iphone",
+          img_url: "@/assets/img/iphone13.png",
+          price: "20000000",
+          cost: "25000000"
+        },
+        {
+          name: "Iphone",
+          img_url: "@/assets/img/iphone13.png",
+          price: "20000000",
+          cost: "25000000"
+        },
+        {
+          name: "Iphone",
+          img_url: "@/assets/img/iphone13.png",
+          price: "20000000",
+          cost: "25000000"
+        },
+      ],
+    }
+  }
+}
+</script>
+
+<style>
+  @import "@/assets/main.css";
+  @import "@/assets/slider.css";
+  @import "@/assets/slider-card.css";
+  @import "@/assets/reponsive.css";
+  @import "@/assets/grid.css";
+  @import "@/assets/style.css";
+</style>

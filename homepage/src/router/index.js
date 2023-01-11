@@ -19,5 +19,10 @@ export default createRouter({
           name: 'product-detail',
           component: import("@/components/productdetails/ProductDetails.vue")
       },
+      {
+          path: '/test-product',
+          name: 'test-product',
+          component: import("@/components/icons/IconDocumentation.vue")
+      },
   ],
 })
