@@ -76,7 +76,7 @@ p {
 
 .product-card-item-img {
   position: relative;
-  /* width: 100%; */
+  width: 100%;
   height: 215px;
   display: flex;
   text-align: center;
@@ -94,6 +94,8 @@ p {
 .product-card-item-img a img {
   width: 80%;
   object-fit: cover;
+  width: 168px;
+  height: 168px
 }
 
 .product-card-item-img img:hover {
