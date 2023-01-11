@@ -3,7 +3,7 @@
     <div class="footer">
       <div class="grid wide">
         <div class="row">
-          <div class="col l-2 m-4 c-12">
+          <div class="col l-2 m-3 c-12">
             <div class="footer-1">
               <ul class="footer-list">
                 <li><a href="">Giới thiệu về công ty</a></li>
@@ -14,7 +14,7 @@
               </ul>
             </div>
           </div>
-          <div class="col l-2 m-4 c-12">
+          <div class="col l-2 m-3 c-12">
             <div class="footer-2">
               <ul class="footer-list">
                 <li class="footer-list-item"><a href="">Tin tuyển dụng</a></li>
@@ -25,7 +25,7 @@
               </ul>
             </div>
           </div>
-          <div class="col l-2 m-4 c-12">
+          <div class="col l-2 m-3 c-12">
             <div class="footer-3">
               <ul class="footer-list">
                 <li class="footer-list-item"><a href="">Hệ thống cửa hàng</a></li>
@@ -37,7 +37,7 @@
               </ul>
             </div>
           </div>
-          <div class="col l-3 m-6 c-12">
+          <div class="col l-2 m-3 c-12">
             <div class="footer-4">
               <p class="title-footer">Tư vấn mua hàng (Miễn phí)</p>
               <!-- <p class="footer-phone">1800 6601</p> -->
@@ -56,7 +56,7 @@
               </div>
             </div>
           </div>
-          <div class="col l-3 m-6 c-12">
+          <div class="col l-2 m-3 c-12">
             <div class="footer-4">
               <p class="title-footer">Góp ý, khiếu nại dịch vụ (8h00-22h00)</p>
               <p class="footer-phone">1800 6616</p>
