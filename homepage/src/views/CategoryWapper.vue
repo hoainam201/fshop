@@ -2,7 +2,7 @@
   <div class="category-wapper">
     <div class="grid wide category">
       <div class="row no-gutters">
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-mobile.png"
                  alt="Điện thoại">
@@ -11,7 +11,7 @@
             Điện thoại
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-laptop.png"
                  alt="Laptop">
@@ -20,7 +20,7 @@
             Laptop
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-pc.png"
                  alt="PC - Lắp ráp">
@@ -29,7 +29,7 @@
             PC - Lắp ráp
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-tablet.png"
                  alt="Máy tính bảng">
@@ -38,7 +38,7 @@
             Máy tính bảng
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-smart.png"
                  alt="Thiết bị thông minh">
@@ -47,7 +47,7 @@
             Thiết bị thông minh
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-houseware.png"
                  alt="Gia dụng">
@@ -56,7 +56,7 @@
             Gia dụng
           </p>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-apple.png"
                  alt="Apple">
@@ -65,7 +65,7 @@
             Apple
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-apple.png"
                  alt="Samsung">
@@ -74,7 +74,7 @@
             Samsung
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-smartwatch.png"
                  alt="Đồng hồ thông minh">
@@ -83,7 +83,7 @@
             Đồng hồ thông minh
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
             <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-accessories.png"
                  alt="Phụ kiện">
@@ -92,22 +92,22 @@
             Phụ kiện
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
-            <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-accessories.png"
-                 alt="Phụ kiện">
+            <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-screen.png"
+                 alt="Màn hình">
           </div>
           <a href="/" class="title-category">
-            Phụ kiện
+            Màn hình
           </a>
         </div>
-        <div class="col l-1 m-2 c-1 category-item">
+        <div class="col l-2 m-1.5 c-4 category-item">
           <div class="img-category">
-            <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-accessories.png"
-                 alt="Phụ kiện">
+            <img src="https://images.fpt.shop/unsafe/fit-in/60x60/filters:quality(90):fill(transparent)/fptshop.com.vn/Uploads/images/2022/iconcate/icon-tcdm.png"
+                 alt="Máy cũ">
           </div>
           <a href="/" class="title-category">
-            Phụ kiện
+            Máy cũ
           </a>
         </div>
       </div>

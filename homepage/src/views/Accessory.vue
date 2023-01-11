@@ -8,7 +8,7 @@
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-bahai"></i>
             </div>
@@ -16,7 +16,7 @@
               Phụ kiện hot
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-apple"></i>
             </div>
@@ -24,7 +24,7 @@
               Apple
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-battery-full"></i>
             </div>
@@ -32,7 +32,7 @@
               Pin dự phòng
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-headphones-simple"></i>
             </div>
@@ -40,7 +40,7 @@
               Tai nghe
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-keyboard"></i>
             </div>
@@ -48,7 +48,7 @@
               Bàn phím
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-computer-mouse"></i>
             </div>
@@ -56,7 +56,7 @@
               Chuột
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-bahai"></i>
             </div>
@@ -64,7 +64,7 @@
               Phụ kiện hot
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-apple"></i>
             </div>
@@ -72,7 +72,7 @@
               Apple
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-battery-full"></i>
             </div>
@@ -80,7 +80,7 @@
               Pin dự phòng
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-headphones-simple"></i>
             </div>
@@ -88,7 +88,7 @@
               Tai nghe
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-keyboard"></i>
             </div>
@@ -96,7 +96,7 @@
               Bàn phím
             </a>
           </div>
-          <div class="col l-2 m-4 c-4 category-item category-item-bot">
+          <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
               <i class="fa fa-computer-mouse"></i>
             </div>
