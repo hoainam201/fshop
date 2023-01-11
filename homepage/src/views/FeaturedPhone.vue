@@ -12,11 +12,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -64,11 +64,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -116,11 +116,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -168,11 +168,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -220,11 +220,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -272,11 +272,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -324,11 +324,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -376,11 +376,11 @@
             <div class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <a href="/">
+                  <router-link to="/product-detail">
                     <img src="@/assets/img/iphone13.png"
                          alt="IPhone 14"
                          title="IPhone 14">
-                  </a>
+                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
