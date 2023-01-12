@@ -44,9 +44,9 @@
                   <MDBBtn color="primary" @click="showAlert"
                           style="background-color: #333333;
                                   width: 58px;
-                                  height: 36px; "
+                                  height: 36px;"
                   >
-                    <MDBIcon icon="search" />
+                    <MDBIcon icon="search"/>
                   </MDBBtn>
                 </MDBInput>
               </div>

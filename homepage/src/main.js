@@ -22,13 +22,21 @@ import {
     faMobileScreenButton,
     faMedal,
     faBattery,
-    faSimCard, faMobileButton, faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard,
+    faSimCard,
+    faMobileButton,
+    faHeadphonesSimple,
+    faPrint,
+    faComputerMouse,
+    faKeyboard,
+    faMicrochip,
+    faMobile,
+    faMemory,
 } from '@fortawesome/free-solid-svg-icons'
 import {faApple} from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
 library.add(faUserSecret, faUser, faMobileScreenButton, faMedal, faBattery, faSimCard, faApple, faMobileButton,
-            faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard)
+            faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard, faMicrochip, faMobile, faMemory)
 
 createApp(App)
     .use(router)
