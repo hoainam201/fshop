@@ -21,7 +21,7 @@
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
-                    <span class="stickers sticker-sale">Lì xì 3.000.000đ</span>
+                    <span class="stickers sticker-sale">Lì xì 3.000.000</span>
                   </div>
                 </div>
                 <div class="product-card-item-content">
@@ -29,8 +29,8 @@
                     <a href="/" class="title-card">{{ laptopproduct.name }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ laptopproduct.price }}</span>
-                    <span class="old-price">{{ laptopproduct.cost }}</span>
+                    <span class="new-price">{{ laptopproduct.price }} đ</span>
+                    <span class="old-price">{{ laptopproduct.cost }} đ</span>
                   </div>
                   <div class="card-item-info__promo">
                     <span class>
@@ -42,7 +42,7 @@
                     <span class="active">
                       <div class="lazyload-wrapper">
                         <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                             alt="Giảm 3% tối đa 250.000đ qua Grab Moca" width="45" height="45">
+                             alt="Giảm 3% tối đa 250.000 qua Grab Moca" width="45" height="45">
                       </div>
                     </span>
                     <span class>
@@ -54,10 +54,10 @@
                     <span class>
                       <div class="lazyload-wrapper">
                         <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                             alt="Giảm ngay 600.000đ khi mở thẻ TPBANK EVO" width="45" height="45">
+                             alt="Giảm ngay 600.000 khi mở thẻ TPBANK EVO" width="45" height="45">
                       </div>
                     </span>
-                    <div class="card-item-info__promo-text">Giảm ngay 600.000đ khi mở thẻ TPBANK EVO</div>
+                    <div class="card-item-info__promo-text">Giảm ngay 600.000 khi mở thẻ TPBANK EVO</div>
                   </div>
                 </div>
               </div>
@@ -88,57 +88,57 @@ export default {
           id: "l1",
           name: "MacBook Air 13\" 2020 M1 256GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "l2",
           name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "l3",
           name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "l4",
           name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "l1",
           name: "MacBook Air 13\" 2020 M1 256GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "l2",
           name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "l3",
           name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "l4",
           name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-          price: "20.000.000đ",
-          cost: "25.000.000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
       ],
     }

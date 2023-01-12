@@ -29,8 +29,8 @@
                     <a href="/" class="title-card">{{ phoneproduct.name }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ phoneproduct.price }}</span>
-                    <span class="old-price">{{ phoneproduct.cost }}</span>
+                    <span class="new-price">{{ phoneproduct.price }} đ</span>
+                    <span class="old-price">{{ phoneproduct.cost }} đ</span>
                   </div>
                   <div class="card-item-info__promo">
                     <span class>
@@ -94,57 +94,57 @@ export default {
           id: "p1",
           name: "iPhone 13 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "p2",
           name: "Asus ROG 6 DIABLO 16GB-512GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "p3",
           name: "Samsung Galaxy S22 Ultra 5G 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "p4",
           name: "Xiaomi Redmi 10 4GB-128GB 2021",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "p5",
           name: "iPhone 13 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "p6",
           name: "Asus ROG 6 DIABLO 16GB-512GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "p7",
           name: "Samsung Galaxy S22 Ultra 5G 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
         {
           id: "p8",
           name: "Xiaomi Redmi 10 4GB-128GB 2021",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
-          price: "20000000đ",
-          cost: "25000000đ"
+          price: "20.000.000",
+          cost: "25.000.000"
         },
       ],
     }
