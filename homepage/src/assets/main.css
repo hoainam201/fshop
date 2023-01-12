@@ -367,77 +367,11 @@ p {
 }
 
 /*breadcrumbs*/
-.breadcrumb-item {
-  color: #0275d8;
-  line-height: 1;
-  font-size: 16px;
-}
 
-.breadcrumb-item:last-child {
-  color: #6c757d;
-}
-
-/* .breadcrumb-item a:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    -webkit-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: -webkit-transform .5s ease;
-    transition: -webkit-transform .5s ease;
-    -o-transition: transform .5s ease;
-    transition: transform .5s ease;
-    transition: transform .5s ease,-webkit-transform .5s ease;
-} */
-
-.breadcrumb-item+.breadcrumb-item:before {
-  display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
-  color: #ccc;
-  font-size: 16px;
-  content: "/";
-}
-
-/* .breadcrumb-margin {
-    margin-top: 10px;
-    margin-bottom: 10px;
-} */
-
-ol {
-  list-style: none;
-}
-
-ol.breadcrumb {
-  padding: 5px 2px;
-  list-style: none;
-  color: #0050d7;
-}
-
-ol.breadcrumb li {
-  display: inline;
-  font-size: 16px;
-}
-
-/* ol.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-} */
-
-ol.breadcrumb li a {
-  color: #0275d8;
-  text-decoration: none;
-}
-
-ol.breadcrumb li a:hover {
-  color: #01447e;
-  text-decoration: underline;
+.breadcrumb-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 /* =======================================main========================================= */
@@ -748,6 +682,32 @@ ol.breadcrumb li a:hover {
 
 .nav-box-banner img {
   padding: 10px 20px 0 22px;
+}
+
+.carousel-indicators .active {
+  background-color: red
+}
+.carousel-indicators :not(.active) {
+  background-color: #ced4da
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.next.round:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 .slider {

@@ -3,56 +3,51 @@
     <div class="grid wide">
       <div class="row">
         <div class="col l-12 m-12 c-12">
-          <div class="breadcrumbs">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="/" title="Trang chủ">Trang chủ</a>
-              </li>
-              <li class="breadcrumb-item active">Điện thoại</li>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-margin">
+              <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Điện thoại</li>
             </ol>
-          </div>
+          </nav>
         </div>
       </div>
     </div>
-    <div class="slider-laptop">
-      <div class="grid wide slider">
-        <div class="row">
-          <div class="col l-12 m-12 c-12">
-            <div class="grid">
-              <div class="wapper-slider page">
-                <div class="row no-warp main-slider page">
-                  <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                    <div class="item-slider page">
-                      <img src="@/assets/img/637806895646282188_F-H1_800x300.jfif" alt="">
-                    </div>
-                  </div>
-                  <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                    <div class="item-slider page">
-                      <img src="@/assets/img/slide-3.png" alt="">
-                    </div>
-                  </div>
-                  <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                    <div class="item-slider page">
-                      <img src="@/assets/img/637811231329170645_F-H1_800x300.jfif" alt="">
-                    </div>
-                  </div>
-                </div>
-                <button class="back page">
-                  <i class="fas fa-angle-left"></i>
-                </button>
-                <button class="next page">
-                  <i class="fas fa-angle-right"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- <div style="text-align:center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </div>--------->
-            <!-- </div>  -->
+<!--    <div class="slider-laptop">-->
+<!--      -->
+<!--    </div>-->
+    <div class="grid wide slider">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators" style="bottom: -22px">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638066637105825600_F-C1_1200x300.png" class="d-block w-100" alt="...">
           </div>
+          <div class="carousel-item">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638066644949339762_F-C1_1200x300.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/12/638090844293808016_F-C1_1200x300.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/23/638073601033977507_F-C1_1200x300.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <div class="previous round">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+        </div>
+        <div class="next round">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </div>
