@@ -20,9 +20,9 @@ export default createRouter({
           component: import("@/components/productdetails/ProductDetails.vue")
       },
       {
-          path: '/test-product',
-          name: 'test-product',
-          component: import("@/components/icons/IconDocumentation.vue")
+          path: '/test',
+          name: 'test',
+          component: import("@/components/icons/Test.vue")
       },
   ],
 })

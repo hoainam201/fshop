@@ -7,6 +7,8 @@ import router from './router'
 import "bootstrap/dist/js/bootstrap.js"
 //import "bootstrap"
 
+import 'mdb-vue-ui-kit/css/mdb.min.css';
+
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 
