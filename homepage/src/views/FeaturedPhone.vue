@@ -30,7 +30,7 @@
                   </h3>
                   <div class="price">
                     <span class="new-price">{{ phoneproduct.price }} đ</span>
-                    <span class="old-price">{{ phoneproduct.cost }} đ</span>
+                    <span class="old-price">{{ phoneproduct.price_sale }} đ</span>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
@@ -86,6 +86,16 @@
         </div>
       </div>
     </div>
+    <div class="banner-2">
+      <div class="grid wide">
+        <div class="row">
+          <div class="col l-12 banner">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x200/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/26/638076688087973485_H5_1200x200.png"
+                 alt="LCD H5">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -100,7 +110,7 @@ export default {
           name: "iPhone 13 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
@@ -111,7 +121,7 @@ export default {
           name: "Asus ROG 6 DIABLO 16GB-512GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
@@ -122,7 +132,7 @@ export default {
           name: "Samsung Galaxy S22 Ultra 5G 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
@@ -133,7 +143,7 @@ export default {
           name: "Xiaomi Redmi 10 4GB-128GB 2021",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
@@ -144,7 +154,7 @@ export default {
           name: "iPhone 13 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "Snapdragon 8+ Gen 1",
           screen: "6.1 inch",
           ram: "4 GB",
@@ -155,7 +165,7 @@ export default {
           name: "Asus ROG 6 DIABLO 16GB-512GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
@@ -166,7 +176,7 @@ export default {
           name: "Samsung Galaxy S22 Ultra 5G 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "MediaTek Helio G88",
           screen: "6.1 inch",
           ram: "4 GB",
@@ -177,7 +187,7 @@ export default {
           name: "Xiaomi Redmi 10 4GB-128GB 2021",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000",
+          price_sale: "25.000.000",
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",

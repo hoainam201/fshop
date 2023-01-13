@@ -257,7 +257,7 @@ p {
   position: relative;
 }
 
-.card-item-info__promo span:not(:last-child) {
+.card-item-info__promo-detail span:not(:last-child) {
   margin-right: 10px;
 }
 

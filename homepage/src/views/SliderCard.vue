@@ -32,7 +32,7 @@
                     <span class="new-price">{{ phoneproduct.price }} đ</span>
                     <span class="old-price">{{ phoneproduct.cost }} đ</span>
                   </div>
-                  <div class="card-item-info__promo">
+                  <div class="card-item-info__promo-detail">
                     <span class>
                       <div class="lazyload-wrapper">
                         <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"

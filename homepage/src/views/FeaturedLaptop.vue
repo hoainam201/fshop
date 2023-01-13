@@ -30,34 +30,62 @@
                   </h3>
                   <div class="price">
                     <span class="new-price">{{ laptopproduct.price }} đ</span>
-                    <span class="old-price">{{ laptopproduct.cost }} đ</span>
+                    <span class="old-price">{{ laptopproduct.price_sale }} đ</span>
                   </div>
                   <div class="card-item-info__promo">
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class="active">
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                             alt="Giảm 3% tối đa 250.000 qua Grab Moca" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                             alt="Giảm ngay 600.000 khi mở thẻ TPBANK EVO" width="45" height="45">
-                      </div>
-                    </span>
-                    <div class="card-item-info__promo-text">Giảm ngay 600.000 khi mở thẻ TPBANK EVO</div>
+                    <div class="card-item-info__promo-product">
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                                    {{ laptopproduct.screen }}
+                                  </span>
+                      <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.cpu }}
+                                  </span>
+                      <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.ram }}
+                                  </span>
+                      <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                                    {{ laptopproduct.harddrive }}
+                                  </span>
+                      <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.graphics }}
+                                  </span>
+                      <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                                    {{ laptopproduct.weight }}
+                                  </span>
+                    </div>
+                    <div class="card-item-info__promo-detail">
+                                  <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
+                                           alt="Tặng Balo Laptop" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
+                                           alt="Giảm 3% tối đa 250.000 qua Grab Moca" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
+                                           alt="Tặng Balo Laptop" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
+                                           alt="Giảm ngay 600.000 khi mở thẻ TPBANK EVO" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <div class="card-item-info__promo-text">Giảm ngay 600.000 khi mở thẻ TPBANK EVO</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -89,56 +117,104 @@ export default {
           name: "MacBook Air 13\" 2020 M1 256GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
           price: "20.000.000",
-          cost: "25.000.000"
+          price_sale: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg",
         },
         {
           id: "l2",
           name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          price_sale: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
         {
           id: "l3",
           name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          price: "20.000.000",
-          cost: "25.000.000"
+          price: "20.790.000",
+          price_sale: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
         },
         {
           id: "l4",
           name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          price_sale: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
         {
           id: "l5",
           name: "MacBook Air 13\" 2020 M1 256GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          price: "20.000.000",
-          cost: "25.000.000"
+          price: "20.790.000",
+          price_sale: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
         },
         {
           id: "l6",
           name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          price_sale: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
         {
           id: "l7",
           name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          price: "20.000.000",
-          cost: "25.000.000"
+          price: "20.790.000",
+          price_sale: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
         },
         {
           id: "l8",
           name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          price_sale: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
       ],
     }
