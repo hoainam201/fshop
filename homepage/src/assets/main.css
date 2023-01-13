@@ -1,4 +1,4 @@
-@import '@/assets/base.css';
+/*@import '@/assets/base.css';*/
 
 * {
   padding: 0;
@@ -962,7 +962,11 @@ footer-certification {
   background-color: rgb(14, 5, 5);
 }
 
-.sidebar-product-item.item1 .form-check-label {
+/*.sidebar-product-item.item1 .form-check-label {*/
+/*  width: 50%;*/
+/*}*/
+
+.sidebar-product-item .form-check-label {
   width: 50%;
 }
 

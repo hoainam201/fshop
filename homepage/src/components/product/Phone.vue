@@ -361,6 +361,7 @@ import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 export default {
   name: "Phone",
   components: {ItemInfoPromo},
+
   data() {
     return {
       phoneproducts: [

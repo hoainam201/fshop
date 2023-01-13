@@ -11,12 +11,12 @@ export default createRouter({
       },
       {
           path: '/phone',
-          name: 'phone',
+          name: 'phone-products',
           component: import("@/components/product/Phone.vue")
       },
       {
           path: '/laptop',
-          name: 'laptop',
+          name: 'laptop-products',
           component: import("@/components/product/Laptop.vue")
       },
       {

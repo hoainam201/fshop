@@ -18,10 +18,10 @@
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa-solid fa-cards-blank"></i>
+              <i><font-awesome-icon icon="fa-solid fa-bag-shopping" /></i>
             </div>
             <a href="/" class="title-category">
-              Bao da ốp lưng
+              Balo - Túi xách
             </a>
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
@@ -74,10 +74,10 @@
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa-solid fa-speaker"></i>
+              <i><font-awesome-icon icon="fa-solid fa-charging-station" /></i>
             </div>
             <a href="/" class="title-category">
-              Loa
+              Sạc cáp
             </a>
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
@@ -98,10 +98,10 @@
           </div>
           <div class="col l-2 m-1.5 c-4 category-item category-item-bot">
             <div class="category-icon">
-              <i class="fa-regular fa-watch-smart"></i>
+              <i><font-awesome-icon icon="fa-solid fa-tv" /></i>
             </div>
             <a href="/" class="title-category">
-              Phụ kiện khác
+              TV BOX
             </a>
           </div>
         </div>
@@ -133,7 +133,18 @@
 
 <script>
 export default {
-  name: "Accessory"
+  name: "Accessory",
+    // data() {
+    //   return {
+    //     accessories: [
+    //       {
+    //         id: "p1",
+    //         name: "iPhone 13 128GB",
+    //
+    //       },
+    //     ],
+    //   }
+    // }
 }
 </script>
 

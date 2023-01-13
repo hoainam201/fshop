@@ -317,7 +317,35 @@
                                 <span class="new-price">{{ laptopproduct.price }} đ</span>
                                 <span class="old-price">{{ laptopproduct.price_sale }} đ</span>
                               </div>
-                              <ItemInfoPromo />
+                              <div class="card-item-info__promo">
+                                <div class="card-item-info__promo-product">
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                                    {{ laptopproduct.screen }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.cpu }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.ram }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                                    {{ laptopproduct.harddrive }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.graphics }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                                    {{ laptopproduct.weight }}
+                                  </span>
+                                </div>
+                                <ItemInfoPromo />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -337,6 +365,7 @@
 <script>
 import { MDBCheckbox } from "mdb-vue-ui-kit";
 import { ref } from "vue";
+import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 
 export default {
   name: "Laptop",
@@ -464,6 +493,7 @@ export default {
     }
   },
   components: {
+    ItemInfoPromo,
     MDBCheckbox
   },
   setup() {
