@@ -58,10 +58,11 @@
               <div class="sidebar-product-item item1">
                 <h3 class="sidebar-product-title">Hãng sản xuất</h3>
                 <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-                    Tất cả
-                  </label>
+<!--                  <label class="form-check-label">-->
+<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>-->
+<!--                    Tất cả-->
+<!--                  </label>-->
+                  <MDBCheckbox label="Tất cả" v-model="checkbox1" />
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
                     Apple
@@ -387,6 +388,9 @@
 </template>
 
 <script>
+import { MDBCheckbox } from "mdb-vue-ui-kit";
+import { ref } from "vue";
+
 export default {
   name: "Laptop",
   data() {
@@ -510,7 +514,20 @@ export default {
           weight: "2.25 kg"
         },
       ],
+
     }
+  },
+  components: {
+    MDBCheckbox
+  },
+  setup() {
+    const checkbox1 = ref(false);
+    const checkbox2 = ref(true);
+
+    return {
+      checkbox1,
+      checkbox2
+    };
   }
 }
 </script>
