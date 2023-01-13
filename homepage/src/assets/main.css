@@ -87,7 +87,7 @@ p {
   text-align: center;
   justify-content: center;
   margin-bottom: 15px;
-  background-image: url(./img/quy_mao_loc_phat.webp);
+  background-image: url(./img/tientaovetroi.webp);
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -257,7 +257,7 @@ p {
   position: relative;
 }
 
-.card-item-info__promo-detail span:not(:last-child) {
+.card-item-info__promo div span:not(:last-child) {
   margin-right: 10px;
 }
 
