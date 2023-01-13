@@ -30,13 +30,14 @@ import {
     faKeyboard,
     faMicrochip,
     faMobile,
-    faMemory,
+    faMemory, faLaptop, faWeightHanging, faHardDrive,
 } from '@fortawesome/free-solid-svg-icons'
 import {faApple} from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
 library.add(faUserSecret, faUser, faMobileScreenButton, faMedal, faBattery, faSimCard, faApple, faMobileButton,
-            faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard, faMicrochip, faMobile, faMemory)
+            faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard, faMicrochip, faMobile, faMemory, faLaptop,
+            faWeightHanging, faHardDrive)
 
 createApp(App)
     .use(router)

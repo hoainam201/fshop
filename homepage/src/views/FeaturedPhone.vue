@@ -33,31 +33,51 @@
                     <span class="old-price">{{ phoneproduct.cost }} đ</span>
                   </div>
                   <div class="card-item-info__promo">
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class="active">
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                             alt="Giảm 3% tối đa 250.000 qua Grab Moca" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                             alt="Giảm ngay 600.000 khi mở thẻ TPBANK EVO" width="45" height="45">
-                      </div>
-                    </span>
-                    <div class="card-item-info__promo-text">Giảm ngay 600.000 khi mở thẻ TPBANK EVO</div>
+                    <div class="card-item-info__promo-product">
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ phoneproduct.cpu}}
+                                  </span>
+                      <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                                    {{ phoneproduct.screen}}
+                                  </span>
+                      <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ phoneproduct.ram}}
+                                  </span>
+                      <span>
+                                    <i class="fa-sharp fa-solid fa-memory"></i>
+                                    {{ phoneproduct.memory}}
+                                  </span>
+                    </div>
+                    <div class="card-item-info__promo-detail">
+                                  <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
+                                           alt="Tặng Balo Laptop" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
+                                           alt="Giảm 3% tối đa 250.000 qua Grab Moca" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
+                                           alt="Tặng Balo Laptop" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <span>
+                                    <div class="lazyload-wrapper">
+                                      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
+                                           alt="Giảm ngay 600.000 khi mở thẻ TPBANK EVO" width="45" height="45">
+                                    </div>
+                                  </span>
+                      <div class="card-item-info__promo-text">Giảm ngay 600.000 khi mở thẻ TPBANK EVO</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -80,56 +100,88 @@ export default {
           name: "iPhone 13 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
         {
           id: "p2",
           name: "Asus ROG 6 DIABLO 16GB-512GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
         {
           id: "p3",
           name: "Samsung Galaxy S22 Ultra 5G 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
         {
           id: "p4",
           name: "Xiaomi Redmi 10 4GB-128GB 2021",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
         {
           id: "p5",
           name: "iPhone 13 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "Snapdragon 8+ Gen 1",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
         {
           id: "p6",
           name: "Asus ROG 6 DIABLO 16GB-512GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
         {
           id: "p7",
           name: "Samsung Galaxy S22 Ultra 5G 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "MediaTek Helio G88",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
         {
           id: "p8",
           name: "Xiaomi Redmi 10 4GB-128GB 2021",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
           price: "20.000.000",
-          cost: "25.000.000"
+          cost: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
         },
       ],
     }

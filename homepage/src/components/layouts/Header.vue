@@ -212,10 +212,14 @@
                   </div>
                 </li>
                 <li class="menu-top-item">
-                  <a href="/phone">
-                    <i class="fa fa-laptop"></i>
-                    Laptop
-                  </a>
+<!--                  <a href="/phone">-->
+<!--                    <i class="fa fa-laptop"></i>-->
+<!--                    Laptop-->
+<!--                  </a>-->
+                  <router-link to="/laptop">
+                    <font-awesome-icon icon="fa-solid fa-laptop" style="margin-right: 4px"/>
+                     Laptop
+                  </router-link>
                   <div class="nav-box">
                     <table class="nav-company">
                       <tr>

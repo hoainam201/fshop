@@ -6,15 +6,12 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-margin">
               <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Điện thoại</li>
+              <li class="breadcrumb-item active" aria-current="page">Laptop</li>
             </ol>
           </nav>
         </div>
       </div>
     </div>
-<!--    <div class="slider-laptop">-->
-<!--      -->
-<!--    </div>-->
     <div class="grid wide slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators" style="bottom: -22px">
@@ -25,16 +22,16 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638066637105825600_F-C1_1200x300.png" class="d-block w-100" alt="...">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638066653187695492_F-C1_1200x300.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638066644949339762_F-C1_1200x300.png" class="d-block w-100" alt="...">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/14/638066562539296823_F-C1_1200x300.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/12/638090844293808016_F-C1_1200x300.jpg" class="d-block w-100" alt="...">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028581732714199_F-C1_1200x300.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/23/638073601033977507_F-C1_1200x300.png" class="d-block w-100" alt="...">
+            <img src="https://images.fpt.shop/unsafe/fit-in/1200x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638066628093843990_F-C1_1200x300.png" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -207,7 +204,7 @@
                 <div class="product-wapper product">
                   <div class="row  no-gutters">
                     <div class="col l-12 m-12 c-12">
-                      <p class="title-product">SẢN PHẨM <span class="title-product-note">(300 sản phẩm)</span> </p>
+                      <p class="title-product">SẢN PHẨM <span class="title-product-note">(333 sản phẩm)</span> </p>
                     </div>
                     <div class="col l-0 m-0 c-12">
                       <div class="sidebar-product">
@@ -295,14 +292,14 @@
                     </div>
                     <div class="product-cate-card active">
                       <div class="row no-gutters">
-                        <div v-for="phoneproduct in phoneproducts"
-                             :key="phoneproduct.id"
+                        <div v-for="laptopproduct in laptopproducts"
+                             :key="laptopproduct.id"
                              class="col l-4 m-6 c-6 card-slider">
                           <div class="product-card-item product-card-item-sale">
                             <div class="product-card-item-img">
                               <router-link to="/product-detail">
-                                <img :src="phoneproduct.img_url"
-                                     alt="{{ phoneproduct.name }}">
+                                <img :src="laptopproduct.img_url"
+                                     alt="{{ laptopproduct.name }}">
                               </router-link>
                               <div class="sticker">
                                 <span class="stickers sticker-event">Trả góp 0%</span>
@@ -312,54 +309,62 @@
                             </div>
                             <div class="product-card-item-content">
                               <h3>
-                                <a href="/" class="title-card">{{ phoneproduct.name }}</a>
+                                <a href="/" class="title-card">{{ laptopproduct.name }}</a>
                               </h3>
                               <div class="price">
-                                <span class="new-price">{{ phoneproduct.price }} đ</span>
-                                <span class="old-price">{{ phoneproduct.cost }} đ</span>
+                                <span class="new-price">{{ laptopproduct.price }} đ</span>
+                                <span class="old-price">{{ laptopproduct.cost }} đ</span>
                               </div>
                               <div class="card-item-info__promo">
                                 <div class="card-item-info__promo-product">
                                   <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ phoneproduct.cpu}}
-                                  </span>
-                                  <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
-                                    {{ phoneproduct.screen}}
+                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                                    {{ laptopproduct.screen }}
                                   </span>
                                   <span>
                                     <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ phoneproduct.ram}}
+                                    {{ laptopproduct.cpu }}
                                   </span>
                                   <span>
-                                    <i class="fa-sharp fa-solid fa-memory"></i>
-                                    {{ phoneproduct.memory}}
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.ram }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                                    {{ laptopproduct.harddrive }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.graphics }}
+                                  </span>
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                                    {{ laptopproduct.weight }}
                                   </span>
                                 </div>
                                 <div class="card-item-info__promo-detail">
                                   <span>
                                     <div class="lazyload-wrapper">
                                       <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
-                                         alt="Tặng Balo Laptop" width="45" height="45">
+                                           alt="Tặng Balo Laptop" width="45" height="45">
                                     </div>
                                   </span>
                                   <span>
                                     <div class="lazyload-wrapper">
                                       <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                                         alt="Giảm 3% tối đa 250.000 qua Grab Moca" width="45" height="45">
+                                           alt="Giảm 3% tối đa 250.000 qua Grab Moca" width="45" height="45">
                                     </div>
                                   </span>
                                   <span>
                                     <div class="lazyload-wrapper">
                                       <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
-                                         alt="Tặng Balo Laptop" width="45" height="45">
+                                           alt="Tặng Balo Laptop" width="45" height="45">
                                     </div>
                                   </span>
                                   <span>
                                     <div class="lazyload-wrapper">
                                       <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                                         alt="Giảm ngay 600.000 khi mở thẻ TPBANK EVO" width="45" height="45">
+                                           alt="Giảm ngay 600.000 khi mở thẻ TPBANK EVO" width="45" height="45">
                                     </div>
                                   </span>
                                   <div class="card-item-info__promo-text">Giảm ngay 600.000 khi mở thẻ TPBANK EVO</div>
@@ -383,108 +388,126 @@
 
 <script>
 export default {
-  name: "Phone",
+  name: "Laptop",
   data() {
     return {
-      phoneproducts: [
+      laptopproducts: [
         {
-          id: "p1",
-          name: "iPhone 13 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
+          id: "l1",
+          name: "MacBook Air 13\" 2020 M1 256GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
           price: "20.000.000",
           cost: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg",
         },
         {
-          id: "p2",
-          name: "Asus ROG 6 DIABLO 16GB-512GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
+          id: "l2",
+          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
           price: "20.000.000",
           cost: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
         {
-          id: "p3",
-          name: "Samsung Galaxy S22 Ultra 5G 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
-          price: "20.000.000",
-          cost: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          id: "l3",
+          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
+          price: "20.790.000",
+          cost: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
         },
         {
-          id: "p4",
-          name: "Xiaomi Redmi 10 4GB-128GB 2021",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
+          id: "l4",
+          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
           price: "20.000.000",
           cost: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
         {
-          id: "p5",
-          name: "iPhone 13 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
-          price: "20.000.000",
-          cost: "25.000.000",
-          cpu: "Snapdragon 8+ Gen 1",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          id: "l5",
+          name: "MacBook Air 13\" 2020 M1 256GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
+          price: "20.790.000",
+          cost: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
         },
         {
-          id: "p6",
-          name: "Asus ROG 6 DIABLO 16GB-512GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
+          id: "l6",
+          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
           price: "20.000.000",
           cost: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
         {
-          id: "p7",
-          name: "Samsung Galaxy S22 Ultra 5G 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
-          price: "20.000.000",
-          cost: "25.000.000",
-          cpu: "MediaTek Helio G88",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          id: "l7",
+          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
+          price: "20.790.000",
+          cost: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
         },
         {
-          id: "p8",
-          name: "Xiaomi Redmi 10 4GB-128GB 2021",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
+          id: "l8",
+          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
           price: "20.000.000",
           cost: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
         },
         {
-          id: "p9",
-          name: "Xiaomi Redmi 11 4GB-128GB 2021",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
-          price: "20.000.000",
-          cost: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB",
+          id: "l9",
+          name: "Lenovo Yoga Slim 7 Pro 14IHU5O i5 11300H/82NH00AFVN",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/240x215/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/5/25/637890960008464129_lenovo-yoga-slim-7-pro-14ihu5-bac-dd-oled.jpg",
+          price: "20.790.000",
+          cost: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
         },
       ],
     }

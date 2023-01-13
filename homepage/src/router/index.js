@@ -15,6 +15,11 @@ export default createRouter({
           component: import("@/components/product/Phone.vue")
       },
       {
+          path: '/laptop',
+          name: 'laptop',
+          component: import("@/components/product/Laptop.vue")
+      },
+      {
           path: '/product-detail',
           name: 'product-detail',
           component: import("@/components/productdetails/ProductDetails.vue")
