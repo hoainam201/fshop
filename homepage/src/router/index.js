@@ -29,5 +29,10 @@ export default createRouter({
           name: 'test',
           component: import("@/components/icons/Test.vue")
       },
+      {
+          path: '/test1',
+          name: 'test1',
+          component: import("@/components/icons/Test1.vue")
+      },
   ],
 })

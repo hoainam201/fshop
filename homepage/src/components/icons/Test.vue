@@ -1,53 +1,61 @@
-<template>
-  <div class="main-background">
-    <div class="main-product">
-      <div class="grid wide">
-        <div class="row" style="margin-left: -24px;
-                                margin-right: -24px;">
-          <div class="col l-3 m-3 c-0 list-product">
-            <div class="sidebar-product">
-              <!-- Hãng sản xuất -->
-              <div class="sidebar-product-item">
-                <h3 class="sidebar-product-title">Hãng sản xuất</h3>
-                <div class="form-check">
-                  <label v-for="checkedManuFacturer in checkedManuFacturers"
-                         :key="checkedManuFacturer.id"
+<!--<template>-->
+<!--  <span>-->
+<!--      <div @mouseenter="hover = true"-->
+<!--           @mouseleave="hover = false"-->
+<!--           class="lazyload-wrapper">-->
+<!--      <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"-->
+<!--           alt="Giảm ngay 600.000đ khi mở thẻ TPBANK EVO" width="45" height="45">-->
+<!--      </div>-->
+<!--      <p v-if="hover">Giảm ngay 600.000đ khi mở thẻ TPBANK EVO</p>-->
+<!--    </span>-->
+<!--</template>-->
 
-                         class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-                    Tất cả
-                  </label>
-                </div>
-              </div>
-<!--              <div id='example-3' class="sidebar-product-item">-->
-<!--                <h3 class="sidebar-product-title">Hãng sản xuất</h3>-->
-<!--                <input type="checkbox" id="tat-ca" value="Tất cả" v-model="checkedManuFacturer">-->
-<!--                <label for="tat-ca" class="form-check-label">Tất cả</label>-->
-<!--              </div>-->
-          </div>
+<!--<script>-->
+<!--export default {-->
+<!--  data() {-->
+<!--    return {-->
+<!--      hover: false,-->
+<!--    };-->
+<!--  },-->
+<!--};-->
+<!--</script>-->
+
+<template>
+  <div class="card-item-info__promo-detail">
+    <span>
+      <div class="lazyload-wrapper" v-for="(promo, i) in promos"
+           :key="i"
+           @mouseover="showByIndex = i" @mouseout="showByIndex = null">
+        <img :src="require('@/assets/img/promo/{{promo.url}}')"
+               alt="{{ promo.name }}" width="45" height="45">
+        <div class="card-item-info__promo-text" v-show="showByIndex === i">
+          {{ promo.name }}
         </div>
-        </div>
-      </div>
     </div>
+    </span>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: "Test",
+  name: "ItemInfoPromo",
   data() {
     return {
-      checkedManuFacturers: [
+      showByIndex: null,
+      promos : [
         {
-          id: "all",
-          value: "all",
-          name: "Tất cả",
-
+          id: "grabmoca",
+          name: "Giảm ngay 600.000đ khi mở thẻ TPBANK EVO",
+          url: "https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
+        },
+        {
+          id: "kre",
+          name: "Giảm ngay 2344342342600.000đ khi mở thẻ TPBANK EVO",
+          url: "https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
         }
       ]
     }
-  }
+  },
 }
 </script>
 
