@@ -34,22 +34,22 @@
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
-                                  <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ phoneproduct.cpu}}
-                                  </span>
                       <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
-                                    {{ phoneproduct.screen}}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ phoneproduct.cpu}}
+                      </span>
+                        <span>
+                          <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                          {{ phoneproduct.screen}}
+                        </span>
                       <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ phoneproduct.ram}}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ phoneproduct.ram}}
+                      </span>
                       <span>
-                                    <i class="fa-sharp fa-solid fa-memory"></i>
-                                    {{ phoneproduct.memory}}
-                                  </span>
+                        <i class="fa-sharp fa-solid fa-memory"></i>
+                        {{ phoneproduct.memory}}
+                      </span>
                     </div>
                     <ItemInfoPromo />
                   </div>
@@ -74,8 +74,11 @@
 </template>
 
 <script>
+import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
+
 export default {
   name: "FeaturedPhone",
+  components: {ItemInfoPromo},
   data() {
     return {
       phoneproducts: [
