@@ -29,8 +29,8 @@
                     <a href="/" class="title-card">{{ laptopproduct.name }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ laptopproduct.price }} đ</span>
-                    <span class="old-price">{{ laptopproduct.price_sale }} đ</span>
+                    <span class="new-price">{{ laptopproduct.price_sale }} đ</span>
+                    <span class="old-price">{{ laptopproduct.price }} đ</span>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
@@ -94,8 +94,8 @@ export default {
           id: "l1",
           name: "MacBook Air 13\" 2020 M1 256GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          price: "20.000.000",
-          price_sale: "25.000.000",
+          price_sale: "20.000.000",
+          price: "25.000.000",
           screen: "15.6 inch",
           cpu: "Core i5",
           ram: "8 GB",
@@ -107,8 +107,8 @@ export default {
           id: "l2",
           name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-          price: "20.000.000",
-          price_sale: "25.000.000",
+          price_sale: "20.000.000",
+          price: "25.000.000",
           screen: "15.6 inch",
           cpu: "Core i5",
           ram: "8 GB",
@@ -120,8 +120,8 @@ export default {
           id: "l3",
           name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          price: "20.790.000",
-          price_sale: "25.990.000",
+          price_sale: "20.790.000",
+          price: "25.990.000",
           screen: "15.6 inch",
           cpu: "Core i7",
           ram: "8 GB (1 thanh 8 GB)",
@@ -133,8 +133,8 @@ export default {
           id: "l4",
           name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-          price: "20.000.000",
-          price_sale: "25.000.000",
+          price_sale: "20.000.000",
+          price: "25.000.000",
           screen: "15.6 inch",
           cpu: "Core i5",
           ram: "8 GB",
@@ -146,8 +146,8 @@ export default {
           id: "l5",
           name: "MacBook Air 13\" 2020 M1 256GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          price: "20.790.000",
-          price_sale: "25.990.000",
+          price_sale: "20.790.000",
+          price: "25.990.000",
           screen: "15.6 inch",
           cpu: "Core i7",
           ram: "8 GB (1 thanh 8 GB)",
@@ -159,8 +159,8 @@ export default {
           id: "l6",
           name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-          price: "20.000.000",
-          price_sale: "25.000.000",
+          price_sale: "20.000.000",
+          price: "25.000.000",
           screen: "15.6 inch",
           cpu: "Core i5",
           ram: "8 GB",
@@ -172,8 +172,8 @@ export default {
           id: "l7",
           name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          price: "20.790.000",
-          price_sale: "25.990.000",
+          price_sale: "20.790.000",
+          price: "25.990.000",
           screen: "15.6 inch",
           cpu: "Core i7",
           ram: "8 GB (1 thanh 8 GB)",
@@ -185,8 +185,8 @@ export default {
           id: "l8",
           name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-          price: "20.000.000",
-          price_sale: "25.000.000",
+          price_sale: "20.000.000",
+          price: "25.000.000",
           screen: "15.6 inch",
           cpu: "Core i5",
           ram: "8 GB",
