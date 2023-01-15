@@ -3,28 +3,34 @@
     <div class="grid wide">
       <div class="row">
         <div class="col l-12 m-12 c-12">
-          <div class="breadcrumbs">
-            <ul class="breadcrumb">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#">Pictures</a></li>
-              <li><a href="#">Summer 15</a></li>
-            </ul>
-          </div>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-margin" style="background-color: #fff">
+              <li class="breadcrumb-item">
+                <router-link to="/">Trang chủ</router-link>
+              </li>
+              <li class="breadcrumb-item">
+                <router-link to="/phone">Điện thoại</router-link>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">iPhone 12 64GB</li>
+            </ol>
+          </nav>
         </div>
       </div>
       <div class="row">
         <div class="col l-12 c-12 m-12">
           <div class="title-product-detail">
-            <div class="name-category">
-              <h2>IPhone 13 Pro Max 128GB</h2>
-            </div>
+<!--            <div class="name-category">-->
+              <h1 class="name-category">iPhone 12 64GB
+                <span class="name-category-label">(No.00719655)</span>
+              </h1>
+<!--            </div>-->
             <div class="rating-category">
               <i class="fa fa-star active"></i>
               <i class="fa fa-star active"></i>
               <i class="fa fa-star active"></i>
               <i class="fa fa-star active"></i>
               <i class="fa fa-star"></i>
-              <span class="count-rate">300 Đánh giá</span>
+              <span class="count-rate">333 Đánh giá</span>
             </div>
           </div>
         </div>
@@ -69,7 +75,7 @@
           <div class="col l-6 m-12 c-12">
             <div class="content-product-detail-right">
               <div class="price">
-                <h2>30.000.000đ <span>33.300.300đ</span> </h2>
+                <h2>30.000.000₫ <span>33.300.300₫</span> </h2>
               </div>
               <div class="option">
                 <label class="form-check-option active">
@@ -345,7 +351,7 @@
 
 <script>
 export default {
-  name: "ProductDetails"
+  name: "ProductDetails",
 }
 </script>
 
