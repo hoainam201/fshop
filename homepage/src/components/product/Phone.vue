@@ -55,7 +55,7 @@
       <div class="grid wide">
         <div class="row" style="margin-left: -24px;
                                 margin-right: -24px;">
-          <div class="col l-3 m-3 c-0 list-product">
+          <div class="col l-3 m-2.5 c-0 list-product">
             <div class="sidebar-product">
               <!-- Hãng sản xuất -->
               <div class="sidebar-product-item item1">

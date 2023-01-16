@@ -19,11 +19,9 @@
       <div class="row">
         <div class="col l-12 c-12 m-12">
           <div class="title-product-detail">
-<!--            <div class="name-category">-->
-              <h1 class="name-category">iPhone 12 64GB
-                <span class="name-category-label">(No.00719655)</span>
-              </h1>
-<!--            </div>-->
+            <h1 class="name-category">iPhone 12 64GB
+              <span class="name-category-label">(No.00719655)</span>
+            </h1>
             <div class="rating-category">
               <i class="fa fa-star active"></i>
               <i class="fa fa-star active"></i>
@@ -41,30 +39,50 @@
             <div class="content-product-detail-left">
               <div class="grid">
                 <div class="row">
-                  <div class="col l-8 l-o-2">
-                    <div class="wapper-slider product-detail">
-                      <div class="row no-warp main-slider">
-                        <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                          <div class="item-slider product-detail">
-                            <img src="@/assets/img/iphone13.png" alt="">
-                          </div>
+                  <div class="carousel-slider carousel-product-sale">
+                    <div class="carousel-frame">
+                      <img src="https://images.fpt.shop/unsafe/fit-in/585x429/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/12/638090838556171711_frame-detail-585x428.png"
+                           alt="Tien tao ve troi">
+                      <p>
+                        Lì xì
+                        <span>4.000.000 đ</span>
+                      </p>
+                    </div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-indicators" style="top: 364px">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869727250_iphone-12-den-1.jpg"
+                               class="d-block w-100" alt="..."
+                               style="width: auto;
+                                height: 73%;">
                         </div>
-                        <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                          <div class="item-slider product-detail">
-                            <img src="@/assets/img/Vivo-V23e-1-2-600x600.jpg" alt="">
-                          </div>
+                        <div class="carousel-item">
+                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869883593_iphone-12-den-2.jpg" class="d-block w-100" alt="...">
                         </div>
-                        <div class="col l-12 m-12 c-12 wrapper-item-slider">
-                          <div class="item-slider product-detail">
-                            <img src="@/assets/img/5640025_iphone-13-family-select-2021.jpg" alt="">
-                          </div>
+                        <div class="carousel-item">
+                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869727250_iphone-12-den-1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869883593_iphone-12-den-2.jpg" class="d-block w-100" alt="...">
                         </div>
                       </div>
-                      <button class="back page">
-                        <i class="fas fa-angle-left"></i>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <div class="round">
+                          <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #52585f"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </div>
                       </button>
-                      <button class="next page">
-                        <i class="fas fa-angle-right"></i>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <div class="round">
+                          <span class="carousel-control-next-icon" aria-hidden="true" style="color: #52585f"></span>
+                          <span class="visually-hidden">Next</span>
+                        </div>
                       </button>
                     </div>
                   </div>
@@ -75,7 +93,14 @@
           <div class="col l-6 m-12 c-12">
             <div class="content-product-detail-right">
               <div class="price">
-                <h2>30.000.000₫ <span>33.300.300₫</span> </h2>
+                <div class="price-main">
+                  15.499.000₫
+                </div>
+                <div class="price-sub">
+                  <strike>
+                    19.999.000₫
+                  </strike>
+                </div>
               </div>
               <div class="option">
                 <label class="form-check-option active">
@@ -134,210 +159,108 @@
             <div class="col l-12 m-12 c-12">
               <p class="title-product">SẢN PHẨM LIÊN QUAN</p>
             </div>
-            <div class="col l-3 m-6 c-6 card-slider">
-              <div class="product-card-item product-card-item-sale">
-                <div class="product-card-item-img">
-                  <a href="/">
-                    <img src="@/assets/img/iphone13.png"
-                         alt="IPhone 14"
-                         title="IPhone 14">
-                  </a>
-                  <div class="sticker">
-                    <span class="stickers sticker-event">Trả góp 0%</span>
-                    <br>
-                    <span class="stickers sticker-sale">Lì xì 3.000.000đ</span>
+            <div class="product-cate-card active">
+              <div class="row no-gutters">
+                <div v-for="laptopproduct in laptopproducts"
+                     :key="laptopproduct.id"
+                     class="col l-3 m-6 c-6 card-slider">
+                  <div class="product-card-item product-card-item-sale">
+                    <div class="product-card-item-img">
+                      <router-link to="/product-detail">
+                        <img :src="laptopproduct.img_url"
+                             alt="{{ laptopproduct.name }}">
+                      </router-link>
+                      <div class="sticker">
+                        <span class="stickers sticker-event">Trả góp 0%</span>
+                        <br>
+                        <span class="stickers sticker-sale">Lì xì 3.000.000</span>
+                      </div>
+                    </div>
+                    <div class="product-card-item-content">
+                      <h3>
+                        <a href="/" class="title-card">{{ laptopproduct.name }}</a>
+                      </h3>
+                      <div class="price">
+                        <span class="new-price">{{ laptopproduct.price_sale }} đ</span>
+                        <span class="old-price">{{ laptopproduct.price }} đ</span>
+                      </div>
+                      <div class="card-item-info__promo">
+                        <div class="card-item-info__promo-product">
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                                    {{ laptopproduct.screen }}
+                                  </span>
+                          <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.cpu }}
+                                  </span>
+                          <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.ram }}
+                                  </span>
+                          <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                                    {{ laptopproduct.harddrive }}
+                                  </span>
+                          <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ laptopproduct.graphics }}
+                                  </span>
+                          <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                                    {{ laptopproduct.weight }}
+                                  </span>
+                        </div>
+                        <ItemInfoPromo />
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="product-card-item-content">
-                  <h3>
-                    <a href="/" class="title-card"></a>
-                  </h3>
-                  <div class="price">
-                    <span class="new-price">20.000.000đ</span>
-                    <span class="old-price">25.000.000đ</span>
-                  </div>
-                  <div class="card-item-info__promo">
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
-                             alt="Tặng Balo Laptop" width="45" height="45">
+                <div v-for="phoneproduct in phoneproducts"
+                     :key="phoneproduct.id"
+                     class="col l-3 m-6 c-6 card-slider">
+                  <div class="product-card-item product-card-item-sale">
+                    <div class="product-card-item-img">
+                      <router-link to="/product-detail">
+                        <img :src="phoneproduct.img_url"
+                             alt="{{ phoneproduct.name }}">
+                      </router-link>
+                      <div class="sticker">
+                        <span class="stickers sticker-event">Trả góp 0%</span>
+                        <br>
+                        <span class="stickers sticker-sale">Lì xì 3.000.000</span>
                       </div>
-                    </span>
-                    <span class="active">
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                             alt="Giảm 3% tối đa 250.000đ qua Grab Moca" width="45" height="45">
+                    </div>
+                    <div class="product-card-item-content">
+                      <h3>
+                        <a href="/" class="title-card">{{ phoneproduct.name }}</a>
+                      </h3>
+                      <div class="price">
+                        <span class="new-price">{{ phoneproduct.price_sale }} đ</span>
+                        <span class="old-price">{{ phoneproduct.price }} đ</span>
                       </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
-                             alt="Tặng Balo Laptop" width="45" height="45">
+                      <div class="card-item-info__promo">
+                        <div class="card-item-info__promo-product">
+                                  <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ phoneproduct.cpu}}
+                                  </span>
+                          <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                                    {{ phoneproduct.screen}}
+                                  </span>
+                          <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ phoneproduct.ram}}
+                                  </span>
+                          <span>
+                                    <i class="fa-sharp fa-solid fa-memory"></i>
+                                    {{ phoneproduct.memory}}
+                                  </span>
+                        </div>
+                        <ItemInfoPromo />
                       </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                             alt="Giảm ngay 600.000đ khi mở thẻ TPBANK EVO" width="45" height="45">
-                      </div>
-                    </span>
-                    <div class="card-item-info__promo-text">Giảm ngay 600.000đ khi mở thẻ TPBANK EVO</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col l-3 m-6 c-6 card-slider">
-              <div class="product-card-item product-card-item-sale">
-                <div class="product-card-item-img">
-                  <a href="/">
-                    <img src="@/assets/img/iphone13.png"
-                         alt="IPhone 14"
-                         title="IPhone 14">
-                  </a>
-                  <div class="sticker">
-                    <span class="stickers sticker-event">Trả góp 0%</span>
-                    <br>
-                    <span class="stickers sticker-sale">Lì xì 3.000.000đ</span>
-                  </div>
-                </div>
-                <div class="product-card-item-content">
-                  <h3>
-                    <a href="/" class="title-card"></a>
-                  </h3>
-                  <div class="price">
-                    <span class="new-price">20.000.000đ</span>
-                    <span class="old-price">25.000.000đ</span>
-                  </div>
-                  <div class="card-item-info__promo">
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class="active">
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                             alt="Giảm 3% tối đa 250.000đ qua Grab Moca" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                             alt="Giảm ngay 600.000đ khi mở thẻ TPBANK EVO" width="45" height="45">
-                      </div>
-                    </span>
-                    <div class="card-item-info__promo-text">Giảm ngay 600.000đ khi mở thẻ TPBANK EVO</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col l-3 m-6 c-6 card-slider">
-              <div class="product-card-item product-card-item-sale">
-                <div class="product-card-item-img">
-                  <a href="/">
-                    <img src="@/assets/img/iphone13.png"
-                         alt="IPhone 14"
-                         title="IPhone 14">
-                  </a>
-                  <div class="sticker">
-                    <span class="stickers sticker-event">Trả góp 0%</span>
-                    <br>
-                    <span class="stickers sticker-sale">Lì xì 3.000.000đ</span>
-                  </div>
-                </div>
-                <div class="product-card-item-content">
-                  <h3>
-                    <a href="/" class="title-card"></a>
-                  </h3>
-                  <div class="price">
-                    <span class="new-price">20.000.000đ</span>
-                    <span class="old-price">25.000.000đ</span>
-                  </div>
-                  <div class="card-item-info__promo">
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class="active">
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                             alt="Giảm 3% tối đa 250.000đ qua Grab Moca" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                             alt="Giảm ngay 600.000đ khi mở thẻ TPBANK EVO" width="45" height="45">
-                      </div>
-                    </span>
-                    <div class="card-item-info__promo-text">Giảm ngay 600.000đ khi mở thẻ TPBANK EVO</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col l-3 m-6 c-6 card-slider">
-              <div class="product-card-item product-card-item-sale">
-                <div class="product-card-item-img">
-                  <a href="/">
-                    <img src="@/assets/img/iphone13.png"
-                         alt="IPhone 14"
-                         title="IPhone 14">
-                  </a>
-                  <div class="sticker">
-                    <span class="stickers sticker-event">Trả góp 0%</span>
-                    <br>
-                    <span class="stickers sticker-sale">Lì xì 3.000.000đ</span>
-                  </div>
-                </div>
-                <div class="product-card-item-content">
-                  <h3>
-                    <a href="/" class="title-card"></a>
-                  </h3>
-                  <div class="price">
-                    <span class="new-price">20.000.000đ</span>
-                    <span class="old-price">25.000.000đ</span>
-                  </div>
-                  <div class="card-item-info__promo">
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/7/1/637607496499646234_637528843647072230_balo%20(1).jpg"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class="active">
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002156152811193_Logo-VNPAYQR.png"
-                             alt="Giảm 3% tối đa 250.000đ qua Grab Moca" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/1/638002152487434133_637426739557050119_logo-moca.png"
-                             alt="Tặng Balo Laptop" width="45" height="45">
-                      </div>
-                    </span>
-                    <span class>
-                      <div class="lazyload-wrapper">
-                        <img src="https://images.fpt.shop/unsafe/fit-in/45x45/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/5/637847745475943329_637846629514363952_ic-tp-bank.jpg"
-                             alt="Giảm ngay 600.000đ khi mở thẻ TPBANK EVO" width="45" height="45">
-                      </div>
-                    </span>
-                    <div class="card-item-info__promo-text">Giảm ngay 600.000đ khi mở thẻ TPBANK EVO</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -350,8 +273,117 @@
 </template>
 
 <script>
+
+import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
+
 export default {
-  name: "ProductDetails",
+  name: 'ProductDetails',
+  components: {ItemInfoPromo},
+
+  data() {
+    return {
+      phoneproducts: [
+        {
+          id: "p1",
+          name: "iPhone 13 128GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
+          price_sale: "20.000.000",
+          price: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
+        },
+        {
+          id: "p2",
+          name: "Asus ROG 6 DIABLO 16GB-512GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
+          price_sale: "20.000.000",
+          price: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
+        },
+        {
+          id: "p3",
+          name: "Samsung Galaxy S22 Ultra 5G 128GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
+          price_sale: "20.000.000",
+          price: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
+        },
+        {
+          id: "p4",
+          name: "Xiaomi Redmi 10 4GB-128GB 2021",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
+          price_sale: "20.000.000",
+          price: "25.000.000",
+          cpu: "Apple A15 Bionic",
+          screen: "6.1 inch",
+          ram: "4 GB",
+          memory: "128 GB"
+        },
+      ],
+      laptopproducts: [
+        {
+          id: "l1",
+          name: "MacBook Air 13\" 2020 M1 256GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
+          price_sale: "20.000.000",
+          price: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg",
+        },
+        {
+          id: "l2",
+          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
+          price_sale: "20.000.000",
+          price: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
+        },
+        {
+          id: "l3",
+          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
+          price_sale: "20.790.000",
+          price: "25.990.000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
+        },
+        {
+          id: "l4",
+          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
+          price_sale: "20.000.000",
+          price: "25.000.000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
+        },
+      ],
+    }
+  }
 }
 </script>
 

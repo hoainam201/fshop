@@ -124,7 +124,7 @@ p {
   color: #fff;
   position: absolute;
   bottom: 6px;
-  left: 50%;
+  left: 1%;
   width: 100%;
   margin: 0;
 }
@@ -1164,17 +1164,33 @@ footer-certification {
   padding: 20px 0;
 }
 
-.content-product-detail-right .price h2 {
-  font-size: 200%;
-  color: #cc2827;
+.price-main {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+  color: #cb1c22;
+  margin-right: 10px;
 }
 
-.content-product-detail-right .price h2 span {
-  font-size: 80%;
-  color: #999;
-  text-decoration: line-through;
-  margin-left: 5px;
+.price-sub {
+  font-weight: 400;
+  color: #99a2aa;
+  font-size: 20px;
+  line-height: 28px;
+  left: 50px;
 }
+
+/*.content-product-detail-right .price h2 {*/
+/*  font-size: 200%;*/
+/*  color: #cc2827;*/
+/*}*/
+
+/*.content-product-detail-right .price h2 span {*/
+/*  font-size: 80%;*/
+/*  color: #999;*/
+/*  text-decoration: line-through;*/
+/*  margin-left: 5px;*/
+/*}*/
 
 .option {
   display: flex;
@@ -1284,6 +1300,10 @@ li.sale-gift-item {
 
 .product-cate {
   margin: 50px 0;
+  border: 1px solid #f4f4f4;
+  border-radius: 6px;
+  box-shadow: 0 3px 3px rgb(0 0 0 / 25%);
+  background-color: #fff;
 }
 
 ul.info-cate-list {

@@ -49,7 +49,7 @@
                       </p>
                     </div>
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                      <div class="carousel-indicators" style="bottom: -22px">
+                      <div class="carousel-indicators" style="top: 364px">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -57,7 +57,10 @@
                       </div>
                       <div class="carousel-inner">
                         <div class="carousel-item active">
-                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869727250_iphone-12-den-1.jpg" class="d-block w-100" alt="...">
+                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869727250_iphone-12-den-1.jpg"
+                               class="d-block w-100" alt="..."
+                               style="width: auto;
+                                height: 73%;">
                         </div>
                         <div class="carousel-item">
                           <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869883593_iphone-12-den-2.jpg" class="d-block w-100" alt="...">
@@ -365,8 +368,9 @@
 </template>
 
 <script>
+
 export default {
-  name: "ProductDetails",
+  name: 'Test'
 }
 </script>
 
