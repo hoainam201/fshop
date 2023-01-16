@@ -53,8 +53,8 @@
     </div>
     <div class="main-product">
       <div class="grid wide">
-        <div class="row" style="margin-left: -24px;
-                                margin-right: -24px;">
+        <div class="row" style="margin-left: -8px;
+                                margin-right: -8px;">
           <div class="col l-3 m-2.5 c-0 list-product">
             <div class="sidebar-product">
               <!-- Hãng sản xuất -->
@@ -201,7 +201,7 @@
               </div>
             </div>
           </div>
-          <div class="col l-9 m-9 c-12">
+          <div class="col l-9 m-9.5 c-12">
             <div class="product-category">
               <div class="grid wide product">
                 <div class="product-wapper product">

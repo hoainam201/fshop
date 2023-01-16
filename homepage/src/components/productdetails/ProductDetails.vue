@@ -121,7 +121,7 @@
                 </ul>
               </div>
               <div class="sale-gift">
-                <p class="sale-gift-title">Nhận ngay khuyến mại đặc biệt</p>
+                <p class="sale-gift-title">Chọn 1 trong 2 khuyến mãi sau</p>
                 <ul class="sale-gift-list">
                   <li class="sale-gift-item">
                     <i class="fa fa-circle-check"></i>
@@ -136,11 +136,51 @@
                     Giảm thêm 10% khi mua Tai nghe Xiaomi Earphones 2 Basic
                   </li>
                 </ul>
+<!--                <b-form-group-->
+<!--                    label="Ship via:"-->
+<!--                    label-cols-sm="3"-->
+<!--                    label-align-sm="right"-->
+<!--                    class="mb-0"-->
+<!--                    v-slot="{ ariaDescribedby }"-->
+<!--                >-->
+<!--                  <b-form-radio-group-->
+<!--                      class="pt-2"-->
+<!--                      :options="['Air', 'Courier', 'Mail']"-->
+<!--                      :aria-describedby="ariaDescribedby"-->
+<!--                  ></b-form-radio-group>-->
+<!--                </b-form-group>-->
               </div>
               <div class="pay-cate">
-                <span class="pay-now">MUA NGAY</span>
-                <span class="pay-with">TRẢ GỚP 0%</span>
-                <span class="pay-with">TRẢ GỚP QUA THẺ</span>
+                <div class="pay-now">
+                  <strong>
+                    MUA NGAY
+                  </strong>
+                  <p>Giao hàng miễn phí hoặc nhận tại shop</p>
+                </div>
+                <div class="pay-with">
+                  <strong>
+                    TRẢ GÓP 0%
+                  </strong>
+                  <p>Duyệt nhanh qua điện thoại</p>
+                </div>
+                <div class="pay-with">
+                  <strong>
+                    TRẢ GÓP QUA THẺ
+                  </strong>
+                  <p>Visa, Master Card, JCB, AMEX</p>
+                </div>
+              </div>
+              <div class="info-hotline" style="display: flex; justify-content: space-between; margin-bottom: 30px">
+                <div class="hotline">
+                  Gọi
+                  <a href="tel:18006601" class="re-hotline">1800-6601</a>
+                  để được tư vấn mua hàng (Miễn phí)
+                </div>
+                <a class="re-link store" href="https://www.google.com/maps/?hl=vi">
+                  <span class="icon-location"></span>
+                  Tìm shop có hàng gần nhất
+                </a>
+
               </div>
               <div class="info-cate">
                 <ul class="info-cate-list">
