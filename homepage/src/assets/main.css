@@ -1029,6 +1029,11 @@ footer-certification {
   margin-bottom: 15px;
 }
 
+.pay-methods ul {
+  padding-left: 0;
+}
+
+
 .pay-methods ul li:not(:last-child) {
   margin-bottom: 10px;
 }
