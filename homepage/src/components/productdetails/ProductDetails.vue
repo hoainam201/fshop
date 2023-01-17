@@ -121,11 +121,13 @@
                 </ul>
               </div>
               <div class="sale-gift">
-                <p class="sale-gift-title">Chọn 1 trong 2 khuyến mãi sau</p>
-                <ul class="sale-gift-list">
+                <p class="sale-gift-title">Nhận ngay khuyến mại đặc biệt</p>
+                <ul class="sale-gift-list sale-gift-list__more">
                   <li class="sale-gift-item">
                     <i class="fa fa-circle-check"></i>
-                    Giảm ngay 2.000.000đ áp dụng đến 10/04
+                    <div>
+                      <span>Lì xì ngay 7.500.000đ</span>
+                    </div>
                   </li>
                   <li class="sale-gift-item">
                     <i class="fa fa-circle-check"></i>

@@ -304,9 +304,9 @@
                                      alt="{{ laptopproduct.name }}">
                               </router-link>
                               <div class="sticker">
-                                <span class="stickers sticker-event">Trả góp 0%</span>
+                                <span class="stickers sticker-event">{{ laptopproduct.installment }}</span>
                                 <br>
-                                <span class="stickers sticker-sale">Lì xì 3.000.000</span>
+                                <span class="stickers sticker-sale">{{ laptopproduct.sale }}</span>
                               </div>
                             </div>
                             <div class="product-card-item-content">
@@ -396,7 +396,9 @@ export default {
           ram: "8 GB",
           harddrive: "SSD 512 GB",
           graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg"
+          weight: "2 kg",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
         },
         {
           id: "l3",
@@ -422,7 +424,9 @@ export default {
           ram: "8 GB",
           harddrive: "SSD 512 GB",
           graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg"
+          weight: "2 kg",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
         },
         {
           id: "l5",
@@ -435,7 +439,9 @@ export default {
           ram: "8 GB (1 thanh 8 GB)",
           harddrive: "SSD 512 GB",
           graphics: "NVIDIA GeForce RTX 3050 4GB",
-          weight: "2.25 kg"
+          weight: "2.25 kg",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
         },
         {
           id: "l6",
@@ -461,7 +467,9 @@ export default {
           ram: "8 GB (1 thanh 8 GB)",
           harddrive: "SSD 512 GB",
           graphics: "NVIDIA GeForce RTX 3050 4GB",
-          weight: "2.25 kg"
+          weight: "2.25 kg",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
         },
         {
           id: "l8",
@@ -487,7 +495,9 @@ export default {
           ram: "8 GB (1 thanh 8 GB)",
           harddrive: "SSD 512 GB",
           graphics: "NVIDIA GeForce RTX 3050 4GB",
-          weight: "2.25 kg"
+          weight: "2.25 kg",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
         },
       ],
     }

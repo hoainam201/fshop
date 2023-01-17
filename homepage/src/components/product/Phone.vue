@@ -305,9 +305,9 @@
                                      alt="{{ phoneproduct.name }}">
                               </router-link>
                               <div class="sticker">
-                                <span class="stickers sticker-event">Trả góp 0%</span>
+                                <span class="stickers sticker-event">{{ phoneproduct.installment }}</span>
                                 <br>
-                                <span class="stickers sticker-sale">Lì xì 3.000.000</span>
+                                <span class="stickers sticker-sale">{{ phoneproduct.sale }}</span>
                               </div>
                             </div>
                             <div class="product-card-item-content">
@@ -369,6 +369,8 @@ export default {
           id: "p1",
           name: "iPhone 13 128GB",
           img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
           price_sale: "20.000.000",
           price: "25.000.000",
           cpu: "Apple A15 Bionic",
@@ -385,7 +387,8 @@ export default {
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
-          memory: "128 GB"
+          memory: "128 GB",
+          installment: "Trả góp 0%",
         },
         {
           id: "p3",
@@ -396,6 +399,8 @@ export default {
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
           memory: "128 GB"
         },
         {
@@ -429,6 +434,8 @@ export default {
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 5.000.000đ",
           memory: "128 GB"
         },
         {
@@ -440,6 +447,8 @@ export default {
           cpu: "MediaTek Helio G88",
           screen: "6.1 inch",
           ram: "4 GB",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.500.000đ",
           memory: "128 GB"
         },
         {
@@ -451,6 +460,8 @@ export default {
           cpu: "Apple A15 Bionic",
           screen: "6.1 inch",
           ram: "4 GB",
+          installment: "Trả góp 0%",
+          sale: "Lì xì 3.000.000đ",
           memory: "128 GB"
         },
         {
