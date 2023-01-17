@@ -97,9 +97,9 @@
                   15.499.000₫
                 </div>
                 <div class="price-sub">
-                  <strike>
+                  <span style="text-decoration: line-through;">
                     19.999.000₫
-                  </strike>
+                  </span>
                 </div>
               </div>
               <div class="option">
@@ -121,21 +121,61 @@
                 </ul>
               </div>
               <div class="sale-gift">
-                <p class="sale-gift-title">Nhận ngay khuyến mại đặc biệt</p>
+                <div class="sale-gift-title">Nhận ngay khuyến mại đặc biệt</div>
                 <ul class="sale-gift-list sale-gift-list__more">
-                  <li class="sale-gift-item">
-                    <i class="fa fa-circle-check"></i>
+                  <li>
+                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
                     <div>
                       <span>Lì xì ngay 7.500.000đ</span>
                     </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i class="fa fa-circle-check"></i>
-                    Trả góp 0%
+                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <div>
+                      <span>Trả góp 0%</span>
+                    </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i class="fa fa-circle-check"></i>
-                    Giảm thêm 10% khi mua Tai nghe Xiaomi Earphones 2 Basic
+                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <div>
+                      <span>Độc quyền bảo hành 2 năm</span>
+                      <a href="https://fptshop.com.vn/tin-tuc/tin-khuyen-mai/fpt-shop-doc-quyen-nhan-doi-thoi-gian-bao-hanh-dien-thoai-samsung-151253"
+                        class="re-link">
+                        Xem chi tiết
+                      </a>
+                    </div>
+                  </li>
+                  <li class="sale-gift-item">
+                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <div>
+                      <span>Thu cũ lì xì thêm 2.5 triệu + FPT Shop trợ giá thêm 15% đến 2 triệu (MintPro)</span>
+                      <a href="https://fptshop.com.vn/thu-cu-doi-moi/samsung"
+                         class="re-link">
+                        Xem chi tiết
+                      </a>
+                    </div>
+                  </li>
+                  <li class="sale-gift-item">
+                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <div>
+                      <span>Tặng bộ phụ kiện cao cấp trị giá 8.000.000đ của NTK Lâm Gia Khang</span>
+                    </div>
+                  </li>
+                  <li class="sale-gift-item">
+                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <div>
+                      <span>Danh sách cửa hàng trải nghiệm miễn phí bộ phụ kiện cao cấp </span>
+                      <a href="https://docs.google.com/spreadsheets/d/1hxACT0ztPeUp9mZyQ32NJ2Io04Q-4uoRB0NDSDpH228/edit?usp=sharing"
+                         class="re-link">
+                        Xem chi tiết
+                      </a>
+                    </div>
+                  </li>
+                  <li class="sale-gift-item">
+                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <div>
+                      <span>Lì xì 30% Sim MobiFone Siêu Data 3T - 2GB/ngày - miễn phí 3 tháng - giá chỉ 266.000đ</span>
+                    </div>
                   </li>
                 </ul>
 <!--                <b-form-group-->
@@ -151,6 +191,46 @@
 <!--                      :aria-describedby="ariaDescribedby"-->
 <!--                  ></b-form-radio-group>-->
 <!--                </b-form-group>-->
+              </div>
+              <div class="pay-methods">
+                <ul>
+                  <li>
+                    <label class="img">
+                      <img src="https://images.fpt.shop/unsafe/fit-in/48x48/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/4/637846629514363952_ic-tp-bank.jpg"
+                        width="48" height="48" alt="Lì xì ngay 600.000đ và hoàn tiền đến 500.000đ khi mở thẻ đồng thương hiệu TPBANK EVO (áp dụng cùng VNPAY/MOCA)">
+                      <div class="pay-methods-label">
+                        <div class="checkbox">
+                          <input type="checkbox" id="evo" value="Evo" v-model="checkedEvo" class="form-check-input">
+                        </div>
+                      </div>
+                    </label>
+                    <div class="pay-methods-text">
+                      <p>EVO</p>
+                      <div>
+                        <span>Lì xì ngay 600.000đ và hoàn tiền đến 500.000đ khi mở thẻ đồng thương hiệu TPBANK EVO (áp dụng cùng VNPAY/MOCA)</span>
+                        <a href="https://fptshop.com.vn/the-dong-thuong-hieu-EVO" class="re-link">Xem chi tiết</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <label class="img">
+                      <img src="https://images.fpt.shop/unsafe/fit-in/48x48/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/3/14/637828748513420662_Kredio.jpg"
+                           width="48" height="48" alt="Lì xì ngay 600.000đ và hoàn tiền đến 500.000đ khi mở thẻ đồng thương hiệu TPBANK EVO (áp dụng cùng VNPAY/MOCA)">
+                      <div class="pay-methods-label">
+                        <div class="checkbox">
+                          <input type="checkbox" id="evo" value="Evo" v-model="checkedKredivo" class="form-check-input">
+                        </div>
+                      </div>
+                    </label>
+                    <div class="pay-methods-text">
+                      <p>Thanh toán Kredivo</p>
+                      <div>
+                        <span>Lì xì ngay 5% tối đa 1.200.000đ khi trả góp kỳ hạn 6 hoặc 12 tháng qua Kredivo</span>
+                        <a href="https://fptshop.com.vn/ctkm/kredivo" class="re-link">Xem chi tiết</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
               <div class="pay-cate">
                 <div class="pay-now">
@@ -424,6 +504,8 @@ export default {
           weight: "2 kg"
         },
       ],
+      checkedEvo: [],
+      checkedKredivo: [],
     }
   }
 }
