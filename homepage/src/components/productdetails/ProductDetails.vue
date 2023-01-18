@@ -11,7 +11,7 @@
               <li class="breadcrumb-item">
                 <router-link to="/phone">Điện thoại</router-link>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">iPhone 12 64GB</li>
+              <li class="breadcrumb-item active" aria-current="page">{{ productName }}</li>
             </ol>
           </nav>
         </div>
@@ -19,8 +19,9 @@
       <div class="row">
         <div class="col l-12 c-12 m-12">
           <div class="title-product-detail">
-            <h1 class="name-category">iPhone 12 64GB
-              <span class="name-category-label">(No.00719655)</span>
+            <h1 class="name-category">
+              {{ productName }}
+              <span class="name-category-label">({{ productNumber }})</span>
             </h1>
             <div class="rating-category">
               <i class="fa fa-star active"></i>
@@ -84,6 +85,42 @@
                           <span class="visually-hidden">Next</span>
                         </div>
                       </button>
+                    </div>
+                  </div>
+                  <div class="product-slider__feature">
+                    <a class="product-slider__feature-item product-slider__img">
+                      <span><i><font-awesome-icon icon="fa-solid fa-image" /></i></span>
+                      <p>Xem thêm 12 ảnh</p>
+                    </a>
+                    <a class="product-slider__feature-item product-slider__video">
+                      <span><i><font-awesome-icon icon="fa-brands fa-youtube" /></i></span>
+                      <p>Video trên tay</p>
+                    </a>
+                    <a class="product-slider__feature-item product-slider__box">
+                      <span><i><font-awesome-icon icon="fa-solid fa-box" /></i></span>
+                      <p>Trong hộp có gì</p>
+                    </a>
+                  </div>
+                  <div class="info-cate">
+                    <ul>
+                      <li class="info-cat-item"><i class="fa fa-mobile-screen-button"></i> <span>Màn hình: 6.43 inch, Chính: AMOLED, FHD+, 1080 x 2400 Pixels</span> </li>
+                      <li class="info-cat-item"><i class="fa fa-camera"></i> <span> Camera: 64.0 MP + 2.0 MP + 2.0 MP</span></li>
+                      <li class="info-cat-item"><i class="fa fa-microchip"></i> <span>CPU: Snapdragon 695 5G</span> </li>
+                      <li class="info-cat-item"><i class="fa fa-memory"></i> <span>ROM: 128G RAM: 8G</span> </li>
+                      <li class="info-cat-item"><i class="fa fa-battery-full"></i> <span> Pin: 5000mah</span></li>
+                    </ul>
+                    <a class="re-link info-details" href="/">
+                      Xem chi tiết thông số kỹ thuật
+                    </a>
+                  </div>
+                  <div class="product-policy">
+                    <div class="product-policy__item">
+                      <span class="product-policy__item-shape"><font-awesome-icon icon="fa-solid fa-medal" /></span>
+                      <p>Hàng chính hãng - Bảo hành 12 tháng</p>
+                    </div>
+                    <div class="product-policy__item">
+                      <span class="product-policy__item-shape"><font-awesome-icon icon="fa-solid fa-truck-fast" /></span>
+                      <p>Giao hàng toàn quốc</p>
                     </div>
                   </div>
                 </div>
@@ -262,16 +299,6 @@
                   <span class="icon-location"></span>
                   Tìm shop có hàng gần nhất
                 </a>
-
-              </div>
-              <div class="info-cate">
-                <ul class="info-cate-list">
-                  <li class="info-cat-item"><i class="fa fa-mobile-screen-button"></i> <span>Màn hình: 6.43 inch, Chính: AMOLED, FHD+, 1080 x 2400 Pixels</span> </li>
-                  <li class="info-cat-item"><i class="fa fa-camera"></i> <span> Camera: 64.0 MP + 2.0 MP + 2.0 MP</span></li>
-                  <li class="info-cat-item"><i class="fa fa-microchip"></i> <span>CPU: Snapdragon 695 5G</span> </li>
-                  <li class="info-cat-item"><i class="fa fa-memory"></i> <span>ROM: 128G RAM: 8G</span> </li>
-                  <li class="info-cat-item"><i class="fa fa-battery-full"></i> <span> Pin: 5000mah</span></li>
-                </ul>
               </div>
             </div>
           </div>
@@ -283,61 +310,61 @@
             </div>
             <div class="product-cate-card active">
               <div class="row no-gutters">
-                <div v-for="laptopproduct in laptopproducts"
-                     :key="laptopproduct.id"
-                     class="col l-3 m-6 c-6 card-slider">
-                  <div class="product-card-item product-card-item-sale">
-                    <div class="product-card-item-img">
-                      <router-link to="/product-detail">
-                        <img :src="laptopproduct.img_url"
-                             alt="{{ laptopproduct.name }}">
-                      </router-link>
-                      <div class="sticker">
-                        <span class="stickers sticker-event">Trả góp 0%</span>
-                        <br>
-                        <span class="stickers sticker-sale">Lì xì 3.000.000</span>
-                      </div>
-                    </div>
-                    <div class="product-card-item-content">
-                      <h3>
-                        <a href="/" class="title-card">{{ laptopproduct.name }}</a>
-                      </h3>
-                      <div class="price">
-                        <span class="new-price">{{ laptopproduct.price_sale }} đ</span>
-                        <span class="old-price">{{ laptopproduct.price }} đ</span>
-                      </div>
-                      <div class="card-item-info__promo">
-                        <div class="card-item-info__promo-product">
-                                  <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
-                                    {{ laptopproduct.screen }}
-                                  </span>
-                          <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ laptopproduct.cpu }}
-                                  </span>
-                          <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ laptopproduct.ram }}
-                                  </span>
-                          <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
-                                    {{ laptopproduct.harddrive }}
-                                  </span>
-                          <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ laptopproduct.graphics }}
-                                  </span>
-                          <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
-                                    {{ laptopproduct.weight }}
-                                  </span>
-                        </div>
-                        <ItemInfoPromo />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<!--                <div v-for="laptopproduct in laptopproducts"-->
+<!--                     :key="laptopproduct.id"-->
+<!--                     class="col l-3 m-6 c-6 card-slider">-->
+<!--                  <div class="product-card-item product-card-item-sale">-->
+<!--                    <div class="product-card-item-img">-->
+<!--                      <router-link to="/product-detail">-->
+<!--                        <img :src="laptopproduct.img_url"-->
+<!--                             alt="{{ laptopproduct.name }}">-->
+<!--                      </router-link>-->
+<!--                      <div class="sticker">-->
+<!--                        <span class="stickers sticker-event">Trả góp 0%</span>-->
+<!--                        <br>-->
+<!--                        <span class="stickers sticker-sale">Lì xì 3.000.000</span>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="product-card-item-content">-->
+<!--                      <h3>-->
+<!--                        <a href="/" class="title-card">{{ laptopproduct.name }}</a>-->
+<!--                      </h3>-->
+<!--                      <div class="price">-->
+<!--                        <span class="new-price">{{ laptopproduct.price_sale }} đ</span>-->
+<!--                        <span class="old-price">{{ laptopproduct.price }} đ</span>-->
+<!--                      </div>-->
+<!--                      <div class="card-item-info__promo">-->
+<!--                        <div class="card-item-info__promo-product">-->
+<!--                                  <span>-->
+<!--                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>-->
+<!--                                    {{ laptopproduct.screen }}-->
+<!--                                  </span>-->
+<!--                          <span>-->
+<!--                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>-->
+<!--                                    {{ laptopproduct.cpu }}-->
+<!--                                  </span>-->
+<!--                          <span>-->
+<!--                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>-->
+<!--                                    {{ laptopproduct.ram }}-->
+<!--                                  </span>-->
+<!--                          <span>-->
+<!--                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>-->
+<!--                                    {{ laptopproduct.harddrive }}-->
+<!--                                  </span>-->
+<!--                          <span>-->
+<!--                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>-->
+<!--                                    {{ laptopproduct.graphics }}-->
+<!--                                  </span>-->
+<!--                          <span>-->
+<!--                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>-->
+<!--                                    {{ laptopproduct.weight }}-->
+<!--                                  </span>-->
+<!--                        </div>-->
+<!--                        <ItemInfoPromo />-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
                 <div v-for="phoneproduct in phoneproducts"
                      :key="phoneproduct.id"
                      class="col l-3 m-6 c-6 card-slider">
@@ -418,8 +445,8 @@ export default {
         },
         {
           id: "p2",
-          name: "Asus ROG 6 DIABLO 16GB-512GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
+          name: "iPhone 13 128GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
           price_sale: "20.000.000",
           price: "25.000.000",
           cpu: "Apple A15 Bionic",
@@ -429,8 +456,8 @@ export default {
         },
         {
           id: "p3",
-          name: "Samsung Galaxy S22 Ultra 5G 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
+          name: "iPhone 13 128GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
           price_sale: "20.000.000",
           price: "25.000.000",
           cpu: "Apple A15 Bionic",
@@ -440,8 +467,8 @@ export default {
         },
         {
           id: "p4",
-          name: "Xiaomi Redmi 10 4GB-128GB 2021",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
+          name: "iPhone 13 128GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
           price_sale: "20.000.000",
           price: "25.000.000",
           cpu: "Apple A15 Bionic",
@@ -450,62 +477,10 @@ export default {
           memory: "128 GB"
         },
       ],
-      laptopproducts: [
-        {
-          id: "l1",
-          name: "MacBook Air 13\" 2020 M1 256GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg",
-        },
-        {
-          id: "l2",
-          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg"
-        },
-        {
-          id: "l3",
-          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          price_sale: "20.790.000",
-          price: "25.990.000",
-          screen: "15.6 inch",
-          cpu: "Core i7",
-          ram: "8 GB (1 thanh 8 GB)",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 4GB",
-          weight: "2.25 kg"
-        },
-        {
-          id: "l4",
-          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg"
-        },
-      ],
       checkedEvo: [],
       checkedKredivo: [],
+      productName: "iPhone 13 128GB",
+      productNumber: "No.00719655"
     }
   }
 }
