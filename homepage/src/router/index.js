@@ -34,5 +34,10 @@ export default createRouter({
           name: 'test1',
           component: import("@/components/icons/Test1.vue")
       },
+      {
+          path: '/buynow',
+          name: 'BuyNow',
+          component: import("@/components/productdetails/BuyNow.vue")
+      },
   ],
 })

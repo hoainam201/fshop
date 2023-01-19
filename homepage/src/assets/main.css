@@ -1036,11 +1036,6 @@ footer-certification {
   background-color: rgb(14, 5, 5);
 }
 
-/*.form-check-input[type=checkbox]:checked {*/
-/*  background-image: none;*/
-/*  background-color: #cb1c22;*/
-/*}*/
-
 /*pay-methods*/
 .pay-methods {
   margin-bottom: 15px;
@@ -1504,8 +1499,121 @@ strong {
   line-height: 1;
 }
 
-.btn.title {
+.modal-footer {
+  text-align: center;
+  -webkit-box-shadow: inset 0 1px 0 0 #e1e4e6;
+  box-shadow: inset 0 1px 0 0 #e1e4e6;
+  padding: 24px 0;
+}
 
+.modal-footer .btn {
+  font-weight: 500;
+  padding: 15px 23px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.modal-footer p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #939ca3;
+  margin-top: 16px;
+}
+
+.re-link--gray {
+  color: #939ca3;
+}
+
+.btn-xl {
+  padding: 10px 32px;
+  font-size: 18px;
+  line-height: 14px;
+}
+
+.cart__form {
+  -webkit-box-shadow: inset 0 -1px 0 #edeeef;
+  box-shadow: inset 0 -1px 0 #edeeef;
+  padding: 0 24px;
+}
+
+.cart__form--type {
+  padding-bottom: 16px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.cart__form--type .cart__form__block {
+  max-width: 100%;
+}
+
+.cart__form__block {
+  max-width: 490px;
+}
+
+.cart__form--type .form-customer {
+  width: 490px;
+  margin-top: 16px;
+}
+
+.cart__form__line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.margin-bottom {
+  margin-bottom: 8px;
+}
+
+.cart-submit {
+  background-color: #cb1c22;
+  color: #fff;
+  outline: 0;
+}
+
+.cart__form__line .form-check {
+  color: #444b52;
+  width: 72px;
+  display: inline-block ;
+}
+
+.form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*.modal-body .form-check input {*/
+/*  margin: 0 8px 0 0;*/
+/*  position: relative;*/
+/*  top: 3px;*/
+/*}*/
+
+/*.form-check input {*/
+/*  position: relative;*/
+/*  border: none;*/
+/*  margin: 0 8px 0 0;*/
+/*  -webkit-appearance: none;*/
+/*  -moz-appearance: none;*/
+/*  appearance: none;*/
+/*  cursor: pointer;*/
+/*  outline: 0;*/
+/*}*/
+
+.cart__form__line .form-check label {
+  font-size: 14px;
+  line-height: 10px;
+}
+
+.form-check label {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .option {
