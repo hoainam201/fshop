@@ -1,11 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
 import './assets/main.css'
 import router from './router'
 
 import "bootstrap/dist/js/bootstrap.js"
-//import "bootstrap"
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+// const bootstrap = require('bootstrap')
+// import {BootstrapVue, IconsPlugin} from "bootstrap-vue"
 
 import 'mdb-vue-ui-kit/css/mdb.min.css';
 

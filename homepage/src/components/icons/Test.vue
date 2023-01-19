@@ -1,27 +1,21 @@
 <template>
-  <div class="loyalty">
-    <div class="btn-loyalty">
-      <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-              title="Điểm thưởng khi mua hàng. Quý khách có thể sử dụng đổi thành Voucher khi thanh toán. ">
-        <span>F</span>
-        <strong>+ 487 điểm thưởng dự kiến</strong>
-        <font-awesome-icon icon="fa-solid fa-circle-info" />
-      </button>
+  <div>
+    <div class="input-group flex-nowrap">
+      <!--    <span class="input-group-text" id="addon-wrapping">@</span>-->
+      <input type="text" class="form-control" placeholder="Nhập họ và tên" aria-label="Username" aria-describedby="addon-wrapping">
+      <input type="number" class="form-control" placeholder="Nhập số điện thoại" aria-label="PhoneNumber" aria-describedby="addon-wrapping">
+      <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)" aria-label="Email" aria-describedby="addon-wrapping">
     </div>
+    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Test',
+  data() {
+    return {
+      text: ''
+    }
+  }
 }
 </script>
-
-<style>
-  @import "@/assets/main.css";
-  @import "@/assets/slider.css";
-  @import "@/assets/slider-card.css";
-  @import "@/assets/reponsive.css";
-  @import "@/assets/grid.css";
-  @import "@/assets/style.css";
-</style>

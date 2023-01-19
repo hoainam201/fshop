@@ -58,10 +58,32 @@
 
 <script>
 export default {
-  name: "BuyNow"
+  name: "BuyNow",
+  data() {
+    return {
+      types: [
+        'text',
+        'number',
+        'email',
+        'password',
+        'search',
+        'url',
+        'tel',
+        'date',
+        'time',
+        'range',
+        'color'
+      ]
+    }
+  }
 }
 </script>
 
 <style>
-
+  @import "@/assets/main.css";
+  @import "@/assets/slider.css";
+  @import "@/assets/slider-card.css";
+  @import "@/assets/reponsive.css";
+  @import "@/assets/grid.css";
+  @import "@/assets/style.css";
 </style>
