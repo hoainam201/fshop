@@ -34,6 +34,32 @@
                     </div>
                   </div>
                   <div class="cart__form__line margin-bottom cart__form__line--col">
+                    <div class="namecus">
+                      <input type="text" class="form-control" placeholder="Nhập họ và tên" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="phonecus">
+                      <input type="number" class="form-control" placeholder="Nhập số điện thoại" aria-label="PhoneNumber" aria-describedby="addon-wrapping">
+                    </div>
+                    <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)" aria-label="Email" aria-describedby="addon-wrapping">
+                  </div>
+                </div>
+                <div class="cart__form__line form-delivery" style="display: block">
+                  <div class="cart__title">Chọn hình thức nhận hàng</div>
+                  <div class="cart__payment">
+                    <div class="cart__payment__wrap cart__methodship">
+                      <div class="form-check margin-right" style="width: 160px">
+                        <input readonly class="form-check-input" type="radio" name="methodship" id="radio-cart3">
+                        <label class="form-check-label" for="radio-cart3">
+                          Giao hàng tận nơi
+                        </label>
+                      </div>
+                      <div class="form-check" style="width: 160px">
+                        <input readonly class="form-check-input" type="radio" name="methodship" id="radio-cart4">
+                        <label class="form-check-label" for="radio-cart4">
+                          Nhận tại cửa hàng
+                        </label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

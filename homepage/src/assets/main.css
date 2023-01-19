@@ -988,7 +988,7 @@ p {
   padding: 0
 }
 
-footer-certification {
+.footer-certification {
   margin-top: 10px;
   display: flex;
 }
@@ -1125,7 +1125,7 @@ img {
 .checkbox input[type=checkbox]:before {
   content: "";
   position: absolute;
-  top: 1.5px;
+  top: 2px;
   left: 6px;
   display: table;
   width: 5px;
@@ -1499,11 +1499,23 @@ strong {
   line-height: 1;
 }
 
+.modal .modal-dialog {
+  max-width: 776px;
+}
+
+.modal-dialog {
+  margin: 100px auto;
+  max-width: 800px;
+  width: 100%;
+  display: block;
+}
+
 .modal-footer {
   text-align: center;
   -webkit-box-shadow: inset 0 1px 0 0 #e1e4e6;
   box-shadow: inset 0 1px 0 0 #e1e4e6;
   padding: 24px 0;
+  display: block;
 }
 
 .modal-footer .btn {
@@ -1518,6 +1530,42 @@ strong {
   line-height: 20px;
   color: #939ca3;
   margin-top: 16px;
+}
+
+.cart__form--type .form-delivery {
+  width: 490px;
+}
+
+.cart__form .form-delivery {
+  margin-top: 16px;
+}
+
+.cart__title {
+  font-size: 16px;
+  line-height: 24px;
+  /*-ms-flex-preferred-size: 100%;*/
+  flex-basis: 100%;
+  font-weight: 500;
+  color: #32373d;
+  margin-bottom: 8px;
+}
+
+.cart__payment__wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.cart__methodship {
+  margin-bottom: 8px;
+}
+
+.cart__payment__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .re-link--gray {
@@ -1610,6 +1658,10 @@ strong {
   line-height: 10px;
 }
 
+.form-check input:checked+label {
+  font-weight: 500;
+}
+
 .form-check label {
   cursor: pointer;
   font-size: 14px;
@@ -1695,7 +1747,7 @@ li.option-color-item:nth-child(2) {
 .sale-gift-list li i {
   margin-top: 1px;
   color: #48bb78;
-  font-size: 14.5px;
+  font-size: 15px;
   margin-right: 8px;
   line-height: 1;
 }
@@ -1837,7 +1889,7 @@ li.option-color-item:nth-child(2) {
   border-radius: 4px;
   white-space: nowrap;
   color: #cecece;
-  -webkit-transform: translateX(-50%);
+  /*-webkit-transform: translateX(-50%);*/
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   -webkit-transition: all .4s ease;
