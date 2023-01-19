@@ -24,12 +24,22 @@
               <span class="name-category-label">({{ productNumber }})</span>
             </h1>
             <div class="rating-category">
-              <i class="fa fa-star active"></i>
-              <i class="fa fa-star active"></i>
-              <i class="fa fa-star active"></i>
-              <i class="fa fa-star active"></i>
-              <i class="fa fa-star"></i>
-              <span class="count-rate">333 Đánh giá</span>
+              <ul class="rating-star">
+                <li><i class="fa fa-star active"></i></li>
+                <li><i class="fa fa-star active"></i></li>
+                <li><i class="fa fa-star active"></i></li>
+                <li><i class="fa fa-star active"></i></li>
+                <li><i class="fa fa-star"></i></li>
+              </ul>
+              <div  class="rating-link">
+                <a id="re-rate" class="re-link" href="#"> 260 đánh giá</a>
+                <span>|</span>
+                <a class="re-link" href="#"> 107 Hỏi & đáp</a>
+              </div>
+              <a href="https://fptshop.com.vn/so-sanh-san-pham?samsung-galaxy-z-flip4-flex-mode-collection" class="re-link margin-left">
+                <span class="icon-plus margin-right"><font-awesome-icon icon="fa-solid fa-circle-plus" /></span>
+                So sánh
+              </a>
             </div>
           </div>
         </div>
@@ -130,13 +140,29 @@
           <div class="col l-6 m-12 c-12">
             <div class="content-product-detail-right">
               <div class="price">
-                <div class="price-main">
-                  15.499.000₫
-                </div>
-                <div class="price-sub">
+                <div class="price-left">
+                  <div class="price-main">
+                    15.499.000₫
+                  </div>
+                  <div class="price-sub">
                   <span style="text-decoration: line-through;">
                     19.999.000₫
                   </span>
+                  </div>
+                </div>
+                <div class="price-right">
+                  <span>Trả góp chỉ từ&nbsp;</span>
+                  <span><strong>2.169.500₫/tháng</strong></span>
+                </div>
+              </div>
+              <div class="loyalty">
+                <div class="btn-loyalty">
+                  <button type="button" class="btn btn-secondary loyalty-info" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                          title="Điểm thưởng khi mua hàng. Quý khách có thể sử dụng đổi thành Voucher khi thanh toán. ">
+                    <span>F</span>
+                    <strong>+ 487 điểm thưởng dự kiến</strong>
+                    <i><font-awesome-icon icon="fa-solid fa-circle-info" /></i>
+                  </button>
                 </div>
               </div>
               <div class="option">

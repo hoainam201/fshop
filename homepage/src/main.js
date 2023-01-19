@@ -36,17 +36,17 @@ import {
     faHardDrive,
     faTv,
     faChargingStation,
-    faBoxesPacking,
     faBagShopping,
-    faCheck,
-    faCircleCheck, faTruckFast, faImage, faBox,
+    faCircleCheck, faTruckFast, faImage, faBox, faCirclePlus,
 } from '@fortawesome/free-solid-svg-icons'
 import {faApple, faYoutube} from "@fortawesome/free-brands-svg-icons";
+import {faCircleInfo} from "@fortawesome/free-solid-svg-icons/faCircleInfo";
 
 /* add icons to the library */
 library.add(faUserSecret, faUser, faMobileScreenButton, faMedal, faBattery, faSimCard, faApple, faMobileButton,
             faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard, faMicrochip, faMobile, faMemory, faLaptop,
-            faWeightHanging, faHardDrive, faTv, faChargingStation, faBagShopping, faCircleCheck, faTruckFast, faImage, faYoutube, faBox)
+            faWeightHanging, faHardDrive, faTv, faChargingStation, faBagShopping, faCircleCheck, faTruckFast, faImage,
+            faYoutube, faBox, faCircleInfo, faCirclePlus)
 
 createApp(App)
     .use(router)
