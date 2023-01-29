@@ -17,21 +17,6 @@
                   <i class="fa fa-cart-shopping"></i> <br>
                 </div>
               </div>
-              <!-- end cart for mobile and tablet -->
-<!--              <div class="col l-5 m-6 c-12">-->
-<!--                <form class="search-top">-->
-<!--                  <input type="search" placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm">-->
-<!--                  <button class="button-search">-->
-<!--                    <i class="fa fa-magnifying-glass"></i>-->
-<!--                  </button>-->
-<!--                  <ul class="history-search">-->
-<!--                    <span class="title-history-search">Lịch sử tìm</span>-->
-<!--                    <li class="history-item"><a href="">Iphone</a></li>-->
-<!--                    <li class="history-item"><a href="">Samsung</a></li>-->
-<!--                    <li class="history-item"><a href="">Tai nghe</a></li>-->
-<!--                  </ul>-->
-<!--                </form>-->
-<!--              </div>-->
               <div class="col l-5 m-6 c-12" style="top: 10px">
                 <MDBInput
                     inputGroup
@@ -78,7 +63,7 @@
                       <span>Thanh toán &amp; Tiện ích</span>
                     </a>
                   </li>
-                  <li class="service-personal-account">
+                  <li class="service-personal-account" @click="openSignUp">
                     <a href="#">
                       <i><font-awesome-icon icon="fa-solid fa-user" /></i>
                       <span>Tài khoản của tôi</span>
@@ -591,6 +576,7 @@
 
 <script>
 import { MDBInput, MDBBtn, MDBIcon } from 'mdb-vue-ui-kit';
+import Login from "@/components/layouts/LoginForm/Login.vue"
 import { ref } from 'vue';
 
 export default {
@@ -599,6 +585,12 @@ export default {
     MDBInput,
     MDBBtn,
     MDBIcon,
+    Login,
+  },
+  props: {
+    openSignUp: {
+      type: Function,
+    },
   },
   setup() {
     const search5 = ref('');
