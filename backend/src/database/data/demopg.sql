@@ -32,14 +32,16 @@ create table products
 create table productImg
 (
     imgID     serial primary key,
-    img       bytea not null,
+    img       char not null,
     productID int,
     foreign key (productID) references products (productID)
 );
 
+
 create table discounts
 (
     discountID serial primary key,
+    price      int not null,
     startDate  date,
     endDate    date
 );
@@ -59,17 +61,15 @@ create table districts
 
 create table customers
 (
-    customerID       serial primary key,
-    phone            varchar unique,
+    phone            varchar primary key ,
     accumulatePoints int default 0
 );
 
 create table contacts
 (
     contactId   serial primary key,
-    phone       varchar,
+    phone       varchar references customers(phone),
     contactName varchar,
-    customerID  int references customers (customerID),
     districtsId char(3) references districts (districtsId),
     address     varchar
 );
@@ -77,7 +77,7 @@ create table contacts
 create table orders
 (
     orderID      serial primary key,
-    contactId   int,
+    contactId    int,
     orderDate    date default current_date,
     requiredDate date,
     shippedDate  date,
@@ -112,7 +112,7 @@ create table questions
 (
     questionID  serial primary key,
     productID   int references products (productID),
-    customerID  int references customers (customerID),
+    phone       varchar references customers(phone),
     question    text not null,
     createdTime timestamp
 );
@@ -130,7 +130,7 @@ create table reviews
 (
     reviewID    serial primary key,
     productID   int references products (productID),
-    customerID  int references customers (customerID),
+    phone       varchar references customers(phone),
     stars       int not null,
     node        text,
     createdTime timestamp

@@ -1,7 +1,8 @@
 const category = require('./categories');
 const admin = require('./admin');
-const account = require('./account')
-const site = require('./site')
+const account = require('./account');
+const site = require('./site');
+
 
 function route(app) {
     app.use('/admin', admin);
