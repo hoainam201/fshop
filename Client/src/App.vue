@@ -31,9 +31,9 @@ export default {
       this.isSignUp = false
     }
   }
-
-}
+};
 </script>
+
 <style>
 .view {
   position: relative;

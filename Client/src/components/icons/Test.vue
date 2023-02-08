@@ -1,21 +1,78 @@
 <template>
   <div>
-    <div class="input-group flex-nowrap">
-      <!--    <span class="input-group-text" id="addon-wrapping">@</span>-->
-      <input type="text" class="form-control" placeholder="Nhập họ và tên" aria-label="Username" aria-describedby="addon-wrapping">
-      <input type="number" class="form-control" placeholder="Nhập số điện thoại" aria-label="PhoneNumber" aria-describedby="addon-wrapping">
-      <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)" aria-label="Email" aria-describedby="addon-wrapping">
+    <div class="product">
+      <div class="grid wide ">
+        <div class="product-wapper">
+          <div class="row no-gutters">
+            <div class="col l-12 m-12 c-12">
+              <p class="title-product">ĐIỆN THOẠI NỔI BẬT</p>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <div v-for="product in products"
+                 :key="product.productid"
+                 class="col l-3 m-6 c-6 card-slider">
+              <div class="product-card-item product-card-item-sale">
+                <div class="product-card-item-content">
+                  <h3>
+                    <a href="/" class="title-card">{{ product.productname }}</a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import {ref} from "vue";
+
 export default {
-  data() {
+  name: "FeaturedPhone",
+  setup() {
+    const products = ref([])
+    const getAllProducts = async () => {
+      try {
+        const res = await axios.get(
+            // 'http://localhost:4000/admin/product'
+            'https://jsonplaceholder.typicode.com/todos?_limit=8'
+        )
+        // console.log(res.data)
+        products.value = res.data
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getAllProducts()
+    const addProduct = async newProduct => {
+      try {
+        const res = await axios.post(
+            // 'http://localhost:4000/admin/product',
+            'https://jsonplaceholder.typicode.com/todos',
+            newProduct
+        )
+        products.value.push(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
     return {
-      text: ''
+      products,
+      addProduct
     }
   }
 }
 </script>
+
+<style>
+@import "@/assets/main.css";
+@import "@/assets/slider.css";
+@import "@/assets/slider-card.css";
+@import "@/assets/reponsive.css";
+@import "@/assets/grid.css";
+@import "@/assets/style.css";
+</style>
