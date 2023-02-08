@@ -38,8 +38,8 @@ export default {
     const getAllProducts = async () => {
       try {
         const res = await axios.get(
-            // 'http://localhost:4000/admin/product'
-            'https://jsonplaceholder.typicode.com/todos?_limit=8'
+            'localhost:4000'
+            // 'https://jsonplaceholder.typicode.com/todos?_limit=8'
         )
         // console.log(res.data)
         products.value = res.data
@@ -51,8 +51,8 @@ export default {
     const addProduct = async newProduct => {
       try {
         const res = await axios.post(
-            // 'http://localhost:4000/admin/product',
-            'https://jsonplaceholder.typicode.com/todos',
+            'localhost:4000',
+            // 'https://jsonplaceholder.typicode.com/todos',
             newProduct
         )
         products.value.push(res.data)

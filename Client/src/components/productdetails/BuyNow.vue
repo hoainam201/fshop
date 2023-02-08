@@ -1,10 +1,11 @@
 <template>
-  <div>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <strong>
-          MUA NGAY
-        </strong>
+    <button type="button" class="btn btn-primary btn-xl btn-full" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+        <div>
+          <strong>
+            MUA NGAY
+          </strong>
+        </div>
         <p>Giao hàng miễn phí hoặc nhận tại shop</p>
     </button>
     <!-- Modal -->
@@ -64,6 +65,15 @@
                 </div>
               </div>
             </div>
+            <div class="product-quantity">
+              <tr v-for="item in basket" :key="item.name">
+                <td>
+                  <v-icon color="orange" @click="increaseQuantity(item)">add</v-icon>
+                  1
+                  <v-icon color="orange" @click="decreaseQuantity(item)">minus</v-icon>
+                </td>
+              </tr>
+            </div>
           </div>
           <div class="modal-footer">
 <!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
@@ -79,7 +89,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -100,6 +109,26 @@ export default {
         'range',
         'color'
       ]
+    }
+  },
+  methods: {
+    addToBasket(item) {
+      this.basket.push({
+        name: item.name,
+        price: item.price,
+        quantity: 1
+      })
+    },
+
+    increaseQuantity(item) {
+      item.quantity++;
+    },
+    decreaseQuantity(item) {
+      item.quantity--;
+
+      if (item.quantity === 0) {
+        this.basket.splice(this.basket.indexOf(item), 1);
+      }
     }
   }
 }

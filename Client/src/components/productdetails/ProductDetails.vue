@@ -165,24 +165,24 @@
                   </button>
                 </div>
               </div>
-              <div class="option">
-                <label class="form-check-option active">
-                  <input type="radio" class="form-check-option" name="radio" id="" checked>
-                  RAM 4G ROM 64G
-                </label>
-                <label class="form-check-option">
-                  <input type="radio" class="form-check-option" name="radio" id="">
-                  RAM 6G ROM 12G
-                </label>
-              </div>
-              <div class="option-color-wrapper">
-                <span>Màu sắc: </span>
-                <ul class="option-color">
-                  <li class="option-color-item"></li>
-                  <li class="option-color-item"></li>
-                  <li class="option-color-item"></li>
-                </ul>
-              </div>
+<!--              <div class="option">-->
+<!--                <label class="form-check-option active">-->
+<!--                  <input type="radio" class="form-check-option" name="radio" id="" checked>-->
+<!--                  RAM 4G ROM 64G-->
+<!--                </label>-->
+<!--                <label class="form-check-option">-->
+<!--                  <input type="radio" class="form-check-option" name="radio" id="">-->
+<!--                  RAM 6G ROM 12G-->
+<!--                </label>-->
+<!--              </div>-->
+<!--              <div class="option-color-wrapper">-->
+<!--                <span>Màu sắc: </span>-->
+<!--                <ul class="option-color">-->
+<!--                  <li class="option-color-item"></li>-->
+<!--                  <li class="option-color-item"></li>-->
+<!--                  <li class="option-color-item"></li>-->
+<!--                </ul>-->
+<!--              </div>-->
               <div class="sale-gift">
                 <div class="sale-gift-title">Nhận ngay khuyến mại đặc biệt</div>
                 <ul class="sale-gift-list sale-gift-list__more">
@@ -296,19 +296,20 @@
                 </ul>
               </div>
               <div class="pay-cate">
-                <div class="pay-now">
-                  <strong>
-                    MUA NGAY
-                  </strong>
-                  <p>Giao hàng miễn phí hoặc nhận tại shop</p>
-                </div>
-                <div class="pay-with">
+<!--                <div class="pay-now">-->
+<!--                  <strong>-->
+<!--                    MUA NGAY-->
+<!--                  </strong>-->
+<!--                  <p>Giao hàng miễn phí hoặc nhận tại shop</p>-->
+<!--                </div>-->
+                <BuyNow />
+                <div class="btn btn-info btn-xl btn--half">
                   <strong>
                     TRẢ GÓP 0%
                   </strong>
                   <p>Duyệt nhanh qua điện thoại</p>
                 </div>
-                <div class="pay-with">
+                <div class="btn btn-info btn-xl btn--half">
                   <strong>
                     TRẢ GÓP QUA THẺ
                   </strong>
@@ -450,10 +451,11 @@
 <script>
 
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
+import BuyNow from "@/components/productdetails/BuyNow.vue";
 
 export default {
   name: 'ProductDetails',
-  components: {ItemInfoPromo},
+  components: {BuyNow, ItemInfoPromo},
 
   data() {
     return {
