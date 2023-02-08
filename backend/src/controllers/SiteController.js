@@ -17,13 +17,13 @@ class SiteController{
             if (err) {
                 return next(err);
             }
-            res.json(result.rows);
-        })
-        db.query('select * from products', [], (err, result) => {
-            if (err) {
-                return next(err);
-            }
-            res.json(result.rows);
+            res.data(result.rows);
+        // })
+        // db.query('select * from products', [], (err, result) => {
+        //     if (err) {
+        //         return next(err);
+        //     }
+        //     // res.json(result.rows);
         })
     }
 

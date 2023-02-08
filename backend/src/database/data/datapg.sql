@@ -25,5 +25,5 @@ values ('Apple', 'Mỹ'),
 
 insert into products(productname, supplierid, categoryid, description, price, point, unitonorders, discontinue)
 values ('iPhone 13', 1, 1, '', 19990000, 1999, 1, true),
-       ('Asus ROG 6 DIABLO', 8, 1, '', 29990000, 2999, 1, true),
+       ('Asus ROG 6 DIABLO', 8, 1, '', 29990000, 2999, 1, true)
 
