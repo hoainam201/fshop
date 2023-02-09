@@ -33,12 +33,18 @@ import {ref} from "vue";
 
 export default {
   name: "FeaturedPhone",
+  data() {
+    return {
+      products: []
+    }
+  },
+
   setup() {
     const products = ref([])
     const getAllProducts = async () => {
       try {
         const res = await axios.get(
-            'localhost:4000'
+            'http://localhost:4000'
             // 'https://jsonplaceholder.typicode.com/todos?_limit=8'
         )
         // console.log(res.data)
@@ -51,7 +57,7 @@ export default {
     const addProduct = async newProduct => {
       try {
         const res = await axios.post(
-            'localhost:4000',
+            'http://localhost:4000',
             // 'https://jsonplaceholder.typicode.com/todos',
             newProduct
         )

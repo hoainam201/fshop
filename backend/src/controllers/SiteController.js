@@ -8,7 +8,7 @@ class SiteController{
             if (err) {
                 return next(err);
             }
-            res.json(result.rows);
+            //res.json(result.rows);
         })
     }
 
@@ -17,7 +17,7 @@ class SiteController{
             if (err) {
                 return next(err);
             }
-            res.data(result.rows);
+            res.json(result.rows);
         // })
         // db.query('select * from products', [], (err, result) => {
         //     if (err) {
