@@ -15,7 +15,7 @@
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
                   <router-link to="/product-detail">
-                    <img :src="product.img_url"
+                    <img :src="img_url"
                          alt="{{ product.productname }}">
                   </router-link>
                   <div class="sticker">
@@ -29,7 +29,7 @@
                     <a href="/" class="title-card">{{ product.productname }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ product.price_sale }} đ</span>
+                    <span class="new-price">{{ product.price - this.discount }} đ</span>
                     <span class="old-price">{{ product.price }} đ</span>
                   </div>
                   <div class="card-item-info__promo">
@@ -81,11 +81,14 @@ import {ref} from "vue";
 export default {
   name: "FeaturedPhone",
   components: {ItemInfoPromo},
-  // data() {
-  //   return {
-  //     products: [],
-  //   }
-  // },
+  data() {
+    return {
+      products: [],
+      discount: 500000,
+      img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/2/638109492836018083_oppo-reno8-t-5g-dd-moi.jpg"
+    }
+  },
+
   setup() {
     const products = ref([])
     const getAllProducts = async () => {
@@ -115,7 +118,13 @@ export default {
       products,
       addProduct
     }
-  }
+  },
+
+  // computed: {
+  //   discounted() {
+  //     return product.price - this.discount
+  //   }
+  // }
 }
 </script>
 
