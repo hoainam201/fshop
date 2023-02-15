@@ -1,9 +1,17 @@
 <template>
     <div class="login-fade">
         <div class="login-form">
-          <div class="login-header">Đăng nhập vào tài khoản <div class="icon-close" @click="closeSignUp">X</div></div>
-          <div class="image-phone"></div>
-          <div class="content">Nhập số điện thoại để <br/>mua hàng tại FPT Shop</div>
+          <div class="login-header">Đăng nhập hoặc tạo tài khoản
+            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>
+          </div>
+          <div class="image-login text-center">
+            <picture>
+              <img src="https://fptshop.com.vn/Content/v5d/account/images/img-login.png?v=123"
+                   alt="Nhấp số điện thoại"
+                   width="156" height="156" loading="lazy">
+            </picture>
+          </div>
+          <div class="content">Nhập số điện thoại mua hàng để hưởng <br/>đặc quyền riêng tại FPT Shop</div>
           <div class="input-phone"><input type="text" placeholder="Nhập số điện thoại"></div>
           <div class="btn-submit">TIẾP TỤC</div>
         </div>
@@ -67,7 +75,7 @@
     color: #ccc;
   }
   .image-phone {
-    background-image: url('../../../assets/images/header/login.png');
+    background-image: url('@/assets/images/header/img-login.png');
     height: 156px;
     width: 156px;
     margin: auto;
