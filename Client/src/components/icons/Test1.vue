@@ -58,49 +58,26 @@
 <!--</script>-->
 
 <template>
-  <!-- Button trigger modal -->
-  <div class="product-quantity">
-    <tr v-for="item in basket" :key="item.name">
-      <td>
-        <button class="btn btn-success" @click="decreaseQuantity()">-</button>
-        {{ quantity }} &nbsp;
-        <button class="btn btn-success" @click="increaseQuantity()">+</button>
-      </td>
-    </tr>
+  <div>
+    <p>{{ formatCurrency(1000000) }}</p>
+    <p>{{ formatCurrency(2000000) }}</p>
+    <p>{{ formatCurrency(3000000) }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "BuyNow",
-  data() {
-    return {
-      quantity: 0
-    };
-  },
   methods: {
-    // addToBasket(item) {
-    //   this.basket.push({
-    //     name: item.name,
-    //     price: item.price,
-    //     quantity: 1
-    //   })
-    // },
-
-    increaseQuantity(cartItem) {
-      cartItem.product.inStock--
-      cartItem.quantity++;
+    formatCurrency(number) {
+      return number.toLocaleString('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+      })
     },
-    decreaseQuantity(cartItem) {
-      this.quantity--;
-
-      // if (this.quantity === 0) {
-      //   this.basket.splice(this.basket.indexOf(item), 1);
-      // }
-    }
-  }
+  },
 }
 </script>
+
 
 <style>
 @import "@/assets/main.css";

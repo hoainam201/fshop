@@ -188,11 +188,11 @@ p {
 }
 
 .price {
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-  /*flex-wrap: wrap;*/
-  /*align-items: center;*/
-  /*margin-bottom: 10px*/
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
   display: flex;
   margin-bottom: 16px;
 }

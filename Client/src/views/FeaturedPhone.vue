@@ -21,7 +21,7 @@
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
-                    <span class="stickers sticker-sale">Lì xì 3.000.000</span>
+                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(discount) }}</span>
                   </div>
                 </div>
                 <div class="product-card-item-content">
@@ -29,8 +29,8 @@
                     <a href="/" class="title-card">{{ product.productname }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ product.price - this.discount }} đ</span>
-                    <span class="old-price">{{ product.price }} đ</span>
+                    <span class="new-price">{{ formatCurrency(product.price - discount) }}</span>
+                    <span class="old-price">{{ formatCurrency(product.price) }}</span>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
@@ -89,6 +89,15 @@ export default {
     }
   },
 
+  methods: {
+    formatCurrency(number) {
+      return number.toLocaleString('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+      })
+    },
+  },
+
   setup() {
     const products = ref([])
     const getAllProducts = async () => {
@@ -102,6 +111,7 @@ export default {
         console.log(error)
       }
     }
+
     getAllProducts()
     const addProduct = async newProduct => {
       try {
@@ -114,6 +124,7 @@ export default {
         console.log(error)
       }
     }
+
     return {
       products,
       addProduct
