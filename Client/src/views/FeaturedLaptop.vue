@@ -21,7 +21,7 @@
                   <div class="sticker">
                     <span class="stickers sticker-event">{{ laptopproduct.installment }}</span>
                     <br>
-                    <span class="stickers sticker-sale">{{ laptopproduct.sale }}</span>
+                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(discount) }}</span>
                   </div>
                 </div>
                 <div class="product-card-item-content">
@@ -29,8 +29,8 @@
                     <a href="/" class="title-card">{{ laptopproduct.name }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ laptopproduct.price_sale }} đ</span>
-                    <span class="old-price">{{ laptopproduct.price }} đ</span>
+                    <span class="new-price">{{ formatCurrency(laptop_price - discount) }}</span>
+                    <span class="old-price">{{ formatCurrency(laptop_price) }}</span>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
@@ -83,128 +83,132 @@
 
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
+import { formatCurrency } from '@/router/utils'
 
 export default {
   name: "FeaturedLaptop",
   components: {ItemInfoPromo},
   data() {
     return {
-      // laptopproducts: [
-      //   {
-      //     id: "l1",
-      //     name: "MacBook Air 13\" 2020 M1 256GB",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-      //     price_sale: "20.000.000",
-      //     price: "25.000.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i5",
-      //     ram: "8 GB",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-      //     weight: "2 kg",
-      //   },
-      //   {
-      //     id: "l2",
-      //     name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-      //     price_sale: "20.000.000",
-      //     price: "25.000.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i5",
-      //     ram: "8 GB",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-      //     weight: "2 kg",
-      //     installment: "Trả góp 0%",
-      //     sale: "Lì xì 3.000.000đ",
-      //   },
-      //   {
-      //     id: "l3",
-      //     name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-      //     price_sale: "20.790.000",
-      //     price: "25.990.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i7",
-      //     ram: "8 GB (1 thanh 8 GB)",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 4GB",
-      //     weight: "2.25 kg"
-      //   },
-      //   {
-      //     id: "l4",
-      //     name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-      //     price_sale: "20.000.000",
-      //     price: "25.000.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i5",
-      //     ram: "8 GB",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-      //     weight: "2 kg",
-      //     installment: "Trả góp 0%",
-      //     sale: "Lì xì 3.000.000đ",
-      //   },
-      //   {
-      //     id: "l5",
-      //     name: "MacBook Air 13\" 2020 M1 256GB",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-      //     price_sale: "20.790.000",
-      //     price: "25.990.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i7",
-      //     ram: "8 GB (1 thanh 8 GB)",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 4GB",
-      //     weight: "2.25 kg",
-      //     installment: "Trả góp 0%",
-      //     sale: "Lì xì 3.000.000đ",
-      //   },
-      //   {
-      //     id: "l6",
-      //     name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-      //     price_sale: "20.000.000",
-      //     price: "25.000.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i5",
-      //     ram: "8 GB",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-      //     weight: "2 kg"
-      //   },
-      //   {
-      //     id: "l7",
-      //     name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-      //     price_sale: "20.790.000",
-      //     price: "25.990.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i7",
-      //     ram: "8 GB (1 thanh 8 GB)",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 4GB",
-      //     weight: "2.25 kg",
-      //     installment: "Trả góp 0%",
-      //     sale: "Lì xì 3.000.000đ",
-      //   },
-      //   {
-      //     id: "l8",
-      //     name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
-      //     img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-      //     price_sale: "20.000.000",
-      //     price: "25.000.000",
-      //     screen: "15.6 inch",
-      //     cpu: "Core i5",
-      //     ram: "8 GB",
-      //     harddrive: "SSD 512 GB",
-      //     graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-      //     weight: "2 kg"
-      //   },
-      // ],
+      laptopproducts: [
+        {
+          id: "l1",
+          name: "MacBook Air 13\" 2020 M1 256GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
+          discount: "2000000",
+          laptop_price: "25000000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg",
+        },
+        {
+          id: "l2",
+          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
+          discount: "2000000",
+          laptop_price: "25000000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg",
+          installment: "Trả góp 0%",
+        },
+        {
+          id: "l3",
+          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
+          discount: "2090000",
+          laptop_price: "25990000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg"
+        },
+        {
+          id: "l4",
+          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
+          discount: "2000000",
+          laptop_price: "25000000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg",
+          installment: "Trả góp 0%",
+        },
+        {
+          id: "l5",
+          name: "MacBook Air 13\" 2020 M1 256GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
+          discount: "2079000",
+          laptop_price: "25990000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg",
+          installment: "Trả góp 0%",
+        },
+        {
+          id: "l6",
+          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
+          discount: "2000000",
+          laptop_price: "25000000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
+        },
+        {
+          id: "l7",
+          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
+          discount: "2079000",
+          laptop_price: "25990000",
+          screen: "15.6 inch",
+          cpu: "Core i7",
+          ram: "8 GB (1 thanh 8 GB)",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 4GB",
+          weight: "2.25 kg",
+          installment: "Trả góp 0%",
+        },
+        {
+          id: "l8",
+          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
+          discount: "2000000",
+          laptop_price: "25000000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg"
+        },
+      ],
+      laptop_price: 25000000,
+      discount: 500000,
     }
-  }
+  },
+
+  methods: {
+    formatCurrency,
+  },
+
 }
 </script>
 

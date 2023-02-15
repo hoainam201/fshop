@@ -66,17 +66,15 @@
 </template>
 
 <script>
+import { formatCurrency } from '@/router/utils'
+
 export default {
   methods: {
-    formatCurrency(number) {
-      return number.toLocaleString('vi-VN', {
-        style: 'currency',
-        currency: 'VND',
-      })
-    },
+    formatCurrency,
   },
 }
 </script>
+
 
 
 <style>

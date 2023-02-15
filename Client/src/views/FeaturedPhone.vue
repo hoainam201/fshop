@@ -77,6 +77,7 @@
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import axios from "axios";
 import {ref} from "vue";
+import {formatCurrency} from "@/router/utils";
 
 export default {
   name: "FeaturedPhone",
@@ -90,12 +91,7 @@ export default {
   },
 
   methods: {
-    formatCurrency(number) {
-      return number.toLocaleString('vi-VN', {
-        style: 'currency',
-        currency: 'VND',
-      })
-    },
+    formatCurrency,
   },
 
   setup() {
