@@ -29,8 +29,16 @@
                     <a href="/" class="title-card">{{ laptopproduct.name }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ formatCurrency(laptop_price - discount) }}</span>
-                    <span class="old-price">{{ formatCurrency(laptop_price) }}</span>
+                    <div class="progress">
+                      {{ formatCurrency(laptop_price - discount) }}
+                      <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth }" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+<!--                    <span class="old-price">{{ formatCurrency(laptop_price) }}</span>-->
+                    <div class="strike-price">
+                      <strike>
+                        {{ formatCurrency(laptop_price) }}
+                      </strike>
+                    </div>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
@@ -202,11 +210,18 @@ export default {
       ],
       laptop_price: 25000000,
       discount: 500000,
+      progress: 84,
     }
   },
 
   methods: {
     formatCurrency,
+  },
+
+  computed: {
+    progressBarWidth() {
+      return `${this.progress}%`;
+    },
   },
 
 }

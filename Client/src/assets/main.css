@@ -189,12 +189,46 @@ p {
 
 .price {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 10px;
-  display: flex;
+  justify-content: space-between;
   margin-bottom: 16px;
+}
+
+.price .progress {
+  flex-basis: 130px;
+  width: 130px;
+  height: 28px;
+  border-radius: 15px;
+  background-color: #ef8573;
+  text-align: center;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.price .progress-bar {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #cb1c22;
+}
+
+.price .strike-price {
+  text-align: right;
+  position: relative;
+}
+
+.price .strike-price strike {
+  font-size: 14px;
+  line-height: 15px;
+  color: #919191;
+  display: block;
 }
 
 .price-left {
@@ -213,6 +247,15 @@ p {
 /*}*/
 
 .new-price {
+  display: block;
+  padding: 5px 15px;
+  border-radius: 17px;
+  background-color: #cc2827;
+  color: #fff;
+  font-weight: 600;
+}
+
+.progress {
   display: block;
   padding: 5px 15px;
   border-radius: 17px;
@@ -608,7 +651,7 @@ p {
 
 .service {
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 86px;
   text-align: right;
 }
