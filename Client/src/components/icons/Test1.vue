@@ -110,7 +110,7 @@
 
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
-import { formatCurrency } from '@/router/utils'
+import { formatCurrency } from '@/utils'
 
 export default {
   name: "FeaturedLaptop",

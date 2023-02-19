@@ -77,7 +77,7 @@
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import axios from "axios";
 import {ref} from "vue";
-import {formatCurrency} from "@/router/utils";
+import {formatCurrency} from "@/utils";
 
 export default {
   name: "FeaturedPhone",

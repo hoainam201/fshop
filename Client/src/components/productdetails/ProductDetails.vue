@@ -11,7 +11,7 @@
               <li class="breadcrumb-item">
                 <router-link to="/phone">Điện thoại</router-link>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">{{ productName }}</li>
+              <li class="breadcrumb-item active" aria-current="page">{{ laptopproducts.name }}</li>
             </ol>
           </nav>
         </div>
@@ -20,7 +20,7 @@
         <div class="col l-12 c-12 m-12">
           <div class="title-product-detail">
             <h1 class="name-category">
-              {{ productName }}
+              {{ laptopproducts.name }}
               <span class="name-category-label">({{ productNumber }})</span>
             </h1>
             <div class="rating-category">
@@ -141,18 +141,14 @@
             <div class="content-product-detail-right">
               <div class="price">
                 <div class="price-left">
-                  <div class="price-main">
-                    15.499.000₫
-                  </div>
+                  <div class="price-main">{{ formatCurrency(salePrice) }}</div>
                   <div class="price-sub">
-                  <span style="text-decoration: line-through;">
-                    19.999.000₫
-                  </span>
+                  <span style="text-decoration: line-through;">{{ formatCurrency(price) }}</span>
                   </div>
                 </div>
                 <div class="price-right">
                   <span>Trả góp chỉ từ&nbsp;</span>
-                  <span><strong>2.169.500₫/tháng</strong></span>
+                  <span><strong>{{ formatCurrency(salePricePerMonth ) }}/tháng</strong></span>
                 </div>
               </div>
               <div class="loyalty">
@@ -241,19 +237,6 @@
                     </div>
                   </li>
                 </ul>
-<!--                <b-form-group-->
-<!--                    label="Ship via:"-->
-<!--                    label-cols-sm="3"-->
-<!--                    label-align-sm="right"-->
-<!--                    class="mb-0"-->
-<!--                    v-slot="{ ariaDescribedby }"-->
-<!--                >-->
-<!--                  <b-form-radio-group-->
-<!--                      class="pt-2"-->
-<!--                      :options="['Air', 'Courier', 'Mail']"-->
-<!--                      :aria-describedby="ariaDescribedby"-->
-<!--                  ></b-form-radio-group>-->
-<!--                </b-form-group>-->
               </div>
               <div class="pay-methods">
                 <ul>
@@ -337,61 +320,6 @@
             </div>
             <div class="product-cate-card active">
               <div class="row no-gutters">
-<!--                <div v-for="laptopproduct in laptopproducts"-->
-<!--                     :key="laptopproduct.id"-->
-<!--                     class="col l-3 m-6 c-6 card-slider">-->
-<!--                  <div class="product-card-item product-card-item-sale">-->
-<!--                    <div class="product-card-item-img">-->
-<!--                      <router-link to="/product-detail">-->
-<!--                        <img :src="laptopproduct.img_url"-->
-<!--                             alt="{{ laptopproduct.name }}">-->
-<!--                      </router-link>-->
-<!--                      <div class="sticker">-->
-<!--                        <span class="stickers sticker-event">Trả góp 0%</span>-->
-<!--                        <br>-->
-<!--                        <span class="stickers sticker-sale">Lì xì 3.000.000</span>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                    <div class="product-card-item-content">-->
-<!--                      <h3>-->
-<!--                        <a href="/" class="title-card">{{ laptopproduct.name }}</a>-->
-<!--                      </h3>-->
-<!--                      <div class="price">-->
-<!--                        <span class="new-price">{{ laptopproduct.price_sale }} đ</span>-->
-<!--                        <span class="old-price">{{ laptopproduct.price }} đ</span>-->
-<!--                      </div>-->
-<!--                      <div class="card-item-info__promo">-->
-<!--                        <div class="card-item-info__promo-product">-->
-<!--                                  <span>-->
-<!--                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>-->
-<!--                                    {{ laptopproduct.screen }}-->
-<!--                                  </span>-->
-<!--                          <span>-->
-<!--                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>-->
-<!--                                    {{ laptopproduct.cpu }}-->
-<!--                                  </span>-->
-<!--                          <span>-->
-<!--                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>-->
-<!--                                    {{ laptopproduct.ram }}-->
-<!--                                  </span>-->
-<!--                          <span>-->
-<!--                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>-->
-<!--                                    {{ laptopproduct.harddrive }}-->
-<!--                                  </span>-->
-<!--                          <span>-->
-<!--                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>-->
-<!--                                    {{ laptopproduct.graphics }}-->
-<!--                                  </span>-->
-<!--                          <span>-->
-<!--                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>-->
-<!--                                    {{ laptopproduct.weight }}-->
-<!--                                  </span>-->
-<!--                        </div>-->
-<!--                        <ItemInfoPromo />-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
                 <div v-for="phoneproduct in phoneproducts"
                      :key="phoneproduct.id"
                      class="col l-3 m-6 c-6 card-slider">
@@ -452,9 +380,14 @@
 
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import BuyNow from "@/components/productdetails/BuyNow.vue";
+import {formatCurrency} from "@/utils";
+import globalMixin from "@/utils";
 
 export default {
   name: 'ProductDetails',
+  methods: {
+    formatCurrency,
+  },
   components: {BuyNow, ItemInfoPromo},
 
   data() {
@@ -508,9 +441,29 @@ export default {
       checkedEvo: [],
       checkedKredivo: [],
       productName: "iPhone 13 128GB",
-      productNumber: "No.00719655"
+      productNumber: "No.00719655",
+      laptopproducts: [
+        {
+          id: "l1",
+          name: "MacBook Air 13\" 2020 M1 256GB",
+          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
+          discount: "2000000",
+          price: "25000000",
+          screen: "15.6 inch",
+          cpu: "Core i5",
+          ram: "8 GB",
+          harddrive: "SSD 512 GB",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          weight: "2 kg",
+        },
+      ],
+      price: 25000000,
+      discount: 500000,
+      progress: 84,
     }
-  }
+  },
+
+  mixins: [globalMixin],
 }
 </script>
 

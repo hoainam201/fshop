@@ -16,7 +16,7 @@ import SliderCard from "@/views/SliderCard.vue";
 import Accessory from "@/views/Accessory.vue";
 import FeaturedLaptop from "@/views/FeaturedLaptop.vue";
 import FeaturedPhone from "@/views/FeaturedPhone.vue";
-import {formatCurrency} from "@/router/utils";
+import {formatCurrency} from "@/utils";
 
 export default {
   name: 'HomeView',
