@@ -29,8 +29,17 @@
                     <a href="/" class="title-card">{{ product.productname }}</a>
                   </h3>
                   <div class="price">
-                    <span class="new-price">{{ formatCurrency(product.price - discount) }}</span>
-                    <span class="old-price">{{ formatCurrency(product.price) }}</span>
+                    <div class="progress">
+                      {{ formatCurrency(salePrice) }}
+                      <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth }"
+                           aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
+                    <div class="strike-price">
+                      <strike>
+                        {{ formatCurrency(price) }}
+                      </strike>
+                    </div>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
@@ -77,7 +86,7 @@
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import axios from "axios";
 import {ref} from "vue";
-import {formatCurrency} from "@/utils";
+import globalMixin, {formatCurrency} from "@/utils";
 
 export default {
   name: "FeaturedPhone",
@@ -85,7 +94,8 @@ export default {
   data() {
     return {
       products: [],
-      discount: 500000,
+      price: 25000000,
+      discount: 5000000,
       img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/2/638109492836018083_oppo-reno8-t-5g-dd-moi.jpg"
     }
   },
@@ -126,6 +136,7 @@ export default {
       addProduct
     }
   },
+  mixins: [globalMixin],
 
   // computed: {
   //   discounted() {

@@ -43,30 +43,30 @@
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
-                                  <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
-                                    {{ laptopproduct.screen }}
-                                  </span>
                       <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ laptopproduct.cpu }}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                        {{ laptopproduct.screen }}
+                      </span>
                       <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ laptopproduct.ram }}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ laptopproduct.cpu }}
+                      </span>
                       <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
-                                    {{ laptopproduct.harddrive }}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ laptopproduct.ram }}
+                      </span>
                       <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ laptopproduct.graphics }}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                        {{ laptopproduct.harddrive }}
+                      </span>
                       <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
-                                    {{ laptopproduct.weight }}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ laptopproduct.graphics }}
+                      </span>
+                      <span>
+                        <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                        {{ laptopproduct.weight }}
+                      </span>
                     </div>
                     <ItemInfoPromo />
                   </div>
@@ -211,7 +211,6 @@ export default {
       ],
       price: 25000000,
       discount: 5000000,
-      progress: 84,
     }
   },
 

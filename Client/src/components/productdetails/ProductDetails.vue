@@ -20,7 +20,7 @@
         <div class="col l-12 c-12 m-12">
           <div class="title-product-detail">
             <h1 class="name-category">
-              {{ laptopproducts.name }}
+              {{ productName }}
               <span class="name-category-label">({{ productNumber }})</span>
             </h1>
             <div class="rating-category">
@@ -340,8 +340,17 @@
                         <a href="/" class="title-card">{{ phoneproduct.name }}</a>
                       </h3>
                       <div class="price">
-                        <span class="new-price">{{ phoneproduct.price_sale }} đ</span>
-                        <span class="old-price">{{ phoneproduct.price }} đ</span>
+                        <div class="progress">
+                          {{ formatCurrency(salePrice) }}
+                          <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth }"
+                               aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
+                        <div class="strike-price">
+                          <strike>
+                            {{ formatCurrency(price) }}
+                          </strike>
+                        </div>
                       </div>
                       <div class="card-item-info__promo">
                         <div class="card-item-info__promo-product">

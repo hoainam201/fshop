@@ -1,27 +1,30 @@
 <template>
   <div>
-    <label>Price:</label>
-    <input v-model="price"/>
-
-    <label>Discount Percentage:</label>
-    <input v-model.number="discountPercentage"/>
-
-    <p>Discounted Price: {{ discounted }}</p>
+    <breadcrumb :items="breadcrumbItems" />
+    <h1>{{ pageTitle }}</h1>
   </div>
 </template>
 
 <script>
+import Breadcrumb from "./Breadcrumb.vue";
+
 export default {
+  components: {
+    Breadcrumb,
+  },
   data() {
     return {
-      price: 10000000,
-      discount: 500000
-    }
+      pageTitle: "Trang chủ",
+      breadcrumbItems: [
+        { label: "Trang chủ", link: "/" },
+        { label: "Điện thoại", link: "/phone-products" },
+        { label: "Laptop Dell", link: "/products/laptops/dell" },
+      ],
+    };
   },
-  computed: {
-    discounted() {
-      return this.price - this.discount
-    }
-  }
-}
+};
 </script>
+
+<style>
+/* Style cho component cha */
+</style>
