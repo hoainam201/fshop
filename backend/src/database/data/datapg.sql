@@ -39,25 +39,24 @@ values ('Apple', 'Mỹ'),--1
        ('Gigabyte', 'Mỹ');--12
 
 insert into products(productname, supplierid, categoryid, description, price, discount, unitonorders)
-values ('Iphone 13', 1, 1, '', 19990000, 1999, 1),
-       ('Asus ROG 6 DIABLO', 8, 1, '', 29990000, 3000000, 1),
-       ('Samsung Galaxy S22 Bora purple 5G', 4, 1, '', 21990000, 7000000, 1),
-       ('Xiaomi Redmi 10 4GB-128GB 2021', 5, 1, '', 4290000, 500000, 1),
-       ('Iphone 11 64GB', 1, 1, '', 14999000, 3700000, 1),
-       ('Oppp A57 4GB-128GB', 6, 1, '', 4990000, 700000, 1),
-       ('Samsung Galaxy S23 Ultra 5G 256GB', 4, 1, '', 31990000, 5000000, 1),
-       ('Iphone 14 Pro', 1, 1, '', 30990000, 5000000, 1),
+values ('Iphone 13', 1, 1, '{"monitor":"6.1 inch, OLED, Super Retina XDR, 2532 x 1170 Pixels","cam 1":"12.0 MP + 12.0 MP","cam 2":"12.0 MP","cpu ":"Apple A15 Bionic","rom":"128 GB"}', 19990000, 1999, 1),
+       ('Asus ROG 6 DIABLO', 8, 1, '{"monitor":"6.78 inch, AMOLED, FHD+, 2448 x 1080 Pixels","cam 1":"50.0 MP + 13.0 MP + 5.0 MP","cam 2":"12.0 MP","cpu ":"Snapdragon 8+ Gen 1","rom":"512 GB"}', 29990000, 3000000, 1),
+       ('Samsung Galaxy S22 Bora purple 5G', 4, 1, '{"monitor":"6.1 inch, Dynamic AMOLED 2X, FHD+, 1080 x 2340 Pixels","cam 1":"50.0 MP + 12.0 MP + 10.0 MP","cam 2":"10.0 MP","cpu ":"Snapdragon 8+ Gen 1","rom":"128 GB"}', 21990000, 7000000, 1),
+       ('Xiaomi Redmi 10 4GB-128GB 2021', 5, 1, '{"monitor":"6.5 inch, IPS LCD, FHD+, 1080 x 2400 Pixels","cam 1":"50.0 MP + 8.0 MP + 2.0 MP + 2.0 MP","cam 2":"8.0 MP","cpu ":"MediaTek Helio G88","rom":"128 GB"}', 4290000, 500000, 1),
+       ('Iphone 11 64GB', 1, 1, '{"monitor":"6.1 inch, IPS LCD, Liquid Retina HD, 828 x 1792 Pixels","cam 1":"12.0 MP + 12.0 MP","cam 2":"12.0 MP","cpu ":"Apple A13 Bionic","rom":"64 GB"}', 14999000, 3700000, 1),
+       ('Oppp A57 4GB-128GB', 6, 1, '{"monitor":"6.56 inch, LCD, HD+, 720 x 1612 Pixels","cam 1":"13.0 MP + 2.0 MP","cam 2":"8.0 MP","cpu ":"Helio G35","rom":"128 GB"}', 4990000, 700000, 1),
+       ('Samsung Galaxy S23 Ultra 5G 256GB', 4, 1, '{"monitor":"6.8 inch, Dynamic AMOLED 2X, QHD+, 1440 x 3088 Pixels","cam 1":"200.0 MP + 12.0 MP + 10.0 MP + 10.0 MP","cam 2":"12.0 MP","cpu ":"Snapdragon 8 Gen 2","rom":"256 GB"}', 31990000, 5000000, 1),
+       ('Iphone 14 Pro', 1, 1, '{"monitor":"6.1 inch, Super Retina XDR, 2556 x 1179 Pixels","cam 1":"48.0 MP + 12.0 MP","cam 2":"12.0 MP","cpu ":"Apple A16 Bionic","rom":"128 GB"}', 30990000, 5000000, 1),
        -------------------------------------------------------------
-       ('MacBook Air 13" 2020 M1 256GB', 1, 2, '', 26999000, 7000000, 1),
-       ('Asus TUF Gaming FX506LHB-HN188W i5 10300H', 9, 2, '', 20990000, 4700000, 1),
-       ('HP Pavilion 15 eg2058TU i5 1240P', 10, 2, '', 17990000, 2000000, 1),
-       ('Asus Vivobook M1403QA-LY022W R5 5600H', 8, 2, '', 16490000, 1500000, 1),
-       ('Lenovo IdeaPad 1 15AMN7 R5 7520U', 9, 2, '', 13490000, 1349000, 1),
-       ('Lenovo IdeaPad Gaming 3 15IAH7 i5 12500H', 9, 2, '', 27290000, 4300000, 1),
-       ('MSI Gaming GF63 Thin 11SC-1090VN i5 11400H', 11, 2, '', 18990000, 3000000, 1),
-       ('Gigabyte Gaming G5 GE-51VN263SH i5 12500H', 12, 2, '', 23990000, 2300000, 1);
+       ('MacBook Air 13" 2020 M1 256GB', 1, 2, '{"monitor" : "13.3 inch, 2560 x 1600 Pixels, IPS, IPS LCD LED Backlit, True Tone","cpu": "Apple M1","ram": "8 GB, LPDDR4","disk": "SSD 256 GB","gpu": "Apple M1 GPU 7 nhân"}', 26999000, 7000000, 1),
+       ('Asus TUF Gaming FX506LHB-HN188W i5 10300H', 9, 2, '{"monitor" : "15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, Anti-glare LED-backlit","cpu": "Intel Core i5 10300H","ram": "8 GB (1 thanh 8 GB), DDR4, 2933 MHz","disk": "SSD 512 GB","gpu": "NVIDIA GeForce GTX 1650 4GB; Intel UHD Graphics"}', 20990000, 4700000, 1),
+       ('HP Pavilion 15 eg2058TU i5 1240P', 10, 2, '{"monitor" : "15.6 inch, 1920 x 1080 Pixels, IPS, 250 nits, IPS FHD","cpu": "Intel Core i5 1240P","ram": "8 GB (2 thanh 4 GB), DDR4, 3200 MHz","disk": "SSD 256 GB","gpu": "Intel Iris Xe Graphics"}', 17990000, 2000000, 1),
+       ('Asus Vivobook M1403QA-LY022W R5 5600H', 8, 2, '{"monitor" : "14.0 inch, 1920 x 1200 Pixels, IPS, 60 Hz, 300 nits, LED Backlit","cpu": "AMD Ryzen 5 5600H","ram": "8 GB (1 thanh 8 GB), DDR4, 3200 MHz","disk": "SSD 512 GB","gpu": "AMD Radeon Graphics"}', 16490000, 1500000, 1),
+       ('Lenovo IdeaPad 1 15AMN7 R5 7520U', 9, 2, '{"monitor" : "15.6 inch, 1920 x 1080 Pixels, TN, 60 Hz, 220 nits, FHD","cpu": "AMD, Ryzen 5, 7520U","ram": "8 GB LPDDR5 5500 MHz","disk": "SSD 512 GB","gpu": "AMD Radeon 610 2GB"}', 13490000, 1349000, 1),
+       ('Lenovo IdeaPad Gaming 3 15IAH7 i5 12500H', 9, 2, '{"monitor" : "15.6 inch, 1920 x 1080 Pixels, IPS, 120 Hz, 250 nits, IPS LCD LED Backlit, True Tone","cpu": "Intel Core i5 12500H","ram": "16 GB (2 thanh 8 GB), DDR4, 3200 MHz","disk": "SSD 512 GB","gpu": "NVIDIA GeForce RTX 3050 4GB"}', 27290000, 4300000, 1),
+       ('MSI Gaming GF63 Thin 11SC-1090VN i5 11400H', 11, 2, '{"monitor" : "15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, IPS FHD","cpu": "Intel Core i5 11400H","ram": "8 GB (1 thanh 8 GB), DDR4, 3200 MHz","disk": "SSD 512 GB","gpu": "NVIDIA GeForce GTX 1650 4GB"}', 18990000, 3000000, 1),
+       ('Gigabyte Gaming G5 GE-51VN263SH i5 12500H', 12, 2, '{"monitor" : "15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, Anti-Glare LED-Backlit Display","cpu": "Intel Core i5 12500H","ram": "8 GB (1 thanh 8 GB), DDR4, 3200 MHz","disk": "SSD 512 GB","gpu": "NVIDIA GeForce RTX 3050 4GB; Intel Iris Xe Graphics"}', 23990000, 2300000, 1);
 
-truncate table productimg;
 insert into productimg(img, productid)
 values ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/25/637864945997429464_iphone-13-do-1.jpg', 1),
        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/25/637864946000085710_iphone-13-do-2.jpg', 1),
@@ -105,8 +104,7 @@ values ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(
        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054213959247730_ip-14-pro-tim-1.jpg', 8),
        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054213959584929_ip-14-pro-tim-2.jpg', 8),
        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054213960366728_ip-14-pro-tim-3.jpg', 8);
-       ----------------------------------------
-
+----------------------------------------
 
 
 

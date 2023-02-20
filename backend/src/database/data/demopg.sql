@@ -20,7 +20,7 @@ create table products
     productName  varchar not null,
     supplierID   int     not null, --ID của nhà sản xuất
     categoryID   int     not null, --ID loại sản phẩm
-    description  text,
+    description  json,
     price        int     not null, --Giá gốc
     discount     int     default 0, --Giá khuyến mại
     unitOnOrders smallint, --Đơn vị mua tối thiểu cho một đơn hàng
