@@ -15,13 +15,13 @@
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
                   <router-link to="/product-detail">
-                    <img :src="img_url"
+                    <img :src="product.img"
                          alt="{{ product.productname }}">
                   </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
-                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(discount) }}</span>
+                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
                   </div>
                 </div>
                 <div class="product-card-item-content">
@@ -37,7 +37,7 @@
                     <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
                     <div class="strike-price">
                       <strike>
-                        {{ formatCurrency(price) }}
+                        {{ formatCurrency(product.price) }}
                       </strike>
                     </div>
                   </div>

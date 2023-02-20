@@ -13,17 +13,13 @@ class SiteController{
     }
 
     home(req, res, next) {
-        db.query('select * from products', [], (err, result) => {
+        db.query('select products.*, (select img from productimg where products.productid = productimg.productid limit 1)\n' +
+            'from products\n' +
+            'where products.categoryid = 1;\n', [], (err, result) => {
             if (err) {
                 return next(err);
             }
             res.json(result.rows);
-        // })
-        // db.query('select * from products', [], (err, result) => {
-        //     if (err) {
-        //         return next(err);
-        //     }
-        //     // res.json(result.rows);
         })
     }
 
