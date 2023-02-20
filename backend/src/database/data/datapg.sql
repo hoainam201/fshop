@@ -103,8 +103,49 @@ values ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(
        ----------------------------------------
        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054213959247730_ip-14-pro-tim-1.jpg', 8),
        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054213959584929_ip-14-pro-tim-2.jpg', 8),
-       ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054213960366728_ip-14-pro-tim-3.jpg', 8);
-----------------------------------------
+       ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054213960366728_ip-14-pro-tim-3.jpg', 8),
+        ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407982638531818_mba-2020-gray-1.png', 9),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407982638531818_mba-2020-gray-2.png', 9),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407982637907068_mba-2020-gray-3.png', 9),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407982638375713_mba-2020-gray-4.png', 9),
+        ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637788079927538825_asus-tuf-gaming-fx506lh-den-2022-1.jpg', 10),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637788079927538825_asus-tuf-gaming-fx506lh-den-2022-2.jpg', 10),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637788079926445424_asus-tuf-gaming-fx506lh-den-2022-3.jpg', 10),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637788079927226319_asus-tuf-gaming-fx506lh-den-2022-4.jpg', 10),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637788079926757565_asus-tuf-gaming-fx506lh-den-2022-5.jpg', 10),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637788079925976574_asus-tuf-gaming-fx506lh-den-2022-6.jpg', 10),
+        ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637946871737901127_hp-pavilion-15-eg2059tu-i5-1240p-vang-1.jpg', 11),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637946871738213918_hp-pavilion-15-eg2059tu-i5-1240p-vang-2.jpg', 11),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637946871737901127_hp-pavilion-15-eg2059tu-i5-1240p-vang-4.jpg', 11),
+        ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/14/637987719191658652_asus-vivobook-m1403-non-oled-bac-1.jpg', 12),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/14/637987719191346214_asus-vivobook-m1403-non-oled-bac-2.jpg', 12),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/14/637987719189627753_asus-vivobook-m1403-non-oled-bac-3.jpg', 12),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/14/637987719191814975_asus-vivobook-m1403-non-oled-bac-4.jpg', 12),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/14/637987719190408683_asus-vivobook-m1403-non-oled-bac-5.jpg', 12),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/14/637987719189158691_asus-vivobook-m1403-non-oled-bac-6.jpg', 12),
+       ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/29/638053327833014914_lenovo-ideapad-1-15amn7-xam-1.jpg', 13),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/29/638053327833171258_lenovo-ideapad-1-15amn7-xam-2.jpg', 13),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/29/638053327832233628_lenovo-ideapad-1-15amn7-xam-3.jpg', 13),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/29/638053327833014914_lenovo-ideapad-1-15amn7-xam-4.jpg', 13),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/29/638053327830193012_lenovo-ideapad-1-15amn7-xam-5.jpg', 13),
+       ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/26/637971153501323885_lenovo-ideapad-gaming-3-15iah7-xam-1.jpg', 14),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/26/637971150907998334_lenovo-ideapad-gaming-3-15iah7-xam-2.jpg', 14),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/26/637971150907373284_lenovo-ideapad-gaming-3-15iah7-xam-4.jpg', 14),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/26/637971150905029596_lenovo-ideapad-gaming-3-15iah7-xam-3.jpg', 14),
+       ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/7/638007368710444071_msi-gaming-gf63-thin-11sc-1090vn-den-1.jpg', 15),
+       ----------------------------------------
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/5/638005617517738074_gigabyte-gaming-g5-ge-i5-12500h-rtx3050-1.jpg', 16),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/5/638005617517738074_gigabyte-gaming-g5-ge-i5-12500h-rtx3050-2.jpg', 16),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/5/638005617517020818_gigabyte-gaming-g5-ge-i5-12500h-rtx3050-3.jpg', 16),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/5/638005617516468797_gigabyte-gaming-g5-ge-i5-12500h-rtx3050-5.jpg', 16),
+        ('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/5/638005617515939081_gigabyte-gaming-g5-ge-i5-12500h-rtx3050-4.jpg', 16);
 
 
 
