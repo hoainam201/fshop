@@ -7,7 +7,7 @@ export function formatCurrency(number) {
 export default {
     computed: {
         salePrice() {
-            return this.price - this.discount;
+            return this.product.price - this.product.discount;
         },
         salePricePerMonth() {
             return this.salePrice / 12;
