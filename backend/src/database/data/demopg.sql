@@ -18,13 +18,13 @@ create table products
 (
     productID    serial primary key,
     productName  varchar not null,
-    supplierID   int     not null,
-    categoryID   int     not null,
+    supplierID   int     not null, --ID của nhà sản xuất
+    categoryID   int     not null, --ID loại sản phẩm
     description  text,
-    price        int     not null,
-    point        int     not null,
-    unitOnOrders smallint,
-    discontinue  boolean default false,
+    price        int     not null, --Giá gốc
+    discount     int     default 0, --Giá khuyến mại
+    unitOnOrders smallint, --Đơn vị mua tối thiểu cho một đơn hàng
+    discontinue  boolean default false, --Sản phẩm đã ngừng bán? false là còn bán/true là đã ngừng mặc định là còn
     foreign key (supplierID) references suppliers (supplierID),
     foreign key (categoryID) references categories (categoryID)
 );
@@ -32,15 +32,15 @@ create table products
 create table productImg
 (
     imgID     serial primary key,
-    img       char not null,
+    img       varchar(256) not null,
     productID int,
     foreign key (productID) references products (productID)
 );
 
 
-create table discounts
+create table coupons
 (
-    discountID serial primary key,
+    couponID serial primary key,
     price      int not null,
     startDate  date,
     endDate    date
@@ -61,14 +61,14 @@ create table districts
 
 create table customers
 (
-    phone            varchar primary key ,
+    phone            varchar primary key,
     accumulatePoints int default 0
 );
 
 create table contacts
 (
     contactId   serial primary key,
-    phone       varchar references customers(phone),
+    phone       varchar references customers (phone),
     contactName varchar,
     districtsId char(3) references districts (districtsId),
     address     varchar
@@ -82,7 +82,7 @@ create table orders
     requiredDate date,
     shippedDate  date,
     shipAddress  varchar,
-    discountID   int references discounts (discountID),
+    couponID   int references coupons(couponID),
     foreign key (contactId) references contacts (contactId)
 );
 
@@ -112,7 +112,7 @@ create table questions
 (
     questionID  serial primary key,
     productID   int references products (productID),
-    phone       varchar references customers(phone),
+    phone       varchar references customers (phone),
     question    text not null,
     createdTime timestamp
 );
@@ -130,7 +130,7 @@ create table reviews
 (
     reviewID    serial primary key,
     productID   int references products (productID),
-    phone       varchar references customers(phone),
+    phone       varchar references customers (phone),
     stars       int not null,
     node        text,
     createdTime timestamp
