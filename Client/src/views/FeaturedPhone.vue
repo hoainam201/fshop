@@ -10,14 +10,12 @@
           </div>
           <div class="row no-gutters">
             <div v-for="product in filteredProducts"
-                 :key="product.id"
+                 :key="product.productid"
                  class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
-                  <router-link to="/product-detail">
-                    <img :src="product.img"
-                         alt="{{ product.productname }}">
-                  </router-link>
+                  <img :src="product.img"
+                       alt="{{ product.productname }}">
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -26,7 +24,9 @@
                 </div>
                 <div class="product-card-item-content">
                   <h3>
-                    <a href="/" class="title-card">{{ product.productname }}</a>
+                    <router-link :to="{ name: 'productDetail', params: { id: product.productid } }" class="title-card">
+                      {{ product.productname }}
+                    </router-link>
                   </h3>
                   <div class="price">
                     <div class="progress">
@@ -47,7 +47,7 @@
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
                         {{ product.description.cpu }}
                       </span>
-                        <span>
+                      <span>
                           <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
                           {{ getMonitorSize(product.description.monitor) }}
                         </span>
@@ -64,6 +64,9 @@
                   </div>
                 </div>
               </div>
+              <router-link :to="{ name: 'productDetail', params: { id: product.productid } }">
+
+              </router-link>
             </div>
           </div>
         </div>

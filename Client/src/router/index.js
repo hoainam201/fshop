@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import ProductDetails from "@/components/productdetails/ProductDetails.vue";
 
 export default createRouter({
   history: createWebHistory(),
@@ -20,9 +21,10 @@ export default createRouter({
           component: import("@/components/product/Laptop.vue")
       },
       {
-          path: '/product-detail',
-          name: 'product-detail',
-          component: import("@/components/productdetails/ProductDetails.vue")
+          path: '/product/:id',
+          name: 'productDetail',
+          component: ProductDetails,
+          props: true
       },
       {
           path: '/test',
