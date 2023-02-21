@@ -36,7 +36,7 @@ class SiteController {
                         phone: result.phone
                     };
                     const token = jwt.sign(payload, 'fptshop');
-                    res.headers.authorization;
+                    res.setHeader('Authorization', `Bearer ${token}`);
                 })
             }
         })

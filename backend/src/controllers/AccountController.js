@@ -23,7 +23,7 @@ class AccountController {
 
     getContact(req, res, next){
         const id = 1;
-        db.query('select * from contacts where customerid = $1', [id], (err, result) =>{
+        db.query('select * from contacts where phone = $1', [id], (err, result) =>{
             if (err){
                 return next(err);
             }
@@ -33,8 +33,8 @@ class AccountController {
 
     creatContact(req, res, next){
         const id = 1;
-        const {phone, name, districtsId, address} = req.body;
-        db.query('insert into contacts (phone, contactname, customerid, districtsid, address) values ($1, $2, $3, $4, $5)', [phone, name, id, districtsId, address], (err, result) =>{
+        const {phone, name, address} = req.body;
+        db.query('insert into contacts (phone, contactname, customerid, address) values ($1, $2, $3, $4, $5)', [phone, name, id, districtsId, address], (err, result) =>{
             if (err){
                 return next(err);
             }

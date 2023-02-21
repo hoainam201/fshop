@@ -18,12 +18,12 @@ create table products
 (
     productID    serial primary key,
     productName  varchar not null,
-    supplierID   int     not null, --ID của nhà sản xuất
-    categoryID   int     not null, --ID loại sản phẩm
+    supplierID   int     not null,      --ID của nhà sản xuất
+    categoryID   int     not null,      --ID loại sản phẩm
     description  json,
-    price        int     not null, --Giá gốc
-    discount     int     default 0, --Giá khuyến mại
-    unitOnOrders smallint, --Đơn vị mua tối thiểu cho một đơn hàng
+    price        int     not null,      --Giá gốc
+    discount     int     default 0,     --Giá khuyến mại
+    unitOnOrders smallint,              --Đơn vị mua tối thiểu cho một đơn hàng
     discontinue  boolean default false, --Sản phẩm đã ngừng bán? false là còn bán/true là đã ngừng mặc định là còn
     foreign key (supplierID) references suppliers (supplierID),
     foreign key (categoryID) references categories (categoryID)
@@ -38,27 +38,6 @@ create table productImg
 );
 
 
-create table coupons
-(
-    couponID serial primary key,
-    price      int not null,
-    startDate  date,
-    endDate    date
-);
-
-create table provinces
-(
-    provinceId   char(2) primary key,
-    provinceName char(20)
-);
-
-create table districts
-(
-    districtsId   char(3) primary key,
-    districtsName char(20),
-    provinceId    char(2) references provinces (provinceId)
-);
-
 create table customers
 (
     phone            varchar primary key,
@@ -67,29 +46,28 @@ create table customers
 
 create table contacts
 (
-    contactId   serial primary key,
-    phone       varchar references customers (phone),
-    contactName varchar,
-    districtsId char(3) references districts (districtsId),
-    address     varchar
+    contactId    serial primary key,
+    customerID   varchar references customers (phone),
+    contactPhone varchar,
+    contactName  varchar,
+    address      varchar
 );
 
 create table orders
 (
-    orderID      serial primary key,
-    contactId    int,
-    orderDate    date default current_date,
-    requiredDate date,
-    shippedDate  date,
-    shipAddress  varchar,
-    couponID   int references coupons(couponID),
+    orderID     serial primary key,
+    contactId   int,
+    orderDate   date default current_date,
+    payDate     date,
+    shippedDate date,
+    vnpay       boolean,
     foreign key (contactId) references contacts (contactId)
 );
 
 create table orderDetails
 (
-    orderID   serial,
-    productID serial,
+    orderID   int,
+    productID int,
     primary key (orderID, productID),
     price     int not null,
     quantity  int default 1,

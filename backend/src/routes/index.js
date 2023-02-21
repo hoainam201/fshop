@@ -1,4 +1,3 @@
-const category = require('./categories');
 const admin = require('./admin');
 const account = require('./account');
 const site = require('./site');
