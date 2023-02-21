@@ -55,13 +55,14 @@ create table contacts
 
 create table orders
 (
-    orderID     serial primary key,
-    contactId   int,
-    orderDate   date default current_date,
-    payDate     date,
-    shippedDate date,
-    vnpay       boolean,
-    foreign key (contactId) references contacts (contactId)
+    orderID      serial primary key,
+    orderDate    date default current_date,
+    payDate      date,
+    shippedDate  date,
+    contactPhone varchar,
+    contactName  varchar,
+    address      varchar,
+    vnpay        boolean
 );
 
 create table orderDetails
