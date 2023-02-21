@@ -27,7 +27,7 @@
                     aria-label="Search"
                 >
                   <MDBBtn color="primary" @click="showAlert"
-                          style="background-color: #333333;
+                          style="background-color: #333333 !important;
                                   width: 58px;
                                   height: 36px;"
                   >

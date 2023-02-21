@@ -52,8 +52,8 @@
                 <div class="row">
                   <div class="carousel-slider carousel-product-sale">
                     <div class="carousel-frame">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/585x429/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/12/638090838556171711_frame-detail-585x428.png"
-                           alt="Tien tao ve troi">
+                      <img src="https://images.fpt.shop/unsafe/fit-in/585x429/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/1/638108489376997131_frame-detail-585x428.png"
+                           alt="Thang hai cap doi">
                       <p>
                         Lì xì
                         <span>4.000.000 đ</span>
@@ -66,10 +66,10 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                       </div>
-                      <div class="carousel-inner">
+                      <div class="carousel-inner carousel-inner__img">
                         <div class="carousel-item active">
                           <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869727250_iphone-12-den-1.jpg"
-                               class="d-block w-100" alt="..."
+                               class="d-block w-100" alt="image product"
                                style="width: auto;
                                 height: 73%;">
                         </div>

@@ -44,6 +44,6 @@ export default {
   /*@import "@/assets/style.css";*/
 
   .home-view {
-    background-color: #d00435;
+    background-color: #ffecec;
   }
 </style>
