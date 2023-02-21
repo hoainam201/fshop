@@ -155,8 +155,4 @@ export default {
   @import "@/assets/reponsive.css";
   @import "@/assets/grid.css";
   @import "@/assets/style.css";
-
-  .accessory {
-    background-image: url("@/assets/img/accessory.webp");
-  }
 </style>

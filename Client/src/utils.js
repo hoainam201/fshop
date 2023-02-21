@@ -29,7 +29,7 @@ export const products = ref([]);
 
 export const getAllProducts = async () => {
     try {
-        const res = await axios.get('http://localhost');
+        const res = await axios.get('http://localhost:4000');
         products.value = res.data;
     } catch (error) {
         console.log(error);
