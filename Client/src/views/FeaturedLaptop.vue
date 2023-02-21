@@ -9,63 +9,59 @@
             </div>
           </div>
           <div class="row no-gutters">
-            <div v-for="laptopproduct in laptopproducts"
-                 :key="laptopproduct.id"
+            <div v-for="product in filteredProducts"
+                 :key="product.id"
                 class="col l-3 m-6 c-6 product-card">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
                   <router-link to="/product-detail">
-                    <img :src="laptopproduct.img_url"
-                         alt="{{ laptopproduct.name }}">
+                    <img :src="product.img"
+                         alt="{{ product.name }}">
                   </router-link>
                   <div class="sticker">
-                    <span class="stickers sticker-event">{{ laptopproduct.installment }}</span>
+                    <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
-                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(discount) }}</span>
+                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
                   </div>
                 </div>
                 <div class="product-card-item-content">
                   <h3>
-                    <a href="/" class="title-card">{{ laptopproduct.name }}</a>
+                    <a href="/" class="title-card">{{ product.name }}</a>
                   </h3>
                   <div class="price">
                     <div class="progress">
-                      {{ formatCurrency(salePrice) }}
-                      <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth }"
+                      {{ formatCurrency(salePrice(product)) }}
+                      <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
 <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
                     <div class="strike-price">
-                      <strike>
-                        {{ formatCurrency(price) }}
-                      </strike>
+                      <span style="text-decoration: line-through">
+                        {{ formatCurrency(product.price) }}
+                      </span>
                     </div>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
-                        {{ laptopproduct.screen }}
+                        {{ getMonitorSize(product.description.monitor) }}
                       </span>
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ laptopproduct.cpu }}
-                      </span>
-                      <span>
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ laptopproduct.ram }}
+                        {{ product.description.cpu }}
                       </span>
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
-                        {{ laptopproduct.harddrive }}
+                        {{ product.description.disk }}
                       </span>
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ laptopproduct.graphics }}
+                        {{ getMonitorSize(product.description.ram) }}
                       </span>
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
-                        {{ laptopproduct.weight }}
+                        {{ getMonitorSize(product.description.gpu) }}
                       </span>
                     </div>
                     <ItemInfoPromo />
@@ -92,134 +88,77 @@
 
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
-import globalMixin, { formatCurrency } from '@/utils'
+import { formatCurrency } from '@/utils'
+import {ref} from "vue";
+import axios from "axios";
 
 export default {
   name: "FeaturedLaptop",
   components: {ItemInfoPromo},
   data() {
     return {
-      laptopproducts: [
-        {
-          id: "l1",
-          name: "MacBook Air 13\" 2020 M1 256GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          discount: "2000000",
-          price: "25000000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg",
-        },
-        {
-          id: "l2",
-          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-          discount: "2000000",
-          price: "25000000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg",
-          installment: "Trả góp 0%",
-        },
-        {
-          id: "l3",
-          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          discount: "2090000",
-          price: "25990000",
-          screen: "15.6 inch",
-          cpu: "Core i7",
-          ram: "8 GB (1 thanh 8 GB)",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 4GB",
-          weight: "2.25 kg"
-        },
-        {
-          id: "l4",
-          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-          discount: "2000000",
-          price: "25000000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg",
-          installment: "Trả góp 0%",
-        },
-        {
-          id: "l5",
-          name: "MacBook Air 13\" 2020 M1 256GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png",
-          discount: "2079000",
-          price: "25990000",
-          screen: "15.6 inch",
-          cpu: "Core i7",
-          ram: "8 GB (1 thanh 8 GB)",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 4GB",
-          weight: "2.25 kg",
-          installment: "Trả góp 0%",
-        },
-        {
-          id: "l6",
-          name: "Asus TUF Gaming FX506LHB-HN188W i5 10300H",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg",
-          discount: "2000000",
-          price: "25000000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg"
-        },
-        {
-          id: "l7",
-          name: "HP Pavilion 15-eg2057TU i5 1240P/6K787PA",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg",
-          discount: "2079000",
-          price: "25990000",
-          screen: "15.6 inch",
-          cpu: "Core i7",
-          ram: "8 GB (1 thanh 8 GB)",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 4GB",
-          weight: "2.25 kg",
-          installment: "Trả góp 0%",
-        },
-        {
-          id: "l8",
-          name: "Asus TUF Gaming FA506IHRB-HN019W R5 4600H",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg",
-          discount: "2000000",
-          price: "25000000",
-          screen: "15.6 inch",
-          cpu: "Core i5",
-          ram: "8 GB",
-          harddrive: "SSD 512 GB",
-          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
-          weight: "2 kg"
-        },
-      ],
-      price: 25000000,
-      discount: 5000000,
+      products: [],
     }
   },
 
   methods: {
     formatCurrency,
+
+    getMonitorSize(monitorString) {
+      // Split the monitor string by comma and space
+      const monitorArray = monitorString.split(", ");
+      // Get the first element of the array
+      const monitorSize = monitorArray[0];
+      return monitorSize;
+    }
   },
 
-  mixins: [globalMixin],
+  setup() {
+    const products = ref([])
+    const getAllProducts = async () => {
+      try {
+        const res = await axios.get(
+            'http://localhost:4000'
+        )
+        products.value = res.data
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
+    getAllProducts()
+    const addProduct = async newProduct => {
+      try {
+        const res = await axios.post(
+            'http://localhost:4000',
+            newProduct
+        )
+        products.value.push(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    return {
+      products,
+      addProduct
+    }
+  },
+
+  computed: {
+    salePrice() {
+      return product => product.price - product.discount;
+    },
+    discountPercentage() {
+      return product => `${((this.salePrice(product) / product.price) * 100).toFixed(2)}%`;
+    },
+    progressBarWidth() {
+      return product => this.discountPercentage(product);
+    },
+    filteredProducts() {
+      return this.products.filter(product => product.categoryid === 2).slice(0, 8);
+    }
+  },
 }
 </script>
 

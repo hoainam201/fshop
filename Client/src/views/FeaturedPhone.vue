@@ -99,9 +99,6 @@ export default {
 
   methods: {
     formatCurrency,
-    filteredProducts() {
-      return this.products.filter(product => product.categoryid === 1).slice(0, 8);
-    },
 
     getMonitorSize(monitorString) {
       // Split the monitor string by comma and space
