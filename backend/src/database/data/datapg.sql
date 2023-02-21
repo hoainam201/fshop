@@ -39,14 +39,14 @@ values ('Apple', 'Mỹ'),--1
        ('Gigabyte', 'Mỹ');--12
 
 insert into products(productname, supplierid, categoryid, description, price, discount, unitonorders)
-values ('Iphone 13', 1, 1, '{"monitor":"6.1 inch, OLED, Super Retina XDR, 2532 x 1170 Pixels","cam 1":"12.0 MP + 12.0 MP","cam 2":"12.0 MP","cpu ":"Apple A15 Bionic","rom":"128 GB"}', 19990000, 1999, 1),
-       ('Asus ROG 6 DIABLO', 8, 1, '{"monitor":"6.78 inch, AMOLED, FHD+, 2448 x 1080 Pixels","cam 1":"50.0 MP + 13.0 MP + 5.0 MP","cam 2":"12.0 MP","cpu ":"Snapdragon 8+ Gen 1","rom":"512 GB"}', 29990000, 3000000, 1),
-       ('Samsung Galaxy S22 Bora purple 5G', 4, 1, '{"monitor":"6.1 inch, Dynamic AMOLED 2X, FHD+, 1080 x 2340 Pixels","cam 1":"50.0 MP + 12.0 MP + 10.0 MP","cam 2":"10.0 MP","cpu ":"Snapdragon 8+ Gen 1","rom":"128 GB"}', 21990000, 7000000, 1),
-       ('Xiaomi Redmi 10 4GB-128GB 2021', 5, 1, '{"monitor":"6.5 inch, IPS LCD, FHD+, 1080 x 2400 Pixels","cam 1":"50.0 MP + 8.0 MP + 2.0 MP + 2.0 MP","cam 2":"8.0 MP","cpu ":"MediaTek Helio G88","rom":"128 GB"}', 4290000, 500000, 1),
-       ('Iphone 11 64GB', 1, 1, '{"monitor":"6.1 inch, IPS LCD, Liquid Retina HD, 828 x 1792 Pixels","cam 1":"12.0 MP + 12.0 MP","cam 2":"12.0 MP","cpu ":"Apple A13 Bionic","rom":"64 GB"}', 14999000, 3700000, 1),
-       ('Oppp A57 4GB-128GB', 6, 1, '{"monitor":"6.56 inch, LCD, HD+, 720 x 1612 Pixels","cam 1":"13.0 MP + 2.0 MP","cam 2":"8.0 MP","cpu ":"Helio G35","rom":"128 GB"}', 4990000, 700000, 1),
-       ('Samsung Galaxy S23 Ultra 5G 256GB', 4, 1, '{"monitor":"6.8 inch, Dynamic AMOLED 2X, QHD+, 1440 x 3088 Pixels","cam 1":"200.0 MP + 12.0 MP + 10.0 MP + 10.0 MP","cam 2":"12.0 MP","cpu ":"Snapdragon 8 Gen 2","rom":"256 GB"}', 31990000, 5000000, 1),
-       ('Iphone 14 Pro', 1, 1, '{"monitor":"6.1 inch, Super Retina XDR, 2556 x 1179 Pixels","cam 1":"48.0 MP + 12.0 MP","cam 2":"12.0 MP","cpu ":"Apple A16 Bionic","rom":"128 GB"}', 30990000, 5000000, 1),
+values ('Iphone 13', 1, 1, '{"monitor":"6.1 inch, OLED, Super Retina XDR, 2532 x 1170 Pixels","cam1":"12.0 MP + 12.0 MP","cam2":"12.0 MP","cpu":"Apple A15 Bionic","rom":"128 GB"}', 19990000, 2000000, 1),
+       ('Asus ROG 6 DIABLO', 8, 1, '{"monitor":"6.78 inch, AMOLED, FHD+, 2448 x 1080 Pixels","cam1":"50.0 MP + 13.0 MP + 5.0 MP","cam2":"12.0 MP","cpu":"Snapdragon 8+ Gen 1","rom":"512 GB"}', 29990000, 3000000, 1),
+       ('Samsung Galaxy S22 Bora purple 5G', 4, 1, '{"monitor":"6.1 inch, Dynamic AMOLED 2X, FHD+, 1080 x 2340 Pixels","cam1":"50.0 MP + 12.0 MP + 10.0 MP","cam2":"10.0 MP","cpu":"Snapdragon 8+ Gen 1","rom":"128 GB"}', 21990000, 7000000, 1),
+       ('Xiaomi Redmi 10 4GB-128GB 2021', 5, 1, '{"monitor":"6.5 inch, IPS LCD, FHD+, 1080 x 2400 Pixels","cam1":"50.0 MP + 8.0 MP + 2.0 MP + 2.0 MP","cam2":"8.0 MP","cpu":"MediaTek Helio G88","rom":"128 GB"}', 4290000, 500000, 1),
+       ('Iphone 11 64GB', 1, 1, '{"monitor":"6.1 inch, IPS LCD, Liquid Retina HD, 828 x 1792 Pixels","cam1":"12.0 MP + 12.0 MP","cam2":"12.0 MP","cpu":"Apple A13 Bionic","rom":"64 GB"}', 14999000, 3700000, 1),
+       ('Oppp A57 4GB-128GB', 6, 1, '{"monitor":"6.56 inch, LCD, HD+, 720 x 1612 Pixels","cam1":"13.0 MP + 2.0 MP","cam2":"8.0 MP","cpu":"Helio G35","rom":"128 GB"}', 4990000, 700000, 1),
+       ('Samsung Galaxy S23 Ultra 5G 256GB', 4, 1, '{"monitor":"6.8 inch, Dynamic AMOLED 2X, QHD+, 1440 x 3088 Pixels","cam1":"200.0 MP + 12.0 MP + 10.0 MP + 10.0 MP","cam2":"12.0 MP","cpu":"Snapdragon 8 Gen 2","rom":"256 GB"}', 31990000, 5000000, 1),
+       ('Iphone 14 Pro', 1, 1, '{"monitor":"6.1 inch, Super Retina XDR, 2556 x 1179 Pixels","cam1":"48.0 MP + 12.0 MP","cam2":"12.0 MP","cpu":"Apple A16 Bionic","rom":"128 GB"}', 30990000, 5000000, 1),
        -------------------------------------------------------------
        ('MacBook Air 13" 2020 M1 256GB', 1, 2, '{"monitor" : "13.3 inch, 2560 x 1600 Pixels, IPS, IPS LCD LED Backlit, True Tone","cpu": "Apple M1","ram": "8 GB, LPDDR4","disk": "SSD 256 GB","gpu": "Apple M1 GPU 7 nhân"}', 26999000, 7000000, 1),
        ('Asus TUF Gaming FX506LHB-HN188W i5 10300H', 9, 2, '{"monitor" : "15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, Anti-glare LED-backlit","cpu": "Intel Core i5 10300H","ram": "8 GB (1 thanh 8 GB), DDR4, 2933 MHz","disk": "SSD 512 GB","gpu": "NVIDIA GeForce GTX 1650 4GB; Intel UHD Graphics"}', 20990000, 4700000, 1),
