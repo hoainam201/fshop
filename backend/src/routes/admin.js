@@ -17,6 +17,7 @@ router.get('/product', async (req, res) => {
 router.get('/product/:id', async (req, res) => {
     const id = req.params.id;
     const {rows} = await db.query('select * from products p join suppliers s on s.supplierid = p.supplierid where productid = $1', [id]);
+    rows.list = await db.query('select * from productimg where productid = $1', [id]);
     res.json(rows);
 });
 
