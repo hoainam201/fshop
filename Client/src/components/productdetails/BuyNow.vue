@@ -17,6 +17,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            <div class="modal-product">
+              <h2>{{ product.name }}</h2>
+              <div class="product-cart__quality__wrap">
+                <button @click="decreaseQuantity" :disabled="quantity === 1" class="btn">
+                  <font-awesome-icon icon="fa-solid fa-minus" />
+                </button>
+                <span class="product-quantity"> {{ quantity }} </span>
+                <button @click="increaseQuantity" class="btn">
+                  <font-awesome-icon icon="fa-solid fa-plus" />
+                </button>
+              </div>
+            </div>
             <div class="cart__form cart__form--type">
               <div class="cart__form__block">
                 <div class="form-customer" style="display: block">
@@ -65,15 +77,6 @@
                 </div>
               </div>
             </div>
-            <div class="product-quantity">
-              <tr v-for="item in basket" :key="item.name">
-                <td>
-                  <v-icon color="orange" @click="increaseQuantity(item)">add</v-icon>
-                  1
-                  <v-icon color="orange" @click="decreaseQuantity(item)">minus</v-icon>
-                </td>
-              </tr>
-            </div>
           </div>
           <div class="modal-footer">
 <!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
@@ -108,26 +111,20 @@ export default {
         'time',
         'range',
         'color'
-      ]
+      ],
+      product: {
+        name: 'Xiaomi Redmi Note 11 Pro 8GB - 128GB',
+      },
+      quantity: 1
     }
   },
   methods: {
-    addToBasket(item) {
-      this.basket.push({
-        name: item.name,
-        price: item.price,
-        quantity: 1
-      })
+    increaseQuantity() {
+      this.quantity++
     },
-
-    increaseQuantity(item) {
-      item.quantity++;
-    },
-    decreaseQuantity(item) {
-      item.quantity--;
-
-      if (item.quantity === 0) {
-        this.basket.splice(this.basket.indexOf(item), 1);
+    decreaseQuantity() {
+      if (this.quantity > 1) {
+        this.quantity--
       }
     }
   }
