@@ -9,7 +9,7 @@
             </div>
           </div>
           <div class="row no-gutters">
-            <div v-for="product in products"
+            <div v-for="product in filteredProducts"
                  :key="product.id"
                  class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
@@ -30,34 +30,34 @@
                   </h3>
                   <div class="price">
                     <div class="progress">
-                      {{ formatCurrency(salePrice) }}
-                      <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth }"
+                      {{ formatCurrency(salePrice(product)) }}
+                      <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
                     <div class="strike-price">
-                      <strike>
+                      <span style="text-decoration: line-through">
                         {{ formatCurrency(product.price) }}
-                      </strike>
+                      </span>
                     </div>
                   </div>
                   <div class="card-item-info__promo">
                     <div class="card-item-info__promo-product">
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ product.cpu}}
+                        {{ product.description.cpu }}
                       </span>
                         <span>
                           <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
-                          {{ product.screen}}
+                          {{ getMonitorSize(product.description.monitor) }}
                         </span>
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ product.ram}}
+                        {{ product.description.rom }}
                       </span>
                       <span>
                         <i class="fa-sharp fa-solid fa-memory"></i>
-                        {{ product.memory}}
+                        {{ product.description.cam2 }}
                       </span>
                     </div>
                     <ItemInfoPromo />
@@ -84,9 +84,7 @@
 
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
-// import axios from "axios";
-// import {ref} from "vue";
-import globalMixin, {formatCurrency} from "@/utils";
+import {formatCurrency} from "@/utils";
 import {ref} from "vue";
 import axios from "axios";
 
@@ -96,14 +94,22 @@ export default {
   data() {
     return {
       products: [],
-      price: 25000000,
-      discount: 5000000,
-      img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/2/638109492836018083_oppo-reno8-t-5g-dd-moi.jpg"
     }
   },
 
   methods: {
     formatCurrency,
+    filteredProducts() {
+      return this.products.filter(product => product.categoryid === 1).slice(0, 8);
+    },
+
+    getMonitorSize(monitorString) {
+      // Split the monitor string by comma and space
+      const monitorArray = monitorString.split(", ");
+      // Get the first element of the array
+      const monitorSize = monitorArray[0];
+      return monitorSize;
+    }
   },
 
   setup() {
@@ -111,9 +117,8 @@ export default {
     const getAllProducts = async () => {
       try {
         const res = await axios.get(
-            'http://localhost:4000?_limit=8'
+            'http://localhost:4000'
         )
-        // console.log(res.data)
         products.value = res.data
       } catch (error) {
         console.log(error)
@@ -138,13 +143,21 @@ export default {
       addProduct
     }
   },
-  mixins: [globalMixin],
 
-  // computed: {
-  //   discounted() {
-  //     return product.price - this.discount
-  //   }
-  // }
+  computed: {
+    salePrice() {
+      return product => product.price - product.discount;
+    },
+    discountPercentage() {
+      return product => `${((this.salePrice(product) / product.price) * 100).toFixed(2)}%`;
+    },
+    progressBarWidth() {
+      return product => this.discountPercentage(product);
+    },
+    filteredProducts() {
+      return this.products.filter(product => product.categoryid === 1).slice(0, 8);
+    }
+  },
 }
 </script>
 
