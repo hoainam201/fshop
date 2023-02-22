@@ -464,10 +464,8 @@ export default {
             suppliers.includes(product.supplierid.toString()) &&
             prices.includes(this.getPriceRange(product.price))
         );
-      });
+      },
     },
-  },
-
 }
 </script>
 

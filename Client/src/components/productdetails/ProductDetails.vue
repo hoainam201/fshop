@@ -64,7 +64,7 @@
                            alt="Thang hai cap doi">
                       <p>
                         Lì xì
-                        <span>{{ formatCurrency(salePrice(product)) }}</span>
+                        <span>{{ formatCurrency(product.discount) }}</span>
                       </p>
                     </div>
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -91,7 +91,7 @@
 <!--                        <div class="carousel-item">-->
 <!--                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869883593_iphone-12-den-2.jpg" class="d-block w-100" alt="...">-->
 <!--                        </div>-->
-                          <div class="carousel-item active" v-for="(productimg, index) in product.list" :key="index">
+                          <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(productimg, index) in product.list" :key="index">
                             <img :src="productimg.img" class="d-block w-100" style="width: auto; height: 73%"
                                  alt="image product">
                           </div>
@@ -198,7 +198,7 @@
                   <li>
                     <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
                     <div>
-                      <span>Lì xì ngay 7.500.000đ</span>
+                      <span>Lì xì ngay {{ formatCurrency(product.discount) }}</span>
                     </div>
                   </li>
                   <li class="sale-gift-item">

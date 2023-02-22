@@ -33,7 +33,6 @@
                       <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
                     <div class="strike-price">
                       <span style="text-decoration: line-through">
                         {{ formatCurrency(product.price) }}
@@ -86,7 +85,6 @@ import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import {formatCurrency} from "@/utils";
 import {ref} from "vue";
 import axios from "axios";
-// import {useRoute} from "vue-router";
 
 
 export default {
@@ -102,7 +100,6 @@ export default {
 
   methods: {
     formatCurrency,
-
     getMonitorSize(monitorString) {
       // Split the monitor string by comma and space
       const monitorArray = monitorString.split(", ");
@@ -110,7 +107,6 @@ export default {
       const monitorSize = monitorArray[0];
       return monitorSize;
     },
-
     handleProduct(product_id, product_name) {
       this.product_id = product_id;
       this.product_name = product_name;
@@ -120,7 +116,6 @@ export default {
         params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
       }).catch(() => true);
     },
-
     removeVietnameseTones(str) {
       str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
       str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");

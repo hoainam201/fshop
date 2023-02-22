@@ -13,12 +13,10 @@
                  :key="product.productid"
                  class="col l-3 m-6 c-6 card-slider"
                  @click="handleProduct(product.productid, product.productname)">
-              <div class="product-card-item product-card-item-sale">
+              <div class="product-card-item product-card-item-sale" style="cursor: pointer">
                 <div class="product-card-item-img">
-                  <router-link to="/product-detail">
                     <img :src="product.img"
                          alt="{{ product.productname }}">
-                  </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
                     <br>
@@ -26,8 +24,8 @@
                   </div>
                 </div>
                 <div class="product-card-item-content">
-                  <h3>
-                    <a href="/" class="title-card">{{ product.productname }}</a>
+                  <h3 class="title-card">
+                    {{ product.productname }}
                   </h3>
                   <div class="price">
                     <div class="progress">
@@ -35,7 +33,6 @@
                       <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
                     <div class="strike-price">
                       <span style="text-decoration: line-through">
                         {{ formatCurrency(product.price) }}
@@ -69,7 +66,8 @@
 
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
-import { formatCurrency } from '@/utils'
+import {formatCurrency} from "@/utils";
+import {ref} from "vue";
 import axios from "axios";
 
 export default {
@@ -78,6 +76,8 @@ export default {
   data() {
     return {
       products: [],
+      product_id: "-1",
+      product_name: "",
     }
   },
 
@@ -92,7 +92,13 @@ export default {
         params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
       }).catch(() => true);
     },
-
+    getMonitorSize(monitorString) {
+      // Split the monitor string by comma and space
+      const monitorArray = monitorString.split(", ");
+      // Get the first element of the array
+      const monitorSize = monitorArray[0];
+      return monitorSize;
+    },
     removeVietnameseTones(str) {
       str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
       str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");
@@ -134,6 +140,9 @@ export default {
       const sortedProducts = this.products.sort((a, b) => b.discount - a.discount);
       // Chọn ra 8 sản phẩm đầu tiên từ danh sách đã sắp xếp
       return sortedProducts.slice(0, 8);
+    },
+    product_name_convert_computed(){
+      return this.removeVietnameseTones(this.product_name).replaceAll(' ', '-').toLowerCase()
     }
   },
   mounted() {
