@@ -11,7 +11,8 @@
           <div class="row no-gutters">
             <div v-for="product in filteredProducts"
                  :key="product.productid"
-                 class="col l-3 m-6 c-6 card-slider">
+                 class="col l-3 m-6 c-6 card-slider"
+                  @click="handleProduct(product.productid, product.productname)">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
                   <img :src="product.img"
@@ -23,11 +24,11 @@
                   </div>
                 </div>
                 <div class="product-card-item-content">
-                  <h3>
-                    <router-link :to="{ name: 'productDetail', params: { productid: product.productid } }" class="title-card">
-                      {{ product.productname }}
-                    </router-link>
-<!--                    {{ product.productname }}-->
+                  <h3 class="title-card">
+<!--                    <router-link :to="{ name: 'productDetail', params: { productid: product.productid } }" class="title-card">-->
+<!--                      {{ product.productname }}-->
+<!--                    </router-link>-->
+                    {{ product.productname }}
                   </h3>
                   <div class="price">
                     <div class="progress">
@@ -97,6 +98,8 @@ export default {
   data() {
     return {
       products: [],
+      product_id: "-1",
+      product_name: "",
     }
   },
 
@@ -109,7 +112,15 @@ export default {
       // Get the first element of the array
       const monitorSize = monitorArray[0];
       return monitorSize;
-    }
+    },
+    handleProduct(product_id, product_name) {
+      this.product_id = product_id;
+      this.product_name = product_name;
+      this.$router.push({
+        name: "productDetail",
+        params: {product_id: `${this.product_id}`},
+      }).catch(() => true);
+    },
   },
 
   setup() {
