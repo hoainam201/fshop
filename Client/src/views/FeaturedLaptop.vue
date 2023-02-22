@@ -26,7 +26,7 @@
                 </div>
                 <div class="product-card-item-content">
                   <h3>
-                    <a href="/" class="title-card">{{ product.name }}</a>
+                    <a href="/" class="title-card">{{ product.productname }}</a>
                   </h3>
                   <div class="price">
                     <div class="progress">

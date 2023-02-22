@@ -24,7 +24,7 @@
                 </div>
                 <div class="product-card-item-content">
                   <h3>
-                    <router-link :to="{ name: 'productDetail', params: { id: product.productid } }" class="title-card">
+                    <router-link :to="{ name: 'productDetail', params: { productid: product.productid } }" class="title-card">
                       {{ product.productname }}
                     </router-link>
                   </h3>
@@ -64,9 +64,6 @@
                   </div>
                 </div>
               </div>
-              <router-link :to="{ name: 'productDetail', params: { id: product.productid } }">
-
-              </router-link>
             </div>
           </div>
         </div>
@@ -140,7 +137,7 @@ export default {
 
     return {
       products,
-      addProduct
+      addProduct,
     }
   },
 

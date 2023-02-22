@@ -10,7 +10,7 @@
         <div class="slider-wapper">
           <div class="row slider-main" style="transform: translateX(-1212px);">
             <div v-for="product in filteredProducts"
-                 :key="productproductid"
+                 :key="product.productid"
                  class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">

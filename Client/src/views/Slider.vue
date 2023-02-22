@@ -9,27 +9,41 @@
       <div class="grid wide slider">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators" style="bottom: -22px">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+            </button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+            </button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
+            </button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5">
+            </button>
           </div>
           <div class="carousel-inner">
-<!--            <div class="carousel-item active">-->
-<!--              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/14/638066548736519019_F-H6_1190x300.png" class="d-block w-100" alt="...">-->
-<!--            </div>-->
-<!--            <div class="carousel-item">-->
-<!--              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/19/638070597111862277_H6%20-%201190x300.png" class="d-block w-100" alt="...">-->
-<!--            </div>-->
-<!--            <div class="carousel-item">-->
-<!--              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/15/638067214883821844_F-H6_1190x300.png" class="d-block w-100" alt="...">-->
-<!--            </div>-->
-<!--            <div class="carousel-item">-->
-<!--              <img src="https://images.fpt.shop/unsafe/fit-in/1190x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/22/638073138777718013_H6%20-%201190x300.png" class="d-block w-100" alt="...">-->
-<!--            </div>-->
-            <div v-for="(image, index) in images" :key="index" :class="{ 'carousel-item': true, 'active': index === 0 }">
-              <img :src="image" class="d-block w-100">
+            <div class="carousel-item active">
+              <img src="https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/15/638120822076951530_F-H1_800x300.png"
+                   class="d-block w-100" alt="...">
             </div>
+            <div class="carousel-item">
+              <img src="https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/10/638116385569529572_F-H1_800x300.png"
+                   class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/1/638108073687218496_F-H1_800x300.png"
+                   class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/6/638112799185751836_F-H1_800x300.png"
+                   class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/17/638122418428942654_F-H1_800x300@2x.png"
+                   class="d-block w-100" alt="...">
+            </div>
+<!--            <div v-for="(image, index) in images" :key="index" :class="{ 'carousel-item': true, 'active': index === 0 }">-->
+<!--              <img :src="image" class="d-block w-100">-->
+<!--            </div>-->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <div class="round">
@@ -55,14 +69,6 @@ export default {
     return {
       slide: 0,
       sliding: null,
-      images: [
-          'https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/15/638120822076951530_F-H1_800x300.png',
-          'https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/10/638116385569529572_F-H1_800x300.png',
-          'https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/1/638108073687218496_F-H1_800x300.png',
-          'https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/6/638112799185751836_F-H1_800x300.png',
-          'https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/17/638122418428942654_F-H1_800x300@2x.png',
-      ],
-
     }
   },
   methods: {
