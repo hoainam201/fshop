@@ -44,7 +44,7 @@ values ('Iphone 13', 1, 1, '{"monitor":"6.1 inch, OLED, Super Retina XDR, 2532 x
        ('Samsung Galaxy S22 Bora purple 5G', 4, 1, '{"monitor":"6.1 inch, Dynamic AMOLED 2X, FHD+, 1080 x 2340 Pixels","cam1":"50.0 MP + 12.0 MP + 10.0 MP","cam2":"10.0 MP","cpu":"Snapdragon 8+ Gen 1","rom":"128 GB"}', 21990000, 7000000, 1),
        ('Xiaomi Redmi 10 4GB-128GB 2021', 5, 1, '{"monitor":"6.5 inch, IPS LCD, FHD+, 1080 x 2400 Pixels","cam1":"50.0 MP + 8.0 MP + 2.0 MP + 2.0 MP","cam2":"8.0 MP","cpu":"MediaTek Helio G88","rom":"128 GB"}', 4290000, 500000, 1),
        ('Iphone 11 64GB', 1, 1, '{"monitor":"6.1 inch, IPS LCD, Liquid Retina HD, 828 x 1792 Pixels","cam1":"12.0 MP + 12.0 MP","cam2":"12.0 MP","cpu":"Apple A13 Bionic","rom":"64 GB"}', 14999000, 3700000, 1),
-       ('Oppp A57 4GB-128GB', 6, 1, '{"monitor":"6.56 inch, LCD, HD+, 720 x 1612 Pixels","cam1":"13.0 MP + 2.0 MP","cam2":"8.0 MP","cpu":"Helio G35","rom":"128 GB"}', 4990000, 700000, 1),
+       ('Oppo A57 4GB-128GB', 6, 1, '{"monitor":"6.56 inch, LCD, HD+, 720 x 1612 Pixels","cam1":"13.0 MP + 2.0 MP","cam2":"8.0 MP","cpu":"Helio G35","rom":"128 GB"}', 4990000, 700000, 1),
        ('Samsung Galaxy S23 Ultra 5G 256GB', 4, 1, '{"monitor":"6.8 inch, Dynamic AMOLED 2X, QHD+, 1440 x 3088 Pixels","cam1":"200.0 MP + 12.0 MP + 10.0 MP + 10.0 MP","cam2":"12.0 MP","cpu":"Snapdragon 8 Gen 2","rom":"256 GB"}', 31990000, 5000000, 1),
        ('Iphone 14 Pro', 1, 1, '{"monitor":"6.1 inch, Super Retina XDR, 2556 x 1179 Pixels","cam1":"48.0 MP + 12.0 MP","cam2":"12.0 MP","cpu":"Apple A16 Bionic","rom":"128 GB"}', 30990000, 5000000, 1),
        -------------------------------------------------------------
