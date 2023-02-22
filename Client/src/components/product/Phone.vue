@@ -59,42 +59,42 @@
             <div class="sidebar-product">
               <!-- Hãng sản xuất -->
               <div class="sidebar-product-item item1">
-                <h3 class="sidebar-product-title">Hãng sản xuất</h3>
+                <h3 class="sidebar-product-title">Hãng sản xuất1</h3>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    <input type="checkbox" class="form-check-input" value="All" v-model="selectedSuppliers">
                     Tất cả
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" value="1" v-model="selectedSuppliers">
                     Apple
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    <input type="checkbox" class="form-check-input" value="4" v-model="selectedSuppliers">
                     Samsung
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" value="5" v-model="selectedSuppliers">
                     Xiaomi
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    <input type="checkbox" class="form-check-input" value="6" v-model="selectedSuppliers">
                     OPPO
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" value="11" v-model="selectedSuppliers">
                     Nokia
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" value="10" v-model="selectedSuppliers">
                     Vivo
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" value="9" v-model="selectedSuppliers">
                     Realme
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" value="8" v-model="selectedSuppliers">
                     Vsmart
                   </label>
                 </div>
@@ -104,23 +104,23 @@
                 <h3 class="sidebar-product-title">Mức giá</h3>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="All">
                     Tất cả
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price24">
                     Từ 2 - 4 triệu
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price47">
                     Từ 4 - 7 triệu
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price710">
                     Từ 7 - 10 triệu
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="over10">
                     Từ 10 triệu
                   </label>
                 </div>
@@ -210,74 +210,74 @@
                       <p class="title-product">SẢN PHẨM <span class="title-product-note">(300 sản phẩm)</span> </p>
                     </div>
                     <div class="col l-0 m-0 c-12">
-                      <div class="sidebar-product">
-                        <div class="sidebar-product-item-product">
-                          <h3 class="sidebar-product-title">Hãng sản xuất</h3>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-                              Tất cả
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Apple
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                              Samsung
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Xiaomi
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                              OPPO
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Nokia
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Vivo
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Realme
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Vsmart
-                            </label>
-                          </div>
-                        </div>
-                        <div class="sidebar-product-item-product">
-                          <h3 class="sidebar-product-title">Mức giá</h3>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-                              Tất cả
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Từ 2 - 4 triệu
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                              Từ 4 - 7 triệu
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                              Từ 7 - 10 triệu
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                              Từ 10 triệu
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+<!--                      <div class="sidebar-product">-->
+<!--                        <div class="sidebar-product-item-product">-->
+<!--                          <h3 class="sidebar-product-title">Hãng sản xuất</h3>-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Tất cả-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Apple-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Samsung-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Xiaomi-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              OPPO-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Nokia-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Vivo-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Realme-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Vsmart-->
+<!--                            </label>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                        <div class="sidebar-product-item-product">-->
+<!--                          <h3 class="sidebar-product-title">Mức giá</h3>-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>-->
+<!--                              Tất cả-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Từ 2 - 4 triệu-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >-->
+<!--                              Từ 4 - 7 triệu-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
+<!--                              Từ 7 - 10 triệu-->
+<!--                            </label>-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >-->
+<!--                              Từ 10 triệu-->
+<!--                            </label>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
                     </div>
                   </div>
                   <div class="row  no-gutters">
@@ -379,10 +379,24 @@ export default {
 
   data() {
     return {
+      selectedSuppliers: ['All'],
+      selectedPrices: ['All'],
       products: [],
     }
   },
   methods: {
+    getPriceRange(price) {
+      if (price >= 2000000 && price < 4000000) {
+        return 'price24';
+      } else if (price >= 4000000 && price < 7000000) {
+        return 'price47';
+      } else if (price >= 7000000 && price < 10000000) {
+        return 'price710';
+      } else {
+        return 'over10';
+      }
+    },
+
     formatCurrency,
 
     getMonitorSize(monitorString) {
@@ -437,9 +451,23 @@ export default {
       return product => this.discountPercentage(product);
     },
     filteredProducts() {
-      return this.products.filter(product => product.categoryid === 1).slice(0, 9);
-    }
+      let suppliers = this.selectedSuppliers;
+      if (suppliers.includes('All')) {
+        suppliers = ['1','4','5','6','8','9','10','11'];
+      }
+      let prices = this.selectedPrices;
+      if (prices.includes('All')) {
+        prices = ['price24', 'price47','price710','over10'];
+      }
+
+      return this.products.filter((product) =>
+            suppliers.includes(product.supplierid.toString()) &&
+            prices.includes(this.getPriceRange(product.price))
+        );
+      });
+    },
   },
+
 }
 </script>
 
