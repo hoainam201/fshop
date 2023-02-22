@@ -10,13 +10,13 @@
           </div>
           <div class="row no-gutters">
             <div v-for="product in filteredProducts"
-                 :key="product.id"
+                 :key="product.productid"
                 class="col l-3 m-6 c-6 product-card">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
                   <router-link to="/product-detail">
                     <img :src="product.img"
-                         alt="{{ product.name }}">
+                         alt="{{ product.productname }}">
                   </router-link>
                   <div class="sticker">
                     <span class="stickers sticker-event">Trả góp 0%</span>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="product-card-item-content">
                   <h3>
-                    <a href="/" class="title-card">{{ product.name }}</a>
+                    <a href="/" class="title-card">{{ product.productname }}</a>
                   </h3>
                   <div class="price">
                     <div class="progress">

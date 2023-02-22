@@ -295,52 +295,64 @@
                     </div>
                     <div class="product-cate-card active">
                       <div class="row no-gutters">
-                        <div v-for="phoneproduct in phoneproducts"
-                             :key="phoneproduct.id"
+                        <div v-for="product in filteredProducts"
+                             :key="product.productid"
                              class="col l-4 m-6 c-6 card-slider">
                           <div class="product-card-item product-card-item-sale">
                             <div class="product-card-item-img">
-                              <router-link to="/product-detail">
-                                <img :src="phoneproduct.img_url"
-                                     alt="{{ phoneproduct.name }}">
-                              </router-link>
+                              <img :src="product.img"
+                                   alt="{{ product.productname }}">
                               <div class="sticker">
-                                <span class="stickers sticker-event">{{ phoneproduct.installment }}</span>
+                                <span class="stickers sticker-event">Trả góp 0%</span>
                                 <br>
-                                <span class="stickers sticker-sale">{{ phoneproduct.sale }}</span>
+                                <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
                               </div>
                             </div>
                             <div class="product-card-item-content">
                               <h3>
-                                <a href="/" class="title-card">{{ phoneproduct.name }}</a>
+                                <router-link :to="{ name: 'productDetail', params: { id: product.productid } }" class="title-card">
+                                  {{ product.productname }}
+                                </router-link>
                               </h3>
                               <div class="price">
-                                <span class="new-price">{{ phoneproduct.price_sale }} đ</span>
-                                <span class="old-price">{{ phoneproduct.price }} đ</span>
+                                <div class="progress">
+                                  {{ formatCurrency(salePrice(product)) }}
+                                  <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
+                                       aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
+                                <div class="strike-price">
+                      <span style="text-decoration: line-through">
+                        {{ formatCurrency(product.price) }}
+                      </span>
+                                </div>
                               </div>
                               <div class="card-item-info__promo">
                                 <div class="card-item-info__promo-product">
+                      <span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ product.description.cpu }}
+                      </span>
                                   <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ phoneproduct.cpu}}
-                                  </span>
+                          <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                          {{ getMonitorSize(product.description.monitor) }}
+                        </span>
                                   <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
-                                    {{ phoneproduct.screen}}
-                                  </span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ product.description.rom }}
+                      </span>
                                   <span>
-                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                    {{ phoneproduct.ram}}
-                                  </span>
-                                  <span>
-                                    <i class="fa-sharp fa-solid fa-memory"></i>
-                                    {{ phoneproduct.memory}}
-                                  </span>
+                        <i class="fa-sharp fa-solid fa-memory"></i>
+                        {{ product.description.cam2 }}
+                      </span>
                                 </div>
                                 <ItemInfoPromo />
                               </div>
                             </div>
                           </div>
+                          <router-link :to="{ name: 'productDetail', params: { id: product.productid } }">
+
+                          </router-link>
                         </div>
                       </div>
                     </div>
@@ -357,6 +369,9 @@
 
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
+import {formatCurrency} from "@/utils";
+import {ref} from "vue";
+import axios from "axios";
 
 export default {
   name: "Phone",
@@ -364,120 +379,67 @@ export default {
 
   data() {
     return {
-      phoneproducts: [
-        {
-          id: "p1",
-          name: "iPhone 13 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
-          installment: "Trả góp 0%",
-          sale: "Lì xì 3.000.000đ",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
-        },
-        {
-          id: "p2",
-          name: "Asus ROG 6 DIABLO 16GB-512GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB",
-          installment: "Trả góp 0%",
-        },
-        {
-          id: "p3",
-          name: "Samsung Galaxy S22 Ultra 5G 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          installment: "Trả góp 0%",
-          sale: "Lì xì 3.000.000đ",
-          memory: "128 GB"
-        },
-        {
-          id: "p4",
-          name: "Xiaomi Redmi 10 4GB-128GB 2021",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
-        },
-        {
-          id: "p5",
-          name: "iPhone 13 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Snapdragon 8+ Gen 1",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB"
-        },
-        {
-          id: "p6",
-          name: "Asus ROG 6 DIABLO 16GB-512GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/16/638067823694050310_asus-rog6-diablo-dd-docquyen.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          installment: "Trả góp 0%",
-          sale: "Lì xì 5.000.000đ",
-          memory: "128 GB"
-        },
-        {
-          id: "p7",
-          name: "Samsung Galaxy S22 Ultra 5G 128GB",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "MediaTek Helio G88",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          installment: "Trả góp 0%",
-          sale: "Lì xì 3.500.000đ",
-          memory: "128 GB"
-        },
-        {
-          id: "p8",
-          name: "Xiaomi Redmi 10 4GB-128GB 2021",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          installment: "Trả góp 0%",
-          sale: "Lì xì 3.000.000đ",
-          memory: "128 GB"
-        },
-        {
-          id: "p9",
-          name: "Xiaomi Redmi 11 4GB-128GB 2021",
-          img_url: "https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg",
-          price_sale: "20.000.000",
-          price: "25.000.000",
-          cpu: "Apple A15 Bionic",
-          screen: "6.1 inch",
-          ram: "4 GB",
-          memory: "128 GB",
-        },
-      ],
+      products: [],
     }
-  }
+  },
+  methods: {
+    formatCurrency,
+
+    getMonitorSize(monitorString) {
+      // Split the monitor string by comma and space
+      const monitorArray = monitorString.split(", ");
+      // Get the first element of the array
+      const monitorSize = monitorArray[0];
+      return monitorSize;
+    }
+  },
+
+  setup() {
+    const products = ref([])
+    const getAllProducts = async () => {
+      try {
+        const res = await axios.get(
+            'http://localhost:4000'
+        )
+        products.value = res.data
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getAllProducts()
+    const addProduct = async newProduct => {
+      try {
+        const res = await axios.post(
+            'http://localhost:4000',
+            newProduct
+        )
+        products.value.push(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    return {
+      products,
+      addProduct
+    }
+  },
+
+  computed: {
+    salePrice() {
+      return product => product.price - product.discount;
+    },
+    discountPercentage() {
+      return product => `${((this.salePrice(product) / product.price) * 100).toFixed(2)}%`;
+    },
+    progressBarWidth() {
+      return product => this.discountPercentage(product);
+    },
+    filteredProducts() {
+      return this.products.filter(product => product.categoryid === 1).slice(0, 9);
+    }
+  },
 }
 </script>
 
