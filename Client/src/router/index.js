@@ -12,16 +12,16 @@ export default createRouter({
       },
       {
           path: '/phone',
-          name: 'phone-products',
+          name: 'FeaturedPhone',
           component: import("@/components/product/Phone.vue")
       },
       {
           path: '/laptop',
-          name: 'laptop-products',
+          name: 'FeaturedLaptop',
           component: import("@/components/product/Laptop.vue")
       },
       {
-          path: '/product',
+          path: '/product/:product_name_convert',
           name: 'productDetail',
           component: ProductDetails,
           props: true
