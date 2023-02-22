@@ -1,11 +1,8 @@
 <template>
   <div>
     <h1>Product Details</h1>
-    <div v-if="product">
+    <div>
       <h2>{{ product.productname }}</h2>
-    </div>
-    <div v-else>
-      Loading...
     </div>
   </div>
 <!--  <div class="main product-detail">-->
@@ -399,10 +396,9 @@
 import BuyNow from "@/components/productdetails/BuyNow.vue";
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 // import {formatCurrency} from "@/utils";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import axios from "axios";
 import {useRoute} from "vue-router";
-// import props from "@vue/cli-service/lib/PluginAPI";
 
 export default {
   name: 'productDetail',
@@ -417,29 +413,55 @@ export default {
   // },
   data() {
     return {
-      product: [],
+      product: null,
+      error: null
     }
-  },  
-
-  setup() {
-    const route = useRoute();
-    const productid = route.params.productid;
-    const product = ref(null);
-    const getProduct = async () => {
-      try {
-        const res = await axios.get(`http://localhost:4000/admin/product/${productid}`);
-        product.value = res.data;
-      } catch (error) {
-        console.log(error);
-      }
+  },
+  methods: {
+    getProductDetail(productId) {
+      axios.get(`http://localhost:4000/admin/product/${productId}`)
+          .then(response => {
+            this.product = response.data
+          })
+          .catch(error => {
+            this.error = error
+          })
     }
-
-    getProduct()
-
-    return {
-      product,
-    }
+  },
+  mounted() {
+    // Get product ID from route params
+    const productId = this.$route.params.productid
+    this.getProductDetail(productId)
   }
+
+  // setup() {
+  //   const route = useRoute();
+  //   const productId = route.params.productid;
+  //   const product = ref(null);
+  //   const getProduct = async () => {
+  //     try {
+  //       const res = await axios.get(`http://localhost:4000/admin/product/${this.productId}`);
+  //       product.value = res.data;
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //
+  //   getProduct()
+  //
+  //   // onMounted(async () => {
+  //   //   try {
+  //   //     const response = await axios.get(`http://localhost:4000/admin/product/${productid}`);
+  //   //     product.value = response.data;
+  //   //   } catch (error) {
+  //   //     console.log(error);
+  //   //   }
+  //   // });
+  //
+  //   return {
+  //     product,
+  //   }
+  // }
 }
 </script>
 

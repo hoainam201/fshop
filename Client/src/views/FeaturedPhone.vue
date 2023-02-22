@@ -27,6 +27,7 @@
                     <router-link :to="{ name: 'productDetail', params: { productid: product.productid } }" class="title-card">
                       {{ product.productname }}
                     </router-link>
+<!--                    {{ product.productname }}-->
                   </h3>
                   <div class="price">
                     <div class="progress">
@@ -87,6 +88,8 @@ import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import {formatCurrency} from "@/utils";
 import {ref} from "vue";
 import axios from "axios";
+// import {useRoute} from "vue-router";
+
 
 export default {
   name: "FeaturedPhone",
@@ -134,10 +137,14 @@ export default {
         console.log(error)
       }
     }
+    // const handleProduct = (productid) => {
+    //   this.$router.push({ name: "productDetail", params: { productid: productid } });
+    // };
 
     return {
       products,
       addProduct,
+      // handleProduct,
     }
   },
 
