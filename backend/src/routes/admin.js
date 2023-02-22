@@ -23,7 +23,7 @@ router.get('/product/:id', async (req, res) => {
     catch {
         res.status(401).json({
             "message": "Invalid Id"
-        })
+        });
     }
 });
 
