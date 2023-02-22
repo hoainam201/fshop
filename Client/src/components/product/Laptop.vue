@@ -57,46 +57,48 @@
               <!-- Hãng sản xuất -->
               <div class="sidebar-product-item item1">
                 <h3 class="sidebar-product-title">Hãng sản xuất</h3>
-<!--                <div class="form-check">-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>-->
-<!--                    Tất cả-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
-<!--                    Apple-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >-->
-<!--                    Samsung-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
-<!--                    Xiaomi-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >-->
-<!--                    OPPO-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
-<!--                    Nokia-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
-<!--                    Vivo-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
-<!--                    Realme-->
-<!--                  </label>-->
-<!--                  <label class="form-check-label">-->
-<!--                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">-->
-<!--                    Vsmart-->
-<!--                  </label>-->
-<!--                </div>-->
-                <MDBCheckbox label="Tất cả" v-model="checkbox1" />
-                <MDBCheckbox label="Asus" v-model="checkbox2" />
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    Tất cả
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Apple
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    Asus
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    HP
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    Lenovo
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    MSI
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Gigabyte
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Acer
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    LG
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Microsoft
+                  </label>
+                </div>
               </div>
               <!-- Mức giá -->
               <div class="sidebar-product-item">
@@ -108,25 +110,29 @@
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Từ 2 - 4 triệu
-                  </label>
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                    Từ 4 - 7 triệu
+                    Dưới 10 triệu
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Từ 7 - 10 triệu
+                    Từ 10 - 15 triệu
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                    Từ 10 triệu
+                    Từ 15 - 20 triệu
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Từ 20 - 25 triệu
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    Trên 25 triệu
                   </label>
                 </div>
               </div>
               <!-- Tính năng đặt biệt -->
               <div class="sidebar-product-item">
-                <h3 class="sidebar-product-title">Tính năng đặt biệt</h3>
+                <h3 class="sidebar-product-title">Màn hình</h3>
                 <div class="form-check">
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
@@ -134,25 +140,21 @@
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Bảo mật vân tay
+                    Khoảng 13 inch
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                    Nhận diện khuôn mặt
+                    Khoảng 14 inch
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Sạc nhanh
-                  </label>
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Chống nước & bụi
+                    Trên 15 inch
                   </label>
                 </div>
               </div>
               <!-- Pin -->
               <div class="sidebar-product-item">
-                <h3 class="sidebar-product-title">Pin</h3>
+                <h3 class="sidebar-product-title">CPU</h3>
                 <div class="form-check">
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
@@ -160,19 +162,69 @@
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Trên 2000mah
+                    Intel celeron
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                    Trên 3000mah
+                    Intel pentium
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Trên 4000mah
+                    Intel core i3
                   </label>
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    Trên 5000mah
+                    Intel core i5
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Intel core i5
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Intel core i7
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Amd ryzen 3
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Amd ryzen 5
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Amd ryzen 7
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Amd ryzen 9
+                  </label>
+                </div>
+              </div>
+              <!-- Ram -->
+              <div class="sidebar-product-item">
+                <h3 class="sidebar-product-title">Ram</h3>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    Tất cả
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Ram 4Gb
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
+                    Ram 8Gb
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Ram 16Gb
+                  </label>
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
+                    Ram 32Gb
                   </label>
                 </div>
               </div>
