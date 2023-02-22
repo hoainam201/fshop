@@ -7,7 +7,7 @@ export default createRouter({
   routes: [
       {
           path: '/',
-          name: 'home-view',
+          name: 'HomeView',
           component: HomeView
       },
       {

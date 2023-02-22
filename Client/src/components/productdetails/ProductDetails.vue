@@ -126,11 +126,23 @@
                   </div>
                   <div class="info-cate">
                     <ul>
-                      <li class="info-cat-item"><i class="fa fa-mobile-screen-button"></i> <span>Màn hình: 6.43 inch, Chính: AMOLED, FHD+, 1080 x 2400 Pixels</span> </li>
-                      <li class="info-cat-item"><i class="fa fa-camera"></i> <span> Camera: 64.0 MP + 2.0 MP + 2.0 MP</span></li>
-                      <li class="info-cat-item"><i class="fa fa-microchip"></i> <span>CPU: Snapdragon 695 5G</span> </li>
-                      <li class="info-cat-item"><i class="fa fa-memory"></i> <span>ROM: 128G RAM: 8G</span> </li>
-                      <li class="info-cat-item"><i class="fa fa-battery-full"></i> <span> Pin: 5000mah</span></li>
+                      <li class="info-cat-item">
+                        <i class="fa fa-mobile-screen-button"></i>
+                        <span>Màn hình: 6.43 inch, Chính: AMOLED, FHD+, 1080 x 2400 Pixels</span>
+                      </li>
+                      <li class="info-cat-item">
+                        <i class="fa fa-camera"></i>
+                        <span> Camera: 64.0 MP + 2.0 MP + 2.0 MP</span>
+                      </li>
+                      <li class="info-cat-item">
+                        <i class="fa fa-microchip"></i>
+                        <span>CPU: Snapdragon 695 5G</span> </li>
+                      <li class="info-cat-item">
+                        <i class="fa fa-memory"></i>
+                        <span>ROM: 128G RAM: 8G</span> </li>
+                      <li class="info-cat-item">
+                        <i class="fa fa-battery-full"></i>
+                        <span> Pin: 5000mah</span></li>
                     </ul>
                     <a class="re-link info-details" href="/">
                       Xem chi tiết thông số kỹ thuật
