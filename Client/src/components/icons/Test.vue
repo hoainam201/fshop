@@ -1,30 +1,32 @@
 <template>
   <div>
-    <breadcrumb :items="breadcrumbItems" />
-    <h1>{{ pageTitle }}</h1>
+    <button @click="showBox = true">Open Box</button>
+    <div v-if="showBox" class="popup-box">
+      <h3>This is a Popup Box</h3>
+      <p>Some content here...</p>
+      <button @click="showBox = false">Close Box</button>
+    </div>
   </div>
 </template>
 
 <script>
-import Breadcrumb from "./Breadcrumb.vue";
-
 export default {
-  components: {
-    Breadcrumb,
-  },
   data() {
     return {
-      pageTitle: "Trang chủ",
-      breadcrumbItems: [
-        { label: "Trang chủ", link: "/" },
-        { label: "Điện thoại", link: "/phone-products" },
-        { label: "Laptop Dell", link: "/products/laptops/dell" },
-      ],
+      showBox: false,
     };
   },
 };
 </script>
 
-<style>
-/* Style cho component cha */
+<style scoped>
+.popup-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+}
 </style>

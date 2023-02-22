@@ -9,7 +9,7 @@
             </div>
           </div>
           <div class="row no-gutters">
-            <div v-for="product in filteredProducts"
+            <div v-for="product in topLaptopProducts"
                  :key="product.productid"
                 class="col l-3 m-6 c-6 product-card">
               <div class="product-card-item product-card-item-sale">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="product-card-item-content">
                   <h3>
-                    <a href="/" class="title-card">{{ product.name }}</a>
+                    <a href="/" class="title-card">{{ product.productname }}</a>
                   </h3>
                   <div class="price">
                     <div class="progress">
@@ -113,36 +113,15 @@ export default {
     }
   },
 
-  setup() {
-    const products = ref([])
-    const getAllProducts = async () => {
-      try {
-        const res = await axios.get(
-            'http://localhost:4000'
-        )
-        products.value = res.data
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getAllProducts()
-    const addProduct = async newProduct => {
-      try {
-        const res = await axios.post(
-            'http://localhost:4000',
-            newProduct
-        )
-        products.value.push(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    return {
-      products,
-      addProduct
-    }
+  mounted() {
+    // Gọi API để lấy danh sách sản phẩm
+    axios.get('http://localhost:4000/category/laptop')
+        .then(response => {
+          this.products = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
   },
 
   computed: {
@@ -155,8 +134,12 @@ export default {
     progressBarWidth() {
       return product => this.discountPercentage(product);
     },
-    filteredProducts() {
-      return this.products.filter(product => product.categoryid === 2).slice(0, 8);
+    topLaptopProducts() {
+      const filtered = this.products.filter(
+          (product) => product.categoryid === 2
+      );
+      filtered.sort((a, b) => b.discount - a.discount);
+      return filtered.slice(0, 8);
     }
   },
 }

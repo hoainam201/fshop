@@ -9,9 +9,10 @@
             </div>
           </div>
           <div class="row no-gutters">
-            <div v-for="product in filteredProducts"
+            <div v-for="product in topPhoneProducts"
                  :key="product.productid"
-                 class="col l-3 m-6 c-6 card-slider">
+                 class="col l-3 m-6 c-6 card-slider"
+                  @click="handleProduct(product.productid, product.productname)">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
                   <img :src="product.img"
@@ -23,10 +24,11 @@
                   </div>
                 </div>
                 <div class="product-card-item-content">
-                  <h3>
-                    <router-link :to="{ name: 'productDetail', params: { id: product.productid } }" class="title-card">
-                      {{ product.productname }}
-                    </router-link>
+                  <h3 class="title-card">
+<!--                    <router-link :to="{ name: 'productDetail', params: { productid: product.productid } }" class="title-card">-->
+<!--                      {{ product.productname }}-->
+<!--                    </router-link>-->
+                    {{ product.productname }}
                   </h3>
                   <div class="price">
                     <div class="progress">
@@ -64,9 +66,6 @@
                   </div>
                 </div>
               </div>
-              <router-link :to="{ name: 'productDetail', params: { id: product.productid } }">
-
-              </router-link>
             </div>
           </div>
         </div>
@@ -90,6 +89,8 @@ import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import {formatCurrency} from "@/utils";
 import {ref} from "vue";
 import axios from "axios";
+// import {useRoute} from "vue-router";
+
 
 export default {
   name: "FeaturedPhone",
@@ -97,6 +98,8 @@ export default {
   data() {
     return {
       products: [],
+      product_id: "-1",
+      product_name: "",
     }
   },
 
@@ -109,39 +112,26 @@ export default {
       // Get the first element of the array
       const monitorSize = monitorArray[0];
       return monitorSize;
-    }
+    },
+    handleProduct(product_id, product_name) {
+      this.product_id = product_id;
+      this.product_name = product_name;
+      this.$router.push({
+        name: "productDetail",
+        params: {product_id: `${this.product_id}`},
+      }).catch(() => true);
+    },
   },
 
-  setup() {
-    const products = ref([])
-    const getAllProducts = async () => {
-      try {
-        const res = await axios.get(
-            'http://localhost:4000'
-        )
-        products.value = res.data
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getAllProducts()
-    const addProduct = async newProduct => {
-      try {
-        const res = await axios.post(
-            'http://localhost:4000',
-            newProduct
-        )
-        products.value.push(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    return {
-      products,
-      addProduct
-    }
+  mounted() {
+    // Gọi API để lấy danh sách sản phẩm
+    axios.get('http://localhost:4000/category/phone')
+        .then(response => {
+          this.products = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
   },
 
   computed: {
@@ -154,8 +144,12 @@ export default {
     progressBarWidth() {
       return product => this.discountPercentage(product);
     },
-    filteredProducts() {
-      return this.products.filter(product => product.categoryid === 1).slice(0, 8);
+    topPhoneProducts() {
+      const filtered = this.products.filter(
+          (product) => product.categoryid === 1
+      );
+      filtered.sort((a, b) => b.discount - a.discount);
+      return filtered.slice(0, 8);
     }
   },
 }

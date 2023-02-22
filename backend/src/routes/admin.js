@@ -12,10 +12,19 @@ router.get('/product', async (req, res) => {
 });
 
 router.get('/product/:id', async (req, res) => {
-    const id = req.params.id;
-    const {rows} = await db.query('select * from products p join suppliers s on s.supplierid = p.supplierid where productid = $1', [id]);
-    rows.list = await db.query('select * from productimg where productid = $1', [id]);
-    res.json(rows);
+    try {
+        const id = req.params.id;
+        let {rows} = await db.query('select * from products p join suppliers s on s.supplierid = p.supplierid where productid = $1', [id]);
+        const list = await db.query('select img from productimg where productid = $1', [id]);
+        console.log(list.rows);
+        rows[0].list = list.rows;
+        res.json(rows);
+    }
+    catch {
+        res.status(401).json({
+            "message": "Invalid Id"
+        });
+    }
 });
 
 router.post('/product', async (req, res) => {

@@ -9,8 +9,8 @@
         </div>
         <div class="slider-wapper">
           <div class="row slider-main" style="transform: translateX(-1212px);">
-            <div v-for="product in filteredProducts"
-                 :key="productproductid"
+            <div v-for="product in topProducts"
+                 :key="product.productid"
                  class="col l-3 m-6 c-6 card-slider">
               <div class="product-card-item product-card-item-sale">
                 <div class="product-card-item-img">
@@ -69,7 +69,6 @@
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import { formatCurrency } from '@/utils'
-import {ref} from "vue";
 import axios from "axios";
 
 export default {
@@ -85,38 +84,6 @@ export default {
     formatCurrency,
   },
 
-  setup() {
-    const products = ref([])
-    const getAllProducts = async () => {
-      try {
-        const res = await axios.get(
-            'http://localhost:4000'
-        )
-        products.value = res.data
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getAllProducts()
-    const addProduct = async newProduct => {
-      try {
-        const res = await axios.post(
-            'http://localhost:4000',
-            newProduct
-        )
-        products.value.push(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    return {
-      products,
-      addProduct
-    }
-  },
-
   computed: {
     salePrice() {
       return product => product.price - product.discount;
@@ -129,7 +96,23 @@ export default {
     },
     filteredProducts() {
       return this.products.filter(product => product.categoryid === 2).slice(0, 8);
+    },
+    topProducts() {
+      // Sắp xếp danh sách sản phẩm theo giảm dần của discount
+      const sortedProducts = this.products.sort((a, b) => b.discount - a.discount);
+      // Chọn ra 8 sản phẩm đầu tiên từ danh sách đã sắp xếp
+      return sortedProducts.slice(0, 8);
     }
+  },
+  mounted() {
+    // Gọi API để lấy danh sách sản phẩm
+    axios.get('http://localhost:4000')
+        .then(response => {
+          this.products = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
   },
 }
 </script>

@@ -1,4 +1,10 @@
 <template>
+  <div>
+    <h1>Product Details</h1>
+    <div>
+      <h2>{{ product.productname }}</h2>
+    </div>
+  </div>
   <div class="main product-detail">
     <div class="grid wide">
       <div class="row">
@@ -12,7 +18,7 @@
                 <router-link to="/phone">Điện thoại</router-link>
               </li>
 <!--              <li class="breadcrumb-item active" aria-current="page">{{ product.productname }}</li>-->
-              <h1>{{ product.productname }}</h1>
+<!--              <h1>{{ product.productname }}</h1>-->
             </ol>
           </nav>
         </div>
@@ -287,13 +293,13 @@
 <!--&lt;!&ndash;                  <p>Giao hàng miễn phí hoặc nhận tại shop</p>&ndash;&gt;-->
 <!--&lt;!&ndash;                </div>&ndash;&gt;-->
 <!--                <BuyNow />-->
-<!--                <div class="btn btn-info btn-xl btn&#45;&#45;half">-->
+<!--                <div class="btn btn-info btn-xl btn--half">-->
 <!--                  <strong>-->
 <!--                    TRẢ GÓP 0%-->
 <!--                  </strong>-->
 <!--                  <p>Duyệt nhanh qua điện thoại</p>-->
 <!--                </div>-->
-<!--                <div class="btn btn-info btn-xl btn&#45;&#45;half">-->
+<!--                <div class="btn btn-info btn-xl btn--half">-->
 <!--                  <strong>-->
 <!--                    TRẢ GÓP QUA THẺ-->
 <!--                  </strong>-->
@@ -389,40 +395,123 @@
 <script>
 import BuyNow from "@/components/productdetails/BuyNow.vue";
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
-import {formatCurrency} from "@/utils";
-import {ref} from "vue";
+// import {formatCurrency} from "@/utils";
+import {onMounted, ref} from "vue";
 import axios from "axios";
-// import props from "@vue/cli-service/lib/PluginAPI";
+// import {useRoute} from "vue-router";
 
 export default {
   name: 'productDetail',
   components: {BuyNow, ItemInfoPromo},
 
+  // data() {
+  //   return {
+  //     // product: [],
+  //     // checkedEvo: [],
+  //     // checkedKredivo: [],
+  //   }
+  // },
   data() {
     return {
-      // product: [],
-      // checkedEvo: [],
-      // checkedKredivo: [],
+      product: {},
+      product_id: "-1",
     }
   },
+  // methods: {
+  //   getProductDetail(productId) {
+  //     axios.get(`http://localhost:4000/admin/product/${productId}`)
+  //         .then(response => {
+  //           this.product = response.data
+  //         })
+  //         .catch(error => {
+  //           this.error = error
+  //         })
+  //   }
+  // },
+  // mounted() {
+  //   // Get product ID from route params
+  //   const productId = this.$route.params.productid
+  //   this.getProductDetail(productId)
+  // }
 
-  setup(props) {
-    const product = ref(null);
-    const getProduct = async () => {
-      try {
-        const res = await axios.get(`http://localhost:4000/admin/product/${props.id}`)
-        product.value = res.data
-      } catch (error) {
-        console.log(error)
-      }
-    }
+  // setup() {
+  //   const route = useRoute();
+  //   const productId = route.params.productid;
+  //   const product = ref(null);
 
-    getProduct()
-
-    return {
-      product
-    }
-  }
+  //
+  //   getProduct()
+  //
+  //   // onMounted(async () => {
+  //   //   try {
+  //   //     const response = await axios.get(`http://localhost:4000/admin/product/${productid}`);
+  //   //     product.value = response.data;
+  //   //   } catch (error) {
+  //   //     console.log(error);
+  //   //   }
+  //   // });
+  //
+  //   return {
+  //     product,
+  //   }
+  // }
+  created() {
+    // this.category_id = this.$route.params.category_id;
+    this.$watch(
+        () => this.$route.params,
+        (toParams, previousParams) => {
+          console.log("before:", toParams);
+          console.log("after:", previousParams);
+          this.product_id = this.$route.params.product_id;
+          // react to route changes...
+        }
+    ),
+        this.getItemByID();
+  },
+  watch: {
+    product_id() {
+      this.getItemByID();
+      console.log(this.product_id)
+    },
+  },
+  // methods: {
+  //   getProduct() {
+  //       try {
+  //         const res = axios.get(`http://localhost:4000/admin/product/${this.product_id}`);
+  //         this.product = res.data;
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+  //   }
+    // getItemByID() {
+    //   axios
+    //       .post("http://localhost:4000/admin/product", {
+    //         product_id: this.product_id
+    //       })
+    //       .then((response) => {
+    //         console.log("START res product\n");
+    //         console.log(response);
+    //         console.log("END\n");
+    //         this.product = response.data.product;
+    //         this.product.id = this.product_id
+    //         this.topping_items = response.data.toppings
+    //         this.product_relations = response.data.same
+    //         for(let index in this.topping_items){
+    //           let topping_item = this.topping_items[index]
+    //           topping_item.count = 0
+    //           // topping_item.id = index + 1
+    //
+    //         }
+    //         // console.log("ITEMS in function:")
+    //         // console.log(this.items)
+    //       })
+    //       .catch((error) => {
+    //         console.log("CAN NOT")
+    //         console.log(error.response);
+    //       });
+    // },
+  // }
 }
 </script>
 

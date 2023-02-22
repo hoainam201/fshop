@@ -21,7 +21,7 @@ export default createRouter({
           component: import("@/components/product/Laptop.vue")
       },
       {
-          path: '/product/:id',
+          path: '/product',
           name: 'productDetail',
           component: ProductDetails,
           props: true
