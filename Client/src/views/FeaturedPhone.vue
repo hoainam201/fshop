@@ -9,7 +9,7 @@
             </div>
           </div>
           <div class="row no-gutters">
-            <div v-for="product in filteredProducts"
+            <div v-for="product in topPhoneProducts"
                  :key="product.productid"
                  class="col l-3 m-6 c-6 card-slider"
                   @click="handleProduct(product.productid, product.productname)">
@@ -123,40 +123,15 @@ export default {
     },
   },
 
-  setup() {
-    const products = ref([])
-    const getAllProducts = async () => {
-      try {
-        const res = await axios.get(
-            'http://localhost:4000'
-        )
-        products.value = res.data
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getAllProducts()
-    const addProduct = async newProduct => {
-      try {
-        const res = await axios.post(
-            'http://localhost:4000',
-            newProduct
-        )
-        products.value.push(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    // const handleProduct = (productid) => {
-    //   this.$router.push({ name: "productDetail", params: { productid: productid } });
-    // };
-
-    return {
-      products,
-      addProduct,
-      // handleProduct,
-    }
+  mounted() {
+    // Gọi API để lấy danh sách sản phẩm
+    axios.get('http://localhost:4000/category/phone')
+        .then(response => {
+          this.products = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
   },
 
   computed: {
@@ -169,8 +144,12 @@ export default {
     progressBarWidth() {
       return product => this.discountPercentage(product);
     },
-    filteredProducts() {
-      return this.products.filter(product => product.categoryid === 1).slice(0, 8);
+    topPhoneProducts() {
+      const filtered = this.products.filter(
+          (product) => product.categoryid === 1
+      );
+      filtered.sort((a, b) => b.discount - a.discount);
+      return filtered.slice(0, 8);
     }
   },
 }
