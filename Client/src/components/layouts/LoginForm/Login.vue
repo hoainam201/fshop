@@ -5,9 +5,9 @@
         <div class="login-form">
           <div class="login-header">
             Đăng nhập hoặc tạo tài khoản
-<!--            <button type="button" class="btn-close" aria-label="Close" -->
-<!--                    @click="closeModal"></button>-->
-            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>
+            <button type="button" class="btn-close" aria-label="Close"
+                    @click="closeSignUp"></button>
+<!--            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>-->
           </div>
           <div class="image-login text-center">
             <picture>
@@ -38,9 +38,9 @@
       <div class="login-fade">
         <div class="login-otp">
           <div class="login-header">Xác thực OTP
-<!--            <button type="button" class="btn-close" aria-label="Close" -->
-<!--                    @click="closeModal"></button>-->
-            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>
+            <button type="button" class="btn-close" aria-label="Close"
+                    @click="closeSignUp"></button>
+<!--            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>-->
           </div>
           <div class="image-otp text-center">
             <picture>
@@ -49,40 +49,36 @@
                    width="156" height="156" loading="lazy">
             </picture>
           </div>
-          <div class="content">Mã OTP được gửi đến số điện thoại</div>
+          <div class="content">
+            Mã OTP được gửi đến số điện thoại
+            <span class="f-w-500" style="font-weight: 600; font-size: 16px">
+              {{ phoneNumber }}
+            </span>
+          </div>
           <p class="mt-3 back_phonenumber">
             <a href="#" @click="showPhone = true">
               <i class="fa-solid fa-file-pen"></i>
               Đổi số điện thoại nhận mã
             </a>
           </p>
-<!--          <div class="input-otp">-->
-<!--            <div class="otp-group">-->
-<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox1" class="inputotp">-->
-<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox2" class="inputotp">-->
-<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox3" class="inputotp">-->
-<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox4" class="inputotp">-->
-<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox5" class="inputotp">-->
-<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox6" class="inputotp">-->
-<!--            </div>-->
-<!--          </div>-->
           <div>
             <form @submit.prevent="verifyOTP">
               <div class="input-otp">
-                <!--              <input type="text" class="form-control" id="otp" v-model="otp" required>-->
                 <div class="otp-group">
-                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox1" required
-                         value="" autocomplete="one-time-code">
-                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox2" required
-                         value="" autocomplete="one-time-code">
-                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox3" required
-                         value="" autocomplete="one-time-code">
-                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox4" required
-                         value="" autocomplete="one-time-code">
-                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox5" required
-                         value="" autocomplete="one-time-code">
-                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox6" required
-                         value="" autocomplete="one-time-code">
+                  <input
+                      v-for="(digit, index) in otp"
+                      :key="index"
+                      :ref="`otpInput${index}`"
+                      v-model.number="otp[index]"
+                      @input="handleInput(index)"
+                      @keydown="handleKeyDown(index, $event)"
+                      class="inputotp"
+                      type="tel"
+                      pattern="[0-9]"
+                      maxlength="1"
+                      min="0"
+                      max="9"
+                  />
                 </div>
               </div>
               <div class="submit-login">
@@ -108,7 +104,8 @@
       return {
         showPhone: false,
         phoneNumber: '',
-        otp: '',
+        // otp: '',
+        otp: ['', '', '', '', '', ''],
       };
     },
     methods: {
@@ -124,6 +121,24 @@
         this.showPhone = true; // should be this.showPhone = false;
         this.phoneNumber = '';
         this.otp = '';
+      },
+      handleInput(index) {
+        if (this.otp[index]) {
+          if (index < 5) {
+            this.$refs[`otpInput${index+1}`][0].focus();
+          } else {
+            this.$refs.otpInput5.blur();
+          }
+        } else {
+          if (index > 0) {
+            this.$refs[`otpInput${index-1}`][0].focus();
+          }
+        }
+      },
+      handleKeyDown(index, event) {
+        if (event.code === 'Backspace' && !this.otp[index] && index > 0) {
+          this.$refs[`otpInput${index-1}`][0].focus();
+        }
       }
     },
   }    
