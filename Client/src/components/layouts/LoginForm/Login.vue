@@ -1,53 +1,135 @@
 <template>
-    <div class="login-fade">
+  <div>
+    <div v-if="showPhone">
+      <div class="login-fade">
         <div class="login-form">
-          <div class="login-header">Đăng nhập hoặc tạo tài khoản
+          <div class="login-header">
+            Đăng nhập hoặc tạo tài khoản
+<!--            <button type="button" class="btn-close" aria-label="Close" -->
+<!--                    @click="closeModal"></button>-->
             <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>
           </div>
           <div class="image-login text-center">
             <picture>
               <img src="https://fptshop.com.vn/Content/v5d/account/images/img-login.png?v=123"
-                   alt="Nhấp số điện thoại"
+                   alt="Nhập số điện thoại"
                    width="156" height="156" loading="lazy">
             </picture>
           </div>
-          <div class="content">Nhập số điện thoại mua hàng để hưởng <br/>đặc quyền riêng tại FPT Shop</div>
-          <div class="input-phone"><input type="text" placeholder="Nhập số điện thoại"></div>
-          <div class="btn-submit">TIẾP TỤC</div>
+          <div class="content">Nhập số điện thoại mua hàng để hưởng
+            <br/>đặc quyền riêng tại FPT Shop
+          </div>
+          <div>
+            <form @submit.prevent="sendOTP">
+              <div class="input-phone">
+                <input placeholder="Nhập số điện thoại"
+                       type="tel" class="form-control" id="phoneNumber"
+                       v-model="phoneNumber" required>
+              </div>
+              <div class="submit-login">
+                <button type="submit" class="btn btn-primary">TIẾP TỤC</button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+    <div v-else>
+      <div class="login-fade">
+        <div class="login-otp">
+          <div class="login-header">Xác thực OTP
+<!--            <button type="button" class="btn-close" aria-label="Close" -->
+<!--                    @click="closeModal"></button>-->
+            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>
+          </div>
+          <div class="image-otp text-center">
+            <picture>
+              <img src="https://fptshop.com.vn/Content/v5d/account/images/img-otp.png?v=123"
+                   alt="Nhập OTP"
+                   width="156" height="156" loading="lazy">
+            </picture>
+          </div>
+          <div class="content">Mã OTP được gửi đến số điện thoại</div>
+          <p class="mt-3 back_phonenumber">
+            <a href="#" @click="showPhone = true">
+              <i class="fa-solid fa-file-pen"></i>
+              Đổi số điện thoại nhận mã
+            </a>
+          </p>
+<!--          <div class="input-otp">-->
+<!--            <div class="otp-group">-->
+<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox1" class="inputotp">-->
+<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox2" class="inputotp">-->
+<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox3" class="inputotp">-->
+<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox4" class="inputotp">-->
+<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox5" class="inputotp">-->
+<!--              <input type="number" maxlength="1" value="" autocomplete="one-time-code" id="codeBox6" class="inputotp">-->
+<!--            </div>-->
+<!--          </div>-->
+          <div>
+            <form @submit.prevent="verifyOTP">
+              <div class="input-otp">
+                <!--              <input type="text" class="form-control" id="otp" v-model="otp" required>-->
+                <div class="otp-group">
+                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox1" required
+                         value="" autocomplete="one-time-code">
+                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox2" required
+                         value="" autocomplete="one-time-code">
+                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox3" required
+                         value="" autocomplete="one-time-code">
+                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox4" required
+                         value="" autocomplete="one-time-code">
+                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox5" required
+                         value="" autocomplete="one-time-code">
+                  <input type="number"  maxlength="1" class="form-control inputotp" id="codeBox6" required
+                         value="" autocomplete="one-time-code">
+                </div>
+              </div>
+              <div class="submit-login">
+                <button type="submit" class="btn btn-primary">XÁC NHẬN</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
   
 <script >
   
   export default {
-    components: {
-    },
-  
     props: {
       closeSignUp: {
       type: Function,
+      },
     },
-  },
     data() {
-    },
-    computed: {
-  
-    },
-    watch: {
-    },
-    created() {
-    },
-    mounted() {
-    },
-    beforeDestroy() {
+      return {
+        showPhone: false,
+        phoneNumber: '',
+        otp: '',
+      };
     },
     methods: {
+      sendOTP() {
+        // Gửi mã OTP đến số điện thoại
+        this.showPhone = false;
+      },
+      verifyOTP() {
+        // Xác thực mã OTP
+        this.closeModal();
+      },
+      closeModal() {
+        this.showPhone = true; // should be this.showPhone = false;
+        this.phoneNumber = '';
+        this.otp = '';
+      }
     },
   }    
   </script>
   
-  <style scoped>
+<style scoped>
   .login-fade {
     width: 100vw;
     height: 100vh;
@@ -59,7 +141,7 @@
   .login-form {
     width: 576px;
     border-radius: 4px;
-    border: #212529 solid 0.4px;
+    border: #212529 solid 1px;
     background-color: #fff;
   }
   .login-header {
@@ -78,8 +160,7 @@
     background-image: url('@/assets/images/header/img-login.png');
     height: 156px;
     width: 156px;
-    margin: auto;
-    margin-top: 16px;
+    margin: 16px auto auto;
   }
   .content {
     margin-top: 16px;
@@ -98,15 +179,58 @@
   .btn-submit {
     background-color: #cb1c22;
     color: #fff;
-    width: 100px;
+    width: 120px;
     height: 36px;
     padding: 0 16px;
     display: flex;
     align-items: center;
     border-radius: 4px;
-    margin: auto;
-    margin-top: 16px;
+    margin: 16px auto;
+    justify-content: center;
+  }
+  .login-otp {
+    width: 576px;
+    border-radius: 4px;
+    border: #212529 solid 1px;
+    background-color: #fff;
+  }
+  .image-otp {
+    background-image: url('@/assets/images/header/img-otp.png');
+    background-size: 100%;
+    height: 156px;
+    width: 156px;
+    margin: 16px auto auto;
+  }
+  .text {
     margin-bottom: 16px;
+    font-size: 16px;
+    color: #0664f9;
+    text-align: center;
+  }
+  .input-otp{
+    display: flex;
+    flex-direction : row ;
+    gap: 20px;
+    -webkit-box-pack: center;
+    margin-right:32px;
+    margin-left: 32px;
+  }
+  .inputotp{
+    margin-right: 8px;
+    margin-left: 8px;
+    width: 67px;
+    height: 67px;
+    text-align: center;
+    display: inline-block;
+  }
+  .back_phonenumber {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .submit-login {
+    text-align: center;
+    margin: 16px 0;
   }
   </style>
   
