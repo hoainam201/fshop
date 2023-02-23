@@ -1,55 +1,68 @@
-<template>
-  <div>
-    <button @click="showModal = true">Open Modal</button>
-    <div v-if="showModal" class="login-fade">
-      <div class="login-form">
-        <div class="login-header">Login or create an account
-          <button type="button" class="btn-close" aria-label="Close"
-                  @click="closeModal"></button>
-        </div>
-        <div class="image-login text-center">
-          <picture>
-            <img src="https://fptshop.com.vn/Content/v5d/account/images/img-login.png?v=123"
-                 alt="Enter phone number"
-                 width="156" height="156" loading="lazy">
-          </picture>
-        </div>
-        <div class="content">Enter phone number</div>
-        <div>
-          <form @submit.prevent="sendOTP">
-            <div class="input-phone">
-              <input placeholder="Enter phone number"
-                     type="tel" class="form-control" id="phoneNumber"
-                     v-model="phoneNumber" required>
-            </div>
-            <div class="submit-login">
-              <button type="submit" class="btn btn-primary">CONTINUE</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
+<!--<template>-->
+<!--  <div>-->
+<!--    <input-->
+<!--        v-for="(digit, index) in otpDigits"-->
+<!--        :key="index"-->
+<!--        type="text"-->
+<!--        class="otp-digit"-->
+<!--        maxlength="1"-->
+<!--        v-model="otpInput[index]"-->
+<!--        @keydown="onKeyDown(index, $event)"-->
+<!--    />-->
+<!--  </div>-->
+<!--</template>-->
 
-<script>
-export default {
-  data() {
-    return {
-      phoneNumber: '',
-      otp: '',
-      showModal: false
-    }
-  },
-  methods: {
-    sendOTP() {
-      // implementation to send OTP
-    },
-    closeModal() {
-      this.showModal = false;
-      this.phoneNumber = '';
-      this.otp = '';
-    }
-  }
-}
-</script>
+<!--<script>-->
+<!--export default {-->
+<!--  data() {-->
+<!--    return {-->
+<!--      otpInput: ['', '', '', '', '', ''],-->
+<!--      otpDigits: [0, 1, 2, 3, 4, 5]-->
+<!--    }-->
+<!--  },-->
+<!--  methods: {-->
+<!--    onKeyDown(index, event) {-->
+<!--      // If the user presses a number key-->
+<!--      if (/^\d$/.test(event.key)) {-->
+<!--        // Set the value of the current input cell to the pressed digit-->
+<!--        this.otpInput[index] = event.key;-->
+<!--        // Move the focus to the next input cell-->
+<!--        if (index < this.otpDigits.length - 1) {-->
+<!--          this.$refs['otpInput'][index + 1].focus();-->
+<!--        }-->
+<!--        // Prevent the default behavior of the key press event-->
+<!--        event.preventDefault();-->
+<!--      }-->
+<!--      // If the user presses the backspace key-->
+<!--      else if (event.key === 'Backspace') {-->
+<!--        // Clear the value of the current input cell-->
+<!--        this.otpInput[index] = '';-->
+<!--        // Move the focus to the previous input cell-->
+<!--        if (index > 0) {-->
+<!--          this.$refs['otpInput'][index - 1].focus();-->
+<!--        }-->
+<!--        // Prevent the default behavior of the key press event-->
+<!--        event.preventDefault();-->
+<!--      }-->
+<!--    }-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
+
+<!--<style>-->
+<!--.otp-digit {-->
+<!--  width: 3em;-->
+<!--  height: 3em;-->
+<!--  font-size: 2em;-->
+<!--  text-align: center;-->
+<!--  margin: 0.5em;-->
+<!--  border: 2px solid black;-->
+<!--  border-radius: 0.5em;-->
+<!--}-->
+<!--</style>-->
+
+<template></template>
+
+
+
+
