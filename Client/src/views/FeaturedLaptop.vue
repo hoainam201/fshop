@@ -168,11 +168,12 @@ export default {
       return product => this.discountPercentage(product);
     },
     topLaptopProducts() {
-      const filtered = this.products.filter(
-          (product) => product.categoryid === 2
-      );
-      filtered.sort((a, b) => b.discount - a.discount);
-      return filtered.slice(0, 8);
+      // Sắp xếp danh sách sản phẩm theo giá giảm giá giảm dần
+      const sortedProducts = this.products.sort((a, b) => b.discount - a.discount);
+      // Lấy ra 8 sản phẩm đầu tiên của danh sách
+      const topProducts = sortedProducts.slice(0, 8);
+
+      return topProducts;
     },
     product_name_convert_computed(){
       return this.removeVietnameseTones(this.product_name).replaceAll(' ', '-').toLowerCase()

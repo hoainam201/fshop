@@ -18,7 +18,7 @@
           </div>
           <div class="modal-body">
             <div class="modal-product">
-              <h2>{{ product.name }}</h2>
+              <h2>{{ product.productname }}</h2>
               <div class="product-cart__quality__wrap">
                 <button @click="decreaseQuantity" :disabled="quantity === 1" class="btn">
                   <font-awesome-icon icon="fa-solid fa-minus" />
@@ -112,9 +112,6 @@ export default {
         'range',
         'color'
       ],
-      product: {
-        name: 'Xiaomi Redmi Note 11 Pro 8GB - 128GB',
-      },
       quantity: 1
     }
   },

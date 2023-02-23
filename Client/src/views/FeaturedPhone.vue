@@ -9,7 +9,7 @@
             </div>
           </div>
           <div class="row no-gutters">
-            <div v-for="product in products"
+            <div v-for="product in topPhoneProducts"
                  :key="product.productid"
                  class="col l-3 m-6 c-6 card-slider"
                   @click="handleProduct(product.productid, product.productname)">

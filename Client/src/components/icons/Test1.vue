@@ -1,12 +1,11 @@
 <template>
   <div>
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-    <div>
-      <button @click="decreaseQuantity">-</button>
-      <span>{{ quantity }}</span>
-      <button @click="increaseQuantity">+</button>
-    </div>
+    <input type="text" v-model="searchQuery" placeholder="Search...">
+    <ul>
+      <li v-for="product in filteredProducts" :key="product.id">
+        {{ product.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -14,21 +13,20 @@
 export default {
   data() {
     return {
-      product: {
-        name: 'Product Name',
-        description: 'Product Description'
-      },
-      quantity: 1
+      searchQuery: '',
+      products: [
+        { id: 1, name: 'sdfsdf 1' },
+        { id: 2, name: 'Product 2' },
+        { id: 3, name: 'Product 3' },
+        // ...
+      ]
     }
   },
-  methods: {
-    increaseQuantity() {
-      this.quantity++
-    },
-    decreaseQuantity() {
-      if (this.quantity > 1) {
-        this.quantity--
-      }
+  computed: {
+    filteredProducts() {
+      return this.products.filter(product => {
+        return product.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      })
     }
   }
 }

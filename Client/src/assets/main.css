@@ -1231,6 +1231,12 @@ img {
   font-size: 105%;
 }
 
+.form-check-input[type=checkbox]:checked {
+  /*background-image: none;*/
+  background-color: #cb1c22 !important;
+  outline: 2px solid black;
+}
+
 .product-list-tab-wrapper {
   display: flex;
   align-items: center;
@@ -1660,8 +1666,8 @@ strong {
 }
 
 .cart-submit {
-  /*background-color: #cb1c22;*/
-  color: #fff;
+  background-color: #cb1c22 !important;
+  color: #fcf4f5;
   outline: 0;
 }
 
