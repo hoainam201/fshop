@@ -324,15 +324,29 @@
                       </div>
                       <div class="modal-body">
                         <div class="modal-product">
-                          <h2>{{ product.productname }}</h2>
-                          <div class="product-cart__quality__wrap">
-                            <button @click="decreaseQuantity" :disabled="quantity === 1" class="btn">
-                              <font-awesome-icon icon="fa-solid fa-minus" />
-                            </button>
-                            <span class="product-quantity"> {{ quantity }} </span>
-                            <button @click="increaseQuantity" class="btn">
-                              <font-awesome-icon icon="fa-solid fa-plus" />
-                            </button>
+                          <div class="modal-product__img">
+                            <img :src="product.list[0].img"
+                                 alt="{{ product.productname }}">
+                          </div>
+                          <h3 class="modal-product__name">{{ product.productname }}</h3>
+                          <div class="modal-product__quantity" style="margin-left: 28px">
+                            <div class="product-cart__quality__wrap">
+                              <button @click="decreaseQuantity" :disabled="quantity === 1" class="btn">
+                                <font-awesome-icon icon="fa-solid fa-minus" />
+                              </button>
+                              <span class="product-quantity"> {{ quantity }} </span>
+                              <button @click="increaseQuantity" class="btn">
+                                <font-awesome-icon icon="fa-solid fa-plus" />
+                              </button>
+                            </div>
+                          </div>
+                          <div class="modal-product__price" style="margin: auto 32px;">
+                              <div style="color: #cb1c22; font-weight: 500;">
+                                {{ formatCurrency(salePrice(product) * this.quantity) }}
+                              </div>
+                              <div style="text-decoration: line-through">
+                                {{ formatCurrency(product.price * this.quantity) }}
+                              </div>
                           </div>
                         </div>
                         <div class="cart__form cart__form--type">
@@ -700,4 +714,35 @@ export default {
   @import "@/assets/reponsive.css";
   @import "@/assets/grid.css";
   @import "@/assets/style.css";
+
+  .modal-product .modal-product__img,
+  .modal-product .modal-product__name,
+  .modal-product .modal-product__price,
+  .modal-product .modal-product__quantity
+  {
+    display: inline-block;
+  }
+
+  .modal-product__img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .modal-product__name {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #32373d;
+  }
 </style>

@@ -169,7 +169,6 @@
                         <td>
                           <a href="#">Samsung Galaxy A53 5G 256GB
                             <p class="hot-selling-price">10.990.000 ₫</p>
-
                           </a>
                         </td>
                       </tr>
@@ -288,10 +287,10 @@
                   </div>
                 </li>
                 <li class="menu-top-item">
-                  <a href="/phone">
+                  <router-link to="/laptop">
                     <i class="fa fa-tablet"></i>
                     Máy tính bảng
-                  </a>
+                  </router-link>
                   <div class="nav-box">
                     <table class="nav-company htablet">
                       <tr>

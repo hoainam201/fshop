@@ -12,12 +12,12 @@ export default createRouter({
       },
       {
           path: '/phone',
-          name: 'FeaturedPhone',
+          name: 'Phone',
           component: import("@/components/product/Phone.vue")
       },
       {
           path: '/laptop',
-          name: 'FeaturedLaptop',
+          name: 'Laptop',
           component: import("@/components/product/Laptop.vue")
       },
       {
@@ -28,12 +28,12 @@ export default createRouter({
       },
       {
           path: '/test',
-          name: 'test',
+          name: 'Test',
           component: import("@/components/icons/Test.vue")
       },
       {
           path: '/test1',
-          name: 'test1',
+          name: 'Test1',
           component: import("@/components/icons/Test1.vue")
       },
       {

@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'Test',
   data() {
     return {
       showBox: false,

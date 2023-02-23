@@ -168,14 +168,8 @@
     font-size: 24px;
     color: #212529;
   }
-  .login-header .icon-close {
+  .login-header {
     color: #ccc;
-  }
-  .image-phone {
-    background-image: url('@/assets/images/header/img-login.png');
-    height: 156px;
-    width: 156px;
-    margin: 16px auto auto;
   }
   .content {
     margin-top: 16px;
@@ -191,18 +185,6 @@
   .input-phone input {
     width: 406px;
   }
-  .btn-submit {
-    background-color: #cb1c22;
-    color: #fff;
-    width: 120px;
-    height: 36px;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    margin: 16px auto;
-    justify-content: center;
-  }
   .login-otp {
     width: 576px;
     border-radius: 4px;
@@ -215,12 +197,6 @@
     height: 156px;
     width: 156px;
     margin: 16px auto auto;
-  }
-  .text {
-    margin-bottom: 16px;
-    font-size: 16px;
-    color: #0664f9;
-    text-align: center;
   }
   .input-otp{
     display: flex;
