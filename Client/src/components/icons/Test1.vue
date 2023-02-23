@@ -1,11 +1,34 @@
 <template>
   <div>
-    <input type="text" v-model="searchQuery" placeholder="Search...">
-    <ul>
-      <li v-for="product in filteredProducts" :key="product.id">
-        {{ product.name }}
-      </li>
-    </ul>
+    <button @click="showModal = true">Open Modal</button>
+    <div v-if="showModal" class="login-fade">
+      <div class="login-form">
+        <div class="login-header">Login or create an account
+          <button type="button" class="btn-close" aria-label="Close"
+                  @click="closeModal"></button>
+        </div>
+        <div class="image-login text-center">
+          <picture>
+            <img src="https://fptshop.com.vn/Content/v5d/account/images/img-login.png?v=123"
+                 alt="Enter phone number"
+                 width="156" height="156" loading="lazy">
+          </picture>
+        </div>
+        <div class="content">Enter phone number</div>
+        <div>
+          <form @submit.prevent="sendOTP">
+            <div class="input-phone">
+              <input placeholder="Enter phone number"
+                     type="tel" class="form-control" id="phoneNumber"
+                     v-model="phoneNumber" required>
+            </div>
+            <div class="submit-login">
+              <button type="submit" class="btn btn-primary">CONTINUE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -13,20 +36,19 @@
 export default {
   data() {
     return {
-      searchQuery: '',
-      products: [
-        { id: 1, name: 'sdfsdf 1' },
-        { id: 2, name: 'Product 2' },
-        { id: 3, name: 'Product 3' },
-        // ...
-      ]
+      phoneNumber: '',
+      otp: '',
+      showModal: false
     }
   },
-  computed: {
-    filteredProducts() {
-      return this.products.filter(product => {
-        return product.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-      })
+  methods: {
+    sendOTP() {
+      // implementation to send OTP
+    },
+    closeModal() {
+      this.showModal = false;
+      this.phoneNumber = '';
+      this.otp = '';
     }
   }
 }
