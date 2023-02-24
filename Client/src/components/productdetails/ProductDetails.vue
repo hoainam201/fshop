@@ -1,10 +1,4 @@
 <template>
-<!--  <div>-->
-<!--    <h1>Product Details</h1>-->
-<!--    <div>-->
-<!--      <h2>{{ product.productname }}</h2>-->
-<!--    </div>-->
-<!--  </div>-->
   <div class="main product-detail">
     <div class="grid wide">
       <div class="row">
@@ -13,13 +7,16 @@
             <ol class="breadcrumb breadcrumb-margin" style="background-color: #fff">
               <li class="breadcrumb-item">
                 <router-link to="/">Trang chủ</router-link>
-<!--                Trang chủ-->
               </li>
-              <li class="breadcrumb-item">
+              <li v-if="product.categoryid === 1" class="breadcrumb-item">
                 <router-link to="/phone">Điện thoại</router-link>
-<!--                Điện thoại-->
               </li>
-              <li class="breadcrumb-item active" aria-current="page">{{ product.productname }}</li>
+              <li v-if="product.categoryid === 2" class="breadcrumb-item">
+                <router-link to="/laptop">Máy tính xách tay</router-link>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                {{ product.productname }}
+              </li>
             </ol>
           </nav>
         </div>
@@ -29,7 +26,6 @@
           <div class="title-product-detail">
             <h1 class="name-category">
               {{ product.productname }}
-<!--              <span class="name-category-label">({{ productNumber }})</span>-->
             </h1>
             <div class="rating-category">
               <ul class="rating-star">
@@ -44,8 +40,11 @@
                 <span>|</span>
                 <a class="re-link" href="#"> 107 Hỏi & đáp</a>
               </div>
-              <a href="https://fptshop.com.vn/so-sanh-san-pham?samsung-galaxy-z-flip4-flex-mode-collection" class="re-link margin-left">
-                <span class="icon-plus margin-right"><font-awesome-icon icon="fa-solid fa-circle-plus" /></span>
+              <a href="https://fptshop.com.vn/so-sanh-san-pham?samsung-galaxy-z-flip4-flex-mode-collection"
+                 class="re-link margin-left">
+                <span class="icon-plus margin-right">
+                  <font-awesome-icon icon="fa-solid fa-circle-plus" />
+                </span>
                 So sánh
               </a>
             </div>
@@ -76,21 +75,6 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
                       </div>
                       <div class="carousel-inner carousel-inner__img">
-<!--                        <div class="carousel-item active">-->
-<!--                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869727250_iphone-12-den-1.jpg"-->
-<!--                               class="d-block w-100" alt="image product"-->
-<!--                               style="width: auto;-->
-<!--                                height: 73%;">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-item">-->
-<!--                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869883593_iphone-12-den-2.jpg" class="d-block w-100" alt="...">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-item">-->
-<!--                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869727250_iphone-12-den-1.jpg" class="d-block w-100" alt="...">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-item">-->
-<!--                          <img src="https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059219869883593_iphone-12-den-2.jpg" class="d-block w-100" alt="...">-->
-<!--                        </div>-->
                           <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(productimg, index) in product.list" :key="index">
                             <img :src="productimg.img" class="d-block w-100" style="width: auto; height: 73%"
                                  alt="image product">
@@ -124,25 +108,55 @@
                       <p>Trong hộp có gì</p>
                     </a>
                   </div>
-                  <div class="info-cate">
+                  <div v-if="product.categoryid === 2" class="info-cate">
                     <ul>
                       <li class="info-cat-item">
-                        <i class="fa fa-mobile-screen-button"></i>
-                        <span>Màn hình: 6.43 inch, Chính: AMOLED, FHD+, 1080 x 2400 Pixels</span>
+                        <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                        <span>{{ product.description.monitor }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i class="fa fa-camera"></i>
-                        <span> Camera: 64.0 MP + 2.0 MP + 2.0 MP</span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <span>{{ product.description.cpu }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i class="fa fa-microchip"></i>
-                        <span>CPU: Snapdragon 695 5G</span> </li>
+                        <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                        <span>{{ product.description.disk }}</span>
+                      </li>
                       <li class="info-cat-item">
-                        <i class="fa fa-memory"></i>
-                        <span>ROM: 128G RAM: 8G</span> </li>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <span>{{ product.description.ram }}</span>
+                      </li>
                       <li class="info-cat-item">
-                        <i class="fa fa-battery-full"></i>
-                        <span> Pin: 5000mah</span></li>
+                        <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                        <span>{{ product.description.gpu }}</span>
+                      </li>
+                    </ul>
+                    <a class="re-link info-details" href="/">
+                      Xem chi tiết thông số kỹ thuật
+                    </a>
+                  </div>
+                  <div v-else class="info-cate">
+                    <ul>
+                      <li class="info-cat-item">
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <span>{{ product.description.cpu }}</span>
+                      </li>
+                      <li class="info-cat-item">
+                        <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                        <span>{{ product.description.monitor }}</span>
+                      </li>
+                      <li class="info-cat-item">
+                        <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                        <span>{{ product.description.rom }}</span>
+                      </li>
+                      <li class="info-cat-item">
+                        <i class="fa-sharp fa-solid fa-memory"></i>
+                        <span>{{ product.description.cam1 }}</span>
+                      </li>
+                      <li class="info-cat-item">
+                        <i class="fa-sharp fa-solid fa-memory"></i>
+                        <span>{{ product.description.cam2 }}</span>
+                      </li>
                     </ul>
                     <a class="re-link info-details" href="/">
                       Xem chi tiết thông số kỹ thuật
@@ -186,28 +200,10 @@
                   </button>
                 </div>
               </div>
-<!--              <div class="option">-->
-<!--                <label class="form-check-option active">-->
-<!--                  <input type="radio" class="form-check-option" name="radio" id="" checked>-->
-<!--                  RAM 4G ROM 64G-->
-<!--                </label>-->
-<!--                <label class="form-check-option">-->
-<!--                  <input type="radio" class="form-check-option" name="radio" id="">-->
-<!--                  RAM 6G ROM 12G-->
-<!--                </label>-->
-<!--              </div>-->
-<!--              <div class="option-color-wrapper">-->
-<!--                <span>Màu sắc: </span>-->
-<!--                <ul class="option-color">-->
-<!--                  <li class="option-color-item"></li>-->
-<!--                  <li class="option-color-item"></li>-->
-<!--                  <li class="option-color-item"></li>-->
-<!--                </ul>-->
-<!--              </div>-->
               <div class="sale-gift">
                 <div class="sale-gift-title">Nhận ngay khuyến mại đặc biệt</div>
                 <ul class="sale-gift-list sale-gift-list__more">
-                  <li>
+                  <li class="sale-gift-item">
                     <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
                     <div>
                       <span>Lì xì ngay {{ formatCurrency(product.discount) }}</span>
@@ -802,4 +798,10 @@ export default {
     font-weight: 500;
     color: #32373d;
   }
+
+  /* Tooltip text color */
+  .tooltip::after {
+    color: red; /* Change to desired color */
+  }
+
 </style>
