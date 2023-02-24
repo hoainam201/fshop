@@ -75,7 +75,7 @@
                       v-model.number="otp[index]"
                       @input="handleInput(index)"
                       @keydown="handleKeyDown(index, $event)"
-                      class="inputotp"
+                      class="otp-item inputotp is-invalid1"
                       type="tel"
                       pattern="[0-9]"
                       maxlength="1"
@@ -217,6 +217,16 @@
     height: 67px;
     text-align: center;
     display: inline-block;
+    background: #f8f9fa linear-gradient(#b6c0ce, #b6c0ce) no-repeat center bottom 12px;
+    border-radius: 8px;
+    background: -webkit-gradient(linear,left top,left bottom,from(#b6c0ce),to(#b6c0ce)) center bottom 12px/calc(100% - 32px) 1px no-repeat;
+    border: 1px solid #e1e4e6;
+    font-style: normal;
+    font-size: 44px;
+    line-height: 100%;
+    padding: 8px 0 4px;
+    color: #6a737a;
+    font-weight: 500;
   }
   .back_phonenumber {
     text-align: center;
@@ -226,6 +236,12 @@
   .submit-login {
     text-align: center;
     margin: 16px 0;
+  }
+
+  .otp-group input[type=tel].complete {
+    border: 1px solid #444b52;
+    background: 0 0;
+    background-color: #fff;
   }
   </style>
   
