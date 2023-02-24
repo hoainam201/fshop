@@ -591,6 +591,7 @@ export default {
       type: Function,
     },
   },
+
   setup() {
     const search5 = ref('');
     const showAlert = () => alert(search5.value);

@@ -15,13 +15,15 @@
                  @click="handleProduct(product.productid, product.productname)">
               <div class="product-card-item product-card-item-sale" style="cursor: pointer">
                 <div class="product-card-item-img">
-                    <img :src="product.img"
-                         alt="{{ product.productname }}">
-                  <div class="sticker">
-                    <span class="stickers sticker-event">Trả góp 0%</span>
-                    <br>
-                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
-                  </div>
+                    <div>
+                      <img :src="product.img"
+                           alt="{{ product.productname }}">
+                      <div class="sticker">
+                        <span class="stickers sticker-event">Trả góp 0%</span>
+                        <br>
+                        <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
+                      </div>
+                    </div>
                 </div>
                 <div class="product-card-item-content">
                   <h3 class="title-card">

@@ -65,11 +65,11 @@ p {
 }
 
 .product-card-item.product-card-item-sale .product-card-item-img img {
-  max-height: 168px;
+  max-height: 150px;
   /*max-width: 188px;*/
   position: absolute;
   top: 18%;
-  left: 44px
+  left: 24px
   /*-webkit-transform: translate(-50%,-40%);*/
   /*-ms-transform: translate(-50%,-40%);*/
   /*transform: translate(-50%,-40%);*/

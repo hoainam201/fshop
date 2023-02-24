@@ -12,12 +12,12 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-margin" style="background-color: #fff">
               <li class="breadcrumb-item">
-<!--                <router-link to="/">Trang chủ</router-link>-->
-                Trang chủ
+                <router-link to="/">Trang chủ</router-link>
+<!--                Trang chủ-->
               </li>
               <li class="breadcrumb-item">
-<!--                <router-link to="/phone">Điện thoại</router-link>-->
-                Điện thoại
+                <router-link to="/phone">Điện thoại</router-link>
+<!--                Điện thoại-->
               </li>
               <li class="breadcrumb-item active" aria-current="page">{{ product.productname }}</li>
             </ol>
@@ -446,37 +446,33 @@
             </div>
             <div class="product-cate-card active">
               <div class="row no-gutters">
-                <div v-for="product in filteredProducts"
-                     :key="product.productid"
+                <div v-for="item in filteredItems"
+                     :key="item.productid"
                      class="col l-3 m-6 c-6 card-slider"
-                     @click="handleProduct(product.productid, product.productname)">
+                     @click="handleItem(item.productid, item.productname)">
                   <div class="product-card-item product-card-item-sale" style="cursor: pointer">
                     <div class="product-card-item-img">
-                      <img :src="product.img"
-                           alt="{{ product.productname }}">
+                      <img :src="item.img"
+                           alt="{{ item.productname }}">
                       <div class="sticker">
                         <span class="stickers sticker-event">Trả góp 0%</span>
                         <br>
-                        <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
+                        <span class="stickers sticker-sale">Lì xì {{ formatCurrency(item.discount) }}</span>
                       </div>
                     </div>
                     <div class="product-card-item-content">
                       <h3 class="title-card">
-                        <!--                    <router-link :to="{ name: 'productDetail', params: { productid: product.productid } }" class="title-card">-->
-                        <!--                      {{ product.productname }}-->
-                        <!--                    </router-link>-->
-                        {{ product.productname }}
+                        {{ item.productname }}
                       </h3>
                       <div class="price">
                         <div class="progress">
-                          {{ formatCurrency(salePrice(product)) }}
-                          <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
+                          {{ formatCurrency(salePrice(item)) }}
+                          <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(item) }"
                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
                         <div class="strike-price">
                       <span style="text-decoration: line-through">
-                        {{ formatCurrency(product.price) }}
+                        {{ formatCurrency(item.price) }}
                       </span>
                         </div>
                       </div>
@@ -484,19 +480,19 @@
                         <div class="card-item-info__promo-product">
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ product.description.cpu }}
+                        {{ item.description.cpu }}
                       </span>
                           <span>
                           <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
-                          {{ getMonitorSize(product.description.monitor) }}
+                          {{ getMonitorSize(item.description.monitor) }}
                         </span>
                           <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ product.description.rom }}
+                        {{ item.description.rom }}
                       </span>
                           <span>
                         <i class="fa-sharp fa-solid fa-memory"></i>
-                        {{ product.description.cam2 }}
+                        {{ item.description.cam2 }}
                       </span>
                         </div>
                         <ItemInfoPromo />
@@ -517,9 +513,7 @@
 import BuyNow from "@/components/productdetails/BuyNow.vue";
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import {formatCurrency} from "@/utils";
-// import {ref} from "vue";
 import axios from "axios";
-// import {useRoute} from "vue-router";
 
 export default {
   name: 'productDetail',
@@ -531,6 +525,10 @@ export default {
       product_name_convert: "",
       products: [],
       product: {},
+      item: {},
+      items: [],
+      item_id: "-1",
+      item_name: "",
       checkedEvo: [],
       checkedKredivo: [],
       types: [
@@ -557,6 +555,7 @@ export default {
           console.log("before:", toParams);
           console.log("after:", previousParams);
           this.product_name_convert = this.$route.params.product_name_convert;
+          this.item_name_convert = this.$route.params.item_name_convert;
         }
     ),
         this.getItemByID();
@@ -565,6 +564,10 @@ export default {
     product_id() {
       this.getItems();
       console.log(this.product_id)
+    },
+    item_id() {
+      this.getItems();
+      console.log(this.item_id)
     },
   },
   methods: {
@@ -576,6 +579,14 @@ export default {
       this.$router.push({
         name: "productDetail",
         params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
+      }).catch(() => true);
+    },
+    handleItem(item_id, item_name) {
+      this.item_id = item_id;
+      this.item_name = item_name;
+      this.$router.push({
+        name: "productDetail",
+        params: {item_id: `${this.item_id}`, item_name_convert: `${this.item_name_convert_computed}`},
       }).catch(() => true);
     },
     getMonitorSize(monitorString) {
@@ -618,6 +629,17 @@ export default {
       }
       return 0
     },
+    getIDItemByPath(path) {
+      console.log("input path: ", path)
+      for (let index in this.items) {
+        const item = this.items[index]
+        console.log(this.removeVietnameseTones(item.productname).replaceAll(' ', '-').toLowerCase())
+        if (this.removeVietnameseTones(item.productname).replaceAll(' ', '-').toLowerCase() == path) {
+          return item.productid
+        }
+      }
+      return 0
+    },
     getItems() {
       axios
           .get("http://localhost:4000/admin/product")
@@ -638,11 +660,21 @@ export default {
           .catch((error) => {
             console.log(error.response);
           });
-      // const response = await abc();
+      axios
+          .get("http://localhost:4000/admin/product")
+          .then((response) => {
+            this.items = response.data;
+            this.item_id = this.getIDItemByPath(this.item_name_convert)
+            this.getProductItemByID()
+          })
+          .catch((error) => {
+            console.log(error.response);
+          });
     },
     getItemByID() {
       console.log(this.$route.params)
       this.product_name_convert = this.$route.params.product_name_convert
+      this.item_name_convert = this.$route.params.item_name_convert
       this.getItems()
     },
     getProductByID() {
@@ -654,6 +686,21 @@ export default {
             console.log("END\n");
             this.product = response.data[0];
             this.product.list = response.data[0].list;
+          })
+          .catch((error) => {
+            console.log("CAN NOT")
+            console.log(error.response);
+          });
+    },
+    getProductItemByID() {
+      axios
+          .get(`http://localhost:4000/admin/product/${this.item_id}`)
+          .then((response) => {
+            console.log("START res item\n");
+            console.log(response);
+            console.log("END\n");
+            this.item = response.data[0];
+            this.item.list = response.data[0].list;
           })
           .catch((error) => {
             console.log("CAN NOT")
@@ -674,7 +721,7 @@ export default {
     // Gọi API để lấy danh sách sản phẩm
     axios.get('http://localhost:4000/category/phone')
         .then(response => {
-          this.products = response.data;
+          this.items = response.data;
         })
         .catch(error => {
           console.log(error);
@@ -684,24 +731,34 @@ export default {
   computed: {
     salePrice() {
       return product => product.price - product.discount;
+      return item => item.price - item.discount;
     },
     payPerMonth() {
       return product => this.salePrice(product) / 12;
+      return item => this.salePrice(item) / 12;
     },
     rewardPoint() {
       return product => product.price / 40000;
     },
     discountPercentage() {
       return product => `${((this.salePrice(product) / product.price) * 100).toFixed(2)}%`;
+      return item => `${((this.salePrice(item) / item.price) * 100).toFixed(2)}%`;
     },
     progressBarWidth() {
       return product => this.discountPercentage(product);
+      return item => this.discountPercentage(item);
     },
     filteredProducts() {
       return this.products.slice(0, 4);
     },
+    filteredItems() {
+      return this.items.slice(0, 4);
+    },
     product_name_convert_computed(){
       return this.removeVietnameseTones(this.product_name).replaceAll(' ', '-').toLowerCase()
+    },
+    item_name_convert_computed(){
+      return this.removeVietnameseTones(this.item_name).replaceAll(' ', '-').toLowerCase()
     }
   },
 }

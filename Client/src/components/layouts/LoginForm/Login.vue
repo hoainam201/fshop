@@ -4,10 +4,11 @@
       <div class="login-fade">
         <div class="login-form">
           <div class="login-header">
-            Đăng nhập hoặc tạo tài khoản
+            <div class="f-w-500" style="font-weight: 500">
+              Đăng Nhập Hoặc Tạo Tài Khoản
+            </div>
             <button type="button" class="btn-close" aria-label="Close"
                     @click="closeSignUp"></button>
-<!--            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>-->
           </div>
           <div class="image-login text-center">
             <picture>
@@ -37,10 +38,12 @@
     <div v-else>
       <div class="login-fade">
         <div class="login-otp">
-          <div class="login-header">Xác thực OTP
+          <div class="login-header">
+            <div class="f-w-500" style="font-weight: 500">
+              Xác Thực OTP
+            </div>
             <button type="button" class="btn-close" aria-label="Close"
                     @click="closeSignUp"></button>
-<!--            <div class="icon-close" @click="closeSignUp" style="cursor: pointer">X</div>-->
           </div>
           <div class="image-otp text-center">
             <picture>
@@ -102,9 +105,8 @@
     },
     data() {
       return {
-        showPhone: false,
+        showPhone: true,
         phoneNumber: '',
-        // otp: '',
         otp: ['', '', '', '', '', ''],
       };
     },
@@ -168,9 +170,11 @@
     font-size: 24px;
     color: #212529;
   }
-  .login-header {
-    color: #ccc;
+  .login-header div {
+    font-size: 24px;
+    line-height: 32px;
   }
+
   .content {
     margin-top: 16px;
     margin-bottom: 16px;
