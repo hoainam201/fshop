@@ -24,8 +24,11 @@
             <form @submit.prevent="sendOTP">
               <div class="input-phone">
                 <input placeholder="Nhập số điện thoại"
-                       type="tel" class="form-control form-control-lg input-phone__focus" id="phoneNumber"
-                       v-model="phoneNumber" pattern="\d*" maxlength="10" required>
+                       type="tel" class="form-control form-control-lg input-phone__focus"
+                       id="phoneNumber" v-model="phoneNumber" pattern="\d*"
+                       :minlength="10" :maxlength="10"
+                       required
+                       autocomplete="off">
               </div>
               <div class="submit-login">
                 <button type="submit" class="btn btn-primary">TIẾP TỤC</button>
@@ -96,6 +99,8 @@
 </template>
   
 <script >
+  import axios from "axios";
+
   export default {
     props: {
       closeSignUp: {
@@ -112,12 +117,23 @@
     },
     methods: {
       sendOTP() {
+        // this.phoneNumber = "+84".concat(this.phoneNumber.slice(1));
         localStorage.setItem('phoneNumber', this.phoneNumber);
         console.log('phoneNumber: ' + this.phoneNumber);
         // const phoneNumber = localStorage.getItem('phoneNumber');
         // Gửi mã OTP đến số điện thoại
         this.showPhone = false;
-      },
+        // axios.
+        //   post("http://127.0.0.1:8000/api/user/auth/login",
+        //     { phoneNumber: this.phoneNumber }
+        //   ).then((response) => {
+        //   console.log("OTP tra ve: ", response)
+        //   })
+        //     .catch((error) => {
+        //       console.log("ERR")
+        //       console.log(error.response);
+        //     });
+        },
       verifyOTP() {
         // Xác thực mã OTP
         console.log('OTP:', this.otp.join('')); // log the OTP value
