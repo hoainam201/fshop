@@ -1,150 +1,264 @@
 <template>
-  <v-container >
-    <div class="productStore_Infor">
-      <div class="prodcutStore_Wrap">
-        <v-row>
-          <v-col  md="6" lg="6" sm="12">
-            <div>
-              <div class="inforr_product">
-                <div>
-                  <p class="infor_pro__title">{{ product.name}}</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-        </v-row>
+  <div>
+    <div class="login_content" :class="{hidden : loginHidden}">
+      <div class="welcome-login">
+        Chào mừng bạn đến với
       </div>
+      <img class="logo_tch" src="https://cdn.haitrieu.com/wp-content/uploads/2022/03/logo-the-coffee-house-chieu-dai.png" alt="" style="width: 65%">
+      <!--            nhập sdt người dùng -->
+      <form @submit.prevent="sendPhoneNumber" >
+        <div class="login-input-content" >
+          <div class="region-code" >
+            <img style="vertical-align: middle;margin-right: 4px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDI0LjM2NTdDMTguNjI3NCAyNC4zNjU3IDI0IDE4Ljk5MzEgMjQgMTIuMzY1N0MyNCA1LjczODMxIDE4LjYyNzQgMC4zNjU3MjMgMTIgMC4zNjU3MjNDNS4zNzI1OCAwLjM2NTcyMyAwIDUuNzM4MzEgMCAxMi4zNjU3QzAgMTguOTkzMSA1LjM3MjU4IDI0LjM2NTcgMTIgMjQuMzY1N1oiIGZpbGw9IiNGNTIyMkQiLz4KPHBhdGggZD0iTTEyLjAwMTYgMTUuMTY1OEwxNS45NjE2IDE3Ljk2NThMMTQuNDgxNiAxMy40MDU4TDE4LjQwMTYgMTAuNDQ1OEgxMy41MjE2TDEyLjAwMTYgNS45NjU4MkwxMC41MjE2IDEwLjQ0NThINS42MDE1Nkw5LjUyMTU2IDEzLjQwNThMOC4wNDE1NiAxNy45NjU4TDEyLjAwMTYgMTUuMTY1OFoiIGZpbGw9IiNGRkU2MkUiLz4KPC9zdmc+Cg==" alt="">
+            <span>+84</span>
+          </div>
+          <input type="text" class="phone-input" placeholder="Nhập số điện thoại" v-model="data.mobile_no">
+        </div>
+        <v-btn type="submit" @click="otpActive = !otpActive;loginHidden = !loginHidden" width="100%" block depressed  color="#e87800" class="login_btn">Đăng nhập</v-btn>
+      </form>
     </div>
-
-    <div class="product_describe">
-      <div class="product_des_wrap">
-        <v-row>
-          <v-col cols="12" sm="12" lg="12" md="12">
-            <hr>
-            <div>
-              <h4 class="product_des_title">Mô tả sản phẩm</h4>
-              <p class="des_detail"> {{product.description}}</p>
-            </div>
-            <hr>
-          </v-col>
-        </v-row>
-
+    <div :class="{ activeOtp : otpActive}" class="get-otp_content"
+         style="background-color: white">
+      <div class="welcome-login">Xác thực mã OTP</div>
+      <div class="welcome-login" style="text-align: center">
+        Một mã xác thực gồm 6 số đã được gửi đến số điện thoại
+        <span class="font-weight-bold" >{{data.mobile_no}}</span>
       </div>
-
+      <div class="welcome-login">Nhập mã để tiếp tục</div>
+      <!--                nhập otp-->
+      <form @submit.prevent="sendOTP" >
+        <div class="cover-input-otp">
+          <div style="display: flex;justify-content: space-around">
+            <div style="display: flex;align-items: center"  >
+              <input type="tel" class="otp-input" min="0" max="9" maxlength="1"
+                     pattern="[0-9]"  id="input1" @keyup="inputenter()">
+            </div>
+            <div style="display: flex;align-items: center">
+              <input type="tel" class="otp-input" min="0" max="9" maxlength="1"
+                     pattern="[0-9]" id="input2" @keyup="inputenter()">
+            </div>
+            <div style="display: flex;align-items: center">
+              <input type="tel" class="otp-input" min="0" max="9" maxlength="1"
+                     pattern="[0-9]" id="input3" @keyup="inputenter()">
+            </div>
+            <div style="display: flex;align-items: center">
+              <input type="tel" class="otp-input" min="0" max="9" maxlength="1"
+                     pattern="[0-9]" id="input4" @keyup="inputenter()">
+            </div>
+            <div style="display: flex;align-items: center">
+              <input type="tel" class="otp-input" min="0" max="9" maxlength="1"
+                     pattern="[0-9]" id="input5" @keyup="inputenter()">
+            </div>
+            <div style="display: flex;align-items: center">
+              <input type="tel" class="otp-input" min="0" max="9" maxlength="1"
+                     pattern="[0-9]" id="input6" @keyup="inputenter()">
+            </div>
+          </div>
+        </div>
+        <div class="welcome-login" style="margin-bottom: 0.5rem"> Bạn không nhận được mã ?
+          <a class="addborder" style="text-decoration: none;cursor: pointer;margin-left: 0.25rem" href=""> Gửi lại</a>
+        </div>
+      </form>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 export default {
-  name: "productInStore",
-  data() {
+  name: "AuthenticationUser",
+  setup(){
+  },
+  data: () => {
     return {
-      product_id: "-1",
-      product_name_convert: "",
-      checked_topping: [],
-      items: [],
-      product: {},
+      dialog:false,
+      otpActive:false,
+      loginHidden:false,
+      showError:false,
+      data:{
+        mobile_no:'',
+        otp:'',
+      },
+      user: {}
     }
   },
-  created() {
-    // this.category_id = this.$route.params.category_id;
-    this.$watch(
-        () => this.$route.params,
-        (toParams, previousParams) => {
-          console.log("before:", toParams);
-          console.log("after:", previousParams);
-          this.product_name_convert = this.$route.params.product_name_convert;
-          // react to route changes...
-        }
-    ),
-        this.getItemByID();
-  },
-  watch: {
-    product_id() {
-      this.getItems();
-      console.log(this.product_id)
-    },
-  },
-  methods: {
-    // bo het dau trong tieng Viet
-    removeVietnameseTones(str) {
-      str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
-      str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
-      str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
-      str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
-      str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
-      str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
-      str = str.replace(/đ/g, "d");
-      str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
-      str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
-      str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
-      str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
-      str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
-      str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
-      str = str.replace(/Đ/g, "D");
-      // Some system encode vietnamese combining accent as individual utf-8 characters
-      // Một vài bộ encode coi các dấu mũ, dấu chữ như một kí tự riêng biệt nên thêm hai dòng này
-      str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // ̀ ́ ̃ ̉ ̣  huyền, sắc, ngã, hỏi, nặng
-      str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // ˆ ̆ ̛  Â, Ê, Ă, Ơ, Ư
-      return str;
-    },
-    getIDByPath(path) {
-      console.log("input path: ", path)
-      for (let index in this.products) {
-        const product = this.products[index]
-        console.log(this.removeVietnameseTones(product.productname).replaceAll(' ', '-').toLowerCase())
-        if (this.removeVietnameseTones(product.productname).replaceAll(' ', '-').toLowerCase() == path) {
-          return product.productid
-        }
+  methods:{
+    inputenter() {
+      const inputs = document.querySelectorAll('.otp-input');
+      console.log(inputs)
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('keydown', function(event) {
+          if (event.key === "Backspace") {
+            inputs[i].value = '';
+            if (i !== 0) inputs[i - 1].focus();
+          } else {
+            if (i === inputs.length - 1 && inputs[i].value !== '') {
+              return true;
+            } else if (event.keyCode > 47 && event.keyCode < 58) {
+              inputs[i].value = event.key
+              if (i !== inputs.length - 1) inputs[i + 1].focus();
+              event.preventDefault();
+            }
+            else if (event.keyCode > 64 && event.keyCode < 91) {
+              inputs[i].value = String.fromCharCode(event.keyCode);
+              if (i !== inputs.length - 1) inputs[i + 1].focus();
+              event.preventDefault();
+            }
+          }
+        });
       }
-      return 0
+      let otp = "";
+      inputs.forEach((input) => {
+        otp += input.value;
+        this.data.otp = otp;
+        console.log(otp)
+      })
     },
-    getItems() {
-      axios
-          .get("http://127.0.0.1:8000/api/admin/product/index")
-          .then((response) => {
-            // console.log("START\n");
-            // console.log(response);
-            // console.log("END\n");
-            this.products = response.data.products;
-            console.log("this items: ",this.products)
-            console.log("produduct name convert: ", this.product_name_convert)
-            this.product_id = this.getIDByPath(this.product_name_convert)
-            console.log("product_id: ", this.product_id)
-            // call api get product_details
-            this.getProductByID()
-            // luu vao local storage
-            // this.singleItem =
-          })
+    sendPhoneNumber() {
+      this.data.mobile_no = "+84".concat(this.data.mobile_no.slice(1))
+      console.log("Gia tri truyen di: ",this.data.mobile_no)
+      axios.post("http://127.0.0.1:8000/api/user/auth/login", {
+        mobile_no: this.data.mobile_no
+      }).then((response) => {
+        console.log("Gia tri tra ve: ", response)
+      })
           .catch((error) => {
-            console.log(error.response);
-          });
-      // const response = await abc();
-    },
-    getItemByID() {
-      console.log(this.$route.params)
-      this.product_name_convert = this.$route.params.product_name_convert
-      this.getItems()
-    },
-    getProductByID() {
-      axios
-          .post("http://127.0.0.1:8000/api/admin/product/getProductInfo", {
-            product_id: this.product_id
-          })
-          .then((response) => {
-            console.log("START res product\n");
-            console.log(response);
-            console.log("END\n");
-            this.product = response.data.product;
-            this.product.id = this.product_id
-          })
-          .catch((error) => {
-            console.log("CAN NOT")
+            console.log("ERR")
             console.log(error.response);
           });
     },
-  }
+    sendOTP(){
+      console.log("Data send OTP: ", this.data)
+      axios
+          .post("http://127.0.0.1:8000/api/user/auth/checkOtp",this.data)
+          .then((response) => {
+            // let id = response.data.id;
+            // Need to check
+            console.log(response.data)
+            if(response.data.userInfo == null)
+            {
+              // Neef to do stthg else
+              alert("Khong thanh cong!")
+            }
+            else {
+              this.user = response.data.userInfo
+              localStorage.setItem('user',JSON.stringify(this.user));
+              // localStorage.setItem('oldAddress', JSON.stringify(this.user.address))
+              this.$router.push('/userAcount')
+            }
+            // this.$store.dispatch('setAuth',true);
+          })
+          .catch((error) => {
+            console.log("Start\n");
+            console.log(error.response)
+            // this.$store.dispatch('setAuth',false);
+          });
+    }
+  },
 }
 </script>
+
+<style scoped>
+/deep/.my-custom-dialog {
+  align-self: flex-start;
+}
+.activeOtp{
+  display: flex !important;
+}
+.hidden{
+  display: none!important;
+}
+.login_modal{
+  width: 26.25rem;
+  border-radius:0.5rem;
+  padding-right: 0!important;
+  height: unset;
+  transform: none;
+  border: none;
+  box-shadow: 0 -4px 10px rgb(0 0 0 / 12%);
+}
+.img_login{
+  height: 12.5rem;
+  overflow: hidden;
+}
+.img_login img{
+  width: 100%;
+  object-fit: cover;
+}
+.login_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+}
+.welcome-login{
+  margin-bottom: 0.75rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.logo_tch{
+  margin-bottom: 2rem;
+  vertical-align: middle;
+}
+.login-input-content{
+  display: flex;
+  align-items: center;
+  height: 2.75rem;
+  background: #fafafa;
+  border: 1px solid #ededed;
+  border-radius: 0.25rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.region-code{
+  margin: 10px 0 10px 10px;
+  padding-right: 16px;
+  border-right: 1px solid #ededed;
+  height: 1.5rem;
+}
+.phone-input{
+  padding:10px 16px;
+}
+input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin: 0;
+}
+.login_btn{
+  width: 100%;
+  color: #fff;
+  border-radius: 6.25rem;
+  line-height: 1.5;
+}
+.get-otp_content{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: none;
+}
+.cover-input-otp {
+  margin: 0.5rem 0;
+  width: 19rem;
+}
+.otp-input{
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.625rem 0.8375rem;
+  font-size: 0.8375rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ededed;
+  text-align: center;
+  background: #fafafa;
+}
+.addborder:hover{
+  text-decoration: #1e88e5!important;
+}
+.otp-input:focus{
+  border: 2px solid #000000;
+}
+</style>
