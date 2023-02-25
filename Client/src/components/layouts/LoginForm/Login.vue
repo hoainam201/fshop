@@ -161,6 +161,7 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.8);
+    position:fixed;
   }
   .login-form {
     width: 576px;
