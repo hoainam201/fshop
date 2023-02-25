@@ -24,8 +24,8 @@
             <form @submit.prevent="sendOTP">
               <div class="input-phone">
                 <input placeholder="Nhập số điện thoại"
-                       type="tel" class="form-control" id="phoneNumber"
-                       v-model="phoneNumber" required>
+                       type="tel" class="form-control form-control-lg input-phone__focus" id="phoneNumber"
+                       v-model="phoneNumber" pattern="\d*" maxlength="10" required>
               </div>
               <div class="submit-login">
                 <button type="submit" class="btn btn-primary">TIẾP TỤC</button>
@@ -96,7 +96,6 @@
 </template>
   
 <script >
-  
   export default {
     props: {
       closeSignUp: {
@@ -108,28 +107,35 @@
         showPhone: true,
         phoneNumber: '',
         otp: ['', '', '', '', '', ''],
+        isSignUp: true
       };
     },
     methods: {
       sendOTP() {
+        localStorage.setItem('phoneNumber', this.phoneNumber);
+        console.log('phoneNumber: ' + this.phoneNumber);
+        // const phoneNumber = localStorage.getItem('phoneNumber');
         // Gửi mã OTP đến số điện thoại
         this.showPhone = false;
       },
       verifyOTP() {
         // Xác thực mã OTP
+        console.log('OTP:', this.otp.join('')); // log the OTP value
         this.closeModal();
       },
       closeModal() {
         this.showPhone = true; // should be this.showPhone = false;
         this.phoneNumber = '';
-        this.otp = '';
+        // this.otp = '';
+        this.otp = ['', '', '', '', '', '']; // reset the OTP value
       },
       handleInput(index) {
         if (this.otp[index]) {
           if (index < 5) {
             this.$refs[`otpInput${index+1}`][0].focus();
           } else {
-            this.$refs.otpInput5.blur();
+            // this.$refs.otpInput5.blur();
+            this.$refs.otpInput5.style.backgroundColor = 'black';
           }
         } else {
           if (index > 0) {
@@ -137,6 +143,7 @@
           }
         }
       },
+
       handleKeyDown(index, event) {
         if (event.code === 'Backspace' && !this.otp[index] && index > 0) {
           this.$refs[`otpInput${index-1}`][0].focus();
@@ -144,7 +151,7 @@
       }
     },
   }    
-  </script>
+</script>
   
 <style scoped>
   .login-fade {
@@ -210,6 +217,7 @@
     margin-right:32px;
     margin-left: 32px;
   }
+
   .inputotp{
     margin-right: 8px;
     margin-left: 8px;
@@ -228,6 +236,7 @@
     color: #6a737a;
     font-weight: 500;
   }
+
   .back_phonenumber {
     text-align: center;
     margin-bottom: 16px;
@@ -240,8 +249,44 @@
 
   .otp-group input[type=tel].complete {
     border: 1px solid #444b52;
-    background: 0 0;
-    background-color: #fff;
+    background: #fff 0 0;
   }
-  </style>
-  
+
+  /*.otp-group  input[type=tel]:focus {*/
+  /*  outline: 0;*/
+  /*}*/
+
+  .form-control {
+    font-weight: 500;
+    color: #444b52;
+    position: relative;
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    padding: 7.5px 11px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #cbd1d6;
+    border-radius: 4px;
+    -webkit-transition: color .3s cubic-bezier(0,0,.4,1),background-color .3s cubic-bezier(0,0,.4,1),border-color .3s cubic-bezier(0,0,.4,1),-webkit-box-shadow .3s cubic-bezier(0,0,.4,1);
+    -o-transition: color .3s cubic-bezier(0,0,.4,1),background-color .3s cubic-bezier(0,0,.4,1),border-color .3s cubic-bezier(0,0,.4,1),box-shadow .3s cubic-bezier(0,0,.4,1);
+    transition: color .3s cubic-bezier(0,0,.4,1),background-color .3s cubic-bezier(0,0,.4,1),border-color .3s cubic-bezier(0,0,.4,1),box-shadow .3s cubic-bezier(0,0,.4,1);
+  }
+
+  .form-control-lg {
+    padding: 9px 15px;
+  }
+
+  .form-control::placeholder {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #939ca3;
+  }
+
+  .form-control:focus {
+    border-color: black !important;
+    box-shadow: inset 0 0 0 1px black !important;
+  }
+
+</style>
