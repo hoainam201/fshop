@@ -19,6 +19,8 @@ router.get('/search/:text', siteController.searchProduct);
 
 router.post('/login', loginController.login);
 
+router.post('/verify-otp', loginController.verifyOtp);
+
 router.post('/creatPayment',authorization(), async (req, res) => {
     let total = 0;
     const {phone, name, address, vnpay, list} = req.body;
