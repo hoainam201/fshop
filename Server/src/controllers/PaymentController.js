@@ -25,7 +25,6 @@ const creatPayment = async (req, res) => {
 }
 
 const returnUrl = async (req, res)=>{
-
     const code = req.query.vnp_ResponseCode;
     if (code == '00'){
         await paymentModel.returnUrl(req.query.vnp_TxnRef);

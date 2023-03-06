@@ -1,8 +1,9 @@
 const db = require("../database");
 
 const getProductByName = async (name) => {
-    const {rows} = await db.query('select * from products where productname = $1', [name]);
-    return rows[0];
+    const searchValue = `%${name.toLowerCase()}%`;
+    const {rows} = await db.query('select * from products where lower(productname) LIKE $1', [searchValue]);
+    return rows;
 };
 
 const home = async () => {

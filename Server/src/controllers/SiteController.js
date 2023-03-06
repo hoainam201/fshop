@@ -1,8 +1,9 @@
 const siteModel = require('../models/SiteModel');
 
 const searchProduct = async (req, res) => {
-    const {id} = req.params;
+    const id = req.params.text;
     const product = await siteModel.getProductByName(id);
+    console.log(id);
     res.json(product);
 };
 
