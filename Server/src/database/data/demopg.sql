@@ -56,8 +56,9 @@ create table contacts
 create table orders
 (
     orderID      serial primary key,
-    orderDate    date default current_date,
+    orderDate    date    default current_date,
     createdBy    varchar references customers (phone),
+    confirm      boolean default false,
     payDate      date,
     shippedDate  date,
     contactPhone varchar,
@@ -114,4 +115,12 @@ create table reviews
     stars       int not null,
     node        text,
     createdTime timestamp
-)
+);
+
+create table verify
+(
+    phone    varchar,
+    otp      char(6),
+    initTime timestamp default current_timestamp,
+    primary key (phone, initTime)
+);

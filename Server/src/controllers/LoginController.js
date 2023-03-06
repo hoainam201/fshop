@@ -29,26 +29,19 @@ async function sendSMS(otp) {
 
 const login = async (req, res) => {
     const phoneNum = req.body.phone;
-    console.log(phoneNum);
     const otp = generateOTP();
-    req.session.otp = otp;
-    req.session.phone = phoneNum;
-    sendSMS(otp);
-    // await loginModel.login(phoneNum);
-    // const payload = {
-    //     phone: phoneNum
-    // };
-    // const token = jwt.sign(payload, 'fptshop');
-    // console.log(token);
-    // res.setHeader('Authorization', `Bearer ${token}`);
-    // res.send('Thành công');
+    await loginModel.otp(phoneNum, otp);
+    res.send('check otp');
+    // sendSMS(otp);
 }
 
 const verifyOtp = async (req, res) => {
     const otp = req.body.otp;
+    console.log(otp)
     const phoneNum = req.body.phone;
-    const {storedPhone, storedOtp} = req.session;
-    if (phoneNum == storedPhone && otp == storedOtp) {
+    const check = await loginModel.verifyOtp(phoneNum, otp)
+    console.log(check);
+    if (check) {
         await loginModel.login(phoneNum);
         const payload = {
             phone: phoneNum
