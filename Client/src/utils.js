@@ -7,6 +7,7 @@ export function formatCurrency(number) {
         currency: 'VND',
     })
 }
+
 // export default {
 //     computed: {
 //         salePrice() {
