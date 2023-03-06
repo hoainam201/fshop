@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 const crypto = require('crypto');
 const moment = require('moment-timezone');
 const authorization = require('./authorization');
-
+const siteController = require('../controllers/SiteController');
+const loginController = require('../controllers/LoginController');
 const router = express.Router();
 
 function HMAC(s) {
@@ -14,39 +15,17 @@ function HMAC(s) {
 }
 
 
-router.get('/search/:text', async (req, res) => {
-    const {id} = req.params;
-    const {rows} = await db.query('select * from products where productname = $1', [id]);
-    res.send(rows[0]);
-});
+router.get('/search/:text', siteController.searchProduct);
 
-router.post('/login', async (req, res) => {
-    const phoneNum = req.body.phone;
-    console.log(phoneNum);
-    const {rows} = await db.query('select phone from customers where phone = $1', [phoneNum]);
-    if (rows.length == 0) {
-        await db.query('insert into customers (phone) values ($1)', [phoneNum]);
-    }
-    const payload = {
-        phone: phoneNum
-    };
-    const token = jwt.sign(payload, 'fptshop');
-    console.log(token);
-    res.setHeader('Authorization', `Bearer ${token}`);
-    res.send('Thành công');
-});
+router.post('/login', loginController.login);
 
-router.get('/logout', authorization(), (req, res) => {
-    console.log(req.userData);
-    res.clearCookie('token');
-    res.send({message: 'Đăng xuất thành công'});
-});
-
-router.post('/creatPayment', async (req, res) => {
+router.post('/creatPayment',authorization(), async (req, res) => {
     let total = 0;
     const {phone, name, address, vnpay, list} = req.body;
-    await db.query('insert into orders (contactphone, contactname, address, vnpay) \n' +
-        'values ($1, $2, $3, $4)', [phone, name, address, vnpay]);
+    const owner = req.userData.phone;
+    console.log(owner);
+    await db.query('insert into orders (createdby, contactphone, contactname, address, vnpay) \n' +
+        'values ($1, $2, $3, $4, $5)', [owner, phone, name, address, vnpay]);
     const {rows} = await db.query('select orderid from orders order by orderid desc limit 1', []);
     console.log(rows[0].orderid);
     for (const key in list) {
@@ -63,7 +42,7 @@ router.post('/creatPayment', async (req, res) => {
         url += s + "&vnp_SecureHash=" + HMAC(s);
         res.json(url);
     } else
-        res.redirect();
+        res.redirect('/');
 });
 
 router.get('/returnUrl', async (req, res)=>{
@@ -81,9 +60,6 @@ router.get('/returnUrl', async (req, res)=>{
     else
         res.status(200).json({RspCode: '97', Message: 'Fail'});
 });
-router.get('/', async (req, res) => {
-    const {rows} = await db.query('select products.*, (select img from productimg where products.productid = productimg.productid limit 1) from products where categoryid = 1 or categoryid = 2', []);
-    res.json(rows);
-});
+router.get('/', siteController.home);
 
 module.exports = router;

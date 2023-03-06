@@ -57,6 +57,7 @@ create table orders
 (
     orderID      serial primary key,
     orderDate    date default current_date,
+    createdBy    varchar references customers (phone),
     payDate      date,
     shippedDate  date,
     contactPhone varchar,
