@@ -1,4 +1,3 @@
-const db = require('../database');
 const crypto = require('crypto');
 const moment = require('moment-timezone');
 const paymentModel = require('../models/PaymentModel');
