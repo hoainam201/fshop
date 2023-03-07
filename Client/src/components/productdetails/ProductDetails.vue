@@ -75,10 +75,10 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
                       </div>
                       <div class="carousel-inner carousel-inner__img">
-                          <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(productimg, index) in product.list" :key="index">
-                            <img :src="productimg.img" class="d-block w-100" style="width: auto; height: 73%"
-                                 alt="image product">
-                          </div>
+                        <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(productimg, index) in product.list" :key="index">
+                          <img :src="productimg.img" class="d-block w-100" style="width: auto; height: 73%"
+                               alt="image product">
+                        </div>
                       </div>
                       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <div class="round">
@@ -182,7 +182,7 @@
                 <div class="price-left">
                   <div class="price-main">{{ formatCurrency(salePrice(product)) }}</div>
                   <div class="price-sub">
-                  <span style="text-decoration: line-through;">{{ formatCurrency(product.price) }}</span>
+                    <span style="text-decoration: line-through;">{{ formatCurrency(product.price) }}</span>
                   </div>
                 </div>
                 <div class="price-right">
@@ -220,7 +220,7 @@
                     <div>
                       <span>Độc quyền bảo hành 2 năm</span>
                       <a href="https://fptshop.com.vn/tin-tuc/tin-khuyen-mai/fpt-shop-doc-quyen-nhan-doi-thoi-gian-bao-hanh-dien-thoai-samsung-151253"
-                        class="re-link">
+                         class="re-link">
                         Xem chi tiết
                       </a>
                     </div>
@@ -300,7 +300,7 @@
                 </ul>
               </div>
               <div class="pay-cate">
-<!--                <BuyNow />-->
+                <!--                <BuyNow />-->
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-xl btn-full" data-bs-toggle="modal"
                         data-bs-target="#exampleModal" @click="addToCart(product)">
@@ -341,12 +341,12 @@
                             </div>
                           </div>
                           <div class="modal-product__price" style="margin: auto 32px;">
-                              <div style="color: #cb1c22; font-weight: 500;">
-                                {{ formatCurrency(salePrice(product) * this.quantity) }}
-                              </div>
-                              <div style="text-decoration: line-through">
-                                {{ formatCurrency(product.price * this.quantity) }}
-                              </div>
+                            <div style="color: #cb1c22; font-weight: 500;">
+                              {{ formatCurrency(salePrice(product) * this.quantity) }}
+                            </div>
+                            <div style="text-decoration: line-through">
+                              {{ formatCurrency(product.price * this.quantity) }}
+                            </div>
                           </div>
                         </div>
                         <div class="cart__form cart__form--type">
@@ -722,47 +722,47 @@ export default {
 </script>
 
 <style>
-  @import "@/assets/main.css";
-  @import "@/assets/slider.css";
-  @import "@/assets/slider-card.css";
-  @import "@/assets/reponsive.css";
-  @import "@/assets/grid.css";
-  @import "@/assets/style.css";
+@import "@/assets/main.css";
+@import "@/assets/slider.css";
+@import "@/assets/slider-card.css";
+@import "@/assets/reponsive.css";
+@import "@/assets/grid.css";
+@import "@/assets/style.css";
 
-  .modal-product .modal-product__img,
-  .modal-product .modal-product__name,
-  .modal-product .modal-product__price,
-  .modal-product .modal-product__quantity
-  {
-    display: inline-block;
-  }
+.modal-product .modal-product__img,
+.modal-product .modal-product__name,
+.modal-product .modal-product__price,
+.modal-product .modal-product__quantity
+{
+  display: inline-block;
+}
 
-  .modal-product__img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 8px;
-    margin-right: 8px;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-  }
+.modal-product__img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+}
 
-  .modal-product__name {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    color: #32373d;
-  }
+.modal-product__name {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #32373d;
+}
 
-  /* Tooltip text color */
-  .tooltip::after {
-    color: red; /* Change to desired color */
-  }
+/* Tooltip text color */
+.tooltip::after {
+  color: red; /* Change to desired color */
+}
 
 </style>

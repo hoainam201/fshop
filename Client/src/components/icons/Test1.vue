@@ -619,7 +619,7 @@ export default {
     },
     getItems() {
       axios
-          .get("http://localhost:4000/admin/product")
+          .get("http://localhost:4000/product")
           .then((response) => {
             console.log("START\n");
             console.log(response);
@@ -646,7 +646,7 @@ export default {
     },
     getProductByID() {
       axios
-          .get(`http://localhost:4000/admin/product/${this.product_id}`)
+          .get(`http://localhost:4000/product/${this.product_id}`)
           .then((response) => {
             console.log("START res product\n");
             console.log(response);
