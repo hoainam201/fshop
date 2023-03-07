@@ -72,12 +72,12 @@
                     </a>
                   </li>
                   <li class="service-cart">
-                    <a href="#">
+                    <router-link to="/cart">
                       <div>
                         <i class="fa fa-shopping-cart"></i>
                       </div>
                       <span>Giỏ hàng</span>
-                    </a>
+                    </router-link>
                   </li>
                 </ul>
               </div>
