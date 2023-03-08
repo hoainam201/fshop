@@ -21,20 +21,28 @@ const creatPayment = async (req, res) => {
         url += s + "&vnp_SecureHash=" + HMAC(s);
         res.json(url);
     } else
-        res.redirect('/');
+        res.redirect(`/order/${id}`);
 }
 
 const returnUrl = async (req, res)=>{
     const code = req.query.vnp_ResponseCode;
     if (code == '00'){
-        await paymentModel.returnUrl(req.query.vnp_TxnRef);
-        res.json('/order/');
+        const id = req.query.vnp_TxnRef
+        await paymentModel.returnUrl(id);
+        res.redirect(`/order/${id}`);
     }
     else
         res.status(200).json({RspCode: '97', Message: 'Fail'});
 }
 
+const getOrder = async  (req, res) => {
+    const {id} = req.params;
+    const order = await paymentModel.getOrder(id);
+    res.json(order);
+}
+
 module.exports = {
     creatPayment,
-    returnUrl
+    returnUrl,
+    getOrder
 }
