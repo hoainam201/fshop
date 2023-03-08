@@ -340,7 +340,7 @@
                                 <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
                                 {{ product.description.cpu }}
                               </span>
-                                          <span>
+                                  <span>
                                   <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
                                   {{ getMonitorSize(product.description.monitor) }}
                                 </span>
