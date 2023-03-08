@@ -366,34 +366,45 @@
                         <h5 class="modal-title" id="exampleModalLabel">
                           Có {{ itemCount }} sản phẩm trong giỏ hàng
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-
                       <div class="modal-body">
-                        <div v-for="product in order" :key="product.product.productid" >
+                        <div v-for="product in order" :key="product.product.productid">
                           <div class="modal-product" style="border-bottom: 1px solid #e0e0e0;">
                             <div class="modal-product__img">
                               <img :src="product.product.list?.[0]?.img"
                                    alt="{{ product.product.productname }}">
                             </div>
-                            <h3 class="modal-product__name">{{ product.product.productname }}</h3>
-                            <div class="modal-product__quantity" style="margin-left: 28px">
-                              <div class="product-cart__quality__wrap">
-                                <button @click="decreaseQuantity(product)" :disabled="product.quantity === 1" class="btn">
-                                  <font-awesome-icon icon="fa-solid fa-minus"/>
-                                </button>
-                                <span class="product-quantity"> {{ product.quantity }} </span>
-                                <button @click="increaseQuantity(product)" class="btn">
-                                  <font-awesome-icon icon="fa-solid fa-plus"/>
-                                </button>
+                            <div class="product-cart__info">
+                              <div class="product-cart__inside">
+                                <h3 @click="handleProduct(product.product.productid, product.product.productname)" class="modal-product__name">
+                                  {{ product.product.productname }}
+                                </h3>
                               </div>
-                            </div>
-                            <div class="modal-product__price" style="margin: auto 32px;">
-                              <div style="color: #cb1c22; font-weight: 500;">
-                                {{ formatCurrency(salePrice(product.product) * product.quantity) }}
+                              <div class="modal-product__quantity">
+                                <div class="product-cart__quality__wrap">
+                                  <button @click="decreaseQuantity(product)" :disabled="product.quantity === 1"
+                                          class="btn">
+                                    <font-awesome-icon icon="fa-solid fa-minus"/>
+                                  </button>
+                                  <span class="product-quantity"> {{ product.quantity }} </span>
+                                  <button @click="increaseQuantity(product)" :disabled="product.quantity === 4" class="btn">
+                                    <font-awesome-icon icon="fa-solid fa-plus"/>
+                                  </button>
+                                </div>
+                                <div class="product-cart__remove" @click="removeProduct(product)">
+                                  <span>
+                                    <font-awesome-icon icon="fa-solid fa-trash-can" />
+                                  </span>
+                                  Xóa
+                                </div>
                               </div>
-                              <div style="text-decoration: line-through">
-                                {{ formatCurrency(product.product.price * product.quantity) }}
+                              <div class="modal-product__price">
+                                <div style="color: #cb1c22; font-weight: 500;">
+                                  {{ formatCurrency(salePrice(product.product) * product.quantity) }}
+                                </div>
+                                <div style="text-decoration: line-through">
+                                  {{ formatCurrency(product.product.price * product.quantity) }}
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -411,84 +422,83 @@
                           <div class="modal-product__total">
                             <p class="text-normal">
                               <span>Tổng tiền:</span>
-                              <span>{{ formatCurrency(product.price) }}</span>
+                              <span>{{ formatCurrency(totalAmount) }}</span>
                             </p>
                             <p class="text-normal">
                               <span>Giảm:</span>
-                              <span>- {{ formatCurrency(product.discount) }}</span>
+                              <span>- {{ formatCurrency(discountAmount) }}</span>
                             </p>
-                            <p class="text-normal">
-                              <span>Cần thanh toán:</span>
-                              <span>{{ formatCurrency(salePrice(product)) }}</span>
+                            <p class="text--lg">
+                              <span class="text-size--lg">Cần thanh toán:</span>
+                              <span class="re-price re-red priceFinal">{{ formatCurrency(needToPay) }}</span>
                             </p>
                           </div>
                         </div>
-                      </div>
-                      <div class="cart__form cart__form--type">
-                        <div class="cart__form__block">
-                          <div class="form-customer" style="display: block">
-                            <div class="cart__form__line margin-bottom">
-                              <div class="form-check margin-right">
-                                <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart1">
-                                <label class="form-check-label" for="radio-cart1">
-                                  Anh
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart2">
-                                <label class="form-check-label" for="radio-cart2">
-                                  Chị
-                                </label>
-                              </div>
-                            </div>
-                            <div class="cart__form__line margin-bottom cart__form__line--col">
-                              <div class="namecus">
-                                <input type="text" class="form-control" placeholder="Nhập họ và tên"
-                                       aria-label="Username" aria-describedby="addon-wrapping" required>
-                              </div>
-                              <div class="phonecus">
-                                <input type="tel" class="form-control" placeholder="Nhập số điện thoại"
-                                       aria-label="PhoneNumber" aria-describedby="addon-wrapping" required>
-                              </div>
-                              <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)"
-                                     aria-label="Email" aria-describedby="addon-wrapping">
-                            </div>
-                          </div>
-                          <div class="cart__form__line form-delivery" style="display: block">
-                            <div class="cart__title">Chọn hình thức nhận hàng</div>
-                            <div class="cart__payment">
-                              <div class="cart__payment__wrap cart__methodship">
-                                <div class="form-check margin-right" style="width: 160px">
-                                  <input readonly class="form-check-input" type="radio" name="methodship"
-                                         id="radio-cart3">
-                                  <label class="form-check-label" for="radio-cart3">
-                                    Giao hàng tận nơi
+                        <div class="cart__form cart__form--type">
+                          <div class="cart__form__block">
+                            <div class="form-customer" style="display: block">
+                              <div class="cart__form__line margin-bottom">
+                                <div class="form-check margin-right">
+                                  <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart1">
+                                  <label class="form-check-label" for="radio-cart1">
+                                    Anh
                                   </label>
                                 </div>
-                                <div class="form-check" style="width: 160px">
-                                  <input readonly class="form-check-input" type="radio" name="methodship"
-                                         id="radio-cart4">
-                                  <label class="form-check-label" for="radio-cart4">
-                                    Nhận tại cửa hàng
+                                <div class="form-check">
+                                  <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart2">
+                                  <label class="form-check-label" for="radio-cart2">
+                                    Chị
                                   </label>
+                                </div>
+                              </div>
+                              <div class="cart__form__line margin-bottom cart__form__line--col">
+                                <div class="namecus">
+                                  <input type="text" class="form-control" placeholder="Nhập họ và tên"
+                                         aria-label="Username" aria-describedby="addon-wrapping" required>
+                                </div>
+                                <div class="phonecus">
+                                  <input type="tel" class="form-control" placeholder="Nhập số điện thoại"
+                                         aria-label="PhoneNumber" aria-describedby="addon-wrapping" required>
+                                </div>
+                                <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)"
+                                       aria-label="Email" aria-describedby="addon-wrapping">
+                              </div>
+                            </div>
+                            <div class="cart__form__line form-delivery" style="display: block">
+                              <div class="cart__title">Chọn hình thức nhận hàng</div>
+                              <div class="cart__payment">
+                                <div class="cart__payment__wrap cart__methodship">
+                                  <div class="form-check margin-right" style="width: 160px">
+                                    <input readonly class="form-check-input" type="radio" name="methodship"
+                                           id="radio-cart3">
+                                    <label class="form-check-label" for="radio-cart3">
+                                      Giao hàng tận nơi
+                                    </label>
+                                  </div>
+                                  <div class="form-check" style="width: 160px">
+                                    <input readonly class="form-check-input" type="radio" name="methodship"
+                                           id="radio-cart4">
+                                    <label class="form-check-label" for="radio-cart4">
+                                      Nhận tại cửa hàng
+                                    </label>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="modal-footer">
-                      <!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-                      <button type="button" class="btn btn-xl cart-submit">HOÀN TẤT ĐẶT HÀNG</button>
-                      <p>
-                        Bằng cách đặt hàng, quý khách đồng ý với
-                        <a href="https://fptshop.com.vn/tos" class="re-link--gray"
-                           style="text-decoration: underline;">
-                          Điều khoản sử dụng
-                        </a>
-                        của FPTShop
-                      </p>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-xl cart-submit">HOÀN TẤT ĐẶT HÀNG</button>
+                        <p>
+                          Bằng cách đặt hàng, quý khách đồng ý với
+                          <a href="https://fptshop.com.vn/tos" class="re-link--gray"
+                             style="text-decoration: underline;">
+                            Điều khoản sử dụng
+                          </a>
+                          của FPTShop
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -596,7 +606,6 @@ import {formatCurrency} from "@/utils";
 import axios from "axios";
 import commonMixin from "@/mixins/commonMixin";
 import priceMixin from "@/mixins/priceMixin";
-import {bus} from "@/bus";
 
 export default {
   name: 'productDetail',
@@ -660,6 +669,11 @@ export default {
       console.log(this.item_id)
     },
   },
+
+  computed: {
+
+  },
+
   methods: {
     formatCurrency,
     handleProduct(product_id, product_name) {
@@ -671,6 +685,7 @@ export default {
         params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
       }).catch(() => true);
     },
+
     handleItem(item_id, item_name) {
       this.item_id = item_id;
       this.item_name = item_name;
@@ -679,13 +694,7 @@ export default {
         params: {item_id: `${this.item_id}`, item_name_convert: `${this.item_name_convert_computed}`},
       }).catch(() => true);
     },
-    getMonitorSize(monitorString) {
-      // Split the monitor string by comma and space
-      const monitorArray = monitorString.split(", ");
-      // Get the first element of the array
-      const monitorSize = monitorArray[0];
-      return monitorSize;
-    },
+
     getIDByPath(path) {
       console.log("input path: ", path)
       for (let index in this.products) {
@@ -775,52 +784,6 @@ export default {
             console.log(error.response);
           });
     },
-    increaseQuantity(product) {
-      product.quantity++;
-      localStorage.setItem("order", JSON.stringify(this.order))
-    },
-    decreaseQuantity(product) {
-      if (product.quantity > 1) {
-        product.quantity--;
-        localStorage.setItem("order", JSON.stringify(this.order))
-      }
-    },
-    handleChoseItem() {
-      // localStorage.removeItem("order");
-
-      this.order = JSON.parse(localStorage.getItem("order"));
-      if (this.order == null) {
-        this.order = [];
-      }
-
-      // Check if the selected product is already in the cart
-      const existingProduct = this.order.find(
-          (entry) => entry.product.productid === this.product.productid
-      );
-
-      if (existingProduct) {
-        // Product already in the cart, increase its quantity
-        existingProduct.quantity += this.quantity;
-      } else {
-        // Product not in the cart, add it as a new entry
-        const entry = {
-          product: this.product,
-          quantity: this.quantity,
-        };
-        this.order.push(entry);
-      }
-
-      // Update local storage and other variables
-      localStorage.setItem("order", JSON.stringify(this.order));
-      window.dispatchEvent(new CustomEvent("order-localstorage-changed", {
-        detail: {
-          storage: localStorage.getItem("order"),
-        },
-      }));
-      console.log(this.order);
-      this.change++;
-      this.itemCount = this.order.length;
-    }
 
     // handleChoseItem() {
     //   // localStorage.removeItem("order")
@@ -853,7 +816,7 @@ export default {
     //   // this.reset()
     // },
   },
-  
+
 
   mounted() {
     // Gọi API để lấy danh sách sản phẩm
@@ -876,105 +839,4 @@ export default {
 @import "@/assets/grid.css";
 @import "@/assets/style.css";
 
-.modal-product .modal-product__img,
-.modal-product .modal-product__name,
-.modal-product .modal-product__price,
-.modal-product .modal-product__quantity {
-  display: inline-block;
-}
-
-.modal-product__img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 8px;
-  margin-right: 8px;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-}
-
-.modal-product__name {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  color: #32373d;
-}
-
-/* Tooltip text color */
-.tooltip::after {
-  color: red; /* Change to desired color */
-}
-
-.namecus, .phonecus {
-  width: 237px;
-}
-
-.phonecus {
-  margin-left: 16px;
-}
-
-.modal-product__pay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  padding: 16px 24px;
-  -webkit-box-shadow: 0 1px 0 0 #e1e4e6;
-  box-shadow: 0 1px 0 0 #e1e4e6
-}
-
-.modal-product__coupon {
-  font-size: 0;
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.coupon-title {
-  font-size: 16px;
-  line-height: 24px;
-  flex-basis: 100%;
-  font-weight: 500;
-  color: #32373d;
-  margin-bottom: 8px;
-}
-
-.cs-input-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.cs-input {
-  border-radius: 4px;
-  border: solid 1px #cbd1d6;
-  background-color: #fff;
-  color: #444b52;
-  font-size: 14px;
-  line-height: 20px;
-  padding: 3px 8px;
-  -webkit-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-
-.modal-product__total {
-
-}
 </style>

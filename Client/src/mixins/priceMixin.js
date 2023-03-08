@@ -30,7 +30,24 @@ const priceMixin = {
         },
         item_name_convert_computed(){
             return this.removeVietnameseTones(this.item_name).replaceAll(' ', '-').toLowerCase()
-        }
+        },
+        totalAmount() {
+            let total = 0;
+            for (const product of this.order) {
+                total += product.product.price * product.quantity;
+            }
+            return total;
+        },
+        discountAmount() {
+            let discount = 0;
+            for (const product of this.order) {
+                discount += product.product.discount * product.quantity;
+            }
+            return discount;
+        },
+        needToPay() {
+            return this.totalAmount - this.discountAmount;
+        },
     },
 };
 export default {

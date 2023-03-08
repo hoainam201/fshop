@@ -21,5 +21,72 @@ export default {
             str = str.replace(/[\u02C6\u0306\u031B]/g, ""); // ˆ ̆ ̛  Â, Ê, Ă, Ơ, Ư
             return str;
         },
+        getMonitorSize(monitorString) {
+            // Split the monitor string by comma and space
+            const monitorArray = monitorString.split(", ");
+            // Get the first element of the array
+            const monitorSize = monitorArray[0];
+            return monitorSize;
+        },
+        increaseQuantity(product) {
+            product.quantity++;
+            localStorage.setItem("order", JSON.stringify(this.order))
+        },
+        decreaseQuantity(product) {
+            if (product.quantity > 1) {
+                product.quantity--;
+                localStorage.setItem("order", JSON.stringify(this.order))
+            }
+        },
+        removeProduct(product) {
+            const index = this.order.indexOf(product);
+            if (index > -1) {
+                this.order.splice(index, 1);
+                localStorage.setItem("order", JSON.stringify(this.order));
+                window.dispatchEvent(new CustomEvent("order-localstorage-changed", {
+                    detail: {
+                        storage: localStorage.getItem("order"),
+                    },
+                }));
+                this.change++;
+                this.itemCount = this.order.length;
+            }
+        },
+        handleChoseItem() {
+            // localStorage.removeItem("order");
+
+            this.order = JSON.parse(localStorage.getItem("order"));
+            if (this.order == null) {
+                this.order = [];
+            }
+
+            // Check if the selected product is already in the cart
+            const existingProduct = this.order.find(
+                (entry) => entry.product.productid === this.product.productid
+            );
+
+            if (existingProduct) {
+                // Product already in the cart, increase its quantity
+                existingProduct.quantity += this.quantity;
+            } else {
+                // Product not in the cart, add it as a new entry
+                const entry = {
+                    product: this.product,
+                    quantity: this.quantity,
+                };
+                this.order.push(entry);
+            }
+
+            // Update local storage and other variables
+            localStorage.setItem("order", JSON.stringify(this.order));
+            window.dispatchEvent(new CustomEvent("order-localstorage-changed", {
+                detail: {
+                    storage: localStorage.getItem("order"),
+                },
+            }));
+            console.log(this.order);
+            this.change++;
+            this.itemCount = this.order.length;
+        }
     }
 }

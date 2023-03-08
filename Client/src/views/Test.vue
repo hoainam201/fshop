@@ -1,21 +1,38 @@
 <template>
-  <div v-for="product in order" :key="product.product.productid" >
-    <div class="modal-product">
-      <h3>{{ product.product.productname }}</h3>
-      <div>
-        <div>
-          <button @click="decreaseQuantity(product)" :disabled="product.quantity === 1" class="btn">
+  <div class="modal-product">
+    <div class="modal-product__img">
+      <img :src="product.product.list?.[0]?.img"
+           alt="{{ product.product.productname }}">
+    </div>
+    <div class="product-cart__info">
+      <div class="product-cart__inside">
+        <h3 class="modal-product__name">
+          {{ product.product.productname }}
+        </h3>
+      </div>
+      <div class="modal-product__quantity">
+        <div class="product-cart__quality__wrap">
+          <button @click="decreaseQuantity(product)"
+                  class="btn">
             -
           </button>
-          <span> { product.quantity }}</span>
+          <span class="product-quantity"> {{ product.quantity }} </span>
           <button @click="increaseQuantity(product)" class="btn">
             +
           </button>
         </div>
+        <div class="product-cart__remove" @click="removeProduct(product)">
+          Xóa
+        </div>
       </div>
-      <button @click="removeProduct(product)" class="btn">
-        Delete
-      </button>
+      <div class="modal-product__price">
+        <div>
+          {{ product.quantity }}
+        </div>
+        <div style="text-decoration: line-through">
+          {{ product.product.price }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
