@@ -41,7 +41,7 @@ import {
     faTv,
     faChargingStation,
     faBagShopping,
-    faCircleCheck, faTruckFast, faImage, faBox, faCirclePlus, faMinus, faPlus,
+    faCircleCheck, faTruckFast, faImage, faBox, faCirclePlus, faMinus, faPlus, faTrashCan,
 } from '@fortawesome/free-solid-svg-icons'
 import {faApple, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faCircleInfo} from "@fortawesome/free-solid-svg-icons/faCircleInfo";
@@ -50,7 +50,7 @@ import {faCircleInfo} from "@fortawesome/free-solid-svg-icons/faCircleInfo";
 library.add(faUserSecret, faUser, faMobileScreenButton, faMedal, faBattery, faSimCard, faApple, faMobileButton,
             faHeadphonesSimple, faPrint, faComputerMouse, faKeyboard, faMicrochip, faMobile, faMemory, faLaptop,
             faWeightHanging, faHardDrive, faTv, faChargingStation, faBagShopping, faCircleCheck, faTruckFast, faImage,
-            faYoutube, faBox, faCircleInfo, faCirclePlus, faMinus, faPlus)
+            faYoutube, faBox, faCircleInfo, faCirclePlus, faMinus, faPlus, faTrashCan)
 
 createApp(App)
     .use(router)
