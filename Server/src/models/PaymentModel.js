@@ -28,8 +28,17 @@ const returnUrl = async (id) => {
     await db.query('update orders SET paydate = $1, confirm = true where orderid = $2', [currentDate, id]);
 }
 
+const getOrder = async (id) => {
+    let {rows} = await db.query('select * from orders where orderid = $1', [id]);
+    const list = await db.query('select (select productname from products where orderdetails.productid = products.productid), price, quantity, (select img from productimg where orderdetails.productid = productimg.productid limit 1) from orderdetails where orderid = $1', [id]);
+    rows[0].list = list.rows;
+    console.log(rows);
+    return rows[0];
+}
+
 module.exports = {
     newOrder,
     addProduct,
-    returnUrl
+    returnUrl,
+    getOrder
 }
