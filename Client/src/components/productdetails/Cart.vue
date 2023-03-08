@@ -31,7 +31,7 @@
                     <div class="product-cart__info">
                       <div class="product-cart__inside">
                         <h3 @click="handleProduct(product.product.productid, product.product.productname)"
-                            class="modal-product__name">
+                            class="modal-product__name" style="cursor: pointer">
                           {{ product.product.productname }}
                         </h3>
                       </div>
@@ -127,16 +127,18 @@
                     <div class="cart__payment">
                       <div class="cart__payment__wrap cart__methodship">
                         <div class="form-check margin-right" style="width: 180px">
-                          <input readonly class="form-check-input" type="radio" name="methodship"
-                                 id="radio-cart3">
-                          <label class="form-check-label" for="radio-cart3">
+                          <input readonly class="form-check-input" type="radio" name="paymentMethod"
+                                 id="cash" value="cash"
+                                 v-model="paymentMethod">
+                          <label class="form-check-label" for="cash">
                             Thanh toán tiền mặt
                           </label>
                         </div>
                         <div class="form-check" style="width: 200px">
-                          <input readonly class="form-check-input" type="radio" name="methodship"
-                                 id="radio-cart4">
-                          <label class="form-check-label" for="radio-cart4">
+                          <input readonly class="form-check-input" type="radio"
+                                 id="online" value="online"
+                                 v-model="paymentMethod">
+                          <label class="form-check-label" for="online">
                             Thanh toán qua ví VNPay
                           </label>
                         </div>
@@ -146,7 +148,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-xl cart-submit">HOÀN TẤT ĐẶT HÀNG</button>
+                <button type="button" class="btn btn-xl cart-submit" @click="finishOrder">HOÀN TẤT ĐẶT HÀNG</button>
                 <p>
                   Bằng cách đặt hàng, quý khách đồng ý với
                   <a href="https://fptshop.com.vn/tos" class="re-link--gray"
@@ -199,6 +201,7 @@ export default {
       ],
       quantity: 1,
       phoneNumber: '',
+      paymentMethod: '',
     }
   },
   created() {
@@ -301,6 +304,34 @@ export default {
             console.log(error.response);
           });
     },
+
+    async finishOrder() {
+      if (!this.paymentMethod) {
+        alert('Please select a payment method')
+        return
+      }
+      if (this.paymentMethod === 'online') {
+        try {
+          const response = await fetch('http://localhost:4000/createPayment', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              phoneNumber: this.phoneNumber,
+              paymentMethod: this.paymentMethod
+            })
+          })
+          const data = await response.json()
+          window.location.href = data.paymentLink
+        } catch (error) {
+          console.error(error)
+          alert('Payment failed')
+        }
+      } else {
+        // Handle cash payment
+      }
+    }
   }
 }
 </script>

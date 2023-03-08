@@ -1,22 +1,17 @@
 <template>
-  <div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Select province
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a v-for="(province, index) in provinces" :key="index" @click="selectProvince(province)" class="dropdown-item">{{ province }}</a>
-      </div>
-    </div>
-    <div v-if="selectedProvince" class="address">
-      {{ selectedProvince }}
-      <br>
-      Address line 1
-      <br>
-      Address line 2
-      <br>
-      City, Province, Postal Code
-    </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="cash"
+           v-model="paymentMethod">
+    <label class="form-check-label" for="cash">
+      Cash
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="paymentMethod" id="online" value="online"
+           v-model="paymentMethod">
+    <label class="form-check-label" for="online">
+      Online Payment
+    </label>
   </div>
 </template>
 
@@ -24,21 +19,8 @@
 export default {
   data() {
     return {
-      provinces: [
-        'Hà Nội',
-        'Hồ Chí Minh',
-        'Đà Nẵng',
-        'Hải Phòng',
-        'Cần Thơ',
-        // ...
-      ],
-      selectedProvince: null,
-    };
-  },
-  methods: {
-    selectProvince(province) {
-      this.selectedProvince = province;
-    },
-  },
-};
+      paymentMethod: null // or paymentMethod: ''
+    }
+  }
+}
 </script>

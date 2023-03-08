@@ -366,6 +366,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">
                           Có {{ itemCount }} sản phẩm trong giỏ hàng
                         </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <div v-for="product in order" :key="product.product.productid">
