@@ -20,7 +20,6 @@
                 <h5 class="modal-title" id="exampleModalLabel">
                   Có {{ itemCount }} sản phẩm trong giỏ hàng
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <div v-for="product in order" :key="product.product.productid" >
@@ -49,6 +48,10 @@
                         {{ formatCurrency(product.product.price * product.quantity) }}
                       </div>
                     </div>
+
+                    <button @click="removeProduct(product)" class="btn">
+                      Delete
+                    </button>
                   </div>
                 </div>
                 <div class="modal-product__pay">
@@ -316,6 +319,20 @@ export default {
       if (product.quantity > 1) {
         product.quantity--;
         localStorage.setItem("order", JSON.stringify(this.order))
+      }
+    },
+    removeProduct(product) {
+      const index = this.order.indexOf(product);
+      if (index > -1) {
+        this.order.splice(index, 1);
+        localStorage.setItem("order", JSON.stringify(this.order));
+        window.dispatchEvent(new CustomEvent("order-localstorage-changed", {
+          detail: {
+            storage: localStorage.getItem("order"),
+          },
+        }));
+        this.change++;
+        this.itemCount = this.order.length;
       }
     },
     handleChoseItem() {
