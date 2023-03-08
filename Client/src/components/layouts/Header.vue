@@ -18,24 +18,28 @@
                 </div>
               </div>
               <div class="col l-5 m-6 c-12" style="top: 10px">
-                <div style="margin-top: 10px">
-                  <MDBInput
-                      inputGroup
-                      :formOutline="false"
-                      wrapperClass="mb-3"
-                      v-model="search5"
-                      placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm"
-                      aria-label="Search"
-                  >
-                    <MDBBtn color="primary" @click="showAlert"
-                            style="background-color: #333333 !important;
+
+                  <div style="margin-top: 10px">
+                    <MDBInput
+                        inputGroup
+                        :formOutline="false"
+                        wrapperClass="mb-3"
+                        v-model="searchTerm"
+                        placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm"
+                        aria-label="Search"
+                    >
+                      <router-link :to="{ path: '/searchresult', query: { searchTerm: searchTerm } }">
+                      <MDBBtn color="primary"
+                              style="background-color: #333333 !important;
                                   width: 58px;
                                   height: 36px;"
-                    >
-                      <MDBIcon icon="search"/>
-                    </MDBBtn>
-                  </MDBInput>
-                </div>
+                      >
+                        <MDBIcon icon="search"/>
+                      </MDBBtn>
+                      </router-link>
+                    </MDBInput>
+                  </div>
+
               </div>
               <div class="col l-5 m-6 c-6">
                 <ul class="service">
@@ -601,6 +605,9 @@ export default {
       type: Function,
     },
   },
+<<<<<<< HEAD
+  data() {
+=======
 
   created() {
     this.itemCount = JSON.parse(localStorage.getItem("order")).length
@@ -621,10 +628,10 @@ export default {
     const search5 = ref('');
     const showAlert = () => alert(search5.value);
 
+>>>>>>> ccdc91cb0eb04e82eba48672026432da9d5fb6e2
     return {
-      search5,
-      showAlert,
-    };
+      searchTerm: '',
+    }
   },
 };
 </script>

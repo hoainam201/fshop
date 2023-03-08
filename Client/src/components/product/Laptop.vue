@@ -381,9 +381,9 @@
                                 </div>
                                 <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
                                 <div class="strike-price">
-                      <span style="text-decoration: line-through">
-                        {{ formatCurrency(product.price) }}
-                      </span>
+                                  <span style="text-decoration: line-through">
+                                    {{ formatCurrency(product.price) }}
+                                  </span>
                                 </div>
                               </div>
                               <div class="card-item-info__promo">

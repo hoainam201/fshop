@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ProductDetails from "@/components/productdetails/ProductDetails.vue";
-
+import SearchResult from '@/components/icons/SearchResult.vue'
 export default createRouter({
   history: createWebHistory(),
   routes: [
@@ -30,6 +30,11 @@ export default createRouter({
           path: '/test',
           name: 'Test',
           component: import("@/components/icons/Test.vue")
+      },
+      {
+          path: '/searchresult',
+          name: 'SearchResult',
+          component: import("@/components/icons/SearchResult.vue")
       },
       {
           path: '/test1',
