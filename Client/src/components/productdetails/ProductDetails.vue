@@ -637,7 +637,10 @@ export default {
   },
   created() {
     // this.category_id = this.$route.params.category_id;
-    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    // this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    const order = JSON.parse(localStorage.getItem("order")) ?? [];
+    this.itemCount = order.length;
+    this.order = order;
     this.order = JSON.parse(localStorage.getItem("order"));
     this.$watch(
         () => this.$route.params,
