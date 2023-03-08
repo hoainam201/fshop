@@ -607,7 +607,9 @@ export default {
   },
 
   created() {
-    this.itemCount = JSON.parse(localStorage.getItem("order")).length
+    const order = JSON.parse(localStorage.getItem("order")) ?? [];
+    this.itemCount = order.length;
+    this.order = order;
   },
 
   mounted() {
