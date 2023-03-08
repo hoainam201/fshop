@@ -605,9 +605,6 @@ export default {
       type: Function,
     },
   },
-<<<<<<< HEAD
-  data() {
-=======
 
   created() {
     this.itemCount = JSON.parse(localStorage.getItem("order")).length
@@ -628,7 +625,6 @@ export default {
     const search5 = ref('');
     const showAlert = () => alert(search5.value);
 
->>>>>>> ccdc91cb0eb04e82eba48672026432da9d5fb6e2
     return {
       searchTerm: '',
     }
