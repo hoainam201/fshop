@@ -1012,6 +1012,7 @@ p {
   margin: 10px 0;
   width: 20%;
   object-fit: cover;
+  height: fit-content;
 }
 
 .img-footer.footer-final img {

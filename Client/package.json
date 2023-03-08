@@ -22,7 +22,7 @@
     "params": "^0.1.1",
     "vue": "^3.2.45",
     "vue-router": "^4.0.13",
-    "vuex": "^4.1.0"
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

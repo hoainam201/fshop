@@ -76,12 +76,15 @@
                     </a>
                   </li>
                   <li class="service-cart">
-                    <a href="#">
+                    <router-link to="/cart">
                       <div>
                         <i class="fa fa-shopping-cart"></i>
                       </div>
-                      <span>Giỏ hàng</span>
-                    </a>
+                      <div style="display: flex">
+                        <span>Giỏ hàng</span>
+                        <span>{{ itemCount }}</span>
+                      </div>
+                    </router-link>
                   </li>
                 </ul>
               </div>
@@ -592,12 +595,40 @@ export default {
     MDBIcon,
     Login,
   },
+  data() {
+    return {
+      itemCount: 0,
+    }
+  },
   props: {
     openSignUp: {
       type: Function,
     },
   },
+<<<<<<< HEAD
   data() {
+=======
+
+  created() {
+    this.itemCount = JSON.parse(localStorage.getItem("order")).length
+  },
+
+  mounted() {
+    window.addEventListener('order-localstorage-changed', (event) => {
+      // console.log(event.detail.storage)
+      if (event.detail.storage == null) {
+        this.itemCount = 0
+      } else
+        this.itemCount = JSON.parse(event.detail.storage).length;
+      // console.log("item count in mounted: ", this.itemCount)
+    });
+  },
+
+  setup() {
+    const search5 = ref('');
+    const showAlert = () => alert(search5.value);
+
+>>>>>>> ccdc91cb0eb04e82eba48672026432da9d5fb6e2
     return {
       searchTerm: '',
     }

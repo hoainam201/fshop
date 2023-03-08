@@ -83,7 +83,6 @@
 <script>
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
 import {formatCurrency} from "@/utils";
-import {ref} from "vue";
 import axios from "axios";
 import commonMixin from "@/mixins/commonMixin";
 

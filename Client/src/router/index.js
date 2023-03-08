@@ -46,5 +46,10 @@ export default createRouter({
           name: 'BuyNow',
           component: import("@/components/productdetails/BuyNow.vue")
       },
+      {
+          path: '/cart',
+          name: 'Cart',
+          component: import("@/components/productdetails/Cart.vue")
+      },
   ],
 })

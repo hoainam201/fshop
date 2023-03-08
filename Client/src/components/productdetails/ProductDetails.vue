@@ -35,7 +35,7 @@
                 <li><i class="fa fa-star active"></i></li>
                 <li><i class="fa fa-star"></i></li>
               </ul>
-              <div  class="rating-link">
+              <div class="rating-link">
                 <a id="re-rate" class="re-link" href="#"> 260 đánh giá</a>
                 <span>|</span>
                 <a class="re-link" href="#"> 107 Hỏi & đáp</a>
@@ -43,7 +43,7 @@
               <a href="https://fptshop.com.vn/so-sanh-san-pham?samsung-galaxy-z-flip4-flex-mode-collection"
                  class="re-link margin-left">
                 <span class="icon-plus margin-right">
-                  <font-awesome-icon icon="fa-solid fa-circle-plus" />
+                  <font-awesome-icon icon="fa-solid fa-circle-plus"/>
                 </span>
                 So sánh
               </a>
@@ -59,8 +59,9 @@
                 <div class="row">
                   <div class="carousel-slider carousel-product-sale">
                     <div class="carousel-frame">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/585x429/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/1/638108489376997131_frame-detail-585x428.png"
-                           alt="Thang hai cap doi">
+                      <img
+                          src="https://images.fpt.shop/unsafe/fit-in/585x429/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/2/1/638108489376997131_frame-detail-585x428.png"
+                          alt="Thang hai cap doi">
                       <p>
                         Lì xì
                         <span>{{ formatCurrency(product.discount) }}</span>
@@ -68,25 +69,33 @@
                     </div>
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-indicators" style="top: 364px">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                                aria-label="Slide 5"></button>
                       </div>
                       <div class="carousel-inner carousel-inner__img">
-                          <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(productimg, index) in product.list" :key="index">
-                            <img :src="productimg.img" class="d-block w-100" style="width: auto; height: 73%"
-                                 alt="image product">
-                          </div>
+                        <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'"
+                             v-for="(productimg, index) in product.list" :key="index">
+                          <img :src="productimg.img" class="d-block w-100" style="width: auto; height: 73%"
+                               alt="image product">
+                        </div>
                       </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                              data-bs-slide="prev">
                         <div class="round">
                           <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #52585f"></span>
                           <span class="visually-hidden">Previous</span>
                         </div>
                       </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                              data-bs-slide="next">
                         <div class="round">
                           <span class="carousel-control-next-icon" aria-hidden="true" style="color: #52585f"></span>
                           <span class="visually-hidden">Next</span>
@@ -96,38 +105,48 @@
                   </div>
                   <div class="product-slider__feature">
                     <a class="product-slider__feature-item product-slider__img">
-                      <span><i><font-awesome-icon icon="fa-solid fa-image" /></i></span>
+                      <span><i><font-awesome-icon icon="fa-solid fa-image"/></i></span>
                       <p>Xem thêm 12 ảnh</p>
                     </a>
                     <a class="product-slider__feature-item product-slider__video">
-                      <span><i><font-awesome-icon icon="fa-brands fa-youtube" /></i></span>
+                      <span><i><font-awesome-icon icon="fa-brands fa-youtube"/></i></span>
                       <p>Video trên tay</p>
                     </a>
                     <a class="product-slider__feature-item product-slider__box">
-                      <span><i><font-awesome-icon icon="fa-solid fa-box" /></i></span>
+                      <span><i><font-awesome-icon icon="fa-solid fa-box"/></i></span>
                       <p>Trong hộp có gì</p>
                     </a>
                   </div>
                   <div v-if="product.categoryid === 2" class="info-cate">
                     <ul>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-laptop"/>
+                        </i>
                         <span>{{ product.description.monitor }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-microchip"/>
+                        </i>
                         <span>{{ product.description.cpu }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-hard-drive"/>
+                        </i>
                         <span>{{ product.description.disk }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-microchip"/>
+                        </i>
                         <span>{{ product.description.ram }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-weight-hanging"/>
+                        </i>
                         <span>{{ product.description.gpu }}</span>
                       </li>
                     </ul>
@@ -138,15 +157,21 @@
                   <div v-else class="info-cate">
                     <ul>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-microchip"/>
+                        </i>
                         <span>{{ product.description.cpu }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-mobile-screen-button"/>
+                        </i>
                         <span>{{ product.description.monitor }}</span>
                       </li>
                       <li class="info-cat-item">
-                        <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                        <i>
+                          <font-awesome-icon icon="fa-solid fa-hard-drive"/>
+                        </i>
                         <span>{{ product.description.rom }}</span>
                       </li>
                       <li class="info-cat-item">
@@ -164,11 +189,11 @@
                   </div>
                   <div class="product-policy">
                     <div class="product-policy__item">
-                      <span class="product-policy__item-shape"><font-awesome-icon icon="fa-solid fa-medal" /></span>
+                      <span class="product-policy__item-shape"><font-awesome-icon icon="fa-solid fa-medal"/></span>
                       <p>Hàng chính hãng - Bảo hành 12 tháng</p>
                     </div>
                     <div class="product-policy__item">
-                      <span class="product-policy__item-shape"><font-awesome-icon icon="fa-solid fa-truck-fast" /></span>
+                      <span class="product-policy__item-shape"><font-awesome-icon icon="fa-solid fa-truck-fast"/></span>
                       <p>Giao hàng toàn quốc</p>
                     </div>
                   </div>
@@ -182,7 +207,7 @@
                 <div class="price-left">
                   <div class="price-main">{{ formatCurrency(salePrice(product)) }}</div>
                   <div class="price-sub">
-                  <span style="text-decoration: line-through;">{{ formatCurrency(product.price) }}</span>
+                    <span style="text-decoration: line-through;">{{ formatCurrency(product.price) }}</span>
                   </div>
                 </div>
                 <div class="price-right">
@@ -192,11 +217,14 @@
               </div>
               <div class="loyalty">
                 <div class="btn-loyalty">
-                  <button type="button" class="btn btn-secondary loyalty-info" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                  <button type="button" class="btn btn-secondary loyalty-info" data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
                           title="Điểm thưởng khi mua hàng. Quý khách có thể sử dụng đổi thành Voucher khi thanh toán. ">
                     <span>F</span>
                     <strong>+ {{ Math.round(rewardPoint(product)) }} điểm thưởng dự kiến</strong>
-                    <i><font-awesome-icon icon="fa-solid fa-circle-info" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-info"/>
+                    </i>
                   </button>
                 </div>
               </div>
@@ -204,29 +232,37 @@
                 <div class="sale-gift-title">Nhận ngay khuyến mại đặc biệt</div>
                 <ul class="sale-gift-list sale-gift-list__more">
                   <li class="sale-gift-item">
-                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-check"/>
+                    </i>
                     <div>
                       <span>Lì xì ngay {{ formatCurrency(product.discount) }}</span>
                     </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-check"/>
+                    </i>
                     <div>
                       <span>Trả góp 0%</span>
                     </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-check"/>
+                    </i>
                     <div>
                       <span>Độc quyền bảo hành 2 năm</span>
                       <a href="https://fptshop.com.vn/tin-tuc/tin-khuyen-mai/fpt-shop-doc-quyen-nhan-doi-thoi-gian-bao-hanh-dien-thoai-samsung-151253"
-                        class="re-link">
+                         class="re-link">
                         Xem chi tiết
                       </a>
                     </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-check"/>
+                    </i>
                     <div>
                       <span>Thu cũ lì xì thêm 2.5 triệu + FPT Shop trợ giá thêm 15% đến 2 triệu (MintPro)</span>
                       <a href="https://fptshop.com.vn/thu-cu-doi-moi/samsung"
@@ -236,13 +272,17 @@
                     </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-check"/>
+                    </i>
                     <div>
                       <span>Tặng bộ phụ kiện cao cấp trị giá 8.000.000đ của NTK Lâm Gia Khang</span>
                     </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-check"/>
+                    </i>
                     <div>
                       <span>Danh sách cửa hàng trải nghiệm miễn phí bộ phụ kiện cao cấp </span>
                       <a href="https://docs.google.com/spreadsheets/d/1hxACT0ztPeUp9mZyQ32NJ2Io04Q-4uoRB0NDSDpH228/edit?usp=sharing"
@@ -252,7 +292,9 @@
                     </div>
                   </li>
                   <li class="sale-gift-item">
-                    <i><font-awesome-icon icon="fa-solid fa-circle-check" /></i>
+                    <i>
+                      <font-awesome-icon icon="fa-solid fa-circle-check"/>
+                    </i>
                     <div>
                       <span>Lì xì 30% Sim MobiFone Siêu Data 3T - 2GB/ngày - miễn phí 3 tháng - giá chỉ 266.000đ</span>
                     </div>
@@ -263,8 +305,10 @@
                 <ul>
                   <li>
                     <label class="img">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/48x48/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/4/637846629514363952_ic-tp-bank.jpg"
-                           width="48" height="48" alt="Lì xì ngay 600.000đ và hoàn tiền đến 500.000đ khi mở thẻ đồng thương hiệu TPBANK EVO (áp dụng cùng VNPAY/MOCA)">
+                      <img
+                          src="https://images.fpt.shop/unsafe/fit-in/48x48/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/4/4/637846629514363952_ic-tp-bank.jpg"
+                          width="48" height="48"
+                          alt="Lì xì ngay 600.000đ và hoàn tiền đến 500.000đ khi mở thẻ đồng thương hiệu TPBANK EVO (áp dụng cùng VNPAY/MOCA)">
                       <div class="pay-methods-label">
                         <div class="checkbox">
                           <input type="checkbox" id="evo" value="Evo" v-model="checkedEvo" class="form-check-input">
@@ -281,8 +325,10 @@
                   </li>
                   <li>
                     <label class="img">
-                      <img src="https://images.fpt.shop/unsafe/fit-in/48x48/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/3/14/637828748513420662_Kredio.jpg"
-                           width="48" height="48" alt="Lì xì ngay 600.000đ và hoàn tiền đến 500.000đ khi mở thẻ đồng thương hiệu TPBANK EVO (áp dụng cùng VNPAY/MOCA)">
+                      <img
+                          src="https://images.fpt.shop/unsafe/fit-in/48x48/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/3/14/637828748513420662_Kredio.jpg"
+                          width="48" height="48"
+                          alt="Lì xì ngay 600.000đ và hoàn tiền đến 500.000đ khi mở thẻ đồng thương hiệu TPBANK EVO (áp dụng cùng VNPAY/MOCA)">
                       <div class="pay-methods-label">
                         <div class="checkbox">
                           <input type="checkbox" id="evo" value="Evo" v-model="checkedKredivo" class="form-check-input">
@@ -300,10 +346,10 @@
                 </ul>
               </div>
               <div class="pay-cate">
-<!--                <BuyNow />-->
+                <!--                <BuyNow />-->
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-xl btn-full" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" @click="addToCart(product)">
+                        data-bs-target="#exampleModal" @click="handleChoseItem">
                   <div>
                     <strong>
                       MUA NGAY
@@ -312,191 +358,225 @@
                   <p>Giao hàng miễn phí hoặc nhận tại shop</p>
                 </button>
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="
-                      exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
-                          Có 1 sản phẩm trong giỏ hàng
+                          Có {{ itemCount }} sản phẩm trong giỏ hàng
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
+
                       <div class="modal-body">
-                        <div class="modal-product">
-                          <div class="modal-product__img">
-                            <img :src="product.list[0].img"
-                                 alt="{{ product.productname }}">
-                          </div>
-                          <h3 class="modal-product__name">{{ product.productname }}</h3>
-                          <div class="modal-product__quantity" style="margin-left: 28px">
-                            <div class="product-cart__quality__wrap">
-                              <button @click="decreaseQuantity" :disabled="quantity === 1" class="btn">
-                                <font-awesome-icon icon="fa-solid fa-minus" />
-                              </button>
-                              <span class="product-quantity"> {{ quantity }} </span>
-                              <button @click="increaseQuantity" class="btn">
-                                <font-awesome-icon icon="fa-solid fa-plus" />
-                              </button>
+                        <div v-for="product in order" :key="product.product.productid" >
+                          <div class="modal-product" style="border-bottom: 1px solid #e0e0e0;">
+                            <div class="modal-product__img">
+                              <img :src="product.product.list?.[0]?.img"
+                                   alt="{{ product.product.productname }}">
                             </div>
-                          </div>
-                          <div class="modal-product__price" style="margin: auto 32px;">
+                            <h3 class="modal-product__name">{{ product.product.productname }}</h3>
+                            <div class="modal-product__quantity" style="margin-left: 28px">
+                              <div class="product-cart__quality__wrap">
+                                <button @click="decreaseQuantity(product)" :disabled="product.quantity === 1" class="btn">
+                                  <font-awesome-icon icon="fa-solid fa-minus"/>
+                                </button>
+                                <span class="product-quantity"> {{ product.quantity }} </span>
+                                <button @click="increaseQuantity(product)" class="btn">
+                                  <font-awesome-icon icon="fa-solid fa-plus"/>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="modal-product__price" style="margin: auto 32px;">
                               <div style="color: #cb1c22; font-weight: 500;">
-                                {{ formatCurrency(salePrice(product) * this.quantity) }}
+                                {{ formatCurrency(salePrice(product.product) * product.quantity) }}
                               </div>
                               <div style="text-decoration: line-through">
-                                {{ formatCurrency(product.price * this.quantity) }}
-                              </div>
-                          </div>
-                        </div>
-                        <div class="cart__form cart__form--type">
-                          <div class="cart__form__block">
-                            <div class="form-customer" style="display: block">
-                              <div class="cart__form__line margin-bottom">
-                                <div class="form-check margin-right">
-                                  <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart1">
-                                  <label class="form-check-label" for="radio-cart1">
-                                    Anh
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart2">
-                                  <label class="form-check-label" for="radio-cart2">
-                                    Chị
-                                  </label>
-                                </div>
-                              </div>
-                              <div class="cart__form__line margin-bottom cart__form__line--col">
-                                <div class="namecus">
-                                  <input type="text" class="form-control" placeholder="Nhập họ và tên" aria-label="Username" aria-describedby="addon-wrapping">
-                                </div>
-                                <div class="phonecus">
-                                  <input type="number" class="form-control" placeholder="Nhập số điện thoại" aria-label="PhoneNumber" aria-describedby="addon-wrapping">
-                                </div>
-                                <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)" aria-label="Email" aria-describedby="addon-wrapping">
+                                {{ formatCurrency(product.product.price * product.quantity) }}
                               </div>
                             </div>
-                            <div class="cart__form__line form-delivery" style="display: block">
-                              <div class="cart__title">Chọn hình thức nhận hàng</div>
-                              <div class="cart__payment">
-                                <div class="cart__payment__wrap cart__methodship">
-                                  <div class="form-check margin-right" style="width: 160px">
-                                    <input readonly class="form-check-input" type="radio" name="methodship" id="radio-cart3">
-                                    <label class="form-check-label" for="radio-cart3">
-                                      Giao hàng tận nơi
-                                    </label>
-                                  </div>
-                                  <div class="form-check" style="width: 160px">
-                                    <input readonly class="form-check-input" type="radio" name="methodship" id="radio-cart4">
-                                    <label class="form-check-label" for="radio-cart4">
-                                      Nhận tại cửa hàng
-                                    </label>
-                                  </div>
+                          </div>
+                        </div>
+                        <div class="modal-product__pay">
+                          <div class="modal-product__coupon">
+                            <div class="coupon-title">Mã giảm giá</div>
+                            <div class="cs-input-group">
+                              <input type="text" class="cs-input i-txt-voucher" placeholder="Nhập mã giảm giá">
+                              <button type="button" class="cs-btn btn btn-primary btn-apvoucher">
+                                Áp dụng
+                              </button>
+                            </div>
+                          </div>
+                          <div class="modal-product__total">
+                            <p class="text-normal">
+                              <span>Tổng tiền:</span>
+                              <span>{{ formatCurrency(product.price) }}</span>
+                            </p>
+                            <p class="text-normal">
+                              <span>Giảm:</span>
+                              <span>- {{ formatCurrency(product.discount) }}</span>
+                            </p>
+                            <p class="text-normal">
+                              <span>Cần thanh toán:</span>
+                              <span>{{ formatCurrency(salePrice(product)) }}</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart__form cart__form--type">
+                        <div class="cart__form__block">
+                          <div class="form-customer" style="display: block">
+                            <div class="cart__form__line margin-bottom">
+                              <div class="form-check margin-right">
+                                <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart1">
+                                <label class="form-check-label" for="radio-cart1">
+                                  Anh
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart2">
+                                <label class="form-check-label" for="radio-cart2">
+                                  Chị
+                                </label>
+                              </div>
+                            </div>
+                            <div class="cart__form__line margin-bottom cart__form__line--col">
+                              <div class="namecus">
+                                <input type="text" class="form-control" placeholder="Nhập họ và tên"
+                                       aria-label="Username" aria-describedby="addon-wrapping" required>
+                              </div>
+                              <div class="phonecus">
+                                <input type="tel" class="form-control" placeholder="Nhập số điện thoại"
+                                       aria-label="PhoneNumber" aria-describedby="addon-wrapping" required>
+                              </div>
+                              <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)"
+                                     aria-label="Email" aria-describedby="addon-wrapping">
+                            </div>
+                          </div>
+                          <div class="cart__form__line form-delivery" style="display: block">
+                            <div class="cart__title">Chọn hình thức nhận hàng</div>
+                            <div class="cart__payment">
+                              <div class="cart__payment__wrap cart__methodship">
+                                <div class="form-check margin-right" style="width: 160px">
+                                  <input readonly class="form-check-input" type="radio" name="methodship"
+                                         id="radio-cart3">
+                                  <label class="form-check-label" for="radio-cart3">
+                                    Giao hàng tận nơi
+                                  </label>
+                                </div>
+                                <div class="form-check" style="width: 160px">
+                                  <input readonly class="form-check-input" type="radio" name="methodship"
+                                         id="radio-cart4">
+                                  <label class="form-check-label" for="radio-cart4">
+                                    Nhận tại cửa hàng
+                                  </label>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="modal-footer">
-                        <!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-                        <button type="button" class="btn btn-xl cart-submit">HOÀN TẤT ĐẶT HÀNG</button>
-                        <p>
-                          Bằng cách đặt hàng, quý khách đồng ý với
-                          <a href="https://fptshop.com.vn/tos" class="re-link--gray" style="text-decoration: underline;">
-                            Điều khoản sử dụng
-                          </a>
-                          của FPTShop
-                        </p>
-                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                      <button type="button" class="btn btn-xl cart-submit">HOÀN TẤT ĐẶT HÀNG</button>
+                      <p>
+                        Bằng cách đặt hàng, quý khách đồng ý với
+                        <a href="https://fptshop.com.vn/tos" class="re-link--gray"
+                           style="text-decoration: underline;">
+                          Điều khoản sử dụng
+                        </a>
+                        của FPTShop
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="btn btn-info btn-xl btn--half">
-                  <strong>
-                    TRẢ GÓP 0%
-                  </strong>
-                  <p>Duyệt nhanh qua điện thoại</p>
-                </div>
-                <div class="btn btn-info btn-xl btn--half">
-                  <strong>
-                    TRẢ GÓP QUA THẺ
-                  </strong>
-                  <p>Visa, Master Card, JCB, AMEX</p>
-                </div>
               </div>
-              <div class="info-hotline" style="display: flex; justify-content: space-between; margin-bottom: 30px">
-                <div class="hotline">
-                  Gọi
-                  <a href="tel:18006601" class="re-hotline">1800-6601</a>
-                  để được tư vấn mua hàng (Miễn phí)
-                </div>
-                <a class="re-link store" href="https://www.google.com/maps/?hl=vi">
-                  <span class="icon-location"></span>
-                  Tìm shop có hàng gần nhất
-                </a>
+              <div class="btn btn-info btn-xl btn--half">
+                <strong>
+                  TRẢ GÓP 0%
+                </strong>
+                <p>Duyệt nhanh qua điện thoại</p>
               </div>
+              <div class="btn btn-info btn-xl btn--half">
+                <strong>
+                  TRẢ GÓP QUA THẺ
+                </strong>
+                <p>Visa, Master Card, JCB, AMEX</p>
+              </div>
+            </div>
+            <div class="info-hotline" style="display: flex; justify-content: space-between; margin-bottom: 30px">
+              <div class="hotline">
+                Gọi
+                <a href="tel:18006601" class="re-hotline">1800-6601</a>
+                để được tư vấn mua hàng (Miễn phí)
+              </div>
+              <a class="re-link store" href="https://www.google.com/maps/?hl=vi">
+                <span class="icon-location"></span>
+                Tìm shop có hàng gần nhất
+              </a>
             </div>
           </div>
         </div>
-        <div class="product-cate">
-          <div class="row">
-            <div class="col l-12 m-12 c-12">
-              <p class="title-product">SẢN PHẨM LIÊN QUAN</p>
-            </div>
-            <div class="product-cate-card active">
-              <div class="row no-gutters">
-                <div v-for="item in filteredItems"
-                     :key="item.productid"
-                     class="col l-3 m-6 c-6 card-slider"
-                     @click="handleItem(item.productid, item.productname)">
-                  <div class="product-card-item product-card-item-sale" style="cursor: pointer">
-                    <div class="product-card-item-img">
-                      <img :src="item.img"
-                           alt="{{ item.productname }}">
-                      <div class="sticker">
-                        <span class="stickers sticker-event">Trả góp 0%</span>
-                        <br>
-                        <span class="stickers sticker-sale">Lì xì {{ formatCurrency(item.discount) }}</span>
-                      </div>
+      </div>
+      <div class="product-cate">
+        <div class="row">
+          <div class="col l-12 m-12 c-12">
+            <p class="title-product">SẢN PHẨM LIÊN QUAN</p>
+          </div>
+          <div class="product-cate-card active">
+            <div class="row no-gutters">
+              <div v-for="item in filteredItems"
+                   :key="item.productid"
+                   class="col l-3 m-6 c-6 card-slider"
+                   @click="handleItem(item.productid, item.productname)">
+                <div class="product-card-item product-card-item-sale" style="cursor: pointer">
+                  <div class="product-card-item-img">
+                    <img :src="item.img"
+                         alt="{{ item.productname }}">
+                    <div class="sticker">
+                      <span class="stickers sticker-event">Trả góp 0%</span>
+                      <br>
+                      <span class="stickers sticker-sale">Lì xì {{ formatCurrency(item.discount) }}</span>
                     </div>
-                    <div class="product-card-item-content">
-                      <h3 class="title-card">
-                        {{ item.productname }}
-                      </h3>
-                      <div class="price">
-                        <div class="progress">
-                          {{ formatCurrency(salePrice(item)) }}
-                          <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(item) }"
-                               aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="strike-price">
+                  </div>
+                  <div class="product-card-item-content">
+                    <h3 class="title-card">
+                      {{ item.productname }}
+                    </h3>
+                    <div class="price">
+                      <div class="progress">
+                        {{ formatCurrency(salePrice(item)) }}
+                        <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(item) }"
+                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="strike-price">
                       <span style="text-decoration: line-through">
                         {{ formatCurrency(item.price) }}
                       </span>
-                        </div>
                       </div>
-                      <div class="card-item-info__promo">
-                        <div class="card-item-info__promo-product">
+                    </div>
+                    <div class="card-item-info__promo">
+                      <div class="card-item-info__promo-product">
                       <span>
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip"/></i>
                         {{ item.description.cpu }}
                       </span>
-                          <span>
+                        <span>
                           <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
                           {{ getMonitorSize(item.description.monitor) }}
                         </span>
-                          <span>
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        <span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip"/></i>
                         {{ item.description.rom }}
                       </span>
-                          <span>
+                        <span>
                         <i class="fa-sharp fa-solid fa-memory"></i>
                         {{ item.description.cam2 }}
                       </span>
-                        </div>
-                        <ItemInfoPromo />
                       </div>
+                      <ItemInfoPromo/>
                     </div>
                   </div>
                 </div>
@@ -516,6 +596,7 @@ import {formatCurrency} from "@/utils";
 import axios from "axios";
 import commonMixin from "@/mixins/commonMixin";
 import priceMixin from "@/mixins/priceMixin";
+import {bus} from "@/bus";
 
 export default {
   name: 'productDetail',
@@ -534,7 +615,10 @@ export default {
       item_name: "",
       checkedEvo: [],
       checkedKredivo: [],
-      card: [],
+      itemCount: 0,
+      order: [],
+      cart: [],
+      change: 0,
       types: [
         'text',
         'number',
@@ -553,6 +637,8 @@ export default {
   },
   created() {
     // this.category_id = this.$route.params.category_id;
+    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    this.order = JSON.parse(localStorage.getItem("order"));
     this.$watch(
         () => this.$route.params,
         (toParams, previousParams) => {
@@ -630,7 +716,7 @@ export default {
             console.log(response);
             console.log("END\n");
             this.products = response.data;
-            console.log("this products: ",this.products)
+            console.log("this products: ", this.products)
             console.log("produduct name convert: ", this.product_name_convert)
             this.product_id = this.getIDByPath(this.product_name_convert)
             console.log("product_id: ", this.product_id)
@@ -689,24 +775,48 @@ export default {
             console.log(error.response);
           });
     },
-    increaseQuantity() {
-      this.quantity++
+    increaseQuantity(product) {
+      product.quantity++;
+      localStorage.setItem("order", JSON.stringify(this.order))
     },
-    decreaseQuantity() {
-      if (this.quantity > 1) {
-        this.quantity--
+    decreaseQuantity(product) {
+      if (product.quantity > 1) {
+        product.quantity--;
+        localStorage.setItem("order", JSON.stringify(this.order))
       }
     },
-    addToCart(product) {
-      const index = this.cart.findIndex(item => item.id === product.id)
-      if (index === -1) {
-        this.cart.push({ ...product, quantity: 1 })
-      } else {
-        this.cart[index].quantity++
-      }
-    }
+    handleChoseItem() {
+      // localStorage.removeItem("order")
+      // console.log("name: ", this.product_items.name)
+      // Parse any JSON previously stored in allEntries
+      this.order = JSON.parse(localStorage.getItem("order"));
+      if (this.order == null) this.order = [];
+      const entry = {
+        // productid: this.productid,
+        product: this.product,
+        quantity: this.quantity,
+      };
+      // console.log("entry: ", entry)
+      localStorage.setItem("entry", JSON.stringify(entry));
+      // Save allEntries back to local storage
+      this.order.push(entry);
+      // console.log("order: ", order)
+      localStorage.setItem("order", JSON.stringify(this.order));
+      window.dispatchEvent(new CustomEvent('order-localstorage-changed', {
+        detail: {
+          storage: localStorage.getItem('order')
+        }
+      }));
+      console.log(this.order)
+      this.change ++
+      this.itemCount++;
+      // this.$forceUpdate();
 
+      // this.dialog = false
+      // this.reset()
+    },
   },
+  
 
   mounted() {
     // Gọi API để lấy danh sách sản phẩm
@@ -722,47 +832,112 @@ export default {
 </script>
 
 <style>
-  @import "@/assets/main.css";
-  @import "@/assets/slider.css";
-  @import "@/assets/slider-card.css";
-  @import "@/assets/reponsive.css";
-  @import "@/assets/grid.css";
-  @import "@/assets/style.css";
+@import "@/assets/main.css";
+@import "@/assets/slider.css";
+@import "@/assets/slider-card.css";
+@import "@/assets/reponsive.css";
+@import "@/assets/grid.css";
+@import "@/assets/style.css";
 
-  .modal-product .modal-product__img,
-  .modal-product .modal-product__name,
-  .modal-product .modal-product__price,
-  .modal-product .modal-product__quantity
-  {
-    display: inline-block;
-  }
+.modal-product .modal-product__img,
+.modal-product .modal-product__name,
+.modal-product .modal-product__price,
+.modal-product .modal-product__quantity {
+  display: inline-block;
+}
 
-  .modal-product__img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 8px;
-    margin-right: 8px;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-  }
+.modal-product__img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+}
 
-  .modal-product__name {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    color: #32373d;
-  }
+.modal-product__name {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #32373d;
+}
 
-  /* Tooltip text color */
-  .tooltip::after {
-    color: red; /* Change to desired color */
-  }
+/* Tooltip text color */
+.tooltip::after {
+  color: red; /* Change to desired color */
+}
 
+.namecus, .phonecus {
+  width: 237px;
+}
+
+.phonecus {
+  margin-left: 16px;
+}
+
+.modal-product__pay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  padding: 16px 24px;
+  -webkit-box-shadow: 0 1px 0 0 #e1e4e6;
+  box-shadow: 0 1px 0 0 #e1e4e6
+}
+
+.modal-product__coupon {
+  font-size: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.coupon-title {
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 100%;
+  font-weight: 500;
+  color: #32373d;
+  margin-bottom: 8px;
+}
+
+.cs-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cs-input {
+  border-radius: 4px;
+  border: solid 1px #cbd1d6;
+  background-color: #fff;
+  color: #444b52;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 3px 8px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal-product__total {
+
+}
 </style>
