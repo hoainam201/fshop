@@ -21,7 +21,7 @@ const creatPayment = async (req, res) => {
         url += s + "&vnp_SecureHash=" + HMAC(s);
         res.json(url);
     } else
-        res.redirect(`/order/${id}`);
+        res.json(`/order/${orderid}`);
 }
 
 const returnUrl = async (req, res)=>{
@@ -29,7 +29,7 @@ const returnUrl = async (req, res)=>{
     if (code == '00'){
         const id = req.query.vnp_TxnRef
         await paymentModel.returnUrl(id);
-        res.redirect(`/order/${id}`);
+        res.json(`/order/${id}`);
     }
     else
         res.status(200).json({RspCode: '97', Message: 'Fail'});
