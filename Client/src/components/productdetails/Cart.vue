@@ -2,7 +2,8 @@
   <div>
     <div id="root-cart">
       <main>
-        <div class="empty-cart">
+        <div v-if = "itemCount == 0">
+           <div class="empty-cart">
           <img src="https://fptshop.com.vn/cart/Content/Desktop/images/empty-cart.png" alt="empty cart">
           <div class="text">Không có sản phẩm nào trong giỏ hàng</div>
           <router-link to="/">
@@ -10,6 +11,13 @@
               VỀ TRANG CHỦ
             </div>
           </router-link>
+        </div>
+        </div>
+        <div v-else>
+            <h1>Co {{itemCount}} sanpham</h1>
+            <div v-for="(product, index) in products" :key="index">
+              <span>{{product.product.productname}} - {{product.product.price}} - {{product.quantity}}</span>
+            </div>
         </div>
       </main>
     </div>
@@ -26,16 +34,17 @@ export default {
   data() {
     return {
       cart: [],
+      itemCount: 0,
+      products: [],
     };
   },
-  // mounted() {
-  //   this.$root.$on('add-to-cart', (product) => {
-  //     this.cart.push({
-  //       productname: product.productname,
-  //       price: product.price,
-  //     });
-  //   });
-  // },
+
+  created() {
+    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    this.products = JSON.parse(localStorage.getItem("order"));
+    console.log(this.products)
+
+  },
 };
 </script>
 
