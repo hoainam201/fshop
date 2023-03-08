@@ -1,90 +1,84 @@
 <template>
-  <div class="product-detail">
-    <h1 class="name-category">
-      {{ product.productname }} - {{ product.price }}
-    </h1>
-    <button type="button" class="btn btn-primary">
-      Thêm vào giỏ haàng
+  <div>
+    <button type="button" class="btn btn-primary btn-xl btn-full" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" @click="handleChoseItem">
+      <div>MUA NGAY</div>
     </button>
-    <div class="info-hotline">
-      Gọi để được tư vấn mua hàng (Miễn phí)
+    <div class="modal fade" id="exampleModal" tabindex="-1"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Có {{ itemCount }} sản phẩm trong giỏ hàng
+        </h5>
+        <div v-for="product in order" :key="product.product.productid" >
+          <div class="modal-product">
+            <h3 class="modal-product__name">{{ product.product.productname }}</h3>
+            <div class="modal-product__quantity">
+              <div class="product-cart__quality__wrap">
+                <button @click="decreaseQuantity(product)" :disabled="product.quantity === 1" class="btn">
+                  <font-awesome-icon icon="fa-solid fa-minus"/>
+                </button>
+                <span class="product-quantity"> {{ product.quantity }} </span>
+                <button @click="increaseQuantity(product)" class="btn">
+                  <font-awesome-icon icon="fa-solid fa-plus"/>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
-  name: 'test',
+  name: 'productDetail',
   data() {
     return {
-      product_id: "-1",
-      product_name_convert: "",
       products: [],
       product: {},
+      itemCount: 0,
+      order: [],
+      cart: [],
+      change: 0,
       quantity: 1,
     }
   },
   created() {
-    this.$watch(
-        () => this.$route.params,
-        (toParams, previousParams) => {
-          this.product_name_convert = this.$route.params.product_name_convert;
-        }
-    ),
-        this.getItemByID();
-  },
-  watch: {
-    product_id() {
-      this.getItems();
-      console.log(this.product_id)
-    },
+    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    this.order = JSON.parse(localStorage.getItem("order"));
   },
   methods: {
-    handleProduct(product_id, product_name) {
-      this.product_id = product_id;
-      this.product_name = product_name;
-      this.$router.push({
-        name: "productDetail",
-        params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
-      }).catch(() => true);
+    increaseQuantity(product) {
+      product.quantity++;
+      localStorage.setItem("order", JSON.stringify(this.order))
     },
-    getIDByPath(path) {
-      for (let index in this.products) {
-        const product = this.products[index]
-        if (this.removeVietnameseTones(product.productname).replaceAll(' ', '-').toLowerCase() == path) {
-          return product.productid
-        }
+    decreaseQuantity(product) {
+      if (product.quantity > 1) {
+        product.quantity--;
+        localStorage.setItem("order", JSON.stringify(this.order))
       }
-      return 0;
     },
-    getItems() {
-      axios
-          .get("http://localhost:4000/admin/product")
-          .then((response) => {
-            this.products = response.data;
-            this.product_id = this.getIDByPath(this.product_name_convert)
-            this.getProductByID()
-          })
-          .catch((error) => {
-            console.log(error.response);
-          });
-    },
-    getItemByID() {
-      this.product_name_convert = this.$route.params.product_name_convert
-      this.getItems()
-    },
-    getProductByID() {
-      axios
-          .get(`http://localhost:4000/admin/product/${this.product_id}`)
-          .then((response) => {
-            this.product = response.data[0];
-            this.product.list = response.data[0].list;
-          })
-          .catch((error) => {
-            console.log(error.response);
-          });
+    handleChoseItem() {
+      this.order = JSON.parse(localStorage.getItem("order"));
+      if (this.order == null) this.order = [];
+      const entry = {
+        product: this.product,
+        quantity: this.quantity,
+      };
+      localStorage.setItem("entry", JSON.stringify(entry));
+      this.order.push(entry);
+      localStorage.setItem("order", JSON.stringify(this.order));
+      window.dispatchEvent(new CustomEvent('order-localstorage-changed', {
+        detail: {
+          storage: localStorage.getItem('order')
+        }
+      }));
+      console.log(this.order)
+      this.change ++
+      this.itemCount++;
     },
   },
 }

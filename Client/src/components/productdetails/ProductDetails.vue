@@ -786,35 +786,72 @@ export default {
       }
     },
     handleChoseItem() {
-      // localStorage.removeItem("order")
-      // console.log("name: ", this.product_items.name)
-      // Parse any JSON previously stored in allEntries
-      this.order = JSON.parse(localStorage.getItem("order"));
-      if (this.order == null) this.order = [];
-      const entry = {
-        // productid: this.productid,
-        product: this.product,
-        quantity: this.quantity,
-      };
-      // console.log("entry: ", entry)
-      localStorage.setItem("entry", JSON.stringify(entry));
-      // Save allEntries back to local storage
-      this.order.push(entry);
-      // console.log("order: ", order)
-      localStorage.setItem("order", JSON.stringify(this.order));
-      window.dispatchEvent(new CustomEvent('order-localstorage-changed', {
-        detail: {
-          storage: localStorage.getItem('order')
-        }
-      }));
-      console.log(this.order)
-      this.change ++
-      this.itemCount++;
-      // this.$forceUpdate();
+      // localStorage.removeItem("order");
 
-      // this.dialog = false
-      // this.reset()
-    },
+      this.order = JSON.parse(localStorage.getItem("order"));
+      if (this.order == null) {
+        this.order = [];
+      }
+
+      // Check if the selected product is already in the cart
+      const existingProduct = this.order.find(
+          (entry) => entry.product.productid === this.product.productid
+      );
+
+      if (existingProduct) {
+        // Product already in the cart, increase its quantity
+        existingProduct.quantity += this.quantity;
+      } else {
+        // Product not in the cart, add it as a new entry
+        const entry = {
+          product: this.product,
+          quantity: this.quantity,
+        };
+        this.order.push(entry);
+      }
+
+      // Update local storage and other variables
+      localStorage.setItem("order", JSON.stringify(this.order));
+      window.dispatchEvent(new CustomEvent("order-localstorage-changed", {
+        detail: {
+          storage: localStorage.getItem("order"),
+        },
+      }));
+      console.log(this.order);
+      this.change++;
+      this.itemCount = this.order.length;
+    }
+
+    // handleChoseItem() {
+    //   // localStorage.removeItem("order")
+    //   // console.log("name: ", this.product_items.name)
+    //   // Parse any JSON previously stored in allEntries
+    //   this.order = JSON.parse(localStorage.getItem("order"));
+    //   if (this.order == null) this.order = [];
+    //   const entry = {
+    //     // productid: this.productid,
+    //     product: this.product,
+    //     quantity: this.quantity,
+    //   };
+    //   // console.log("entry: ", entry)
+    //   localStorage.setItem("entry", JSON.stringify(entry));
+    //   // Save allEntries back to local storage
+    //   this.order.push(entry);
+    //   // console.log("order: ", order)
+    //   localStorage.setItem("order", JSON.stringify(this.order));
+    //   window.dispatchEvent(new CustomEvent('order-localstorage-changed', {
+    //     detail: {
+    //       storage: localStorage.getItem('order')
+    //     }
+    //   }));
+    //   console.log(this.order)
+    //   this.change ++
+    //   this.itemCount++;
+    //   // this.$forceUpdate();
+    //
+    //   // this.dialog = false
+    //   // this.reset()
+    // },
   },
   
 

@@ -78,7 +78,7 @@
                       </div>
                       <div style="display: flex">
                         <span>Giỏ hàng</span>
-                        <span>{{ itemCount }}</span>
+                        <b class="countTotalCart">{{ itemCount }}</b>
                       </div>
                     </router-link>
                   </li>
@@ -636,4 +636,19 @@ export default {
   @import "@/assets/reponsive.css";
   @import "@/assets/grid.css";
   @import "@/assets/style.css";
+
+  .countTotalCart {
+    position: absolute;
+    top: 5px;
+    left: 33px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+    display: inline-block;
+    background: #f5a623;
+    border-radius: 100%;
+  }
 </style>
