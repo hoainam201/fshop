@@ -438,49 +438,42 @@
                         <div class="cart__form cart__form--type">
                           <div class="cart__form__block">
                             <div class="form-customer" style="display: block">
-                              <div class="cart__form__line margin-bottom">
-                                <div class="form-check margin-right">
-                                  <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart1">
-                                  <label class="form-check-label" for="radio-cart1">
-                                    Anh
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart2">
-                                  <label class="form-check-label" for="radio-cart2">
-                                    Chị
-                                  </label>
-                                </div>
-                              </div>
                               <div class="cart__form__line margin-bottom cart__form__line--col">
                                 <div class="namecus">
                                   <input type="text" class="form-control" placeholder="Nhập họ và tên"
-                                         aria-label="Username" aria-describedby="addon-wrapping" required>
+                                         aria-label="name" aria-describedby="addon-wrapping"
+                                         id="name" v-model="name" required>
                                 </div>
                                 <div class="phonecus">
                                   <input type="tel" class="form-control" placeholder="Nhập số điện thoại"
-                                         aria-label="PhoneNumber" aria-describedby="addon-wrapping" required>
+                                         aria-label="phone" aria-describedby="addon-wrapping"
+                                         id="phone" v-model="phone" pattern="\d*"
+                                         :minlength="10" :maxlength="10" required autocomplete="off">
                                 </div>
-                                <input type="email" class="form-control" placeholder="Nhập email (không bắt buộc)"
-                                       aria-label="Email" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control" placeholder="Nhập địa chỉ của bạn"
+                                       aria-label="address" aria-describedby="addon-wrapping"
+                                       id="address" v-model="address"
+                                       required style="margin-top: 8px">
                               </div>
                             </div>
                             <div class="cart__form__line form-delivery" style="display: block">
-                              <div class="cart__title">Chọn hình thức nhận hàng</div>
+                              <div class="cart__title">Chọn hình thức thanh toán</div>
                               <div class="cart__payment">
                                 <div class="cart__payment__wrap cart__methodship">
-                                  <div class="form-check margin-right" style="width: 160px">
-                                    <input readonly class="form-check-input" type="radio" name="methodship"
-                                           id="radio-cart3">
-                                    <label class="form-check-label" for="radio-cart3">
-                                      Giao hàng tận nơi
+                                  <div class="form-check margin-right" style="width: 180px">
+                                    <input readonly class="form-check-input" type="radio"
+                                           id="cash" value="cash" name="paymentMethod"
+                                           v-model="paymentMethod">
+                                    <label class="form-check-label" for="cash">
+                                      Thanh toán tiền mặt
                                     </label>
                                   </div>
-                                  <div class="form-check" style="width: 160px">
-                                    <input readonly class="form-check-input" type="radio" name="methodship"
-                                           id="radio-cart4">
-                                    <label class="form-check-label" for="radio-cart4">
-                                      Nhận tại cửa hàng
+                                  <div class="form-check" style="width: 200px">
+                                    <input readonly class="form-check-input" type="radio"
+                                           id="vnpay" value="vnpay" name="paymentMethod"
+                                           v-model="paymentMethod">
+                                    <label class="form-check-label" for="vnpay">
+                                      Thanh toán qua ví VNPay
                                     </label>
                                   </div>
                                 </div>
@@ -490,7 +483,7 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-xl cart-submit">HOÀN TẤT ĐẶT HÀNG</button>
+                        <button type="button" class="btn btn-xl cart-submit" @click="finishOrder">HOÀN TẤT ĐẶT HÀNG</button>
                         <p>
                           Bằng cách đặt hàng, quý khách đồng ý với
                           <a href="https://fptshop.com.vn/tos" class="re-link--gray"

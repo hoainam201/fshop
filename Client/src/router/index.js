@@ -51,5 +51,10 @@ export default createRouter({
           name: 'Cart',
           component: import("@/components/productdetails/Cart.vue")
       },
+      {
+          path: '/order',
+          name: 'Orders',
+          component: import("@/components/productdetails/Orders.vue")
+      },
   ],
 })

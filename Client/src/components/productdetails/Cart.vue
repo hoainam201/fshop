@@ -93,33 +93,27 @@
               <div class="cart__form cart__form--type">
                 <div class="cart__form__block">
                   <div class="form-customer" style="display: block">
-<!--                    <div class="cart__form__line margin-bottom">-->
-<!--                      <div class="form-check margin-right">-->
-<!--                        <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart1">-->
-<!--                        <label class="form-check-label" for="radio-cart1">-->
-<!--                          Anh-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                      <div class="form-check">-->
-<!--                        <input readonly class="form-check-input" type="radio" name="gender" id="radio-cart2">-->
-<!--                        <label class="form-check-label" for="radio-cart2">-->
-<!--                          Chị-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                    </div>-->
                     <div class="cart__form__line margin-bottom cart__form__line--col">
                       <div class="namecus">
                         <input type="text" class="form-control" placeholder="Nhập họ và tên"
-                               aria-label="Username" aria-describedby="addon-wrapping" required>
+                               name="contactname"
+                               id="contactname" v-model="contactname" required>
                       </div>
                       <div class="phonecus">
-                        <input type="tel" class="form-control" placeholder="Nhập số điện thoại"
-                               aria-label="PhoneNumber" aria-describedby="addon-wrapping"
-                               id="phoneNumber" v-model="phoneNumber" pattern="\d*"
-                               :minlength="10" :maxlength="10" required autocomplete="off">
+                        <input type="tel" class="form-control"
+                               placeholder="Nhập số điện thoại"
+                               name="contactphone"
+                               id="contactphone"
+                               v-model="contactphone"
+                               pattern="\d*"
+                               :minlength="10"
+                               :maxlength="10"
+                               required
+                               autocomplete="off">
                       </div>
                       <input type="text" class="form-control" placeholder="Nhập địa chỉ của bạn"
-                             aria-label="Address" aria-describedby="addon-wrapping" required style="margin-top: 8px">
+                             id="address" v-model="address"
+                             required style="margin-top: 8px">
                     </div>
                   </div>
                   <div class="cart__form__line form-delivery" style="display: block">
@@ -127,8 +121,8 @@
                     <div class="cart__payment">
                       <div class="cart__payment__wrap cart__methodship">
                         <div class="form-check margin-right" style="width: 180px">
-                          <input readonly class="form-check-input" type="radio" name="paymentMethod"
-                                 id="cash" value="cash"
+                          <input readonly class="form-check-input" type="radio"
+                                 id="cash" value="cash" name="paymentMethod"
                                  v-model="paymentMethod">
                           <label class="form-check-label" for="cash">
                             Thanh toán tiền mặt
@@ -136,9 +130,9 @@
                         </div>
                         <div class="form-check" style="width: 200px">
                           <input readonly class="form-check-input" type="radio"
-                                 id="online" value="online"
+                                 id="vnpay" value="vnpay" name="paymentMethod"
                                  v-model="paymentMethod">
-                          <label class="form-check-label" for="online">
+                          <label class="form-check-label" for="vnpay">
                             Thanh toán qua ví VNPay
                           </label>
                         </div>
@@ -148,7 +142,11 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-xl cart-submit" @click="finishOrder">HOÀN TẤT ĐẶT HÀNG</button>
+                <button type="button" class="btn btn-primary btn-xl cart-submit"
+                        :disabled="!contactname || !contactphone || !address || !paymentMethod"
+                        @click="finishOrder">
+                  HOÀN TẤT ĐẶT HÀNG
+                </button>
                 <p>
                   Bằng cách đặt hàng, quý khách đồng ý với
                   <a href="https://fptshop.com.vn/tos" class="re-link--gray"
@@ -184,24 +182,15 @@ export default {
       checkedKredivo: [],
       itemCount: 0,
       order: [],
+      orderid: 0,
       cart: [],
       change: 0,
-      types: [
-        'text',
-        'number',
-        'email',
-        'password',
-        'search',
-        'url',
-        'tel',
-        'date',
-        'time',
-        'range',
-        'color'
-      ],
       quantity: 1,
-      phoneNumber: '',
-      paymentMethod: '',
+      contactphone: '',
+      contactname: '',
+      address: '',
+      paymentMethod: 'cash',
+      // vnpay: true,
     }
   },
   created() {
@@ -211,8 +200,6 @@ export default {
     this.$watch(
         () => this.$route.params,
         (toParams, previousParams) => {
-          console.log("before:", toParams);
-          console.log("after:", previousParams);
           this.product_name_convert = this.$route.params.product_name_convert;
           this.item_name_convert = this.$route.params.item_name_convert;
         }
@@ -222,7 +209,6 @@ export default {
   watch: {
     product_id() {
       this.getItems();
-      console.log(this.product_id)
     },
   },
 
@@ -235,18 +221,15 @@ export default {
     handleProduct(product_id, product_name) {
       this.product_id = product_id;
       this.product_name = product_name;
-      // console.log(this.product_name_convert),
       this.$router.push({
         name: "productDetail",
         params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
       }).catch(() => true);
     },
     getIDByPath(path) {
-      console.log("input path: ", path)
       for (let index in this.products) {
         const product = this.products[index]
-        console.log(this.removeVietnameseTones(product.productname).replaceAll(' ', '-').toLowerCase())
-        if (this.removeVietnameseTones(product.productname).replaceAll(' ', '-').toLowerCase() == path) {
+        if (this.removeVietnameseTones(product.productname).replaceAll(' ', '-').toLowerCase() === path) {
           return product.productid
         }
       }
@@ -256,18 +239,9 @@ export default {
       axios
           .get("http://localhost:4000/admin/product")
           .then((response) => {
-            console.log("START\n");
-            console.log(response);
-            console.log("END\n");
             this.products = response.data;
-            console.log("this products: ", this.products)
-            console.log("produduct name convert: ", this.product_name_convert)
             this.product_id = this.getIDByPath(this.product_name_convert)
-            console.log("product_id: ", this.product_id)
-            // call api get product_details
             this.getProductByID()
-            // luu vao local storage
-            // this.singleItem =
           })
           .catch((error) => {
             console.log(error.response);
@@ -284,7 +258,6 @@ export default {
           });
     },
     getItemByID() {
-      console.log(this.$route.params)
       this.product_name_convert = this.$route.params.product_name_convert
       this.item_name_convert = this.$route.params.item_name_convert
       this.getItems()
@@ -293,9 +266,6 @@ export default {
       axios
           .get(`http://localhost:4000/admin/product/${this.product_id}`)
           .then((response) => {
-            console.log("START res product\n");
-            console.log(response);
-            console.log("END\n");
             this.product = response.data[0];
             this.product.list = response.data[0].list;
           })
@@ -305,32 +275,58 @@ export default {
           });
     },
 
-    async finishOrder() {
-      if (!this.paymentMethod) {
-        alert('Please select a payment method')
-        return
-      }
-      if (this.paymentMethod === 'online') {
-        try {
-          const response = await fetch('http://localhost:4000/createPayment', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              phoneNumber: this.phoneNumber,
-              paymentMethod: this.paymentMethod
+    finishOrder() {
+      console.log("paymentMethod: ", this.paymentMethod)
+      // console.log("total price: ", Number(this.total_price))
+      if (this.paymentMethod === 'cash') {
+        axios
+            .post("http://localhost:4000/creatPayment", {
+              // user_id: this.user.id,
+              name: this.contactname,
+              phone: this.contactphone,
+              address: this.address,
+              vnpay: 'false',
+              // list:[],
+              // paymentMethod: this.paymentMethod,
+              // products: JSON.parse(JSON.stringify(this.products_info))
             })
-          })
-          const data = await response.json()
-          window.location.href = data.paymentLink
-        } catch (error) {
-          console.error(error)
-          alert('Payment failed')
-        }
+            .then((response) => {
+              console.log("RES:\n")
+              console.log("response1: ", response);
+              console.log("END RES\n")
+              // localStorage.removeItem("order")
+              // window.location.href = `/order/${orderid}`;
+              window.location.href = response.data;
+            })
+            .catch((error) => {
+              console.log("ERR1")
+              console.log(error);
+            });
       } else {
-        // Handle cash payment
+        axios
+            .post("http://localhost:4000/creatPayment", {
+              name: this.contactname,
+              phone: this.contactphone,
+              address: this.address,
+              vnpay: 'true',
+              // list:[],
+              // paymentMethod: this.paymentMethod,
+              // products: JSON.parse(JSON.stringify(this.products_info))
+            })
+            .then((response) => {
+              console.log("RES:\n")
+              console.log("response2: ", response);
+              console.log("END RES\n")
+              window.location.href = response.data;
+            })
+            .catch((error) => {
+              console.log("ERR1")
+              console.log(error);
+            });
       }
+      console.log('contactname:', this.contactname);
+      console.log('contactphone:', this.contactphone);
+      console.log('address:', this.address);
     }
   }
 }

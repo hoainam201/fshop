@@ -24,9 +24,13 @@
             <form @submit.prevent="sendOTP">
               <div class="input-phone">
                 <input placeholder="Nhập số điện thoại"
-                       type="tel" class="form-control form-control-lg input-phone__focus"
-                       id="phoneNumber" v-model="phoneNumber" pattern="\d*"
-                       :minlength="10" :maxlength="10"
+                       type="tel"
+                       class="form-control form-control-lg input-phone__focus"
+                       id="phoneNumber"
+                       v-model="phoneNumber"
+                       pattern="\d*"
+                       :minlength="10"
+                       :maxlength="10"
                        required
                        autocomplete="off">
               </div>

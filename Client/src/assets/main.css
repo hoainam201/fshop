@@ -1881,15 +1881,26 @@ li.option-color-item:nth-child(2) {
 .btn-primary {
   color: #fff;
   background: #cb1c22 !important;
-  outline: 0;
+  outline: none;
 }
 
 .btn-primary:hover {
+  border: 1px solid #bd1319;
   background: #ae1427;
 }
 
 .pay-cate .btn-primary:hover {
   color: #fff;
+}
+
+.btn-primary:active {
+  box-shadow: 0 0 0 0.1rem #e55055;
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  outline: none;
+  background: #99090e;
 }
 
 /*.pay-with {*/
@@ -2392,4 +2403,95 @@ li.info-cat-item i {
   padding-left: 8px;
 }
 
+.card-title {
+  font-size: 24px;
+  line-height: 32px;
+  position: relative;
+  /*margin-bottom: 15px;*/
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #212529;
+}
 
+.modal-notification {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.c-cart__noti__shape img {
+  height: 120px;
+}
+
+.modal-notification p {
+  max-width: 476px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.order_data-user__title {
+  font-weight: 500;
+  background: #f8f9fa;
+  padding: 4px 24px;
+  box-shadow: inset 0 -1px 0 #edeeef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.modal-content .data-user__table {
+  margin: 8px 16px;
+  border-collapse: collapse;
+  width: calc(100% - 48px);
+}
+
+.modal-content .data-user__table:last-child {
+  margin-bottom: 20px;
+}
+
+.modal-content .data-user__table tr:first-child td {
+  padding: 6px 0;
+}
+
+.modal-content .data-user__table td:first-child {
+  color: #939ca3;
+  padding: 8px 8px 8px 0;
+  width: 216px;
+}
+
+.modal-content .data-user__table td {
+  color: #444b52;
+  padding: 8px 0;
+  vertical-align: baseline;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.modal-content .data-user__table td span.text--lg {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.data-user__table tr:not(:last-child) {
+  border-bottom: 1px solid #e1e4e6;
+}
+
+.product-cart__img--sm {
+  width: 60px;
+  height: 60px;
+}
+
+.product-cart__img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}

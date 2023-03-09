@@ -84,7 +84,7 @@ export default {
                     storage: localStorage.getItem("order"),
                 },
             }));
-            console.log(this.order);
+            // console.log(this.order);
             this.change++;
             this.itemCount = this.order.length;
         }
