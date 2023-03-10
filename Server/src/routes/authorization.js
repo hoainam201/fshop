@@ -10,7 +10,7 @@ module.exports = () => {
             next();
         } catch (error) {
             console.log('frag')
-            req.userData = { phone: null};
+            req.userData = { phone: null    };
             next()
         }
     }
