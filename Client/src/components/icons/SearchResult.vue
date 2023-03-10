@@ -12,12 +12,14 @@
                @click="handleProduct(product.productid, product.productname)">
             <div v-if="product.categoryid === 2" class="product-card-item product-card-item-sale" style="cursor: pointer">
               <div class="product-card-item-img">
-                <img :src="product.img"
-                     alt="{{ product.productname }}">
-                <div class="sticker">
-                  <span class="stickers sticker-event">Trả góp 0%</span>
-                  <br>
-                  <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
+                <div>
+                  <img :src="product.img"
+                       alt="{{ product.productname }}">
+                  <div class="sticker">
+                    <span class="stickers sticker-event">Trả góp 0%</span>
+                    <br>
+                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
+                  </div>
                 </div>
               </div>
               <div class="product-card-item-content">
@@ -85,29 +87,29 @@
                          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   <div class="strike-price">
-                              <span style="text-decoration: line-through">
-                                {{ formatCurrency(product.price) }}
-                              </span>
+                      <span style="text-decoration: line-through">
+                        {{ formatCurrency(product.price) }}
+                      </span>
                   </div>
                 </div>
                 <div class="card-item-info__promo">
                   <div class="card-item-info__promo-product">
-                              <span>
-                                <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                {{ product.description.cpu }}
-                              </span>
+                      <span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ product.description.cpu }}
+                      </span>
                     <span>
-                                  <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
-                                  {{ getMonitorSize(product.description.monitor) }}
-                                </span>
+                          <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                          {{ getMonitorSize(product.description.monitor) }}
+                        </span>
                     <span>
-                                <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                                {{ product.description.rom }}
-                              </span>
+                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                        {{ product.description.rom }}
+                      </span>
                     <span>
-                                <i class="fa-sharp fa-solid fa-memory"></i>
-                                {{ product.description.cam2 }}
-                              </span>
+                        <i class="fa-sharp fa-solid fa-memory"></i>
+                        {{ product.description.cam2 }}
+                      </span>
                   </div>
                   <ItemInfoPromo />
                 </div>
@@ -121,14 +123,14 @@
 </template>
 
 <script>
-import axios from "axios";
-import {formatCurrency} from "@/utils";
-import { MDBCheckbox } from "mdb-vue-ui-kit";
 import ItemInfoPromo from "@/components/layouts/ItemInfoPromo.vue";
-import {ref} from "vue";
+import {formatCurrency} from "@/utils";
+import axios from "axios";
 import commonMixin from "@/mixins/commonMixin";
 export default {
   name: "SearchResult",
+  components: {ItemInfoPromo},
+  mixins: [commonMixin],
   data() {
     return {
       searchTerm: this.$route.query.searchTerm || '',
