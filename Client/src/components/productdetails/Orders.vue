@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="modal-dialog modal-dialog-scrollable" style="padding-top: 24px; margin: 0 auto; width: 776px;">
+    <div class="modal-dialog modal-dialog-scrollable c-cart--success" style="padding-top: 24px; margin: 0 auto; width: 776px;">
       <div class="modal-content" style="border-radius: 4px; box-shadow: 0 1px 4px rgb(10 10 10 / 15%);">
         <div class="modal-header">
           <h5 class="modal-title card-title" id="exampleModalLabel">
@@ -42,7 +42,7 @@
                 </table>
               </div>
             </div>
-            <div class="order_title--modified">
+            <div class="c-cart__title--modified" style="text-align: left">
               <span>Thông tin đơn hàng</span>
               <span>Số lượng</span>
               <span>Thành tiền</span>
@@ -50,25 +50,27 @@
             <div class="c-cart__block">
               <div v-for="product in order" :key="product.product.productid" class="c-cart__product">
                 <div class="product-cart" style="border-bottom: 1px solid #e0e0e0;">
-                  <div class="product-cart__img product-cart__img--sm">
+                  <div class="product-cart__img product-cart__img--sm" style="text-align: left">
                     <img :src="product.product.list?.[0]?.img"
                          alt="{{ product.product.productname }}">
                   </div>
                   <div class="product-cart__info">
                     <div class="product-cart__inside">
-                      <h3 @click="handleProduct(product.product.productid, product.product.productname)"
-                          class="modal-product__name product-cart__name--lg" style="cursor: pointer">
-                        {{ product.product.productname }}
-                      </h3>
+                      <div class="product-cart__line">
+                        <h3 @click="handleProduct(product.product.productid, product.product.productname)"
+                            class="product-cart__name product-cart__name--lg" style="cursor: pointer">
+                          {{ product.product.productname }}
+                        </h3>
+                      </div>
                     </div>
-                    <div class="modal-product__quantity">
+                    <div class="product-cart__quality">
                       <span>{{ product.quantity }}</span>
                     </div>
-                    <div class="modal-product__price">
-                      <div style="color: #cb1c22; font-weight: 500;">
+                    <div class="product-cart__price">
+                      <div class="cs-price cs-price--main">
                         {{ formatCurrency(salePrice(product.product) * product.quantity) }}
                       </div>
-                      <div style="text-decoration: line-through">
+                      <div class="cs-price cs-price--sub" style="text-decoration: line-through">
                         {{ formatCurrency(product.product.price * product.quantity) }}
                       </div>
                     </div>
@@ -76,7 +78,8 @@
                 </div>
               </div>
             </div>
-            <div class="modal-product__pay">
+            <div class="modal-product__pay" style="justify-content: space-between; padding-right: 4px">
+              <div></div>
               <div class="modal-product__total">
                 <p class="text-normal">
                   <span>Tổng tiền:</span>
@@ -96,7 +99,7 @@
         </div>
         <div class="modal-footer">
           <router-link to="/">
-            <button type="button" class="btn btn-primary btn-xl cart-submit" @click="finishOrder">
+            <button type="button" class="btn btn-primary btn-xl">
               VỀ TRANG CHỦ
             </button>
           </router-link>
@@ -152,7 +155,12 @@ export default {
   },
 
   computed: {
-
+    contactname() {
+      return localStorage.getItem('contactname') || '';
+    },
+    contactphone() {
+      return localStorage.getItem('contactphone') || '';
+    },
   },
 
   methods: {
