@@ -482,16 +482,18 @@ export default {
 </script>
 
 <style>
+@import "@/assets/main.css";
+@import "@/assets/slider.css";
+@import "@/assets/slider-card.css";
+@import "@/assets/reponsive.css";
+@import "@/assets/grid.css";
+@import "@/assets/style.css";
+
   .form-check-input[type=checkbox]:checked {
     border: solid 2px #cb1c22;
     background-color: #cb1c22;
     height: 16px;
     width: 16px;
   }
-  @import "@/assets/main.css";
-  @import "@/assets/slider.css";
-  @import "@/assets/slider-card.css";
-  @import "@/assets/reponsive.css";
-  @import "@/assets/grid.css";
-  @import "@/assets/style.css";
+
 </style>
