@@ -63,43 +63,43 @@
             <div class="sidebar-product">
               <!-- Hãng sản xuất -->
               <div class="sidebar-product-item item1">
-                <h3 class="sidebar-product-title">Hãng sản xuất1</h3>
+                <h3 class="sidebar-product-title">Hãng sản xuất</h3>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="All" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="All" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     Tất cả
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="1" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="1" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     Apple
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="4" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="4" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     Samsung
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="5" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="5" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     Xiaomi
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="6" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="6" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     OPPO
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="11" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="11" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     Nokia
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="10" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="10" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     Vivo
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="9" v-model="selectedSuppliers">
+                    <input type="checkbox" class="form-check-input" value="9" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
                     Realme
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="8" v-model="selectedSuppliers">
-                    Vsmart
+                    <input type="checkbox" class="form-check-input" value="8" v-model="selectedSuppliers" @change="uncheckAllSuppliers">
+                    Asus
                   </label>
                 </div>
               </div>
@@ -108,23 +108,23 @@
                 <h3 class="sidebar-product-title">Mức giá</h3>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="All">
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="All" @change="uncheckAllSuppliers">
                     Tất cả
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price24">
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price24" @change="uncheckAllSuppliers">
                     Từ 2 - 4 triệu
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price47">
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price47" @change="uncheckAllSuppliers">
                     Từ 4 - 7 triệu
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price710">
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="price710" @change="uncheckAllSuppliers">
                     Từ 7 - 10 triệu
                   </label>
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="over10">
+                    <input type="checkbox" class="form-check-input" v-model="selectedPrices" value="over10" @change="uncheckAllSuppliers">
                     Từ 10 triệu
                   </label>
                 </div>
@@ -214,7 +214,7 @@
                       <p class="title-product">
                         SẢN PHẨM
                         <span class="title-product-note">
-                          ({{ numProducts }} sản phẩm)
+                          ({{ filteredProducts.length }} sản phẩm)
                         </span>
                       </p>
                     </div>
@@ -304,7 +304,7 @@
                     </div>
                     <div class="product-cate-card active">
                       <div class="row no-gutters">
-                        <div v-for="product in products"
+                        <div v-for="product in filteredProducts"
                              :key="product.productid"
                              class="col l-4 m-6 c-6 card-slider"
                              @click="handleProduct(product.productid, product.productname)">
@@ -393,12 +393,13 @@ export default {
     }
   },
   methods: {
-    getPriceRange(price) {
-      if (price >= 2000000 && price < 4000000) {
+    getPriceRange(price, discount) {
+      let price_goc = price - discount;
+      if (price_goc >= 2000000 && price_goc< 4000000) {
         return 'price24';
-      } else if (price >= 4000000 && price < 7000000) {
+      } else if (price_goc >= 4000000 && price_goc < 7000000) {
         return 'price47';
-      } else if (price >= 7000000 && price < 10000000) {
+      } else if (price_goc >= 7000000 && price_goc < 10000000) {
         return 'price710';
       } else {
         return 'over10';
@@ -422,6 +423,16 @@ export default {
         params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
       }).catch(() => true);
     },
+    uncheckAllSuppliers() {
+      if (this.selectedSuppliers.length > 1 && this.selectedSuppliers.includes("All")) {
+        this.selectedSuppliers = this.selectedSuppliers.filter(supplier => supplier !== "All");
+      }
+    },
+    uncheckAllPrices() {
+      if (this.selectedPrices.length > 1 && this.selectedPrices.includes("All")) {
+        this.selectedPrices = this.selectedPrices.filter(price => price !== "All");
+      }
+    }
   },
 
   mounted() {
@@ -457,7 +468,7 @@ export default {
 
       return this.products.filter((product) =>
             suppliers.includes(product.supplierid.toString()) &&
-            prices.includes(this.getPriceRange(product.price))
+            prices.includes(this.getPriceRange(product.price, product.discount))
         );
     },
     product_name_convert_computed(){
