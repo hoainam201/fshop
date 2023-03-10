@@ -22,7 +22,7 @@
                 </h5>
               </div>
               <div class="modal-body">
-                <div v-for="product in order" :key="product.product.productid">
+                <div v-for="(product, productId) in order" :key="productId">
                   <div class="modal-product" style="border-bottom: 1px solid #e0e0e0;">
                     <div class="modal-product__img">
                       <img :src="product.product.list?.[0]?.img"
@@ -190,13 +190,15 @@ export default {
       contactname: '',
       address: '',
       paymentMethod: 'cash',
+      // list: [],
       // vnpay: true,
     }
   },
   created() {
-    // this.category_id = this.$route.params.category_id;
-    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
-    this.order = JSON.parse(localStorage.getItem("order"));
+    // this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    // this.order = JSON.parse(localStorage.getItem("order"));
+    this.order = JSON.parse(localStorage.getItem("order")) || {};
+    this.itemCount = Object.keys(this.order).length;
     this.$watch(
         () => this.$route.params,
         (toParams, previousParams) => {
@@ -275,18 +277,43 @@ export default {
           });
     },
 
+    // getProductsInfo() {
+    //   if (this.order) {
+    //     if (this.order.length !== 0) {
+    //       console.log("In checkOut, this.order: ", this.order)
+    //       for (let product of this.order) {
+    //         let productInfo = {
+    //           product_id: product.productid,
+    //           product_count: product.count,
+    //           size: product.size,
+    //           price: product.product_item[0].price,
+    //           topping_id: [],
+    //           topping_count: [],
+    //         }
+    //         for (let topping_item of product.topping_items) {
+    //           topping_id.push(topping_item.id)
+    //           topping_count.push(topping_item.count)
+    //         }
+    //         productInfo.topping_id = JSON.parse(JSON.stringify(topping_id))
+    //         productInfo.topping_count = JSON.parse(JSON.stringify(topping_count))
+    //         this.products_info.push(JSON.parse(JSON.stringify(productInfo)))
+    //       }
+    //       console.log("In checkOut, products_info: ", this.products_info)
+    //     }
+    //   }
+    // },
+
     finishOrder() {
-      console.log("paymentMethod: ", this.paymentMethod)
-      // console.log("total price: ", Number(this.total_price))
+      localStorage.setItem('contactname', this.contactname);
+      localStorage.setItem('contactphone', this.contactphone);
       if (this.paymentMethod === 'cash') {
         axios
             .post("http://localhost:4000/creatPayment", {
-              // user_id: this.user.id,
-              name: this.contactname,
-              phone: this.contactphone,
+              contactname: this.contactname,
+              contactphone: this.contactphone,
               address: this.address,
               vnpay: 'false',
-              // list:[],
+              order: this.order
               // paymentMethod: this.paymentMethod,
               // products: JSON.parse(JSON.stringify(this.products_info))
             })
@@ -295,7 +322,6 @@ export default {
               console.log("response1: ", response);
               console.log("END RES\n")
               // localStorage.removeItem("order")
-              // window.location.href = `/order/${orderid}`;
               window.location.href = response.data;
             })
             .catch((error) => {
@@ -305,18 +331,20 @@ export default {
       } else {
         axios
             .post("http://localhost:4000/creatPayment", {
-              name: this.contactname,
-              phone: this.contactphone,
+              contactname: this.contactname,
+              contactphone: this.contactphone,
               address: this.address,
               vnpay: 'true',
-              // list:[],
+              order: this.order,
+              // totalAmount: this.totalAmount,
               // paymentMethod: this.paymentMethod,
               // products: JSON.parse(JSON.stringify(this.products_info))
             })
             .then((response) => {
               console.log("RES:\n")
               console.log("response2: ", response);
-              console.log("END RES\n")
+              console.log("END RES\n");
+              console.log("paymentMethod: ", this.paymentMethod);
               window.location.href = response.data;
             })
             .catch((error) => {
@@ -324,9 +352,6 @@ export default {
               console.log(error);
             });
       }
-      console.log('contactname:', this.contactname);
-      console.log('contactphone:', this.contactphone);
-      console.log('address:', this.address);
     }
   }
 }

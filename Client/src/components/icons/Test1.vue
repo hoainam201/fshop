@@ -15,40 +15,61 @@
       Online Payment
     </label>
   </div>
+  <div v-for="product in order" :key="product.product.productid">
+    <div class="product-cart__inside">
+      <h3 class="modal-product__name">
+        {{ product.product.productid }} - {{ product.product.productname }}
+        <span class="product-quantity"> {{ product.quantity }} </span>
+        <div>
+          {{ product.product.price }} - {{ product.product.discount }}
+        </div>
+      </h3>
+    </div>
+  </div>
   <button type="button" class="btn" @click="finishOrder">FINISH ORDER</button>
 </template>
 
 <script>
 import axios from "axios";
 export default {
+  data() {
+    return {
+      product_id: "-1",
+      product_name_convert: "",
+      product: {},
+      itemCount: 0,
+      order: [],
+      quantity: 1,
+      contactphone: '',
+      contactname: '',
+      address: '',
+      paymentMethod: 'cash',
+    }
+  },
+  created() {
+    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    this.order = JSON.parse(localStorage.getItem("order"));
+  },
   methods: {
     finishOrder() {
-      console.log("paymentMethod: ", this.paymentMethod)
       if (this.paymentMethod === 'cash') {
         axios
             .post("http://localhost:4000/creatPayment", {
-              name: this.contactname,
-              phone: this.contactphone,
+              contactname: this.contactname,
+              contactphone: this.contactphone,
               address: this.address,
               vnpay: 'false',
-              // list:[],
             })
             .then((response) => {
-              localStorage.removeItem("order")
-              window.location.href = `/order/${id}`;
+              window.location.href = response.data;
             })
             .catch((error) => {
-              console.log("ERR1")
               console.log(error);
             });
       } else {
         axios
             .post("http://localhost:4000/creatPayment", {
-              name: this.contactname,
-              phone: this.contactphone,
-              address: this.address,
               vnpay: 'true',
-              // list:[],
             })
             .then((response) => {
               window.location.href = response.data;
@@ -61,3 +82,29 @@ export default {
   }
 }
 </script>
+Nguyễn Hoài Nam
+"contactphone": "012345678",
+"contactname": "nam",
+"address": "Hanoi",
+"vnpay": "true",
+"order":[
+          {
+            "product": {
+              "productid": 1,
+              "productname": "Iphone 13",
+              "price": 19990000,
+              "discount": 2000000,
+              },
+              "quantity": 10
+            },
+            {
+            "product": {
+              "productid": 2,
+              "productname": "Asus ROG 6 DIABLO",
+              "price": 29990000,
+              "discount": 3000000,
+              },
+              "quantity": 10
+            }
+  ]
+}
