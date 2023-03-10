@@ -34,7 +34,7 @@ const getOrder = async (id) => {
     let total = 0;
     for (const k in list.rows){
         const detail = list.rows[k];
-
+        total += detail.price * detail.quality;
     }
     rows[0].order = list.rows;
     console.log(rows);
