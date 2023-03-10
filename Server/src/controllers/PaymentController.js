@@ -10,6 +10,7 @@ function HMAC(s) {
 
 const creatPayment = async (req, res) => {
     const {contactphone, contactname, address, vnpay, order} = req.body;
+    //???????
     const owner = req.userData.phone;
     const orderid = await paymentModel.newOrder(owner, contactphone, contactname, address, vnpay);
     const total = await paymentModel.addProduct(orderid, order);
