@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="modal-dialog modal-dialog-scrollable c-cart--success" style="padding-top: 24px; margin: 0 auto; width: 776px;">
+    <div class="modal-dialog modal-dialog-scrollable c-cart--success"
+         style="padding-top: 24px; margin: 0 auto; width: 776px;">
       <div class="modal-content" style="border-radius: 4px; box-shadow: 0 1px 4px rgb(10 10 10 / 15%);">
         <div class="modal-header">
           <h5 class="modal-title card-title" id="exampleModalLabel">
@@ -14,7 +15,8 @@
                 <img class="order-img" src="https://fptshop.com.vn/cart/Content/desktop/images/stt-success.jpg">
               </div>
               <p class="text-size--lg text--lg">Cám ơn quý khách đã mua hàng tại FPTShop.com.vn</p>
-              <p class="text-size--normal text-normal">Bộ phận chăm sóc khách hàng FPT Shop sẽ liên hệ đến Quý khách trong vòng
+              <p class="text-size--normal text-normal">Bộ phận chăm sóc khách hàng FPT Shop sẽ liên hệ đến Quý khách
+                trong vòng
                 <span class="text-size--lg">5 phút</span>
                 .
               </p>
@@ -24,20 +26,20 @@
                 <div class="order_data-user__title">Thông tin khách hàng</div>
                 <table class="data-user__table">
                   <tbody>
-                    <tr>
-                      <td>Mã số đơn hàng</td>
-                      <td>
-                        <span class="text--lg text-size--lg">{{ order.orderid }}</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Họ và tên</td>
-                      <td>{{ order.contactname }}</td>
-                    </tr>
-                    <tr>
-                      <td>Số điện thoại</td>
-                      <td>{{ order.contactphone }}</td>
-                    </tr>
+                  <tr>
+                    <td>Mã số đơn hàng</td>
+                    <td>
+                      <span class="text--lg text-size--lg">{{ order.orderid }}</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Họ và tên</td>
+                    <td>{{ order.contactname }}</td>
+                  </tr>
+                  <tr>
+                    <td>Số điện thoại</td>
+                    <td>{{ order.contactphone }}</td>
+                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -67,7 +69,7 @@
                     </div>
                     <div class="product-cart__price">
                       <div class="cs-price cs-price--main">
-                        {{ formatCurrency(product.price * product.quantity) }}
+                        {{ formatCurrency((product.price - product.discount) * product.quantity) }}
                       </div>
                       <div class="cs-price cs-price--sub" style="text-decoration: line-through">
                         {{ formatCurrency(product.price * product.quantity) }}
@@ -77,23 +79,48 @@
                 </div>
               </div>
             </div>
-<!--            <div class="modal-product__pay" style="justify-content: space-between; padding-right: 4px">-->
-<!--              <div></div>-->
-<!--              <div class="modal-product__total">-->
-<!--                <p class="text-normal">-->
-<!--                  <span>Tổng tiền:</span>-->
-<!--                  <span>{{ formatCurrency(totalAmount) }}</span>-->
-<!--                </p>-->
-<!--                <p class="text-normal">-->
-<!--                  <span>Giảm:</span>-->
-<!--                  <span>- {{ formatCurrency(discountAmount) }}</span>-->
-<!--                </p>-->
-<!--                <p class="text&#45;&#45;lg">-->
-<!--                  <span class="text-size&#45;&#45;lg">Cần thanh toán:</span>-->
-<!--                  <span class="re-price re-red priceFinal">{{ formatCurrency(needToPay) }}</span>-->
-<!--                </p>-->
-<!--              </div>-->
-<!--            </div>-->
+            <div v-if="order.vnpay === true"
+                 class="modal-product__pay"
+                 style="justify-content: space-between; padding-right: 4px">
+              <div>
+                <h5>Thanh toán bằng VNPAY</h5>
+                <img style="width: 120px; height: 50px"
+                    src="https://2178994764-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M3-IU1k8a0MMGt6Gmx-%2F-M_A-izB5HIWzlsGsLNH%2F-M_A02h28079MMLy2nbo%2FLogo-VNPAYQR-update.png?alt=media&token=01ee2488-e973-43d5-8ab2-7a137e031e02"
+                    alt="VNPAY">
+              </div>
+              <div class="modal-product__total">
+                <p class="text-normal">
+                  <span>Tổng tiền:</span>
+                  <span>{{ formatCurrency(totalPay) }}</span>
+                </p>
+                <p class="text-normal" style="margin-top: 4px">
+                  <span>Giảm:</span>
+                  <span>- {{ formatCurrency(discountPay) }}</span>
+                </p>
+                <p class="text--lg" style="margin-top: 8px">
+                  <span class="text-size--lg">Đã thanh toán:</span>
+                  <span class="re-price re-red priceFinal">{{ formatCurrency(needToPayment) }}</span>
+                </p>
+              </div>
+            </div>
+            <div class="modal-product__pay" style="justify-content: space-between; padding-right: 4px"
+                 v-else>
+              <div></div>
+              <div class="modal-product__total">
+                <p class="text-normal">
+                  <span>Tổng tiền:</span>
+                  <span>{{ formatCurrency(totalPay) }}</span>
+                </p>
+                <p class="text-normal" style="margin-top: 4px">
+                  <span>Giảm:</span>
+                  <span>- {{ formatCurrency(discountPay) }}</span>
+                </p>
+                <p class="text--lg" style="margin-top: 8px">
+                  <span class="text-size--lg">Cần thanh toán:</span>
+                  <span class="re-price re-red priceFinal">{{ formatCurrency(needToPayment) }}</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -109,29 +136,13 @@
 </template>
 
 <script>
-import commonMixin from "@/mixins/commonMixin";
-import priceMixin from "@/mixins/priceMixin";
 import {formatCurrency} from "@/utils";
 import axios from "axios";
 
 export default {
-  mixins: [commonMixin, priceMixin],
   name: 'Orders',
   data() {
     return {
-      // product_id: "-1",
-      // product_name_convert: "",
-      // products: [],
-      // product: {},
-      // itemCount: 0,
-      // order: [],
-      // cart: [],
-      // change: 0,
-      // quantity: 1,
-      // contactphone: '',
-      // contactname: '',
-      // address: '',
-      // paymentMethod: null,
       order: {},
     }
   },
@@ -154,11 +165,14 @@ export default {
   },
 
   computed: {
-    contactname() {
-      return localStorage.getItem('contactname') || '';
+    totalPay() {
+      return this.order.order ? this.order.order.reduce((total, product) => total + product.price * product.quantity, 0) : 0;
     },
-    contactphone() {
-      return localStorage.getItem('contactphone') || '';
+    discountPay() {
+      return this.order.order ? this.order.order.reduce((total, product) => total + product.discount * product.quantity, 0) : 0;
+    },
+    needToPayment() {
+      return this.totalPay - this.discountPay;
     },
   },
 
@@ -222,10 +236,6 @@ export default {
             console.log("CAN NOT")
             console.log(error.response);
           });
-    },
-
-    getOrderByID() {
-
     },
   },
 
