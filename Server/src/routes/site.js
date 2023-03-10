@@ -13,7 +13,7 @@ router.post('/verify-otp', loginController.verifyOtp);
 
 router.post('/creatPayment',authorization(), paymentController.creatPayment);
 router.get('/returnUrl', paymentController.returnUrl);
-router.get('/order/:id', paymentController.getOrder);
+router.get('/order/:id', paymentController.returnUrl);
 
 router.get('/', siteController.home);
 
