@@ -10,9 +10,9 @@ const newOrder = async (owner, phone, name, address, vnpay) => {
 const addProduct = async (orderid, list) => {
     let total = 0;
     for (const key in list) {
-        const product = list[key];
+        const product = list[key].product;
         console.log(product);
-        await db.query('insert into orderdetails values ($1, $2, $3, $4)', [orderid, product.productid, product.price, product.quantity]);
+        await db.query('insert into orderdetails values ($1, $2, $3, $4)', [orderid, product.productid, product.price, list[key].quantity]);
         total += product.price * product.quantity;
     }
     return total;

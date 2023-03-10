@@ -388,26 +388,26 @@
                               </div>
                               <div class="card-item-info__promo">
                                 <div class="card-item-info__promo-product">
-                      <span>
-                        <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
-                        {{ getMonitorSize(product.description.monitor) }}
-                      </span>
                                   <span>
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ product.description.cpu }}
-                      </span>
-                                  <span>
-                        <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
-                        {{ product.description.disk }}
-                      </span>
-                                  <span>
-                        <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
-                        {{ getMonitorSize(product.description.ram) }}
-                      </span>
-                                  <span>
-                        <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
-                        {{ getMonitorSize(product.description.gpu) }}
-                      </span>
+                                    <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
+                                    {{ getMonitorSize(product.description.monitor) }}
+                                  </span>
+                                              <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ product.description.cpu }}
+                                  </span>
+                                              <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
+                                    {{ product.description.disk }}
+                                  </span>
+                                              <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                    {{ getMonitorSize(product.description.ram) }}
+                                  </span>
+                                              <span>
+                                    <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
+                                    {{ getMonitorSize(product.description.gpu) }}
+                                  </span>
                                 </div>
                                 <ItemInfoPromo />
                               </div>

@@ -1,75 +1,121 @@
 <template>
   <div>
-    <div class="login_content" :class="{hidden : loginHidden}">
-      <div class="welcome-login">
-        <div>
-          <p>Tìm thấy {{ results.length}} kết quả cho từ khóa "{{ searchTerm }}"</p>
-        </div>
-        <div class="product-cate-card active">
-          <div class="row no-gutters">
-            <div v-for="product in results"
-                 :key="product.productid"
-                 class="col l-4 m-6 c-6 product-card"
-                 @click="handleProduct(product.productid, product.productname)">
-              <div class="product-card-item product-card-item-sale" style="cursor: pointer">
-                <div class="product-card-item-img">
-                  <img :src="product.img"
-                       alt="{{ product.productname }}">
-                  <div class="sticker">
-                    <span class="stickers sticker-event">Trả góp 0%</span>
-                    <br>
-                    <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
-                  </div>
+    <div class="result-s">
+      <div>
+        <p style="font-size: 20px;">Tìm thấy <b>{{ results.length}}</b> kết quả cho từ khóa <b>"{{ searchTerm }}"</b></p>
+      </div>
+      <div class="product-cate-card active">
+        <div class="row no-gutters">
+          <div v-for="product in results"
+               :key="product.productid"
+               class="col l-3 m-6 c-6 product-card"
+               @click="handleProduct(product.productid, product.productname)">
+            <div v-if="product.categoryid === 2" class="product-card-item product-card-item-sale" style="cursor: pointer">
+              <div class="product-card-item-img">
+                <img :src="product.img"
+                     alt="{{ product.productname }}">
+                <div class="sticker">
+                  <span class="stickers sticker-event">Trả góp 0%</span>
+                  <br>
+                  <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
                 </div>
-                <div class="product-card-item-content">
-                  <h3 class="title-card">
-                    {{ product.productname }}
-                  </h3>
-                  <div class="price">
-                    <div class="progress">
-                      {{ formatCurrency(salePrice(product)) }}
-                      <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
-                           aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
-                    <div class="strike-price">
+              </div>
+              <div class="product-card-item-content">
+                <h3 class="title-card">
+                  {{ product.productname }}
+                </h3>
+                <div class="price">
+                  <div class="progress">
+                    {{ formatCurrency(salePrice(product)) }}
+                    <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
+                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <!--                    <span class="old-price">{{ formatCurrency(price) }}</span>-->
+                  <div class="strike-price">
                       <span style="text-decoration: line-through">
                         {{ formatCurrency(product.price) }}
                       </span>
-                    </div>
                   </div>
-                  <div class="card-item-info__promo">
-                    <div class="card-item-info__promo-product">
+                </div>
+                <div class="card-item-info__promo">
+                  <div class="card-item-info__promo-product">
                       <span>
                         <i><font-awesome-icon icon="fa-solid fa-laptop" /></i>
                         {{ getMonitorSize(product.description.monitor) }}
                       </span>
-                      <span>
+                    <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
                         {{ product.description.cpu }}
                       </span>
-                      <span>
+                    <span>
                         <i><font-awesome-icon icon="fa-solid fa-hard-drive" /></i>
                         {{ product.description.disk }}
                       </span>
-                      <span>
+                    <span>
                         <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
                         {{ getMonitorSize(product.description.ram) }}
                       </span>
-                      <span>
+                    <span>
                         <i><font-awesome-icon icon="fa-solid fa-weight-hanging" /></i>
                         {{ getMonitorSize(product.description.gpu) }}
                       </span>
-                    </div>
-                    <ItemInfoPromo />
                   </div>
+                  <ItemInfoPromo />
+                </div>
+              </div>
+            </div>
+            <div v-if="product.categoryid === 1" class="product-card-item product-card-item-sale" style="cursor: pointer">
+              <div class="product-card-item-img">
+                <img :src="product.img"
+                     alt="{{ product.productname }}">
+                <div class="sticker">
+                  <span class="stickers sticker-event">Trả góp 0%</span>
+                  <br>
+                  <span class="stickers sticker-sale">Lì xì {{ formatCurrency(product.discount) }}</span>
+                </div>
+              </div>
+              <div class="product-card-item-content">
+                <h3 class="title-card">
+                  {{ product.productname }}
+                </h3>
+                <div class="price">
+                  <div class="progress">
+                    {{ formatCurrency(salePrice(product)) }}
+                    <div class="progress-bar" role="progressbar" :style="{ width: progressBarWidth(product) }"
+                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="strike-price">
+                              <span style="text-decoration: line-through">
+                                {{ formatCurrency(product.price) }}
+                              </span>
+                  </div>
+                </div>
+                <div class="card-item-info__promo">
+                  <div class="card-item-info__promo-product">
+                              <span>
+                                <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                {{ product.description.cpu }}
+                              </span>
+                    <span>
+                                  <i><font-awesome-icon icon="fa-solid fa-mobile-screen-button"/></i>
+                                  {{ getMonitorSize(product.description.monitor) }}
+                                </span>
+                    <span>
+                                <i><font-awesome-icon icon="fa-solid fa-microchip" /></i>
+                                {{ product.description.rom }}
+                              </span>
+                    <span>
+                                <i class="fa-sharp fa-solid fa-memory"></i>
+                                {{ product.description.cam2 }}
+                              </span>
+                  </div>
+                  <ItemInfoPromo />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -114,7 +160,7 @@ export default {
   },
   mounted() {
     // Gọi API để lấy danh sách sản phẩm
-    axios.get('http://localhost:4000/category/laptop')
+    axios.get('http://localhost:4000')
         .then(response => {
           this.products = response.data;
         })
@@ -158,4 +204,14 @@ export default {
   @import "@/assets/reponsive.css";
   @import "@/assets/grid.css";
   @import "@/assets/style.css";
+  .result-s{
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 2%;
+  }
+  /*.product {*/
+  /*  width: 25%;*/
+  /*  padding: 10px;*/
+  /*  box-sizing: border-box;*/
+  /*}*/
 </style>

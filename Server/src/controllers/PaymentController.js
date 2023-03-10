@@ -9,10 +9,10 @@ function HMAC(s) {
 }
 
 const creatPayment = async (req, res) => {
-    const {contactphone, contactname, address, vnpay, list} = req.body;
+    const {contactphone, contactname, address, vnpay, order} = req.body;
     const owner = req.userData.phone;
     const orderid = await paymentModel.newOrder(owner, contactphone, contactname, address, vnpay);
-    const total = await paymentModel.addProduct(orderid, list);
+    const total = await paymentModel.addProduct(orderid, order);
     if (vnpay == 'true') {
         var url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?";
         var s = "vnp_Amount=" + total + "&vnp_Command=pay&vnp_CreateDate=" + moment().tz('Asia/Ho_Chi_Minh').format('YYYYMMDDHHmmss');
