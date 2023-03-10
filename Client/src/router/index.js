@@ -56,5 +56,10 @@ export default createRouter({
           name: 'Orders',
           component: import("@/components/productdetails/Orders.vue")
       },
+      {
+          path: '/userAccount',
+          name: 'UserAccount',
+          component: import("@/components/layouts/LoginForm/UserAccount.vue")
+      },
   ],
 })
