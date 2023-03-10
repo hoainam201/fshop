@@ -335,7 +335,8 @@ export default {
               contactphone: this.contactphone,
               address: this.address,
               vnpay: 'true',
-              order: this.order
+              order: this.order,
+              totalAmount: this.totalAmount,
               // paymentMethod: this.paymentMethod,
               // products: JSON.parse(JSON.stringify(this.products_info))
             })
