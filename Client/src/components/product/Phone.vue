@@ -482,6 +482,12 @@ export default {
 </script>
 
 <style>
+  .form-check-input[type=checkbox]:checked {
+    border: solid 2px #cb1c22;
+    background-color: #cb1c22;
+    height: 16px;
+    width: 16px;
+  }
   @import "@/assets/main.css";
   @import "@/assets/slider.css";
   @import "@/assets/slider-card.css";
