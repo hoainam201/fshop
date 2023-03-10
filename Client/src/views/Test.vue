@@ -66,85 +66,29 @@
 <!--</script>-->
 
 <template>
-  <div v-for="product in order" :key="product.product.productid">
+  <div>
     <div>
-      <div>
-        <img :src="product.product.list?.[0]?.img"
-             alt="{{ product.product.productname }}">
-      </div>
-      <div class="product-cart__info">
-        <div class="product-cart__inside">
-          <h3 >
-            {{ product.product.productname }}
-          </h3>
-          <span class="product-quantity"> {{ product.quantity }} </span>
-        </div>
-      </div>
+      <span >{{ orderid }}</span>
+      <span >{{ contactname }}</span>
+      <span >{{ contactphone }}</span>
+    </div>
+    <div v-for="product in order" :key="product.product.productid" class="c-cart__product">
+      {{ order.productname }} - {{ order.quantity }} - {{  }}
     </div>
   </div>
-  <button type="button" class="btn"
-          @click="finishOrder">
-    HOÀN TẤT ĐẶT HÀNG
-  </button>
 </template>
 
 <script>
 
-import axios from "axios";
-
 export default {
+  name: 'Orders',
   data() {
     return {
-      product: {},
-      itemCount: 0,
-      order: [],
-      quantity: 1,
-      contactphone: '',
-      contactname: '',
-      address: '',
-      paymentMethod: 'cash',
-    }
-  },
-  created() {
-    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
-    this.order = JSON.parse(localStorage.getItem("order"));
-  },
-  methods: {
-    finishOrder() {
-      if (this.paymentMethod === 'cash') {
-        axios
-            .post("http://localhost:4000/creatPayment", {
-              contactname: this.contactname,
-              contactphone: this.contactphone,
-              address: this.address,
-              vnpay: 'false',
-              order: this.order,
-            })
-            .then((response) => {
-              localStorage.removeItem("order");
-              window.location.href = response.data;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-      } else {
-        axios
-            .post("http://localhost:4000/creatPayment", {
-              contactname: this.contactname,
-              contactphone: this.contactphone,
-              address: this.address,
-              vnpay: 'true',
-              order: this.order,
-            })
-            .then((response) => {
-              // localStorage.removeItem("order")
-              window.location.href = response.data;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-      }
+
     }
   },
 }
 </script>
+
+
+

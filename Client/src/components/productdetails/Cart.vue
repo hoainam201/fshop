@@ -319,6 +319,7 @@ export default {
             })
             .then((response) => {
               localStorage.removeItem("order");
+              // window.location.href = `/order/${response.data.orderid}`;
               window.location.href = response.data;
             })
             .catch((error) => {
@@ -335,7 +336,7 @@ export default {
               order: this.order,
             })
             .then((response) => {
-              // localStorage.removeItem("order")
+              localStorage.removeItem("order");
               window.location.href = response.data;
             })
             .catch((error) => {
