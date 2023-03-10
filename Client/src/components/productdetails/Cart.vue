@@ -313,15 +313,12 @@ export default {
               contactphone: this.contactphone,
               address: this.address,
               vnpay: 'false',
-              order: this.order
+              order: this.order,
               // paymentMethod: this.paymentMethod,
               // products: JSON.parse(JSON.stringify(this.products_info))
             })
             .then((response) => {
-              console.log("RES:\n")
-              console.log("response1: ", response);
-              console.log("END RES\n")
-              // localStorage.removeItem("order")
+              localStorage.removeItem("order");
               window.location.href = response.data;
             })
             .catch((error) => {
@@ -336,15 +333,9 @@ export default {
               address: this.address,
               vnpay: 'true',
               order: this.order,
-              // totalAmount: this.totalAmount,
-              // paymentMethod: this.paymentMethod,
-              // products: JSON.parse(JSON.stringify(this.products_info))
             })
             .then((response) => {
-              console.log("RES:\n")
-              console.log("response2: ", response);
-              console.log("END RES\n");
-              console.log("paymentMethod: ", this.paymentMethod);
+              // localStorage.removeItem("order")
               window.location.href = response.data;
             })
             .catch((error) => {

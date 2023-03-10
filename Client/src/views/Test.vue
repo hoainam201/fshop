@@ -82,9 +82,15 @@
       </div>
     </div>
   </div>
+  <button type="button" class="btn"
+          @click="finishOrder">
+    HOÀN TẤT ĐẶT HÀNG
+  </button>
 </template>
 
 <script>
+
+import axios from "axios";
 
 export default {
   data() {
@@ -102,6 +108,43 @@ export default {
   created() {
     this.itemCount = JSON.parse(localStorage.getItem("order")).length;
     this.order = JSON.parse(localStorage.getItem("order"));
+  },
+  methods: {
+    finishOrder() {
+      if (this.paymentMethod === 'cash') {
+        axios
+            .post("http://localhost:4000/creatPayment", {
+              contactname: this.contactname,
+              contactphone: this.contactphone,
+              address: this.address,
+              vnpay: 'false',
+              order: this.order,
+            })
+            .then((response) => {
+              localStorage.removeItem("order");
+              window.location.href = response.data;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+      } else {
+        axios
+            .post("http://localhost:4000/creatPayment", {
+              contactname: this.contactname,
+              contactphone: this.contactphone,
+              address: this.address,
+              vnpay: 'true',
+              order: this.order,
+            })
+            .then((response) => {
+              // localStorage.removeItem("order")
+              window.location.href = response.data;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+      }
+    }
   },
 }
 </script>
