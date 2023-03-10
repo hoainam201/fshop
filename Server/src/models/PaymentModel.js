@@ -13,7 +13,7 @@ const addProduct = async (orderid, list) => {
         const product = list[key].product;
         console.log(product);
         await db.query('insert into orderdetails values ($1, $2, $3, $4)', [orderid, product.productid, product.price, list[key].quantity]);
-        total += product.price * product.quantity;
+        total += (product.price - product.discount) * list[key].quantity;
     }
     return total;
 }
