@@ -336,7 +336,7 @@ export default {
               address: this.address,
               vnpay: 'true',
               order: this.order,
-              totalAmount: this.totalAmount,
+              // totalAmount: this.totalAmount,
               // paymentMethod: this.paymentMethod,
               // products: JSON.parse(JSON.stringify(this.products_info))
             })
