@@ -190,8 +190,6 @@ export default {
       contactname: '',
       address: '',
       paymentMethod: 'cash',
-      // list: [],
-      // vnpay: true,
     }
   },
   created() {
@@ -212,10 +210,6 @@ export default {
     product_id() {
       this.getItems();
     },
-  },
-
-  computed: {
-
   },
 
   methods: {
@@ -276,32 +270,6 @@ export default {
             console.log(error.response);
           });
     },
-
-    // getProductsInfo() {
-    //   if (this.order) {
-    //     if (this.order.length !== 0) {
-    //       console.log("In checkOut, this.order: ", this.order)
-    //       for (let product of this.order) {
-    //         let productInfo = {
-    //           product_id: product.productid,
-    //           product_count: product.count,
-    //           size: product.size,
-    //           price: product.product_item[0].price,
-    //           topping_id: [],
-    //           topping_count: [],
-    //         }
-    //         for (let topping_item of product.topping_items) {
-    //           topping_id.push(topping_item.id)
-    //           topping_count.push(topping_item.count)
-    //         }
-    //         productInfo.topping_id = JSON.parse(JSON.stringify(topping_id))
-    //         productInfo.topping_count = JSON.parse(JSON.stringify(topping_count))
-    //         this.products_info.push(JSON.parse(JSON.stringify(productInfo)))
-    //       }
-    //       console.log("In checkOut, products_info: ", this.products_info)
-    //     }
-    //   }
-    // },
 
     finishOrder() {
       localStorage.setItem('contactname', this.contactname);
