@@ -73,6 +73,7 @@ create table orderDetails
     productID int,
     primary key (orderID, productID),
     price     int not null,
+    discount   int default 0,
     quantity  int default 1,
     foreign key (orderID) references orders (orderID),
     foreign key (productID) references products (productID)
