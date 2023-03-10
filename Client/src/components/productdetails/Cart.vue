@@ -282,8 +282,6 @@ export default {
               address: this.address,
               vnpay: 'false',
               order: this.order,
-              // paymentMethod: this.paymentMethod,
-              // products: JSON.parse(JSON.stringify(this.products_info))
             })
             .then((response) => {
               localStorage.removeItem("order");
@@ -308,7 +306,6 @@ export default {
               window.location.href = response.data;
             })
             .catch((error) => {
-              console.log("ERR1")
               console.log(error);
             });
       }
