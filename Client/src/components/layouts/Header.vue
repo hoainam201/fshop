@@ -21,12 +21,15 @@
 
                   <div style="margin-top: 10px">
                     <MDBInput
+                        tag="form"
+                        @submit.prevent="search"
                         inputGroup
                         :formOutline="false"
                         wrapperClass="mb-3"
                         v-model="searchTerm"
                         placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm"
                         aria-label="Search"
+                        @keydown.enter="goToSearchResult"
                     >
                       <router-link :to="{ path: '/searchresult', query: { searchTerm: searchTerm } }">
                       <MDBBtn color="primary"
@@ -622,15 +625,13 @@ export default {
       // console.log("item count in mounted: ", this.itemCount)
     });
   },
-
-  setup() {
-    const search5 = ref('');
-    const showAlert = () => alert(search5.value);
-
-    return {
-      searchTerm: '',
+  methods: {
+    goToSearchResult() {
+      event.preventDefault();
+      this.$router.push({ path: '/searchresult', query: { searchTerm: this.searchTerm } });
     }
-  },
+  }
+
 };
 </script>
 
