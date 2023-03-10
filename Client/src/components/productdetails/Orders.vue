@@ -27,16 +27,16 @@
                     <tr>
                       <td>Mã số đơn hàng</td>
                       <td>
-                        <span class="text--lg text-size--lg">9999</span>
+                        <span class="text--lg text-size--lg">{{ order.orderid }}</span>
                       </td>
                     </tr>
                     <tr>
                       <td>Họ và tên</td>
-                      <td>{{ contactname }}</td>
+                      <td>{{ order.contactname }}</td>
                     </tr>
                     <tr>
                       <td>Số điện thoại</td>
-                      <td>{{ contactphone }}</td>
+                      <td>{{ order.contactphone }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -48,18 +48,17 @@
               <span>Thành tiền</span>
             </div>
             <div class="c-cart__block">
-              <div v-for="product in order" :key="product.product.productid" class="c-cart__product">
+              <div v-for="product in order.order" :key="product.productname" class="c-cart__product">
                 <div class="product-cart" style="border-bottom: 1px solid #e0e0e0;">
                   <div class="product-cart__img product-cart__img--sm" style="text-align: left">
-                    <img :src="product.product.list?.[0]?.img"
-                         alt="{{ product.product.productname }}">
+                    <img :src="product.img"
+                         alt="{{ product.productname }}">
                   </div>
                   <div class="product-cart__info">
                     <div class="product-cart__inside">
                       <div class="product-cart__line">
-                        <h3 @click="handleProduct(product.product.productid, product.product.productname)"
-                            class="product-cart__name product-cart__name--lg" style="cursor: pointer">
-                          {{ product.product.productname }}
+                        <h3 class="product-cart__name product-cart__name--lg" style="cursor: pointer">
+                          {{ product.productname }}
                         </h3>
                       </div>
                     </div>
@@ -68,33 +67,33 @@
                     </div>
                     <div class="product-cart__price">
                       <div class="cs-price cs-price--main">
-                        {{ formatCurrency(salePrice(product.product) * product.quantity) }}
+                        {{ formatCurrency(product.price * product.quantity) }}
                       </div>
                       <div class="cs-price cs-price--sub" style="text-decoration: line-through">
-                        {{ formatCurrency(product.product.price * product.quantity) }}
+                        {{ formatCurrency(product.price * product.quantity) }}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="modal-product__pay" style="justify-content: space-between; padding-right: 4px">
-              <div></div>
-              <div class="modal-product__total">
-                <p class="text-normal">
-                  <span>Tổng tiền:</span>
-                  <span>{{ formatCurrency(totalAmount) }}</span>
-                </p>
-                <p class="text-normal">
-                  <span>Giảm:</span>
-                  <span>- {{ formatCurrency(discountAmount) }}</span>
-                </p>
-                <p class="text--lg">
-                  <span class="text-size--lg">Cần thanh toán:</span>
-                  <span class="re-price re-red priceFinal">{{ formatCurrency(needToPay) }}</span>
-                </p>
-              </div>
-            </div>
+<!--            <div class="modal-product__pay" style="justify-content: space-between; padding-right: 4px">-->
+<!--              <div></div>-->
+<!--              <div class="modal-product__total">-->
+<!--                <p class="text-normal">-->
+<!--                  <span>Tổng tiền:</span>-->
+<!--                  <span>{{ formatCurrency(totalAmount) }}</span>-->
+<!--                </p>-->
+<!--                <p class="text-normal">-->
+<!--                  <span>Giảm:</span>-->
+<!--                  <span>- {{ formatCurrency(discountAmount) }}</span>-->
+<!--                </p>-->
+<!--                <p class="text&#45;&#45;lg">-->
+<!--                  <span class="text-size&#45;&#45;lg">Cần thanh toán:</span>-->
+<!--                  <span class="re-price re-red priceFinal">{{ formatCurrency(needToPay) }}</span>-->
+<!--                </p>-->
+<!--              </div>-->
+<!--            </div>-->
           </div>
         </div>
         <div class="modal-footer">
@@ -120,25 +119,25 @@ export default {
   name: 'Orders',
   data() {
     return {
-      product_id: "-1",
-      product_name_convert: "",
-      products: [],
-      product: {},
-      itemCount: 0,
-      order: [],
-      cart: [],
-      change: 0,
-      quantity: 1,
-      contactphone: '',
-      contactname: '',
-      address: '',
-      paymentMethod: null,
+      // product_id: "-1",
+      // product_name_convert: "",
+      // products: [],
+      // product: {},
+      // itemCount: 0,
+      // order: [],
+      // cart: [],
+      // change: 0,
+      // quantity: 1,
+      // contactphone: '',
+      // contactname: '',
+      // address: '',
+      // paymentMethod: null,
+      order: {},
     }
   },
   created() {
-    // this.category_id = this.$route.params.category_id;
-    this.itemCount = JSON.parse(localStorage.getItem("order")).length;
-    this.order = JSON.parse(localStorage.getItem("order"));
+    // this.itemCount = JSON.parse(localStorage.getItem("order")).length;
+    // this.order = JSON.parse(localStorage.getItem("order"));
     this.$watch(
         () => this.$route.params,
         (toParams, previousParams) => {
@@ -224,7 +223,21 @@ export default {
             console.log(error.response);
           });
     },
-  }
+
+    getOrderByID() {
+
+    },
+  },
+
+  mounted() {
+    axios.get(`http://localhost:4000/order/${this.$route.params.id}`)
+        .then(response => {
+          this.order = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+  },
 }
 </script>
 

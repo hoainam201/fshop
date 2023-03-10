@@ -52,7 +52,7 @@ export default createRouter({
           component: import("@/components/productdetails/Cart.vue")
       },
       {
-          path: '/order',
+          path: '/order/:id',
           name: 'Orders',
           component: import("@/components/productdetails/Orders.vue")
       },

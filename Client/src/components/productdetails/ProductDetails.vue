@@ -345,6 +345,8 @@
                   </li>
                 </ul>
               </div>
+            </div>
+            <div class="st-pd-btn">
               <div class="pay-cate">
                 <!--                <BuyNow />-->
                 <!-- Button trigger modal -->
@@ -441,17 +443,22 @@
                               <div class="cart__form__line margin-bottom cart__form__line--col">
                                 <div class="namecus">
                                   <input type="text" class="form-control" placeholder="Nhập họ và tên"
-                                         aria-label="name" aria-describedby="addon-wrapping"
-                                         id="name" v-model="name" required>
+                                         name="contactname"
+                                         id="contactname" v-model="contactname" required>
                                 </div>
                                 <div class="phonecus">
-                                  <input type="tel" class="form-control" placeholder="Nhập số điện thoại"
-                                         aria-label="phone" aria-describedby="addon-wrapping"
-                                         id="phone" v-model="phone" pattern="\d*"
-                                         :minlength="10" :maxlength="10" required autocomplete="off">
+                                  <input type="tel" class="form-control"
+                                         placeholder="Nhập số điện thoại"
+                                         name="contactphone"
+                                         id="contactphone"
+                                         v-model="contactphone"
+                                         pattern="\d*"
+                                         :minlength="10"
+                                         :maxlength="10"
+                                         required
+                                         autocomplete="off">
                                 </div>
                                 <input type="text" class="form-control" placeholder="Nhập địa chỉ của bạn"
-                                       aria-label="address" aria-describedby="addon-wrapping"
                                        id="address" v-model="address"
                                        required style="margin-top: 8px">
                               </div>
@@ -483,7 +490,11 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-xl cart-submit" @click="finishOrder">HOÀN TẤT ĐẶT HÀNG</button>
+                        <button type="button" class="btn btn-primary btn-xl cart-submit"
+                                :disabled="!contactname || !contactphone || !address || !paymentMethod"
+                                @click="finishOrder">
+                          HOÀN TẤT ĐẶT HÀNG
+                        </button>
                         <p>
                           Bằng cách đặt hàng, quý khách đồng ý với
                           <a href="https://fptshop.com.vn/tos" class="re-link--gray"
@@ -497,16 +508,20 @@
                   </div>
                 </div>
               </div>
-              <div class="btn btn-info btn-xl btn--half">
-                <strong>
-                  TRẢ GÓP 0%
-                </strong>
+              <div class="btn btn-info btn-xl btn--half" id="btn-installment">
+                <div>
+                  <strong>
+                    TRẢ GÓP 0%
+                  </strong>
+                </div>
                 <p>Duyệt nhanh qua điện thoại</p>
               </div>
-              <div class="btn btn-info btn-xl btn--half">
-                <strong>
-                  TRẢ GÓP QUA THẺ
-                </strong>
+              <div class="btn btn-info btn-xl btn--half" id="btn-installment-card">
+                <div>
+                  <strong>
+                    TRẢ GÓP QUA THẺ
+                  </strong>
+                </div>
                 <p>Visa, Master Card, JCB, AMEX</p>
               </div>
             </div>
@@ -620,22 +635,14 @@ export default {
       checkedKredivo: [],
       itemCount: 0,
       order: [],
+      orderid: 0,
       cart: [],
       change: 0,
-      types: [
-        'text',
-        'number',
-        'email',
-        'password',
-        'search',
-        'url',
-        'tel',
-        'date',
-        'time',
-        'range',
-        'color'
-      ],
       quantity: 1,
+      contactphone: '',
+      contactname: '',
+      address: '',
+      paymentMethod: 'cash',
     }
   },
   created() {
@@ -667,10 +674,6 @@ export default {
     },
   },
 
-  computed: {
-
-  },
-
   methods: {
     formatCurrency,
     handleProduct(product_id, product_name) {
@@ -682,7 +685,6 @@ export default {
         params: {product_id: `${this.product_id}`, product_name_convert: `${this.product_name_convert_computed}`},
       }).catch(() => true);
     },
-
     handleItem(item_id, item_name) {
       this.item_id = item_id;
       this.item_name = item_name;
@@ -691,7 +693,6 @@ export default {
         params: {item_id: `${this.item_id}`, item_name_convert: `${this.item_name_convert_computed}`},
       }).catch(() => true);
     },
-
     getIDByPath(path) {
       console.log("input path: ", path)
       for (let index in this.products) {
@@ -782,36 +783,48 @@ export default {
           });
     },
 
-    // handleChoseItem() {
-    //   // localStorage.removeItem("order")
-    //   // console.log("name: ", this.product_items.name)
-    //   // Parse any JSON previously stored in allEntries
-    //   this.order = JSON.parse(localStorage.getItem("order"));
-    //   if (this.order == null) this.order = [];
-    //   const entry = {
-    //     // productid: this.productid,
-    //     product: this.product,
-    //     quantity: this.quantity,
-    //   };
-    //   // console.log("entry: ", entry)
-    //   localStorage.setItem("entry", JSON.stringify(entry));
-    //   // Save allEntries back to local storage
-    //   this.order.push(entry);
-    //   // console.log("order: ", order)
-    //   localStorage.setItem("order", JSON.stringify(this.order));
-    //   window.dispatchEvent(new CustomEvent('order-localstorage-changed', {
-    //     detail: {
-    //       storage: localStorage.getItem('order')
-    //     }
-    //   }));
-    //   console.log(this.order)
-    //   this.change ++
-    //   this.itemCount++;
-    //   // this.$forceUpdate();
-    //
-    //   // this.dialog = false
-    //   // this.reset()
-    // },
+    finishOrder() {
+      localStorage.setItem('contactname', this.contactname);
+      localStorage.setItem('contactphone', this.contactphone);
+      if (this.paymentMethod === 'cash') {
+        axios
+            .post("http://localhost:4000/creatPayment", {
+              contactname: this.contactname,
+              contactphone: this.contactphone,
+              address: this.address,
+              vnpay: 'false',
+              order: this.order,
+              // paymentMethod: this.paymentMethod,
+              // products: JSON.parse(JSON.stringify(this.products_info))
+            })
+            .then((response) => {
+              localStorage.removeItem("order");
+              // window.location.href = `/order/${response.data.orderid}`;
+              window.location.href = response.data;
+            })
+            .catch((error) => {
+              console.log("ERR1")
+              console.log(error);
+            });
+      } else {
+        axios
+            .post("http://localhost:4000/creatPayment", {
+              contactname: this.contactname,
+              contactphone: this.contactphone,
+              address: this.address,
+              vnpay: 'true',
+              order: this.order,
+            })
+            .then((response) => {
+              localStorage.removeItem("order");
+              window.location.href = response.data;
+            })
+            .catch((error) => {
+              console.log("ERR1")
+              console.log(error);
+            });
+      }
+    }
   },
 
 
@@ -835,5 +848,4 @@ export default {
 @import "@/assets/reponsive.css";
 @import "@/assets/grid.css";
 @import "@/assets/style.css";
-
 </style>

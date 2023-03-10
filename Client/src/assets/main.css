@@ -1834,7 +1834,7 @@ li.option-color-item:nth-child(2) {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 /*.pay-now {*/
@@ -2610,4 +2610,46 @@ li.info-cat-item i {
   color: #939ca3;
 }
 
+.st-pd-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
 
+.st-pd-btn .btn div {
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.st-pd-btn .btn div strong {
+  font-weight: 500;
+}
+
+.st-pd-btn .btn p {
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.st-pd-btn .btn-info {
+  background: #0664f9;
+}
+
+.st-pd-btn .btn--half {
+  width: calc((100% - 8px)/ 2);
+}
+
+.st-pd-btn .btn {
+  cursor: pointer;
+}
