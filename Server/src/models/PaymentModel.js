@@ -31,6 +31,11 @@ const returnUrl = async (id) => {
 const getOrder = async (id) => {
     let {rows} = await db.query('select * from orders where orderid = $1', [id]);
     const list = await db.query('select (select productname from products where orderdetails.productid = products.productid), price, quantity, (select img from productimg where orderdetails.productid = productimg.productid limit 1) from orderdetails where orderid = $1', [id]);
+    let total = 0;
+    for (const k in list.rows){
+        const detail = list.rows[k];
+
+    }
     rows[0].order = list.rows;
     console.log(rows);
     return rows[0];

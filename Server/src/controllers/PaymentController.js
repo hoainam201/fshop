@@ -16,10 +16,11 @@ const creatPayment = async (req, res) => {
     const total = await paymentModel.addProduct(orderid, order);
     if (vnpay == 'true') {
         var url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?";
-        var s = "vnp_Amount=" + total + "&vnp_Command=pay&vnp_CreateDate=" + moment().tz('Asia/Ho_Chi_Minh').format('YYYYMMDDHHmmss');
+        var s = "vnp_Amount=" + total * 100 + "&vnp_Command=pay&vnp_CreateDate=" + moment().tz('Asia/Ho_Chi_Minh').format('YYYYMMDDHHmmss');
         s += "&vnp_CurrCode=VND&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang&vnp_OrderType=other&";
         s += "vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A5173%2FreturnUrl&vnp_TmnCode=USQBCEZ9&vnp_TxnRef=" + orderid + "&vnp_Version=2.1.0";
         url += s + "&vnp_SecureHash=" + HMAC(s);
+        // console.log(url);
         res.json(url);
     } else
         res.json(`/order/${orderid}`);
